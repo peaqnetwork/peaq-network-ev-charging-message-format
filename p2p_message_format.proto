@@ -39,7 +39,7 @@ message ServiceAckData {
 message ServiceRequestedData {
     string consumer = 1;
     string provider = 2;
-    int64 token_deposited = 3;
+    string token_deposited = 3;
 }
 
 message ServiceDeliveredData {
@@ -69,7 +69,7 @@ message Response {
 }
 
 message TransactionValue {
-  int64 token_num = 1;
+  string token_num = 1;
   string tx_hash = 2;
 
   message TimePoint {
