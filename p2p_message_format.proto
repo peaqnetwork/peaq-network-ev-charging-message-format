@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package p2p;
-option go_package = "github.com/peaqnetwork/peaq-network-ev-charging-message-format/message;message";
+option go_package = "github.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/message;message";
 
 // Events types
 enum EventType {

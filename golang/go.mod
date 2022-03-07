@@ -1,4 +1,4 @@
-module github.com/peaqnetwork/peaq-network-ev-charging-message-format
+module github.com/peaqnetwork/peaq-network-ev-charging-message-format/golang
 
 go 1.17
 
