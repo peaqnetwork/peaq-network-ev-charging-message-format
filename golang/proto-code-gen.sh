@@ -1,1 +1,0 @@
-protoc -I=../ --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative  --go_out message --go-grpc_out message $(find ../ -iname "*.proto")
