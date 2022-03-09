@@ -48,11 +48,10 @@ message ServiceDeliveredData {
 
 message StopChargeResponseData { Response resp = 1; }
 
-message IdentityChallengeData { string encrypted_number = 1; }
+message IdentityChallengeData { string plain_data = 1; }
 
 message IdentityResponseData {
   Response resp = 1;
-  string incremented_number = 2;
   string signature = 3;
 }
 
