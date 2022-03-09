@@ -1,66 +1,59 @@
 syntax = "proto3";
 
 package p2p;
+option go_package = "github.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/message;message";
 
 // Events types
 enum EventType {
-    CHARGING_STATUS = 0;
-    SERVICE_REQUEST_ACK = 1;
-    SERVICE_DELIVERY_ACK = 2;
-    SERVICE_REQUESTED = 3;
-    SERVICE_DELIVERED = 4;
-    STOP_CHARGE = 5;
-    STOP_CHARGE_RESPONSE = 6;
-    IDENTITY_CHALLENGE = 7;
-    IDENTITY_RESPONSE = 8;
+  CHARGING_STATUS = 0;
+  SERVICE_REQUEST_ACK = 1;
+  SERVICE_DELIVERY_ACK = 2;
+  SERVICE_REQUESTED = 3;
+  SERVICE_DELIVERED = 4;
+  STOP_CHARGE = 5;
+  STOP_CHARGE_RESPONSE = 6;
+  IDENTITY_CHALLENGE = 7;
+  IDENTITY_RESPONSE = 8;
 }
 
 message Event {
-    EventType event_id = 1;
-    oneof data {
-        ChargingStatusData charging_status_data = 2;
-        ServiceAckData service_ack_data = 3;
-        ServiceRequestedData service_requested_data = 4;
-        ServiceDeliveredData service_delivered_data = 5;
-        StopChargeResponseData stop_charge_data = 6;
-        IdentityChallengeData identity_challenge_data = 7;
-        IdentityResponseData identity_response_data = 8;
-    }
+  EventType event_id = 1;
+  oneof data {
+    ChargingStatusData charging_status_data = 2;
+    ServiceAckData service_ack_data = 3;
+    ServiceRequestedData service_requested_data = 4;
+    ServiceDeliveredData service_delivered_data = 5;
+    StopChargeResponseData stop_charge_data = 6;
+    IdentityChallengeData identity_challenge_data = 7;
+    IdentityResponseData identity_response_data = 8;
+  }
 }
 
-message ChargingStatusData {
-    float progress = 1;
-}
+message ChargingStatusData { float progress = 1; }
 
-message ServiceAckData {
-    Response resp = 1;
-}
+message ServiceAckData { Response resp = 1; }
 
 message ServiceRequestedData {
-    string consumer = 1;
-    string provider = 2;
-    string token_deposited = 3;
+  string consumer = 1;
+  string provider = 2;
+  string token_deposited = 3;
 }
 
 message ServiceDeliveredData {
-    string consumer = 1;
-    string provider = 2;
-    TransactionValue refund_info = 3;
-    TransactionValue spent_info = 4;
+  string consumer = 1;
+  string provider = 2;
+  TransactionValue refund_info = 3;
+  TransactionValue spent_info = 4;
 }
 
-message StopChargeResponseData {
-    Response resp = 1;
-}
+message StopChargeResponseData { Response resp = 1; }
 
-message IdentityChallengeData {
-    string encrypted_number = 1;
-}
+message IdentityChallengeData { string encrypted_number = 1; }
 
 message IdentityResponseData {
-    Response resp = 1;
-    string incremented_number = 2;
-    string signature = 3;
+  Response resp = 1;
+  string incremented_number = 2;
+  string signature = 3;
 }
 
 message Response {
@@ -73,8 +66,8 @@ message TransactionValue {
   string tx_hash = 2;
 
   message TimePoint {
-      int64 height = 1;
-      int64 index = 2;
+    int64 height = 1;
+    int64 index = 2;
   }
 
   TimePoint time_point = 3;
