@@ -3,3 +3,5 @@ protoc -I=./ --go_opt=paths=source_relative --go_out golang/message $(find ./ -i
 
 # Rust code generator
 protoc -I=./  --rust_out rust/src $(find ./ -iname "*.proto")
+#rename the mod.rs to lib.rs
+mv rust/src/mod.rs rust/src/lib.rs
