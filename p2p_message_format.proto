@@ -119,14 +119,14 @@ message EmitShowInfoData {
 message GetBalanceData {}
 
 message GetBalanceAckData {
-  string balance = 1;
-  bool success = 2;
+  Response resp = 1;
+  string balance = 2;
 }
 
 message GetPKData {}
 message GetPKAckData {
-  string pk = 1;
-  bool success = 2;
+  Response resp = 1;
+  string pk = 2;
 }
 
 message RePublishDIDData {}
@@ -137,8 +137,8 @@ message RePublishDIDAckData {
 
 message ReconnectData {}
 message ReconnectAckData {
-  string data = 1;
-  bool success = 2;
+  Response resp = 1;
+  string message = 2;
 }
 
 message StopChargeData {
