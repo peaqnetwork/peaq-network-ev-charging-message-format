@@ -38,23 +38,22 @@ message Event {
     ServiceAckData service_ack_data = 3;
     ServiceRequestedData service_requested_data = 4;
     ServiceDeliveredData service_delivered_data = 5;
-	// TODO Change naming
-    StopChargeResponseData stop_charge_resp_data = 6;
-    IdentityChallengeData identity_challenge_data = 7;
-    IdentityResponseData identity_response_data = 8;
+    StopChargeData stop_charge_data = 6;
+    StopChargeResponseData stop_charge_resp_data = 7;
+    IdentityChallengeData identity_challenge_data = 8;
+    IdentityResponseData identity_response_data = 9;
 
-    ChainEventData chain_event_data = 9;
-    EmitShowInfoData emit_show_info_data = 10;
+    ChainEventData chain_event_data = 10;
+    EmitShowInfoData emit_show_info_data = 11;
 
-    GetBalanceData get_balance_data = 11;
-    GetBalanceAckData get_balance_ack_data = 12;
-    GetPKData get_pk_data = 13;
-    GetPKAckData get_pk_ack_data = 14;
-    RePublishDIDData republish_did_data = 15;
-    RePublishDIDAckData republish_ack_data = 16;
-    ReconnectData reconnect_data = 17;
-    ReconnectAckData reconnect_ack_data = 18;
-    StopChargingData stop_charging_data = 19;
+    GetBalanceData get_balance_data = 12;
+    GetBalanceAckData get_balance_ack_data = 13;
+    GetPKData get_pk_data = 14;
+    GetPKAckData get_pk_ack_data = 15;
+    RePublishDIDData republish_did_data = 16;
+    RePublishDIDAckData republish_ack_data = 17;
+    ReconnectData reconnect_data = 18;
+    ReconnectAckData reconnect_ack_data = 19;
   }
 }
 
@@ -142,6 +141,6 @@ message ReconnectAckData {
   bool success = 2;
 }
 
-message StopChargingData {
+message StopChargeData {
   bool success = 1;
 }
