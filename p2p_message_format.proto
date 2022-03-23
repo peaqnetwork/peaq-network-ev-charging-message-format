@@ -14,6 +14,21 @@ enum EventType {
   STOP_CHARGE_RESPONSE = 6;
   IDENTITY_CHALLENGE = 7;
   IDENTITY_RESPONSE = 8;
+
+  // For substarte's event
+  RECEIVE_CHAIN_EVENT = 9;
+  // For simulator log
+  EMIT_SHOW_INFO = 10;
+
+  // For simulator actions
+  GET_BALANCE = 11;
+  GET_BALANCE_ACK = 12;
+  GET_PK = 13;
+  GET_PK_ACK = 14;
+  REPUBLISH_DID = 15;
+  REPUBLISH_DID_ACK = 16;
+  RECONNECT = 17;
+  RECONNECT_ACK = 18;
 }
 
 message Event {
@@ -23,9 +38,23 @@ message Event {
     ServiceAckData service_ack_data = 3;
     ServiceRequestedData service_requested_data = 4;
     ServiceDeliveredData service_delivered_data = 5;
-    StopChargeResponseData stop_charge_data = 6;
+	// TODO Change naming
+    StopChargeResponseData stop_charge_resp_data = 6;
     IdentityChallengeData identity_challenge_data = 7;
     IdentityResponseData identity_response_data = 8;
+
+    ChainEventData chain_event_data = 9;
+    EmitShowInfoData emit_show_info_data = 10;
+
+    GetBalanceData get_balance_data = 11;
+    GetBalanceAckData get_balance_ack_data = 12;
+    GetPKData get_pk_data = 13;
+    GetPKAckData get_pk_ack_data = 14;
+    RePublishDIDData republish_did_data = 15;
+    RePublishDIDAckData republish_ack_data = 16;
+    ReconnectData reconnect_data = 17;
+    ReconnectAckData reconnect_ack_data = 18;
+    StopChargingData stop_charging_data = 19;
   }
 }
 
@@ -71,4 +100,48 @@ message TransactionValue {
 
   TimePoint time_point = 3;
   string call_hash = 4;
+}
+
+message ChainEventData {
+  string event_id = 1;
+  string attributes = 2;
+}
+
+message EmitShowInfoData {
+  enum ShowInfoType {    
+    LOG_INFO = 0;
+    EVENT_INFO = 1;
+  }
+
+  ShowInfoType type = 1;
+  string data = 2;
+}
+
+message GetBalanceData {}
+
+message GetBalanceAckData {
+  string balance = 1;
+  bool success = 2;
+}
+
+message GetPKData {}
+message GetPKAckData {
+  string pk = 1;
+  bool success = 2;
+}
+
+message RePublishDIDData {}
+message RePublishDIDAckData {
+  Response resp = 1;
+  string pk = 2;
+}
+
+message ReconnectData {}
+message ReconnectAckData {
+  string data = 1;
+  bool success = 2;
+}
+
+message StopChargingData {
+  bool success = 1;
 }
