@@ -46,14 +46,10 @@ message Event {
     ChainEventData chain_event_data = 10;
     EmitShowInfoData emit_show_info_data = 11;
 
-    GetBalanceData get_balance_data = 12;
-    GetBalanceAckData get_balance_ack_data = 13;
-    GetPKData get_pk_data = 14;
-    GetPKAckData get_pk_ack_data = 15;
-    RePublishDIDData republish_did_data = 16;
-    RePublishDIDAckData republish_ack_data = 17;
-    ReconnectData reconnect_data = 18;
-    ReconnectAckData reconnect_ack_data = 19;
+    GetBalanceAckData get_balance_ack_data = 12;
+    GetPKAckData get_pk_ack_data = 13;
+    RePublishDIDAckData republish_ack_data = 14;
+    ReconnectAckData reconnect_ack_data = 15;
   }
 }
 
@@ -116,26 +112,21 @@ message EmitShowInfoData {
   string data = 2;
 }
 
-message GetBalanceData {}
-
 message GetBalanceAckData {
   Response resp = 1;
   string balance = 2;
 }
 
-message GetPKData {}
 message GetPKAckData {
   Response resp = 1;
   string pk = 2;
 }
 
-message RePublishDIDData {}
 message RePublishDIDAckData {
   Response resp = 1;
   string pk = 2;
 }
 
-message ReconnectData {}
 message ReconnectAckData {
   Response resp = 1;
   string message = 2;

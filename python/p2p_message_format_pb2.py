@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'ZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/message;message',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18p2p_message_format.proto\x12\x03p2p\"\xf5\x07\n\x05\x45vent\x12 \n\x08\x65vent_id\x18\x01 \x01(\x0e\x32\x0e.p2p.EventType\x12\x37\n\x14\x63harging_status_data\x18\x02 \x01(\x0b\x32\x17.p2p.ChargingStatusDataH\x00\x12/\n\x10service_ack_data\x18\x03 \x01(\x0b\x32\x13.p2p.ServiceAckDataH\x00\x12;\n\x16service_requested_data\x18\x04 \x01(\x0b\x32\x19.p2p.ServiceRequestedDataH\x00\x12;\n\x16service_delivered_data\x18\x05 \x01(\x0b\x32\x19.p2p.ServiceDeliveredDataH\x00\x12/\n\x10stop_charge_data\x18\x06 \x01(\x0b\x32\x13.p2p.StopChargeDataH\x00\x12<\n\x15stop_charge_resp_data\x18\x07 \x01(\x0b\x32\x1b.p2p.StopChargeResponseDataH\x00\x12=\n\x17identity_challenge_data\x18\x08 \x01(\x0b\x32\x1a.p2p.IdentityChallengeDataH\x00\x12;\n\x16identity_response_data\x18\t \x01(\x0b\x32\x19.p2p.IdentityResponseDataH\x00\x12/\n\x10\x63hain_event_data\x18\n \x01(\x0b\x32\x13.p2p.ChainEventDataH\x00\x12\x34\n\x13\x65mit_show_info_data\x18\x0b \x01(\x0b\x32\x15.p2p.EmitShowInfoDataH\x00\x12/\n\x10get_balance_data\x18\x0c \x01(\x0b\x32\x13.p2p.GetBalanceDataH\x00\x12\x36\n\x14get_balance_ack_data\x18\r \x01(\x0b\x32\x16.p2p.GetBalanceAckDataH\x00\x12%\n\x0bget_pk_data\x18\x0e \x01(\x0b\x32\x0e.p2p.GetPKDataH\x00\x12,\n\x0fget_pk_ack_data\x18\x0f \x01(\x0b\x32\x11.p2p.GetPKAckDataH\x00\x12\x33\n\x12republish_did_data\x18\x10 \x01(\x0b\x32\x15.p2p.RePublishDIDDataH\x00\x12\x36\n\x12republish_ack_data\x18\x11 \x01(\x0b\x32\x18.p2p.RePublishDIDAckDataH\x00\x12,\n\x0ereconnect_data\x18\x12 \x01(\x0b\x32\x12.p2p.ReconnectDataH\x00\x12\x33\n\x12reconnect_ack_data\x18\x13 \x01(\x0b\x32\x15.p2p.ReconnectAckDataH\x00\x42\x06\n\x04\x64\x61ta\"&\n\x12\x43hargingStatusData\x12\x10\n\x08progress\x18\x01 \x01(\x02\"-\n\x0eServiceAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\"S\n\x14ServiceRequestedData\x12\x10\n\x08\x63onsumer\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x17\n\x0ftoken_deposited\x18\x03 \x01(\t\"\x91\x01\n\x14ServiceDeliveredData\x12\x10\n\x08\x63onsumer\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12*\n\x0brefund_info\x18\x03 \x01(\x0b\x32\x15.p2p.TransactionValue\x12)\n\nspent_info\x18\x04 \x01(\x0b\x32\x15.p2p.TransactionValue\"5\n\x16StopChargeResponseData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\"+\n\x15IdentityChallengeData\x12\x12\n\nplain_data\x18\x01 \x01(\t\"F\n\x14IdentityResponseData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x11\n\tsignature\x18\x03 \x01(\t\"*\n\x08Response\x12\r\n\x05\x65rror\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xaa\x01\n\x10TransactionValue\x12\x11\n\ttoken_num\x18\x01 \x01(\t\x12\x0f\n\x07tx_hash\x18\x02 \x01(\t\x12\x33\n\ntime_point\x18\x03 \x01(\x0b\x32\x1f.p2p.TransactionValue.TimePoint\x12\x11\n\tcall_hash\x18\x04 \x01(\t\x1a*\n\tTimePoint\x12\x0e\n\x06height\x18\x01 \x01(\x03\x12\r\n\x05index\x18\x02 \x01(\x03\"6\n\x0e\x43hainEventData\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\t\x12\x12\n\nattributes\x18\x02 \x01(\t\"\x80\x01\n\x10\x45mitShowInfoData\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\".p2p.EmitShowInfoData.ShowInfoType\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\",\n\x0cShowInfoType\x12\x0c\n\x08LOG_INFO\x10\x00\x12\x0e\n\nEVENT_INFO\x10\x01\"\x10\n\x0eGetBalanceData\"A\n\x11GetBalanceAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x0f\n\x07\x62\x61lance\x18\x02 \x01(\t\"\x0b\n\tGetPKData\"7\n\x0cGetPKAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\n\n\x02pk\x18\x02 \x01(\t\"\x12\n\x10RePublishDIDData\">\n\x13RePublishDIDAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\n\n\x02pk\x18\x02 \x01(\t\"\x0f\n\rReconnectData\"@\n\x10ReconnectAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x0f\n\x07message\x18\x02 \x01(\t\"!\n\x0eStopChargeData\x12\x0f\n\x07success\x18\x01 \x01(\x08*\x96\x03\n\tEventType\x12\x13\n\x0f\x43HARGING_STATUS\x10\x00\x12\x17\n\x13SERVICE_REQUEST_ACK\x10\x01\x12\x18\n\x14SERVICE_DELIVERY_ACK\x10\x02\x12\x15\n\x11SERVICE_REQUESTED\x10\x03\x12\x15\n\x11SERVICE_DELIVERED\x10\x04\x12\x0f\n\x0bSTOP_CHARGE\x10\x05\x12\x18\n\x14STOP_CHARGE_RESPONSE\x10\x06\x12\x16\n\x12IDENTITY_CHALLENGE\x10\x07\x12\x15\n\x11IDENTITY_RESPONSE\x10\x08\x12\x17\n\x13RECEIVE_CHAIN_EVENT\x10\t\x12\x12\n\x0e\x45MIT_SHOW_INFO\x10\n\x12\x0f\n\x0bGET_BALANCE\x10\x0b\x12\x13\n\x0fGET_BALANCE_ACK\x10\x0c\x12\n\n\x06GET_PK\x10\r\x12\x0e\n\nGET_PK_ACK\x10\x0e\x12\x11\n\rREPUBLISH_DID\x10\x0f\x12\x15\n\x11REPUBLISH_DID_ACK\x10\x10\x12\r\n\tRECONNECT\x10\x11\x12\x11\n\rRECONNECT_ACK\x10\x12\x42WZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/message;messageb\x06proto3'
+  serialized_pb=b'\n\x18p2p_message_format.proto\x12\x03p2p\"\xba\x06\n\x05\x45vent\x12 \n\x08\x65vent_id\x18\x01 \x01(\x0e\x32\x0e.p2p.EventType\x12\x37\n\x14\x63harging_status_data\x18\x02 \x01(\x0b\x32\x17.p2p.ChargingStatusDataH\x00\x12/\n\x10service_ack_data\x18\x03 \x01(\x0b\x32\x13.p2p.ServiceAckDataH\x00\x12;\n\x16service_requested_data\x18\x04 \x01(\x0b\x32\x19.p2p.ServiceRequestedDataH\x00\x12;\n\x16service_delivered_data\x18\x05 \x01(\x0b\x32\x19.p2p.ServiceDeliveredDataH\x00\x12/\n\x10stop_charge_data\x18\x06 \x01(\x0b\x32\x13.p2p.StopChargeDataH\x00\x12<\n\x15stop_charge_resp_data\x18\x07 \x01(\x0b\x32\x1b.p2p.StopChargeResponseDataH\x00\x12=\n\x17identity_challenge_data\x18\x08 \x01(\x0b\x32\x1a.p2p.IdentityChallengeDataH\x00\x12;\n\x16identity_response_data\x18\t \x01(\x0b\x32\x19.p2p.IdentityResponseDataH\x00\x12/\n\x10\x63hain_event_data\x18\n \x01(\x0b\x32\x13.p2p.ChainEventDataH\x00\x12\x34\n\x13\x65mit_show_info_data\x18\x0b \x01(\x0b\x32\x15.p2p.EmitShowInfoDataH\x00\x12\x36\n\x14get_balance_ack_data\x18\x0c \x01(\x0b\x32\x16.p2p.GetBalanceAckDataH\x00\x12,\n\x0fget_pk_ack_data\x18\r \x01(\x0b\x32\x11.p2p.GetPKAckDataH\x00\x12\x36\n\x12republish_ack_data\x18\x0e \x01(\x0b\x32\x18.p2p.RePublishDIDAckDataH\x00\x12\x33\n\x12reconnect_ack_data\x18\x0f \x01(\x0b\x32\x15.p2p.ReconnectAckDataH\x00\x42\x06\n\x04\x64\x61ta\"&\n\x12\x43hargingStatusData\x12\x10\n\x08progress\x18\x01 \x01(\x02\"-\n\x0eServiceAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\"S\n\x14ServiceRequestedData\x12\x10\n\x08\x63onsumer\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x17\n\x0ftoken_deposited\x18\x03 \x01(\t\"\x91\x01\n\x14ServiceDeliveredData\x12\x10\n\x08\x63onsumer\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12*\n\x0brefund_info\x18\x03 \x01(\x0b\x32\x15.p2p.TransactionValue\x12)\n\nspent_info\x18\x04 \x01(\x0b\x32\x15.p2p.TransactionValue\"5\n\x16StopChargeResponseData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\"+\n\x15IdentityChallengeData\x12\x12\n\nplain_data\x18\x01 \x01(\t\"F\n\x14IdentityResponseData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x11\n\tsignature\x18\x03 \x01(\t\"*\n\x08Response\x12\r\n\x05\x65rror\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xaa\x01\n\x10TransactionValue\x12\x11\n\ttoken_num\x18\x01 \x01(\t\x12\x0f\n\x07tx_hash\x18\x02 \x01(\t\x12\x33\n\ntime_point\x18\x03 \x01(\x0b\x32\x1f.p2p.TransactionValue.TimePoint\x12\x11\n\tcall_hash\x18\x04 \x01(\t\x1a*\n\tTimePoint\x12\x0e\n\x06height\x18\x01 \x01(\x03\x12\r\n\x05index\x18\x02 \x01(\x03\"6\n\x0e\x43hainEventData\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\t\x12\x12\n\nattributes\x18\x02 \x01(\t\"\x80\x01\n\x10\x45mitShowInfoData\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\".p2p.EmitShowInfoData.ShowInfoType\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\",\n\x0cShowInfoType\x12\x0c\n\x08LOG_INFO\x10\x00\x12\x0e\n\nEVENT_INFO\x10\x01\"A\n\x11GetBalanceAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x0f\n\x07\x62\x61lance\x18\x02 \x01(\t\"7\n\x0cGetPKAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\n\n\x02pk\x18\x02 \x01(\t\">\n\x13RePublishDIDAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\n\n\x02pk\x18\x02 \x01(\t\"@\n\x10ReconnectAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x0f\n\x07message\x18\x02 \x01(\t\"!\n\x0eStopChargeData\x12\x0f\n\x07success\x18\x01 \x01(\x08*\x96\x03\n\tEventType\x12\x13\n\x0f\x43HARGING_STATUS\x10\x00\x12\x17\n\x13SERVICE_REQUEST_ACK\x10\x01\x12\x18\n\x14SERVICE_DELIVERY_ACK\x10\x02\x12\x15\n\x11SERVICE_REQUESTED\x10\x03\x12\x15\n\x11SERVICE_DELIVERED\x10\x04\x12\x0f\n\x0bSTOP_CHARGE\x10\x05\x12\x18\n\x14STOP_CHARGE_RESPONSE\x10\x06\x12\x16\n\x12IDENTITY_CHALLENGE\x10\x07\x12\x15\n\x11IDENTITY_RESPONSE\x10\x08\x12\x17\n\x13RECEIVE_CHAIN_EVENT\x10\t\x12\x12\n\x0e\x45MIT_SHOW_INFO\x10\n\x12\x0f\n\x0bGET_BALANCE\x10\x0b\x12\x13\n\x0fGET_BALANCE_ACK\x10\x0c\x12\n\n\x06GET_PK\x10\r\x12\x0e\n\nGET_PK_ACK\x10\x0e\x12\x11\n\rREPUBLISH_DID\x10\x0f\x12\x15\n\x11REPUBLISH_DID_ACK\x10\x10\x12\r\n\tRECONNECT\x10\x11\x12\x11\n\rRECONNECT_ACK\x10\x12\x42WZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/message;messageb\x06proto3'
 )
 
 _EVENTTYPE = _descriptor.EnumDescriptor(
@@ -128,8 +128,8 @@ _EVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2303,
-  serialized_end=2709,
+  serialized_start=2048,
+  serialized_end=2454,
 )
 _sym_db.RegisterEnumDescriptor(_EVENTTYPE)
 
@@ -175,8 +175,8 @@ _EMITSHOWINFODATA_SHOWINFOTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1899,
-  serialized_end=1943,
+  serialized_start=1712,
+  serialized_end=1756,
 )
 _sym_db.RegisterEnumDescriptor(_EMITSHOWINFODATA_SHOWINFOTYPE)
 
@@ -267,57 +267,29 @@ _EVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='get_balance_data', full_name='p2p.Event.get_balance_data', index=11,
+      name='get_balance_ack_data', full_name='p2p.Event.get_balance_ack_data', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='get_balance_ack_data', full_name='p2p.Event.get_balance_ack_data', index=12,
+      name='get_pk_ack_data', full_name='p2p.Event.get_pk_ack_data', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='get_pk_data', full_name='p2p.Event.get_pk_data', index=13,
+      name='republish_ack_data', full_name='p2p.Event.republish_ack_data', index=13,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='get_pk_ack_data', full_name='p2p.Event.get_pk_ack_data', index=14,
+      name='reconnect_ack_data', full_name='p2p.Event.reconnect_ack_data', index=14,
       number=15, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='republish_did_data', full_name='p2p.Event.republish_did_data', index=15,
-      number=16, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='republish_ack_data', full_name='p2p.Event.republish_ack_data', index=16,
-      number=17, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='reconnect_data', full_name='p2p.Event.reconnect_data', index=17,
-      number=18, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='reconnect_ack_data', full_name='p2p.Event.reconnect_ack_data', index=18,
-      number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -340,7 +312,7 @@ _EVENT = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=34,
-  serialized_end=1047,
+  serialized_end=860,
 )
 
 
@@ -371,8 +343,8 @@ _CHARGINGSTATUSDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1049,
-  serialized_end=1087,
+  serialized_start=862,
+  serialized_end=900,
 )
 
 
@@ -403,8 +375,8 @@ _SERVICEACKDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1089,
-  serialized_end=1134,
+  serialized_start=902,
+  serialized_end=947,
 )
 
 
@@ -449,8 +421,8 @@ _SERVICEREQUESTEDDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1136,
-  serialized_end=1219,
+  serialized_start=949,
+  serialized_end=1032,
 )
 
 
@@ -502,8 +474,8 @@ _SERVICEDELIVEREDDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1222,
-  serialized_end=1367,
+  serialized_start=1035,
+  serialized_end=1180,
 )
 
 
@@ -534,8 +506,8 @@ _STOPCHARGERESPONSEDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1369,
-  serialized_end=1422,
+  serialized_start=1182,
+  serialized_end=1235,
 )
 
 
@@ -566,8 +538,8 @@ _IDENTITYCHALLENGEDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1424,
-  serialized_end=1467,
+  serialized_start=1237,
+  serialized_end=1280,
 )
 
 
@@ -605,8 +577,8 @@ _IDENTITYRESPONSEDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1469,
-  serialized_end=1539,
+  serialized_start=1282,
+  serialized_end=1352,
 )
 
 
@@ -644,8 +616,8 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1541,
-  serialized_end=1583,
+  serialized_start=1354,
+  serialized_end=1396,
 )
 
 
@@ -683,8 +655,8 @@ _TRANSACTIONVALUE_TIMEPOINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1714,
-  serialized_end=1756,
+  serialized_start=1527,
+  serialized_end=1569,
 )
 
 _TRANSACTIONVALUE = _descriptor.Descriptor(
@@ -735,8 +707,8 @@ _TRANSACTIONVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1586,
-  serialized_end=1756,
+  serialized_start=1399,
+  serialized_end=1569,
 )
 
 
@@ -774,8 +746,8 @@ _CHAINEVENTDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1758,
-  serialized_end=1812,
+  serialized_start=1571,
+  serialized_end=1625,
 )
 
 
@@ -814,33 +786,8 @@ _EMITSHOWINFODATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1815,
-  serialized_end=1943,
-)
-
-
-_GETBALANCEDATA = _descriptor.Descriptor(
-  name='GetBalanceData',
-  full_name='p2p.GetBalanceData',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1945,
-  serialized_end=1961,
+  serialized_start=1628,
+  serialized_end=1756,
 )
 
 
@@ -878,33 +825,8 @@ _GETBALANCEACKDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1963,
-  serialized_end=2028,
-)
-
-
-_GETPKDATA = _descriptor.Descriptor(
-  name='GetPKData',
-  full_name='p2p.GetPKData',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2030,
-  serialized_end=2041,
+  serialized_start=1758,
+  serialized_end=1823,
 )
 
 
@@ -942,33 +864,8 @@ _GETPKACKDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2043,
-  serialized_end=2098,
-)
-
-
-_REPUBLISHDIDDATA = _descriptor.Descriptor(
-  name='RePublishDIDData',
-  full_name='p2p.RePublishDIDData',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2100,
-  serialized_end=2118,
+  serialized_start=1825,
+  serialized_end=1880,
 )
 
 
@@ -1006,33 +903,8 @@ _REPUBLISHDIDACKDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2120,
-  serialized_end=2182,
-)
-
-
-_RECONNECTDATA = _descriptor.Descriptor(
-  name='ReconnectData',
-  full_name='p2p.ReconnectData',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2184,
-  serialized_end=2199,
+  serialized_start=1882,
+  serialized_end=1944,
 )
 
 
@@ -1070,8 +942,8 @@ _RECONNECTACKDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2201,
-  serialized_end=2265,
+  serialized_start=1946,
+  serialized_end=2010,
 )
 
 
@@ -1102,8 +974,8 @@ _STOPCHARGEDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2267,
-  serialized_end=2300,
+  serialized_start=2012,
+  serialized_end=2045,
 )
 
 _EVENT.fields_by_name['event_id'].enum_type = _EVENTTYPE
@@ -1117,13 +989,9 @@ _EVENT.fields_by_name['identity_challenge_data'].message_type = _IDENTITYCHALLEN
 _EVENT.fields_by_name['identity_response_data'].message_type = _IDENTITYRESPONSEDATA
 _EVENT.fields_by_name['chain_event_data'].message_type = _CHAINEVENTDATA
 _EVENT.fields_by_name['emit_show_info_data'].message_type = _EMITSHOWINFODATA
-_EVENT.fields_by_name['get_balance_data'].message_type = _GETBALANCEDATA
 _EVENT.fields_by_name['get_balance_ack_data'].message_type = _GETBALANCEACKDATA
-_EVENT.fields_by_name['get_pk_data'].message_type = _GETPKDATA
 _EVENT.fields_by_name['get_pk_ack_data'].message_type = _GETPKACKDATA
-_EVENT.fields_by_name['republish_did_data'].message_type = _REPUBLISHDIDDATA
 _EVENT.fields_by_name['republish_ack_data'].message_type = _REPUBLISHDIDACKDATA
-_EVENT.fields_by_name['reconnect_data'].message_type = _RECONNECTDATA
 _EVENT.fields_by_name['reconnect_ack_data'].message_type = _RECONNECTACKDATA
 _EVENT.oneofs_by_name['data'].fields.append(
   _EVENT.fields_by_name['charging_status_data'])
@@ -1156,26 +1024,14 @@ _EVENT.oneofs_by_name['data'].fields.append(
   _EVENT.fields_by_name['emit_show_info_data'])
 _EVENT.fields_by_name['emit_show_info_data'].containing_oneof = _EVENT.oneofs_by_name['data']
 _EVENT.oneofs_by_name['data'].fields.append(
-  _EVENT.fields_by_name['get_balance_data'])
-_EVENT.fields_by_name['get_balance_data'].containing_oneof = _EVENT.oneofs_by_name['data']
-_EVENT.oneofs_by_name['data'].fields.append(
   _EVENT.fields_by_name['get_balance_ack_data'])
 _EVENT.fields_by_name['get_balance_ack_data'].containing_oneof = _EVENT.oneofs_by_name['data']
-_EVENT.oneofs_by_name['data'].fields.append(
-  _EVENT.fields_by_name['get_pk_data'])
-_EVENT.fields_by_name['get_pk_data'].containing_oneof = _EVENT.oneofs_by_name['data']
 _EVENT.oneofs_by_name['data'].fields.append(
   _EVENT.fields_by_name['get_pk_ack_data'])
 _EVENT.fields_by_name['get_pk_ack_data'].containing_oneof = _EVENT.oneofs_by_name['data']
 _EVENT.oneofs_by_name['data'].fields.append(
-  _EVENT.fields_by_name['republish_did_data'])
-_EVENT.fields_by_name['republish_did_data'].containing_oneof = _EVENT.oneofs_by_name['data']
-_EVENT.oneofs_by_name['data'].fields.append(
   _EVENT.fields_by_name['republish_ack_data'])
 _EVENT.fields_by_name['republish_ack_data'].containing_oneof = _EVENT.oneofs_by_name['data']
-_EVENT.oneofs_by_name['data'].fields.append(
-  _EVENT.fields_by_name['reconnect_data'])
-_EVENT.fields_by_name['reconnect_data'].containing_oneof = _EVENT.oneofs_by_name['data']
 _EVENT.oneofs_by_name['data'].fields.append(
   _EVENT.fields_by_name['reconnect_ack_data'])
 _EVENT.fields_by_name['reconnect_ack_data'].containing_oneof = _EVENT.oneofs_by_name['data']
@@ -1204,13 +1060,9 @@ DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
 DESCRIPTOR.message_types_by_name['TransactionValue'] = _TRANSACTIONVALUE
 DESCRIPTOR.message_types_by_name['ChainEventData'] = _CHAINEVENTDATA
 DESCRIPTOR.message_types_by_name['EmitShowInfoData'] = _EMITSHOWINFODATA
-DESCRIPTOR.message_types_by_name['GetBalanceData'] = _GETBALANCEDATA
 DESCRIPTOR.message_types_by_name['GetBalanceAckData'] = _GETBALANCEACKDATA
-DESCRIPTOR.message_types_by_name['GetPKData'] = _GETPKDATA
 DESCRIPTOR.message_types_by_name['GetPKAckData'] = _GETPKACKDATA
-DESCRIPTOR.message_types_by_name['RePublishDIDData'] = _REPUBLISHDIDDATA
 DESCRIPTOR.message_types_by_name['RePublishDIDAckData'] = _REPUBLISHDIDACKDATA
-DESCRIPTOR.message_types_by_name['ReconnectData'] = _RECONNECTDATA
 DESCRIPTOR.message_types_by_name['ReconnectAckData'] = _RECONNECTACKDATA
 DESCRIPTOR.message_types_by_name['StopChargeData'] = _STOPCHARGEDATA
 DESCRIPTOR.enum_types_by_name['EventType'] = _EVENTTYPE
@@ -1308,26 +1160,12 @@ EmitShowInfoData = _reflection.GeneratedProtocolMessageType('EmitShowInfoData', 
   })
 _sym_db.RegisterMessage(EmitShowInfoData)
 
-GetBalanceData = _reflection.GeneratedProtocolMessageType('GetBalanceData', (_message.Message,), {
-  'DESCRIPTOR' : _GETBALANCEDATA,
-  '__module__' : 'p2p_message_format_pb2'
-  # @@protoc_insertion_point(class_scope:p2p.GetBalanceData)
-  })
-_sym_db.RegisterMessage(GetBalanceData)
-
 GetBalanceAckData = _reflection.GeneratedProtocolMessageType('GetBalanceAckData', (_message.Message,), {
   'DESCRIPTOR' : _GETBALANCEACKDATA,
   '__module__' : 'p2p_message_format_pb2'
   # @@protoc_insertion_point(class_scope:p2p.GetBalanceAckData)
   })
 _sym_db.RegisterMessage(GetBalanceAckData)
-
-GetPKData = _reflection.GeneratedProtocolMessageType('GetPKData', (_message.Message,), {
-  'DESCRIPTOR' : _GETPKDATA,
-  '__module__' : 'p2p_message_format_pb2'
-  # @@protoc_insertion_point(class_scope:p2p.GetPKData)
-  })
-_sym_db.RegisterMessage(GetPKData)
 
 GetPKAckData = _reflection.GeneratedProtocolMessageType('GetPKAckData', (_message.Message,), {
   'DESCRIPTOR' : _GETPKACKDATA,
@@ -1336,26 +1174,12 @@ GetPKAckData = _reflection.GeneratedProtocolMessageType('GetPKAckData', (_messag
   })
 _sym_db.RegisterMessage(GetPKAckData)
 
-RePublishDIDData = _reflection.GeneratedProtocolMessageType('RePublishDIDData', (_message.Message,), {
-  'DESCRIPTOR' : _REPUBLISHDIDDATA,
-  '__module__' : 'p2p_message_format_pb2'
-  # @@protoc_insertion_point(class_scope:p2p.RePublishDIDData)
-  })
-_sym_db.RegisterMessage(RePublishDIDData)
-
 RePublishDIDAckData = _reflection.GeneratedProtocolMessageType('RePublishDIDAckData', (_message.Message,), {
   'DESCRIPTOR' : _REPUBLISHDIDACKDATA,
   '__module__' : 'p2p_message_format_pb2'
   # @@protoc_insertion_point(class_scope:p2p.RePublishDIDAckData)
   })
 _sym_db.RegisterMessage(RePublishDIDAckData)
-
-ReconnectData = _reflection.GeneratedProtocolMessageType('ReconnectData', (_message.Message,), {
-  'DESCRIPTOR' : _RECONNECTDATA,
-  '__module__' : 'p2p_message_format_pb2'
-  # @@protoc_insertion_point(class_scope:p2p.ReconnectData)
-  })
-_sym_db.RegisterMessage(ReconnectData)
 
 ReconnectAckData = _reflection.GeneratedProtocolMessageType('ReconnectAckData', (_message.Message,), {
   'DESCRIPTOR' : _RECONNECTACKDATA,
