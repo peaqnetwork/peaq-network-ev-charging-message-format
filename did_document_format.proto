@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package document;
+option go_package = "github.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/document;document";
+
+enum ServiceType {
+  p2p = 0;
+  payment = 1;
+  metadata = 2;
+}
+
+enum Status {
+  AVAILABLE = 0;
+  UNAVAILABLE = 1;
+}
+
+enum VerificationType {
+  Ed25519VerificationKey2020 = 0;
+  Sr25519VerificationKey2020 = 1;
+}
+
+message VerificationMethod {
+  string id = 1;
+  VerificationType type = 2;
+  string controller = 3;
+  string publicKeyMultibase = 4;
+}
+
+message Signature {
+  VerificationType type = 1;
+  string issuer = 2;
+  string hash = 3;
+}
+
+message Metadata {
+  string plugType = 1;
+  string power = 2;
+  Status status = 3;
+}
+
+message Service {
+  string id = 1;
+  ServiceType type = 2;
+  oneof serviceEndpoint {
+    string stringData = 3;
+    Metadata metadata = 4;
+  };
+}
+
+message Document {
+  string id = 1;
+  string controller = 2;
+  repeated VerificationMethod verificationMethods = 3;
+  Signature signature = 4;
+  repeated Service services = 5;
+  repeated string authentications = 6;
+}
