@@ -31,6 +31,8 @@ class EventType extends $pb.ProtobufEnum {
   static const EventType RECONNECT_ACK = EventType._(18, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'RECONNECT_ACK');
   static const EventType PEER_CONNECTED = EventType._(19, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PEER_CONNECTED');
   static const EventType PEER_SUBSCRIBED = EventType._(20, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PEER_SUBSCRIBED');
+  static const EventType PEER_CONNECTION_FAILED = EventType._(21, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PEER_CONNECTION_FAILED');
+  static const EventType PEER_SUBSCRIPTION_FAILED = EventType._(22, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PEER_SUBSCRIPTION_FAILED');
 
   static const $core.List<EventType> values = <EventType> [
     CHARGING_STATUS,
@@ -54,6 +56,8 @@ class EventType extends $pb.ProtobufEnum {
     RECONNECT_ACK,
     PEER_CONNECTED,
     PEER_SUBSCRIBED,
+    PEER_CONNECTION_FAILED,
+    PEER_SUBSCRIPTION_FAILED,
   ];
 
   static final $core.Map<$core.int, EventType> _byValue = $pb.ProtobufEnum.initByValue(values);
