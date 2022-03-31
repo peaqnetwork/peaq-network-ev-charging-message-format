@@ -10,3 +10,4 @@ mv rust/src/mod.rs rust/src/lib.rs
 
 # Dart code generator
 protoc -I=./ --dart_out=./dart/lib $(find ./ -iname "*.proto")
+protoc -I=./ --python_out python $(find ./ -iname "*.proto")
