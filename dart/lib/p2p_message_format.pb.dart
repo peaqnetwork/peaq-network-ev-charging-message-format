@@ -20,8 +20,15 @@ enum Event_Data {
   serviceRequestedData, 
   serviceDeliveredData, 
   stopChargeData, 
+  stopChargeRespData, 
   identityChallengeData, 
   identityResponseData, 
+  chainEventData, 
+  emitShowInfoData, 
+  getBalanceAckData, 
+  getPkAckData, 
+  republishAckData, 
+  reconnectAckData, 
   notSet
 }
 
@@ -32,20 +39,34 @@ class Event extends $pb.GeneratedMessage {
     4 : Event_Data.serviceRequestedData,
     5 : Event_Data.serviceDeliveredData,
     6 : Event_Data.stopChargeData,
-    7 : Event_Data.identityChallengeData,
-    8 : Event_Data.identityResponseData,
+    7 : Event_Data.stopChargeRespData,
+    8 : Event_Data.identityChallengeData,
+    9 : Event_Data.identityResponseData,
+    10 : Event_Data.chainEventData,
+    11 : Event_Data.emitShowInfoData,
+    12 : Event_Data.getBalanceAckData,
+    13 : Event_Data.getPkAckData,
+    14 : Event_Data.republishAckData,
+    15 : Event_Data.reconnectAckData,
     0 : Event_Data.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Event', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..oo(0, [2, 3, 4, 5, 6, 7, 8])
+    ..oo(0, [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
     ..e<EventType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'eventId', $pb.PbFieldType.OE, defaultOrMaker: EventType.CHARGING_STATUS, valueOf: EventType.valueOf, enumValues: EventType.values)
     ..aOM<ChargingStatusData>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chargingStatusData', subBuilder: ChargingStatusData.create)
     ..aOM<ServiceAckData>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceAckData', subBuilder: ServiceAckData.create)
     ..aOM<ServiceRequestedData>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceRequestedData', subBuilder: ServiceRequestedData.create)
     ..aOM<ServiceDeliveredData>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceDeliveredData', subBuilder: ServiceDeliveredData.create)
-    ..aOM<StopChargeResponseData>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stopChargeData', subBuilder: StopChargeResponseData.create)
-    ..aOM<IdentityChallengeData>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identityChallengeData', subBuilder: IdentityChallengeData.create)
-    ..aOM<IdentityResponseData>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identityResponseData', subBuilder: IdentityResponseData.create)
+    ..aOM<StopChargeData>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stopChargeData', subBuilder: StopChargeData.create)
+    ..aOM<StopChargeResponseData>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stopChargeRespData', subBuilder: StopChargeResponseData.create)
+    ..aOM<IdentityChallengeData>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identityChallengeData', subBuilder: IdentityChallengeData.create)
+    ..aOM<IdentityResponseData>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identityResponseData', subBuilder: IdentityResponseData.create)
+    ..aOM<ChainEventData>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainEventData', subBuilder: ChainEventData.create)
+    ..aOM<EmitShowInfoData>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emitShowInfoData', subBuilder: EmitShowInfoData.create)
+    ..aOM<GetBalanceAckData>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'getBalanceAckData', subBuilder: GetBalanceAckData.create)
+    ..aOM<GetPKAckData>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'getPkAckData', subBuilder: GetPKAckData.create)
+    ..aOM<RePublishDIDAckData>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'republishAckData', subBuilder: RePublishDIDAckData.create)
+    ..aOM<ReconnectAckData>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reconnectAckData', subBuilder: ReconnectAckData.create)
     ..hasRequiredFields = false
   ;
 
@@ -56,9 +77,16 @@ class Event extends $pb.GeneratedMessage {
     ServiceAckData? serviceAckData,
     ServiceRequestedData? serviceRequestedData,
     ServiceDeliveredData? serviceDeliveredData,
-    StopChargeResponseData? stopChargeData,
+    StopChargeData? stopChargeData,
+    StopChargeResponseData? stopChargeRespData,
     IdentityChallengeData? identityChallengeData,
     IdentityResponseData? identityResponseData,
+    ChainEventData? chainEventData,
+    EmitShowInfoData? emitShowInfoData,
+    GetBalanceAckData? getBalanceAckData,
+    GetPKAckData? getPkAckData,
+    RePublishDIDAckData? republishAckData,
+    ReconnectAckData? reconnectAckData,
   }) {
     final _result = create();
     if (eventId != null) {
@@ -79,11 +107,32 @@ class Event extends $pb.GeneratedMessage {
     if (stopChargeData != null) {
       _result.stopChargeData = stopChargeData;
     }
+    if (stopChargeRespData != null) {
+      _result.stopChargeRespData = stopChargeRespData;
+    }
     if (identityChallengeData != null) {
       _result.identityChallengeData = identityChallengeData;
     }
     if (identityResponseData != null) {
       _result.identityResponseData = identityResponseData;
+    }
+    if (chainEventData != null) {
+      _result.chainEventData = chainEventData;
+    }
+    if (emitShowInfoData != null) {
+      _result.emitShowInfoData = emitShowInfoData;
+    }
+    if (getBalanceAckData != null) {
+      _result.getBalanceAckData = getBalanceAckData;
+    }
+    if (getPkAckData != null) {
+      _result.getPkAckData = getPkAckData;
+    }
+    if (republishAckData != null) {
+      _result.republishAckData = republishAckData;
+    }
+    if (reconnectAckData != null) {
+      _result.reconnectAckData = reconnectAckData;
     }
     return _result;
   }
@@ -165,37 +214,114 @@ class Event extends $pb.GeneratedMessage {
   ServiceDeliveredData ensureServiceDeliveredData() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  StopChargeResponseData get stopChargeData => $_getN(5);
+  StopChargeData get stopChargeData => $_getN(5);
   @$pb.TagNumber(6)
-  set stopChargeData(StopChargeResponseData v) { setField(6, v); }
+  set stopChargeData(StopChargeData v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasStopChargeData() => $_has(5);
   @$pb.TagNumber(6)
   void clearStopChargeData() => clearField(6);
   @$pb.TagNumber(6)
-  StopChargeResponseData ensureStopChargeData() => $_ensure(5);
+  StopChargeData ensureStopChargeData() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  IdentityChallengeData get identityChallengeData => $_getN(6);
+  StopChargeResponseData get stopChargeRespData => $_getN(6);
   @$pb.TagNumber(7)
-  set identityChallengeData(IdentityChallengeData v) { setField(7, v); }
+  set stopChargeRespData(StopChargeResponseData v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasIdentityChallengeData() => $_has(6);
+  $core.bool hasStopChargeRespData() => $_has(6);
   @$pb.TagNumber(7)
-  void clearIdentityChallengeData() => clearField(7);
+  void clearStopChargeRespData() => clearField(7);
   @$pb.TagNumber(7)
-  IdentityChallengeData ensureIdentityChallengeData() => $_ensure(6);
+  StopChargeResponseData ensureStopChargeRespData() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  IdentityResponseData get identityResponseData => $_getN(7);
+  IdentityChallengeData get identityChallengeData => $_getN(7);
   @$pb.TagNumber(8)
-  set identityResponseData(IdentityResponseData v) { setField(8, v); }
+  set identityChallengeData(IdentityChallengeData v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasIdentityResponseData() => $_has(7);
+  $core.bool hasIdentityChallengeData() => $_has(7);
   @$pb.TagNumber(8)
-  void clearIdentityResponseData() => clearField(8);
+  void clearIdentityChallengeData() => clearField(8);
   @$pb.TagNumber(8)
-  IdentityResponseData ensureIdentityResponseData() => $_ensure(7);
+  IdentityChallengeData ensureIdentityChallengeData() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  IdentityResponseData get identityResponseData => $_getN(8);
+  @$pb.TagNumber(9)
+  set identityResponseData(IdentityResponseData v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasIdentityResponseData() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIdentityResponseData() => clearField(9);
+  @$pb.TagNumber(9)
+  IdentityResponseData ensureIdentityResponseData() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  ChainEventData get chainEventData => $_getN(9);
+  @$pb.TagNumber(10)
+  set chainEventData(ChainEventData v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasChainEventData() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearChainEventData() => clearField(10);
+  @$pb.TagNumber(10)
+  ChainEventData ensureChainEventData() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  EmitShowInfoData get emitShowInfoData => $_getN(10);
+  @$pb.TagNumber(11)
+  set emitShowInfoData(EmitShowInfoData v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasEmitShowInfoData() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearEmitShowInfoData() => clearField(11);
+  @$pb.TagNumber(11)
+  EmitShowInfoData ensureEmitShowInfoData() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  GetBalanceAckData get getBalanceAckData => $_getN(11);
+  @$pb.TagNumber(12)
+  set getBalanceAckData(GetBalanceAckData v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasGetBalanceAckData() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearGetBalanceAckData() => clearField(12);
+  @$pb.TagNumber(12)
+  GetBalanceAckData ensureGetBalanceAckData() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  GetPKAckData get getPkAckData => $_getN(12);
+  @$pb.TagNumber(13)
+  set getPkAckData(GetPKAckData v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasGetPkAckData() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearGetPkAckData() => clearField(13);
+  @$pb.TagNumber(13)
+  GetPKAckData ensureGetPkAckData() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  RePublishDIDAckData get republishAckData => $_getN(13);
+  @$pb.TagNumber(14)
+  set republishAckData(RePublishDIDAckData v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasRepublishAckData() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearRepublishAckData() => clearField(14);
+  @$pb.TagNumber(14)
+  RePublishDIDAckData ensureRepublishAckData() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  ReconnectAckData get reconnectAckData => $_getN(14);
+  @$pb.TagNumber(15)
+  set reconnectAckData(ReconnectAckData v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasReconnectAckData() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearReconnectAckData() => clearField(15);
+  @$pb.TagNumber(15)
+  ReconnectAckData ensureReconnectAckData() => $_ensure(14);
 }
 
 class ChargingStatusData extends $pb.GeneratedMessage {
@@ -832,5 +958,426 @@ class TransactionValue extends $pb.GeneratedMessage {
   $core.bool hasCallHash() => $_has(3);
   @$pb.TagNumber(4)
   void clearCallHash() => clearField(4);
+}
+
+class ChainEventData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChainEventData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'eventId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'attributes')
+    ..hasRequiredFields = false
+  ;
+
+  ChainEventData._() : super();
+  factory ChainEventData({
+    $core.String? eventId,
+    $core.String? attributes,
+  }) {
+    final _result = create();
+    if (eventId != null) {
+      _result.eventId = eventId;
+    }
+    if (attributes != null) {
+      _result.attributes = attributes;
+    }
+    return _result;
+  }
+  factory ChainEventData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChainEventData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ChainEventData clone() => ChainEventData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ChainEventData copyWith(void Function(ChainEventData) updates) => super.copyWith((message) => updates(message as ChainEventData)) as ChainEventData; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ChainEventData create() => ChainEventData._();
+  ChainEventData createEmptyInstance() => create();
+  static $pb.PbList<ChainEventData> createRepeated() => $pb.PbList<ChainEventData>();
+  @$core.pragma('dart2js:noInline')
+  static ChainEventData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChainEventData>(create);
+  static ChainEventData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get attributes => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set attributes($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAttributes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAttributes() => clearField(2);
+}
+
+class EmitShowInfoData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EmitShowInfoData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
+    ..e<EmitShowInfoData_ShowInfoType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EmitShowInfoData_ShowInfoType.LOG_INFO, valueOf: EmitShowInfoData_ShowInfoType.valueOf, enumValues: EmitShowInfoData_ShowInfoType.values)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data')
+    ..hasRequiredFields = false
+  ;
+
+  EmitShowInfoData._() : super();
+  factory EmitShowInfoData({
+    EmitShowInfoData_ShowInfoType? type,
+    $core.String? data,
+  }) {
+    final _result = create();
+    if (type != null) {
+      _result.type = type;
+    }
+    if (data != null) {
+      _result.data = data;
+    }
+    return _result;
+  }
+  factory EmitShowInfoData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EmitShowInfoData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  EmitShowInfoData clone() => EmitShowInfoData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EmitShowInfoData copyWith(void Function(EmitShowInfoData) updates) => super.copyWith((message) => updates(message as EmitShowInfoData)) as EmitShowInfoData; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static EmitShowInfoData create() => EmitShowInfoData._();
+  EmitShowInfoData createEmptyInstance() => create();
+  static $pb.PbList<EmitShowInfoData> createRepeated() => $pb.PbList<EmitShowInfoData>();
+  @$core.pragma('dart2js:noInline')
+  static EmitShowInfoData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EmitShowInfoData>(create);
+  static EmitShowInfoData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmitShowInfoData_ShowInfoType get type => $_getN(0);
+  @$pb.TagNumber(1)
+  set type(EmitShowInfoData_ShowInfoType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get data => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set data($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+}
+
+class GetBalanceAckData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetBalanceAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'balance')
+    ..hasRequiredFields = false
+  ;
+
+  GetBalanceAckData._() : super();
+  factory GetBalanceAckData({
+    Response? resp,
+    $core.String? balance,
+  }) {
+    final _result = create();
+    if (resp != null) {
+      _result.resp = resp;
+    }
+    if (balance != null) {
+      _result.balance = balance;
+    }
+    return _result;
+  }
+  factory GetBalanceAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetBalanceAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetBalanceAckData clone() => GetBalanceAckData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetBalanceAckData copyWith(void Function(GetBalanceAckData) updates) => super.copyWith((message) => updates(message as GetBalanceAckData)) as GetBalanceAckData; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetBalanceAckData create() => GetBalanceAckData._();
+  GetBalanceAckData createEmptyInstance() => create();
+  static $pb.PbList<GetBalanceAckData> createRepeated() => $pb.PbList<GetBalanceAckData>();
+  @$core.pragma('dart2js:noInline')
+  static GetBalanceAckData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetBalanceAckData>(create);
+  static GetBalanceAckData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Response get resp => $_getN(0);
+  @$pb.TagNumber(1)
+  set resp(Response v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResp() => clearField(1);
+  @$pb.TagNumber(1)
+  Response ensureResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get balance => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set balance($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBalance() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBalance() => clearField(2);
+}
+
+class GetPKAckData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPKAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pk')
+    ..hasRequiredFields = false
+  ;
+
+  GetPKAckData._() : super();
+  factory GetPKAckData({
+    Response? resp,
+    $core.String? pk,
+  }) {
+    final _result = create();
+    if (resp != null) {
+      _result.resp = resp;
+    }
+    if (pk != null) {
+      _result.pk = pk;
+    }
+    return _result;
+  }
+  factory GetPKAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPKAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPKAckData clone() => GetPKAckData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPKAckData copyWith(void Function(GetPKAckData) updates) => super.copyWith((message) => updates(message as GetPKAckData)) as GetPKAckData; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetPKAckData create() => GetPKAckData._();
+  GetPKAckData createEmptyInstance() => create();
+  static $pb.PbList<GetPKAckData> createRepeated() => $pb.PbList<GetPKAckData>();
+  @$core.pragma('dart2js:noInline')
+  static GetPKAckData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPKAckData>(create);
+  static GetPKAckData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Response get resp => $_getN(0);
+  @$pb.TagNumber(1)
+  set resp(Response v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResp() => clearField(1);
+  @$pb.TagNumber(1)
+  Response ensureResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get pk => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pk($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPk() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPk() => clearField(2);
+}
+
+class RePublishDIDAckData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RePublishDIDAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pk')
+    ..hasRequiredFields = false
+  ;
+
+  RePublishDIDAckData._() : super();
+  factory RePublishDIDAckData({
+    Response? resp,
+    $core.String? pk,
+  }) {
+    final _result = create();
+    if (resp != null) {
+      _result.resp = resp;
+    }
+    if (pk != null) {
+      _result.pk = pk;
+    }
+    return _result;
+  }
+  factory RePublishDIDAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RePublishDIDAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RePublishDIDAckData clone() => RePublishDIDAckData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RePublishDIDAckData copyWith(void Function(RePublishDIDAckData) updates) => super.copyWith((message) => updates(message as RePublishDIDAckData)) as RePublishDIDAckData; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static RePublishDIDAckData create() => RePublishDIDAckData._();
+  RePublishDIDAckData createEmptyInstance() => create();
+  static $pb.PbList<RePublishDIDAckData> createRepeated() => $pb.PbList<RePublishDIDAckData>();
+  @$core.pragma('dart2js:noInline')
+  static RePublishDIDAckData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RePublishDIDAckData>(create);
+  static RePublishDIDAckData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Response get resp => $_getN(0);
+  @$pb.TagNumber(1)
+  set resp(Response v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResp() => clearField(1);
+  @$pb.TagNumber(1)
+  Response ensureResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get pk => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pk($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPk() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPk() => clearField(2);
+}
+
+class ReconnectAckData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ReconnectAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
+  ReconnectAckData._() : super();
+  factory ReconnectAckData({
+    Response? resp,
+    $core.String? message,
+  }) {
+    final _result = create();
+    if (resp != null) {
+      _result.resp = resp;
+    }
+    if (message != null) {
+      _result.message = message;
+    }
+    return _result;
+  }
+  factory ReconnectAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReconnectAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReconnectAckData clone() => ReconnectAckData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReconnectAckData copyWith(void Function(ReconnectAckData) updates) => super.copyWith((message) => updates(message as ReconnectAckData)) as ReconnectAckData; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ReconnectAckData create() => ReconnectAckData._();
+  ReconnectAckData createEmptyInstance() => create();
+  static $pb.PbList<ReconnectAckData> createRepeated() => $pb.PbList<ReconnectAckData>();
+  @$core.pragma('dart2js:noInline')
+  static ReconnectAckData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReconnectAckData>(create);
+  static ReconnectAckData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Response get resp => $_getN(0);
+  @$pb.TagNumber(1)
+  set resp(Response v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResp() => clearField(1);
+  @$pb.TagNumber(1)
+  Response ensureResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get message => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set message($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMessage() => clearField(2);
+}
+
+class StopChargeData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StopChargeData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'success')
+    ..hasRequiredFields = false
+  ;
+
+  StopChargeData._() : super();
+  factory StopChargeData({
+    $core.bool? success,
+  }) {
+    final _result = create();
+    if (success != null) {
+      _result.success = success;
+    }
+    return _result;
+  }
+  factory StopChargeData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StopChargeData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StopChargeData clone() => StopChargeData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StopChargeData copyWith(void Function(StopChargeData) updates) => super.copyWith((message) => updates(message as StopChargeData)) as StopChargeData; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StopChargeData create() => StopChargeData._();
+  StopChargeData createEmptyInstance() => create();
+  static $pb.PbList<StopChargeData> createRepeated() => $pb.PbList<StopChargeData>();
+  @$core.pragma('dart2js:noInline')
+  static StopChargeData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopChargeData>(create);
+  static StopChargeData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => clearField(1);
 }
 
