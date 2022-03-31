@@ -29,6 +29,12 @@ enum EventType {
   REPUBLISH_DID_ACK = 16;
   RECONNECT = 17;
   RECONNECT_ACK = 18;
+
+  // For charmev actions
+  PEER_CONNECTED = 19;
+  PEER_SUBSCRIBED = 20;
+  PEER_CONNECTION_FAILED = 21;
+  PEER_SUBSCRIPTION_FAILED = 22;
 }
 
 message Event {
@@ -103,7 +109,7 @@ message ChainEventData {
 }
 
 message EmitShowInfoData {
-  enum ShowInfoType {    
+  enum ShowInfoType {
     LOG_INFO = 0;
     EVENT_INFO = 1;
   }
@@ -132,6 +138,4 @@ message ReconnectAckData {
   string message = 2;
 }
 
-message StopChargeData {
-  bool success = 1;
-}
+message StopChargeData { bool success = 1; }
