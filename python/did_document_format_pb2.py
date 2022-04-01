@@ -4,7 +4,6 @@
 """Generated protocol buffer code."""
 from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -15,13 +14,97 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x64id_document_format.proto\x12\x08\x64ocument\"z\n\x12VerificationMethod\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0e\x32\x1a.document.VerificationType\x12\x12\n\ncontroller\x18\x03 \x01(\t\x12\x1a\n\x12publicKeyMultibase\x18\x04 \x01(\t\"S\n\tSignature\x12(\n\x04type\x18\x01 \x01(\x0e\x32\x1a.document.VerificationType\x12\x0e\n\x06issuer\x18\x02 \x01(\t\x12\x0c\n\x04hash\x18\x03 \x01(\t\"M\n\x08Metadata\x12\x10\n\x08plugType\x18\x01 \x01(\t\x12\r\n\x05power\x18\x02 \x01(\t\x12 \n\x06status\x18\x03 \x01(\x0e\x32\x10.document.Status\"\x8b\x01\n\x07Service\x12\n\n\x02id\x18\x01 \x01(\t\x12#\n\x04type\x18\x02 \x01(\x0e\x32\x15.document.ServiceType\x12\x14\n\nstringData\x18\x03 \x01(\tH\x00\x12&\n\x08metadata\x18\x04 \x01(\x0b\x32\x12.document.MetadataH\x00\x42\x11\n\x0fserviceEndpoint\"\xcb\x01\n\x08\x44ocument\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncontroller\x18\x02 \x01(\t\x12\x39\n\x13verificationMethods\x18\x03 \x03(\x0b\x32\x1c.document.VerificationMethod\x12&\n\tsignature\x18\x04 \x01(\x0b\x32\x13.document.Signature\x12#\n\x08services\x18\x05 \x03(\x0b\x32\x11.document.Service\x12\x17\n\x0f\x61uthentications\x18\x06 \x03(\t*1\n\x0bServiceType\x12\x07\n\x03p2p\x10\x00\x12\x0b\n\x07payment\x10\x01\x12\x0c\n\x08metadata\x10\x02*(\n\x06Status\x12\r\n\tAVAILABLE\x10\x00\x12\x0f\n\x0bUNAVAILABLE\x10\x01*R\n\x10VerificationType\x12\x1e\n\x1a\x45\x64\x32\x35\x35\x31\x39VerificationKey2020\x10\x00\x12\x1e\n\x1aSr25519VerificationKey2020\x10\x01\x42YZWgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/document;documentb\x06proto3')
+DESCRIPTOR = _descriptor.FileDescriptor(
+  name='did_document_format.proto',
+  package='document',
+  syntax='proto3',
+  serialized_options=b'ZWgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/document;document',
+  create_key=_descriptor._internal_create_key,
+  serialized_pb=b'\n\x19\x64id_document_format.proto\x12\x08\x64ocument\"z\n\x12VerificationMethod\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0e\x32\x1a.document.VerificationType\x12\x12\n\ncontroller\x18\x03 \x01(\t\x12\x1a\n\x12publicKeyMultibase\x18\x04 \x01(\t\"S\n\tSignature\x12(\n\x04type\x18\x01 \x01(\x0e\x32\x1a.document.VerificationType\x12\x0e\n\x06issuer\x18\x02 \x01(\t\x12\x0c\n\x04hash\x18\x03 \x01(\t\"M\n\x08Metadata\x12\x10\n\x08plugType\x18\x01 \x01(\t\x12\r\n\x05power\x18\x02 \x01(\t\x12 \n\x06status\x18\x03 \x01(\x0e\x32\x10.document.Status\"\x8b\x01\n\x07Service\x12\n\n\x02id\x18\x01 \x01(\t\x12#\n\x04type\x18\x02 \x01(\x0e\x32\x15.document.ServiceType\x12\x14\n\nstringData\x18\x03 \x01(\tH\x00\x12&\n\x08metadata\x18\x04 \x01(\x0b\x32\x12.document.MetadataH\x00\x42\x11\n\x0fserviceEndpoint\"\xcb\x01\n\x08\x44ocument\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncontroller\x18\x02 \x01(\t\x12\x39\n\x13verificationMethods\x18\x03 \x03(\x0b\x32\x1c.document.VerificationMethod\x12&\n\tsignature\x18\x04 \x01(\x0b\x32\x13.document.Signature\x12#\n\x08services\x18\x05 \x03(\x0b\x32\x11.document.Service\x12\x17\n\x0f\x61uthentications\x18\x06 \x03(\t*1\n\x0bServiceType\x12\x07\n\x03p2p\x10\x00\x12\x0b\n\x07payment\x10\x01\x12\x0c\n\x08metadata\x10\x02*(\n\x06Status\x12\r\n\tAVAILABLE\x10\x00\x12\x0f\n\x0bUNAVAILABLE\x10\x01*R\n\x10VerificationType\x12\x1e\n\x1a\x45\x64\x32\x35\x35\x31\x39VerificationKey2020\x10\x00\x12\x1e\n\x1aSr25519VerificationKey2020\x10\x01\x42YZWgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/document;documentb\x06proto3'
+)
 
-_SERVICETYPE = DESCRIPTOR.enum_types_by_name['ServiceType']
+_SERVICETYPE = _descriptor.EnumDescriptor(
+  name='ServiceType',
+  full_name='document.ServiceType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='p2p', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='payment', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='metadata', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=675,
+  serialized_end=724,
+)
+_sym_db.RegisterEnumDescriptor(_SERVICETYPE)
+
 ServiceType = enum_type_wrapper.EnumTypeWrapper(_SERVICETYPE)
-_STATUS = DESCRIPTOR.enum_types_by_name['Status']
+_STATUS = _descriptor.EnumDescriptor(
+  name='Status',
+  full_name='document.Status',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='AVAILABLE', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNAVAILABLE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=726,
+  serialized_end=766,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS)
+
 Status = enum_type_wrapper.EnumTypeWrapper(_STATUS)
-_VERIFICATIONTYPE = DESCRIPTOR.enum_types_by_name['VerificationType']
+_VERIFICATIONTYPE = _descriptor.EnumDescriptor(
+  name='VerificationType',
+  full_name='document.VerificationType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='Ed25519VerificationKey2020', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Sr25519VerificationKey2020', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=768,
+  serialized_end=850,
+)
+_sym_db.RegisterEnumDescriptor(_VERIFICATIONTYPE)
+
 VerificationType = enum_type_wrapper.EnumTypeWrapper(_VERIFICATIONTYPE)
 p2p = 0
 payment = 1
@@ -32,11 +115,300 @@ Ed25519VerificationKey2020 = 0
 Sr25519VerificationKey2020 = 1
 
 
-_VERIFICATIONMETHOD = DESCRIPTOR.message_types_by_name['VerificationMethod']
-_SIGNATURE = DESCRIPTOR.message_types_by_name['Signature']
-_METADATA = DESCRIPTOR.message_types_by_name['Metadata']
-_SERVICE = DESCRIPTOR.message_types_by_name['Service']
-_DOCUMENT = DESCRIPTOR.message_types_by_name['Document']
+
+_VERIFICATIONMETHOD = _descriptor.Descriptor(
+  name='VerificationMethod',
+  full_name='document.VerificationMethod',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='document.VerificationMethod.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='document.VerificationMethod.type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='controller', full_name='document.VerificationMethod.controller', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='publicKeyMultibase', full_name='document.VerificationMethod.publicKeyMultibase', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=39,
+  serialized_end=161,
+)
+
+
+_SIGNATURE = _descriptor.Descriptor(
+  name='Signature',
+  full_name='document.Signature',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='document.Signature.type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='issuer', full_name='document.Signature.issuer', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='hash', full_name='document.Signature.hash', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=163,
+  serialized_end=246,
+)
+
+
+_METADATA = _descriptor.Descriptor(
+  name='Metadata',
+  full_name='document.Metadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='plugType', full_name='document.Metadata.plugType', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='power', full_name='document.Metadata.power', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='document.Metadata.status', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=248,
+  serialized_end=325,
+)
+
+
+_SERVICE = _descriptor.Descriptor(
+  name='Service',
+  full_name='document.Service',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='document.Service.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='document.Service.type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stringData', full_name='document.Service.stringData', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='document.Service.metadata', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='serviceEndpoint', full_name='document.Service.serviceEndpoint',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=328,
+  serialized_end=467,
+)
+
+
+_DOCUMENT = _descriptor.Descriptor(
+  name='Document',
+  full_name='document.Document',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='document.Document.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='controller', full_name='document.Document.controller', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='verificationMethods', full_name='document.Document.verificationMethods', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='signature', full_name='document.Document.signature', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='services', full_name='document.Document.services', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='authentications', full_name='document.Document.authentications', index=5,
+      number=6, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=470,
+  serialized_end=673,
+)
+
+_VERIFICATIONMETHOD.fields_by_name['type'].enum_type = _VERIFICATIONTYPE
+_SIGNATURE.fields_by_name['type'].enum_type = _VERIFICATIONTYPE
+_METADATA.fields_by_name['status'].enum_type = _STATUS
+_SERVICE.fields_by_name['type'].enum_type = _SERVICETYPE
+_SERVICE.fields_by_name['metadata'].message_type = _METADATA
+_SERVICE.oneofs_by_name['serviceEndpoint'].fields.append(
+  _SERVICE.fields_by_name['stringData'])
+_SERVICE.fields_by_name['stringData'].containing_oneof = _SERVICE.oneofs_by_name['serviceEndpoint']
+_SERVICE.oneofs_by_name['serviceEndpoint'].fields.append(
+  _SERVICE.fields_by_name['metadata'])
+_SERVICE.fields_by_name['metadata'].containing_oneof = _SERVICE.oneofs_by_name['serviceEndpoint']
+_DOCUMENT.fields_by_name['verificationMethods'].message_type = _VERIFICATIONMETHOD
+_DOCUMENT.fields_by_name['signature'].message_type = _SIGNATURE
+_DOCUMENT.fields_by_name['services'].message_type = _SERVICE
+DESCRIPTOR.message_types_by_name['VerificationMethod'] = _VERIFICATIONMETHOD
+DESCRIPTOR.message_types_by_name['Signature'] = _SIGNATURE
+DESCRIPTOR.message_types_by_name['Metadata'] = _METADATA
+DESCRIPTOR.message_types_by_name['Service'] = _SERVICE
+DESCRIPTOR.message_types_by_name['Document'] = _DOCUMENT
+DESCRIPTOR.enum_types_by_name['ServiceType'] = _SERVICETYPE
+DESCRIPTOR.enum_types_by_name['Status'] = _STATUS
+DESCRIPTOR.enum_types_by_name['VerificationType'] = _VERIFICATIONTYPE
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
 VerificationMethod = _reflection.GeneratedProtocolMessageType('VerificationMethod', (_message.Message,), {
   'DESCRIPTOR' : _VERIFICATIONMETHOD,
   '__module__' : 'did_document_format_pb2'
@@ -72,24 +444,6 @@ Document = _reflection.GeneratedProtocolMessageType('Document', (_message.Messag
   })
 _sym_db.RegisterMessage(Document)
 
-if _descriptor._USE_C_DESCRIPTORS == False:
 
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'ZWgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/document;document'
-  _SERVICETYPE._serialized_start=675
-  _SERVICETYPE._serialized_end=724
-  _STATUS._serialized_start=726
-  _STATUS._serialized_end=766
-  _VERIFICATIONTYPE._serialized_start=768
-  _VERIFICATIONTYPE._serialized_end=850
-  _VERIFICATIONMETHOD._serialized_start=39
-  _VERIFICATIONMETHOD._serialized_end=161
-  _SIGNATURE._serialized_start=163
-  _SIGNATURE._serialized_end=246
-  _METADATA._serialized_start=248
-  _METADATA._serialized_end=325
-  _SERVICE._serialized_start=328
-  _SERVICE._serialized_end=467
-  _DOCUMENT._serialized_start=470
-  _DOCUMENT._serialized_end=673
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)
