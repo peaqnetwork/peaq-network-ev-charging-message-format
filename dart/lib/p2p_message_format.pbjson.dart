@@ -59,6 +59,7 @@ const Event$json = const {
     const {'1': 'get_pk_ack_data', '3': 13, '4': 1, '5': 11, '6': '.p2p.GetPKAckData', '9': 0, '10': 'getPkAckData'},
     const {'1': 'republish_ack_data', '3': 14, '4': 1, '5': 11, '6': '.p2p.RePublishDIDAckData', '9': 0, '10': 'republishAckData'},
     const {'1': 'reconnect_ack_data', '3': 15, '4': 1, '5': 11, '6': '.p2p.ReconnectAckData', '9': 0, '10': 'reconnectAckData'},
+    const {'1': 'service_requested_ack_data', '3': 16, '4': 1, '5': 11, '6': '.p2p.ServiceRequestedAckData', '9': 0, '10': 'serviceRequestedAckData'},
   ],
   '8': const [
     const {'1': 'data'},
@@ -66,7 +67,7 @@ const Event$json = const {
 };
 
 /// Descriptor for `Event`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List eventDescriptor = $convert.base64Decode('CgVFdmVudBIpCghldmVudF9pZBgBIAEoDjIOLnAycC5FdmVudFR5cGVSB2V2ZW50SWQSSwoUY2hhcmdpbmdfc3RhdHVzX2RhdGEYAiABKAsyFy5wMnAuQ2hhcmdpbmdTdGF0dXNEYXRhSABSEmNoYXJnaW5nU3RhdHVzRGF0YRI/ChBzZXJ2aWNlX2Fja19kYXRhGAMgASgLMhMucDJwLlNlcnZpY2VBY2tEYXRhSABSDnNlcnZpY2VBY2tEYXRhElEKFnNlcnZpY2VfcmVxdWVzdGVkX2RhdGEYBCABKAsyGS5wMnAuU2VydmljZVJlcXVlc3RlZERhdGFIAFIUc2VydmljZVJlcXVlc3RlZERhdGESUQoWc2VydmljZV9kZWxpdmVyZWRfZGF0YRgFIAEoCzIZLnAycC5TZXJ2aWNlRGVsaXZlcmVkRGF0YUgAUhRzZXJ2aWNlRGVsaXZlcmVkRGF0YRI/ChBzdG9wX2NoYXJnZV9kYXRhGAYgASgLMhMucDJwLlN0b3BDaGFyZ2VEYXRhSABSDnN0b3BDaGFyZ2VEYXRhElAKFXN0b3BfY2hhcmdlX3Jlc3BfZGF0YRgHIAEoCzIbLnAycC5TdG9wQ2hhcmdlUmVzcG9uc2VEYXRhSABSEnN0b3BDaGFyZ2VSZXNwRGF0YRJUChdpZGVudGl0eV9jaGFsbGVuZ2VfZGF0YRgIIAEoCzIaLnAycC5JZGVudGl0eUNoYWxsZW5nZURhdGFIAFIVaWRlbnRpdHlDaGFsbGVuZ2VEYXRhElEKFmlkZW50aXR5X3Jlc3BvbnNlX2RhdGEYCSABKAsyGS5wMnAuSWRlbnRpdHlSZXNwb25zZURhdGFIAFIUaWRlbnRpdHlSZXNwb25zZURhdGESPwoQY2hhaW5fZXZlbnRfZGF0YRgKIAEoCzITLnAycC5DaGFpbkV2ZW50RGF0YUgAUg5jaGFpbkV2ZW50RGF0YRJGChNlbWl0X3Nob3dfaW5mb19kYXRhGAsgASgLMhUucDJwLkVtaXRTaG93SW5mb0RhdGFIAFIQZW1pdFNob3dJbmZvRGF0YRJJChRnZXRfYmFsYW5jZV9hY2tfZGF0YRgMIAEoCzIWLnAycC5HZXRCYWxhbmNlQWNrRGF0YUgAUhFnZXRCYWxhbmNlQWNrRGF0YRI6Cg9nZXRfcGtfYWNrX2RhdGEYDSABKAsyES5wMnAuR2V0UEtBY2tEYXRhSABSDGdldFBrQWNrRGF0YRJIChJyZXB1Ymxpc2hfYWNrX2RhdGEYDiABKAsyGC5wMnAuUmVQdWJsaXNoRElEQWNrRGF0YUgAUhByZXB1Ymxpc2hBY2tEYXRhEkUKEnJlY29ubmVjdF9hY2tfZGF0YRgPIAEoCzIVLnAycC5SZWNvbm5lY3RBY2tEYXRhSABSEHJlY29ubmVjdEFja0RhdGFCBgoEZGF0YQ==');
+final $typed_data.Uint8List eventDescriptor = $convert.base64Decode('CgVFdmVudBIpCghldmVudF9pZBgBIAEoDjIOLnAycC5FdmVudFR5cGVSB2V2ZW50SWQSSwoUY2hhcmdpbmdfc3RhdHVzX2RhdGEYAiABKAsyFy5wMnAuQ2hhcmdpbmdTdGF0dXNEYXRhSABSEmNoYXJnaW5nU3RhdHVzRGF0YRI/ChBzZXJ2aWNlX2Fja19kYXRhGAMgASgLMhMucDJwLlNlcnZpY2VBY2tEYXRhSABSDnNlcnZpY2VBY2tEYXRhElEKFnNlcnZpY2VfcmVxdWVzdGVkX2RhdGEYBCABKAsyGS5wMnAuU2VydmljZVJlcXVlc3RlZERhdGFIAFIUc2VydmljZVJlcXVlc3RlZERhdGESUQoWc2VydmljZV9kZWxpdmVyZWRfZGF0YRgFIAEoCzIZLnAycC5TZXJ2aWNlRGVsaXZlcmVkRGF0YUgAUhRzZXJ2aWNlRGVsaXZlcmVkRGF0YRI/ChBzdG9wX2NoYXJnZV9kYXRhGAYgASgLMhMucDJwLlN0b3BDaGFyZ2VEYXRhSABSDnN0b3BDaGFyZ2VEYXRhElAKFXN0b3BfY2hhcmdlX3Jlc3BfZGF0YRgHIAEoCzIbLnAycC5TdG9wQ2hhcmdlUmVzcG9uc2VEYXRhSABSEnN0b3BDaGFyZ2VSZXNwRGF0YRJUChdpZGVudGl0eV9jaGFsbGVuZ2VfZGF0YRgIIAEoCzIaLnAycC5JZGVudGl0eUNoYWxsZW5nZURhdGFIAFIVaWRlbnRpdHlDaGFsbGVuZ2VEYXRhElEKFmlkZW50aXR5X3Jlc3BvbnNlX2RhdGEYCSABKAsyGS5wMnAuSWRlbnRpdHlSZXNwb25zZURhdGFIAFIUaWRlbnRpdHlSZXNwb25zZURhdGESPwoQY2hhaW5fZXZlbnRfZGF0YRgKIAEoCzITLnAycC5DaGFpbkV2ZW50RGF0YUgAUg5jaGFpbkV2ZW50RGF0YRJGChNlbWl0X3Nob3dfaW5mb19kYXRhGAsgASgLMhUucDJwLkVtaXRTaG93SW5mb0RhdGFIAFIQZW1pdFNob3dJbmZvRGF0YRJJChRnZXRfYmFsYW5jZV9hY2tfZGF0YRgMIAEoCzIWLnAycC5HZXRCYWxhbmNlQWNrRGF0YUgAUhFnZXRCYWxhbmNlQWNrRGF0YRI6Cg9nZXRfcGtfYWNrX2RhdGEYDSABKAsyES5wMnAuR2V0UEtBY2tEYXRhSABSDGdldFBrQWNrRGF0YRJIChJyZXB1Ymxpc2hfYWNrX2RhdGEYDiABKAsyGC5wMnAuUmVQdWJsaXNoRElEQWNrRGF0YUgAUhByZXB1Ymxpc2hBY2tEYXRhEkUKEnJlY29ubmVjdF9hY2tfZGF0YRgPIAEoCzIVLnAycC5SZWNvbm5lY3RBY2tEYXRhSABSEHJlY29ubmVjdEFja0RhdGESWwoac2VydmljZV9yZXF1ZXN0ZWRfYWNrX2RhdGEYECABKAsyHC5wMnAuU2VydmljZVJlcXVlc3RlZEFja0RhdGFIAFIXc2VydmljZVJlcXVlc3RlZEFja0RhdGFCBgoEZGF0YQ==');
 @$core.Deprecated('Use chargingStatusDataDescriptor instead')
 const ChargingStatusData$json = const {
   '1': 'ChargingStatusData',
@@ -87,6 +88,17 @@ const ServiceAckData$json = const {
 
 /// Descriptor for `ServiceAckData`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List serviceAckDataDescriptor = $convert.base64Decode('Cg5TZXJ2aWNlQWNrRGF0YRIhCgRyZXNwGAEgASgLMg0ucDJwLlJlc3BvbnNlUgRyZXNw');
+@$core.Deprecated('Use serviceRequestedAckDataDescriptor instead')
+const ServiceRequestedAckData$json = const {
+  '1': 'ServiceRequestedAckData',
+  '2': const [
+    const {'1': 'resp', '3': 1, '4': 1, '5': 11, '6': '.p2p.Response', '10': 'resp'},
+    const {'1': 'wait_time', '3': 2, '4': 1, '5': 3, '10': 'waitTime'},
+  ],
+};
+
+/// Descriptor for `ServiceRequestedAckData`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List serviceRequestedAckDataDescriptor = $convert.base64Decode('ChdTZXJ2aWNlUmVxdWVzdGVkQWNrRGF0YRIhCgRyZXNwGAEgASgLMg0ucDJwLlJlc3BvbnNlUgRyZXNwEhsKCXdhaXRfdGltZRgCIAEoA1IId2FpdFRpbWU=');
 @$core.Deprecated('Use serviceRequestedDataDescriptor instead')
 const ServiceRequestedData$json = const {
   '1': 'ServiceRequestedData',

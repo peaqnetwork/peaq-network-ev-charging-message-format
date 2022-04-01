@@ -29,6 +29,7 @@ enum Event_Data {
   getPkAckData, 
   republishAckData, 
   reconnectAckData, 
+  serviceRequestedAckData, 
   notSet
 }
 
@@ -48,10 +49,11 @@ class Event extends $pb.GeneratedMessage {
     13 : Event_Data.getPkAckData,
     14 : Event_Data.republishAckData,
     15 : Event_Data.reconnectAckData,
+    16 : Event_Data.serviceRequestedAckData,
     0 : Event_Data.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Event', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..oo(0, [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+    ..oo(0, [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
     ..e<EventType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'eventId', $pb.PbFieldType.OE, defaultOrMaker: EventType.CHARGING_STATUS, valueOf: EventType.valueOf, enumValues: EventType.values)
     ..aOM<ChargingStatusData>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chargingStatusData', subBuilder: ChargingStatusData.create)
     ..aOM<ServiceAckData>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceAckData', subBuilder: ServiceAckData.create)
@@ -67,6 +69,7 @@ class Event extends $pb.GeneratedMessage {
     ..aOM<GetPKAckData>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'getPkAckData', subBuilder: GetPKAckData.create)
     ..aOM<RePublishDIDAckData>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'republishAckData', subBuilder: RePublishDIDAckData.create)
     ..aOM<ReconnectAckData>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reconnectAckData', subBuilder: ReconnectAckData.create)
+    ..aOM<ServiceRequestedAckData>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceRequestedAckData', subBuilder: ServiceRequestedAckData.create)
     ..hasRequiredFields = false
   ;
 
@@ -87,6 +90,7 @@ class Event extends $pb.GeneratedMessage {
     GetPKAckData? getPkAckData,
     RePublishDIDAckData? republishAckData,
     ReconnectAckData? reconnectAckData,
+    ServiceRequestedAckData? serviceRequestedAckData,
   }) {
     final _result = create();
     if (eventId != null) {
@@ -133,6 +137,9 @@ class Event extends $pb.GeneratedMessage {
     }
     if (reconnectAckData != null) {
       _result.reconnectAckData = reconnectAckData;
+    }
+    if (serviceRequestedAckData != null) {
+      _result.serviceRequestedAckData = serviceRequestedAckData;
     }
     return _result;
   }
@@ -322,6 +329,17 @@ class Event extends $pb.GeneratedMessage {
   void clearReconnectAckData() => clearField(15);
   @$pb.TagNumber(15)
   ReconnectAckData ensureReconnectAckData() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  ServiceRequestedAckData get serviceRequestedAckData => $_getN(15);
+  @$pb.TagNumber(16)
+  set serviceRequestedAckData(ServiceRequestedAckData v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasServiceRequestedAckData() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearServiceRequestedAckData() => clearField(16);
+  @$pb.TagNumber(16)
+  ServiceRequestedAckData ensureServiceRequestedAckData() => $_ensure(15);
 }
 
 class ChargingStatusData extends $pb.GeneratedMessage {
@@ -418,6 +436,69 @@ class ServiceAckData extends $pb.GeneratedMessage {
   void clearResp() => clearField(1);
   @$pb.TagNumber(1)
   Response ensureResp() => $_ensure(0);
+}
+
+class ServiceRequestedAckData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ServiceRequestedAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
+    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'waitTime')
+    ..hasRequiredFields = false
+  ;
+
+  ServiceRequestedAckData._() : super();
+  factory ServiceRequestedAckData({
+    Response? resp,
+    $fixnum.Int64? waitTime,
+  }) {
+    final _result = create();
+    if (resp != null) {
+      _result.resp = resp;
+    }
+    if (waitTime != null) {
+      _result.waitTime = waitTime;
+    }
+    return _result;
+  }
+  factory ServiceRequestedAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ServiceRequestedAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ServiceRequestedAckData clone() => ServiceRequestedAckData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ServiceRequestedAckData copyWith(void Function(ServiceRequestedAckData) updates) => super.copyWith((message) => updates(message as ServiceRequestedAckData)) as ServiceRequestedAckData; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ServiceRequestedAckData create() => ServiceRequestedAckData._();
+  ServiceRequestedAckData createEmptyInstance() => create();
+  static $pb.PbList<ServiceRequestedAckData> createRepeated() => $pb.PbList<ServiceRequestedAckData>();
+  @$core.pragma('dart2js:noInline')
+  static ServiceRequestedAckData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServiceRequestedAckData>(create);
+  static ServiceRequestedAckData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Response get resp => $_getN(0);
+  @$pb.TagNumber(1)
+  set resp(Response v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResp() => clearField(1);
+  @$pb.TagNumber(1)
+  Response ensureResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get waitTime => $_getI64(1);
+  @$pb.TagNumber(2)
+  set waitTime($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWaitTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWaitTime() => clearField(2);
 }
 
 class ServiceRequestedData extends $pb.GeneratedMessage {
