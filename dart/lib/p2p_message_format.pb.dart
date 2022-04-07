@@ -345,16 +345,31 @@ class Event extends $pb.GeneratedMessage {
 class ChargingStatusData extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChargingStatusData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
     ..a<$core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'progress', $pb.PbFieldType.OF)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chargingPeriod')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'energyConsumption')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenSpent')
     ..hasRequiredFields = false
   ;
 
   ChargingStatusData._() : super();
   factory ChargingStatusData({
     $core.double? progress,
+    $core.String? chargingPeriod,
+    $core.String? energyConsumption,
+    $core.String? tokenSpent,
   }) {
     final _result = create();
     if (progress != null) {
       _result.progress = progress;
+    }
+    if (chargingPeriod != null) {
+      _result.chargingPeriod = chargingPeriod;
+    }
+    if (energyConsumption != null) {
+      _result.energyConsumption = energyConsumption;
+    }
+    if (tokenSpent != null) {
+      _result.tokenSpent = tokenSpent;
     }
     return _result;
   }
@@ -387,6 +402,33 @@ class ChargingStatusData extends $pb.GeneratedMessage {
   $core.bool hasProgress() => $_has(0);
   @$pb.TagNumber(1)
   void clearProgress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get chargingPeriod => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set chargingPeriod($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasChargingPeriod() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChargingPeriod() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get energyConsumption => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set energyConsumption($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEnergyConsumption() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEnergyConsumption() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get tokenSpent => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set tokenSpent($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTokenSpent() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTokenSpent() => clearField(4);
 }
 
 class ServiceAckData extends $pb.GeneratedMessage {

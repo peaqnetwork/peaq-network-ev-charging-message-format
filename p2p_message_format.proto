@@ -61,7 +61,12 @@ message Event {
   }
 }
 
-message ChargingStatusData { float progress = 1; }
+message ChargingStatusData {
+  float progress = 1;
+  string charging_period = 2;
+  string energy_consumption = 3;
+  string token_spent = 4;
+}
 
 message ServiceAckData { Response resp = 1; }
 message ServiceRequestedAckData {

@@ -73,11 +73,14 @@ const ChargingStatusData$json = const {
   '1': 'ChargingStatusData',
   '2': const [
     const {'1': 'progress', '3': 1, '4': 1, '5': 2, '10': 'progress'},
+    const {'1': 'charging_period', '3': 2, '4': 1, '5': 9, '10': 'chargingPeriod'},
+    const {'1': 'energy_consumption', '3': 3, '4': 1, '5': 9, '10': 'energyConsumption'},
+    const {'1': 'token_spent', '3': 4, '4': 1, '5': 9, '10': 'tokenSpent'},
   ],
 };
 
 /// Descriptor for `ChargingStatusData`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List chargingStatusDataDescriptor = $convert.base64Decode('ChJDaGFyZ2luZ1N0YXR1c0RhdGESGgoIcHJvZ3Jlc3MYASABKAJSCHByb2dyZXNz');
+final $typed_data.Uint8List chargingStatusDataDescriptor = $convert.base64Decode('ChJDaGFyZ2luZ1N0YXR1c0RhdGESGgoIcHJvZ3Jlc3MYASABKAJSCHByb2dyZXNzEicKD2NoYXJnaW5nX3BlcmlvZBgCIAEoCVIOY2hhcmdpbmdQZXJpb2QSLQoSZW5lcmd5X2NvbnN1bXB0aW9uGAMgASgJUhFlbmVyZ3lDb25zdW1wdGlvbhIfCgt0b2tlbl9zcGVudBgEIAEoCVIKdG9rZW5TcGVudA==');
 @$core.Deprecated('Use serviceAckDataDescriptor instead')
 const ServiceAckData$json = const {
   '1': 'ServiceAckData',
