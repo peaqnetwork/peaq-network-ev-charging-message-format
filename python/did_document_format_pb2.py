@@ -4,6 +4,7 @@
 
 from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -48,6 +49,7 @@ _SERVICETYPE = _descriptor.EnumDescriptor(
 )
 _sym_db.RegisterEnumDescriptor(_SERVICETYPE)
 
+_SERVICETYPE = DESCRIPTOR.enum_types_by_name['ServiceType']
 ServiceType = enum_type_wrapper.EnumTypeWrapper(_SERVICETYPE)
 _STATUS = _descriptor.EnumDescriptor(
   name='Status',
@@ -102,7 +104,6 @@ AVAILABLE = 0
 UNAVAILABLE = 1
 Ed25519VerificationKey2020 = 0
 Sr25519VerificationKey2020 = 1
-
 
 
 _VERIFICATIONMETHOD = _descriptor.Descriptor(
@@ -426,6 +427,24 @@ Document = _reflection.GeneratedProtocolMessageType('Document', (_message.Messag
   })
 _sym_db.RegisterMessage(Document)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'ZWgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/document;document'
+  _SERVICETYPE._serialized_start=675
+  _SERVICETYPE._serialized_end=724
+  _STATUS._serialized_start=726
+  _STATUS._serialized_end=766
+  _VERIFICATIONTYPE._serialized_start=768
+  _VERIFICATIONTYPE._serialized_end=850
+  _VERIFICATIONMETHOD._serialized_start=39
+  _VERIFICATIONMETHOD._serialized_end=161
+  _SIGNATURE._serialized_start=163
+  _SIGNATURE._serialized_end=246
+  _METADATA._serialized_start=248
+  _METADATA._serialized_end=325
+  _SERVICE._serialized_start=328
+  _SERVICE._serialized_end=467
+  _DOCUMENT._serialized_start=470
+  _DOCUMENT._serialized_end=673
 # @@protoc_insertion_point(module_scope)
