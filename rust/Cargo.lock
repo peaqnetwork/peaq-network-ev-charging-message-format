@@ -26,9 +26,9 @@ dependencies = [
 
 [[package]]
 name = "protobuf"
-version = "3.0.0-alpha.9"
+version = "3.0.0-alpha.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "703123ba54f3fce74eee70356fe7b84a8cf6323c14a710f86a2a83618b8e5c5e"
+checksum = "61b052e0a8bd9b051c0e6337a7553c02edb6d07a533cdd3ecd9339f014528b9d"
 dependencies = [
  "once_cell",
  "thiserror",
