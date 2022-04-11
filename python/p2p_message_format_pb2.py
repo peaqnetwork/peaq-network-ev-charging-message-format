@@ -4,13 +4,14 @@
 
 from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
+
+
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -127,7 +128,6 @@ _EVENTTYPE = _descriptor.EnumDescriptor(
 )
 _sym_db.RegisterEnumDescriptor(_EVENTTYPE)
 
-_EVENTTYPE = DESCRIPTOR.enum_types_by_name['EventType']
 EventType = enum_type_wrapper.EnumTypeWrapper(_EVENTTYPE)
 CHARGING_STATUS = 0
 SERVICE_REQUEST_ACK = 1
@@ -1250,50 +1250,6 @@ StopChargeData = _reflection.GeneratedProtocolMessageType('StopChargeData', (_me
   })
 _sym_db.RegisterMessage(StopChargeData)
 
-if _descriptor._USE_C_DESCRIPTORS == False:
 
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'ZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/message;message'
-  _EVENTTYPE._serialized_start=2191
-  _EVENTTYPE._serialized_end=2696
-  _EVENT._serialized_start=34
-  _EVENT._serialized_end=928
-  _CHARGINGSTATUSDATA._serialized_start=930
-  _CHARGINGSTATUSDATA._serialized_end=968
-  _SERVICEACKDATA._serialized_start=970
-  _SERVICEACKDATA._serialized_end=1015
-  _SERVICEREQUESTEDACKDATA._serialized_start=1017
-  _SERVICEREQUESTEDACKDATA._serialized_end=1090
-  _SERVICEREQUESTEDDATA._serialized_start=1092
-  _SERVICEREQUESTEDDATA._serialized_end=1175
-  _SERVICEDELIVEREDDATA._serialized_start=1178
-  _SERVICEDELIVEREDDATA._serialized_end=1323
-  _STOPCHARGERESPONSEDATA._serialized_start=1325
-  _STOPCHARGERESPONSEDATA._serialized_end=1378
-  _IDENTITYCHALLENGEDATA._serialized_start=1380
-  _IDENTITYCHALLENGEDATA._serialized_end=1423
-  _IDENTITYRESPONSEDATA._serialized_start=1425
-  _IDENTITYRESPONSEDATA._serialized_end=1495
-  _RESPONSE._serialized_start=1497
-  _RESPONSE._serialized_end=1539
-  _TRANSACTIONVALUE._serialized_start=1542
-  _TRANSACTIONVALUE._serialized_end=1712
-  _TRANSACTIONVALUE_TIMEPOINT._serialized_start=1670
-  _TRANSACTIONVALUE_TIMEPOINT._serialized_end=1712
-  _CHAINEVENTDATA._serialized_start=1714
-  _CHAINEVENTDATA._serialized_end=1768
-  _EMITSHOWINFODATA._serialized_start=1771
-  _EMITSHOWINFODATA._serialized_end=1899
-  _EMITSHOWINFODATA_SHOWINFOTYPE._serialized_start=1855
-  _EMITSHOWINFODATA_SHOWINFOTYPE._serialized_end=1899
-  _GETBALANCEACKDATA._serialized_start=1901
-  _GETBALANCEACKDATA._serialized_end=1966
-  _GETPKACKDATA._serialized_start=1968
-  _GETPKACKDATA._serialized_end=2023
-  _REPUBLISHDIDACKDATA._serialized_start=2025
-  _REPUBLISHDIDACKDATA._serialized_end=2087
-  _RECONNECTACKDATA._serialized_start=2089
-  _RECONNECTACKDATA._serialized_end=2153
-  _STOPCHARGEDATA._serialized_start=2155
-  _STOPCHARGEDATA._serialized_end=2188
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)
