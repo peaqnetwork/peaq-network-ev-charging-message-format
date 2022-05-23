@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package gateway;
+option go_package = "github.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gateway";
+
+enum EventType {
+  BootNotificationRequest = 0;
+  HeartbeatRequest = 3;
+  Log = 5;
+}
+
+message Event {
+  EventType event_id = 1;
+  oneof data {
+    BootNotificationRequestData boot_notification_request_data = 2;
+    LogData log_data = 4;
+  }
+}
+
+message BootNotificationRequestData {
+  string charge_box_serial_number = 1;
+  string charge_point_model = 2;
+  string Charge_point_serial_number = 3;
+  string Charge_point_vendor = 4;
+  string firmware_version = 5;
+  string iccid = 6;
+  string imsi = 7;
+  string meter_serial_number = 8;
+  string meter_type = 9;
+}
+
+message LogData {
+  string current_time = 1;
+  int32 message = 2;
+  bool error = 3;
+}
