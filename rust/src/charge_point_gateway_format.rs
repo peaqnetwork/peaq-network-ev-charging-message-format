@@ -609,7 +609,7 @@ pub struct LogData {
     // @@protoc_insertion_point(field:gateway.LogData.current_time)
     pub current_time: ::std::string::String,
     // @@protoc_insertion_point(field:gateway.LogData.message)
-    pub message: i32,
+    pub message: ::std::string::String,
     // @@protoc_insertion_point(field:gateway.LogData.error)
     pub error: bool,
     // special fields
@@ -665,8 +665,8 @@ impl ::protobuf::Message for LogData {
                 10 => {
                     self.current_time = is.read_string()?;
                 },
-                16 => {
-                    self.message = is.read_int32()?;
+                18 => {
+                    self.message = is.read_string()?;
                 },
                 24 => {
                     self.error = is.read_bool()?;
@@ -686,8 +686,8 @@ impl ::protobuf::Message for LogData {
         if !self.current_time.is_empty() {
             my_size += ::protobuf::rt::string_size(1, &self.current_time);
         }
-        if self.message != 0 {
-            my_size += ::protobuf::rt::value_size(2, self.message, ::protobuf::rt::WireType::Varint);
+        if !self.message.is_empty() {
+            my_size += ::protobuf::rt::string_size(2, &self.message);
         }
         if self.error != false {
             my_size += 2;
@@ -701,8 +701,8 @@ impl ::protobuf::Message for LogData {
         if !self.current_time.is_empty() {
             os.write_string(1, &self.current_time)?;
         }
-        if self.message != 0 {
-            os.write_int32(2, self.message)?;
+        if !self.message.is_empty() {
+            os.write_string(2, &self.message)?;
         }
         if self.error != false {
             os.write_bool(3, self.error)?;
@@ -729,7 +729,7 @@ impl ::protobuf::Message for LogData {
 
     fn clear(&mut self) {
         self.current_time.clear();
-        self.message = 0;
+        self.message.clear();
         self.error = false;
         self.special_fields.clear();
     }
@@ -737,7 +737,7 @@ impl ::protobuf::Message for LogData {
     fn default_instance() -> &'static LogData {
         static instance: LogData = LogData {
             current_time: ::std::string::String::new(),
-            message: 0,
+            message: ::std::string::String::new(),
             error: false,
             special_fields: ::protobuf::SpecialFields::new(),
         };
@@ -840,12 +840,12 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x07\x20\x01(\tR\x04imsi\x12.\n\x13meter_serial_number\x18\x08\x20\x01(\
     \tR\x11meterSerialNumber\x12\x1d\n\nmeter_type\x18\t\x20\x01(\tR\tmeterT\
     ype\"\\\n\x07LogData\x12!\n\x0ccurrent_time\x18\x01\x20\x01(\tR\x0bcurre\
-    ntTime\x12\x18\n\x07message\x18\x02\x20\x01(\x05R\x07message\x12\x14\n\
-    \x05error\x18\x03\x20\x01(\x08R\x05error*G\n\tEventType\x12\x1b\n\x17Boo\
-    tNotificationRequest\x10\0\x12\x14\n\x10HeartbeatRequest\x10\x03\x12\x07\
-    \n\x03Log\x10\x05BWZUgithub.com/peaqnetwork/peaq-network-ev-charging-mes\
-    sage-format/golang/gateway;gatewayJ\xe1\x08\n\x06\x12\x04\0\0#\x01\n\x08\
-    \n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x02\0\x10\n\x08\n\x01\
+    ntTime\x12\x18\n\x07message\x18\x02\x20\x01(\tR\x07message\x12\x14\n\x05\
+    error\x18\x03\x20\x01(\x08R\x05error*G\n\tEventType\x12\x1b\n\x17BootNot\
+    ificationRequest\x10\0\x12\x14\n\x10HeartbeatRequest\x10\x03\x12\x07\n\
+    \x03Log\x10\x05BWZUgithub.com/peaqnetwork/peaq-network-ev-charging-messa\
+    ge-format/golang/gateway;gatewayJ\xe1\x08\n\x06\x12\x04\0\0#\x01\n\x08\n\
+    \x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x02\0\x10\n\x08\n\x01\
     \x08\x12\x03\x03\0l\n\t\n\x02\x08\x0b\x12\x03\x03\0l\n\n\n\x02\x05\0\x12\
     \x04\x05\0\t\x01\n\n\n\x03\x05\0\x01\x12\x03\x05\x05\x0e\n\x0b\n\x04\x05\
     \0\x02\0\x12\x03\x06\x02\x1e\n\x0c\n\x05\x05\0\x02\0\x01\x12\x03\x06\x02\
@@ -894,9 +894,9 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \n\n\x03\x04\x02\x01\x12\x03\x1f\x08\x0f\n\x0b\n\x04\x04\x02\x02\0\x12\
     \x03\x20\x02\x1a\n\x0c\n\x05\x04\x02\x02\0\x05\x12\x03\x20\x02\x08\n\x0c\
     \n\x05\x04\x02\x02\0\x01\x12\x03\x20\t\x15\n\x0c\n\x05\x04\x02\x02\0\x03\
-    \x12\x03\x20\x18\x19\n\x0b\n\x04\x04\x02\x02\x01\x12\x03!\x02\x14\n\x0c\
-    \n\x05\x04\x02\x02\x01\x05\x12\x03!\x02\x07\n\x0c\n\x05\x04\x02\x02\x01\
-    \x01\x12\x03!\x08\x0f\n\x0c\n\x05\x04\x02\x02\x01\x03\x12\x03!\x12\x13\n\
+    \x12\x03\x20\x18\x19\n\x0b\n\x04\x04\x02\x02\x01\x12\x03!\x02\x15\n\x0c\
+    \n\x05\x04\x02\x02\x01\x05\x12\x03!\x02\x08\n\x0c\n\x05\x04\x02\x02\x01\
+    \x01\x12\x03!\t\x10\n\x0c\n\x05\x04\x02\x02\x01\x03\x12\x03!\x13\x14\n\
     \x0b\n\x04\x04\x02\x02\x02\x12\x03\"\x02\x11\n\x0c\n\x05\x04\x02\x02\x02\
     \x05\x12\x03\"\x02\x06\n\x0c\n\x05\x04\x02\x02\x02\x01\x12\x03\"\x07\x0c\
     \n\x0c\n\x05\x04\x02\x02\x02\x03\x12\x03\"\x0f\x10b\x06proto3\
