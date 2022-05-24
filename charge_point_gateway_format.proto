@@ -31,6 +31,6 @@ message BootNotificationRequestData {
 
 message LogData {
   string current_time = 1;
-  int32 message = 2;
+  string message = 2;
   bool error = 3;
 }
