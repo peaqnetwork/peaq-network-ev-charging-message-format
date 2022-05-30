@@ -16,7 +16,8 @@ message Event {
   oneof data {
     BootNotificationRequestData boot_notification_request_data = 2;
     LogData log_data = 3;
-    AuthorizeRequestAckData authorize_request_ack_data = 4;
+    AuthorizeRequestData authorize_request_data = 4;
+    AuthorizeRequestAckData authorize_request_ack_data = 5;
   }
 }
 
@@ -37,6 +38,7 @@ message LogData {
   Response resp = 2;
 }
 
+message AuthorizeRequestData { string charge_point_id = 1; }
 message AuthorizeRequestAckData { Response resp = 1; }
 
 message Response {
