@@ -7,6 +7,8 @@ enum EventType {
   BootNotificationRequest = 0;
   HeartbeatRequest = 1;
   Log = 2;
+  AuthorizeRequest = 3;
+  AuthorizeRequestAck = 4;
 }
 
 message Event {
@@ -14,6 +16,8 @@ message Event {
   oneof data {
     BootNotificationRequestData boot_notification_request_data = 2;
     LogData log_data = 3;
+    AuthorizeRequestData authorize_request_data = 4;
+    AuthorizeRequestAckData authorize_request_ack_data = 5;
   }
 }
 
@@ -31,6 +35,13 @@ message BootNotificationRequestData {
 
 message LogData {
   string current_time = 1;
+  Response resp = 2;
+}
+
+message AuthorizeRequestData { string charge_point_id = 1; }
+message AuthorizeRequestAckData { Response resp = 1; }
+
+message Response {
+  bool error = 1;
   string message = 2;
-  bool error = 3;
 }
