@@ -15,18 +15,22 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!charge_point_gateway_format.proto\x12\x07gateway\"\xab\x01\n\x05\x45vent\x12$\n\x08\x65vent_id\x18\x01 \x01(\x0e\x32\x12.gateway.EventType\x12N\n\x1e\x62oot_notification_request_data\x18\x02 \x01(\x0b\x32$.gateway.BootNotificationRequestDataH\x00\x12$\n\x08log_data\x18\x04 \x01(\x0b\x32\x10.gateway.LogDataH\x00\x42\x06\n\x04\x64\x61ta\"\x84\x02\n\x1b\x42ootNotificationRequestData\x12 \n\x18\x63harge_box_serial_number\x18\x01 \x01(\t\x12\x1a\n\x12\x63harge_point_model\x18\x02 \x01(\t\x12\"\n\x1a\x43harge_point_serial_number\x18\x03 \x01(\t\x12\x1b\n\x13\x43harge_point_vendor\x18\x04 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x05 \x01(\t\x12\r\n\x05iccid\x18\x06 \x01(\t\x12\x0c\n\x04imsi\x18\x07 \x01(\t\x12\x1b\n\x13meter_serial_number\x18\x08 \x01(\t\x12\x12\n\nmeter_type\x18\t \x01(\t\"?\n\x07LogData\x12\x14\n\x0c\x63urrent_time\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05\x65rror\x18\x03 \x01(\x08*G\n\tEventType\x12\x1b\n\x17\x42ootNotificationRequest\x10\x00\x12\x14\n\x10HeartbeatRequest\x10\x03\x12\x07\n\x03Log\x10\x05\x42WZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gatewayb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!charge_point_gateway_format.proto\x12\x07gateway\"\xf3\x01\n\x05\x45vent\x12$\n\x08\x65vent_id\x18\x01 \x01(\x0e\x32\x12.gateway.EventType\x12N\n\x1e\x62oot_notification_request_data\x18\x02 \x01(\x0b\x32$.gateway.BootNotificationRequestDataH\x00\x12$\n\x08log_data\x18\x03 \x01(\x0b\x32\x10.gateway.LogDataH\x00\x12\x46\n\x1a\x61uthorize_request_ack_data\x18\x04 \x01(\x0b\x32 .gateway.AuthorizeRequestAckDataH\x00\x42\x06\n\x04\x64\x61ta\"\x84\x02\n\x1b\x42ootNotificationRequestData\x12 \n\x18\x63harge_box_serial_number\x18\x01 \x01(\t\x12\x1a\n\x12\x63harge_point_model\x18\x02 \x01(\t\x12\"\n\x1a\x43harge_point_serial_number\x18\x03 \x01(\t\x12\x1b\n\x13\x43harge_point_vendor\x18\x04 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x05 \x01(\t\x12\r\n\x05iccid\x18\x06 \x01(\t\x12\x0c\n\x04imsi\x18\x07 \x01(\t\x12\x1b\n\x13meter_serial_number\x18\x08 \x01(\t\x12\x12\n\nmeter_type\x18\t \x01(\t\"@\n\x07LogData\x12\x14\n\x0c\x63urrent_time\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\":\n\x17\x41uthorizeRequestAckData\x12\x1f\n\x04resp\x18\x01 \x01(\x0b\x32\x11.gateway.Response\"*\n\x08Response\x12\r\n\x05\x65rror\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t*v\n\tEventType\x12\x1b\n\x17\x42ootNotificationRequest\x10\x00\x12\x14\n\x10HeartbeatRequest\x10\x01\x12\x07\n\x03Log\x10\x02\x12\x14\n\x10\x41uthorizeRequest\x10\x03\x12\x17\n\x13\x41uthorizeRequestAck\x10\x04\x42WZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gatewayb\x06proto3')
 
 _EVENTTYPE = DESCRIPTOR.enum_types_by_name['EventType']
 EventType = enum_type_wrapper.EnumTypeWrapper(_EVENTTYPE)
 BootNotificationRequest = 0
-HeartbeatRequest = 3
-Log = 5
+HeartbeatRequest = 1
+Log = 2
+AuthorizeRequest = 3
+AuthorizeRequestAck = 4
 
 
 _EVENT = DESCRIPTOR.message_types_by_name['Event']
 _BOOTNOTIFICATIONREQUESTDATA = DESCRIPTOR.message_types_by_name['BootNotificationRequestData']
 _LOGDATA = DESCRIPTOR.message_types_by_name['LogData']
+_AUTHORIZEREQUESTACKDATA = DESCRIPTOR.message_types_by_name['AuthorizeRequestAckData']
+_RESPONSE = DESCRIPTOR.message_types_by_name['Response']
 Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), {
   'DESCRIPTOR' : _EVENT,
   '__module__' : 'charge_point_gateway_format_pb2'
@@ -48,16 +52,34 @@ LogData = _reflection.GeneratedProtocolMessageType('LogData', (_message.Message,
   })
 _sym_db.RegisterMessage(LogData)
 
+AuthorizeRequestAckData = _reflection.GeneratedProtocolMessageType('AuthorizeRequestAckData', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZEREQUESTACKDATA,
+  '__module__' : 'charge_point_gateway_format_pb2'
+  # @@protoc_insertion_point(class_scope:gateway.AuthorizeRequestAckData)
+  })
+_sym_db.RegisterMessage(AuthorizeRequestAckData)
+
+Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Message,), {
+  'DESCRIPTOR' : _RESPONSE,
+  '__module__' : 'charge_point_gateway_format_pb2'
+  # @@protoc_insertion_point(class_scope:gateway.Response)
+  })
+_sym_db.RegisterMessage(Response)
+
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'ZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gateway'
-  _EVENTTYPE._serialized_start=548
-  _EVENTTYPE._serialized_end=619
+  _EVENTTYPE._serialized_start=725
+  _EVENTTYPE._serialized_end=843
   _EVENT._serialized_start=47
-  _EVENT._serialized_end=218
-  _BOOTNOTIFICATIONREQUESTDATA._serialized_start=221
-  _BOOTNOTIFICATIONREQUESTDATA._serialized_end=481
-  _LOGDATA._serialized_start=483
-  _LOGDATA._serialized_end=546
+  _EVENT._serialized_end=290
+  _BOOTNOTIFICATIONREQUESTDATA._serialized_start=293
+  _BOOTNOTIFICATIONREQUESTDATA._serialized_end=553
+  _LOGDATA._serialized_start=555
+  _LOGDATA._serialized_end=619
+  _AUTHORIZEREQUESTACKDATA._serialized_start=621
+  _AUTHORIZEREQUESTACKDATA._serialized_end=679
+  _RESPONSE._serialized_start=681
+  _RESPONSE._serialized_end=723
 # @@protoc_insertion_point(module_scope)
