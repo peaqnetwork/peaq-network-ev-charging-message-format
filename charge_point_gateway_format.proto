@@ -45,7 +45,10 @@ message LogData {
 message AuthorizeRequestData { string charge_point_id = 1; }
 message AuthorizeRequestAckData { Response resp = 1; }
 
-message CheckAvailabilityRequestData { string charge_point_id = 1; }
+message CheckAvailabilityRequestData {
+  string charge_point_id = 1;
+  string connector_id = 2;
+}
 message CheckAvailabilityRequestAckData { Response resp = 1; }
 
 message Response {
