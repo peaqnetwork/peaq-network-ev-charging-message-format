@@ -21,7 +21,7 @@ message Event {
     AuthorizeRequestData authorize_request_data = 4;
     AuthorizeRequestAckData authorize_request_ack_data = 5;
     CheckAvailabilityRequestData check_availability_request_data = 6;
-    AuthorizeRequestAckData check_availability_request_ack_data = 7;
+    CheckAvailabilityRequestAckData check_availability_request_ack_data = 7;
   }
 }
 
