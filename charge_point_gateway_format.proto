@@ -9,6 +9,8 @@ enum EventType {
   Log = 2;
   AuthorizeRequest = 3;
   AuthorizeRequestAck = 4;
+  CheckAvailabilityRequest = 5;
+  CheckAvailabilityRequestAck = 6;
 }
 
 message Event {
@@ -18,6 +20,8 @@ message Event {
     LogData log_data = 3;
     AuthorizeRequestData authorize_request_data = 4;
     AuthorizeRequestAckData authorize_request_ack_data = 5;
+    CheckAvailabilityRequestData check_availability_request_data = 6;
+    CheckAvailabilityRequestAckData check_availability_request_ack_data = 7;
   }
 }
 
@@ -40,6 +44,12 @@ message LogData {
 
 message AuthorizeRequestData { string charge_point_id = 1; }
 message AuthorizeRequestAckData { Response resp = 1; }
+
+message CheckAvailabilityRequestData {
+  string charge_point_id = 1;
+  int32 connector_id = 2;
+}
+message CheckAvailabilityRequestAckData { Response resp = 1; }
 
 message Response {
   bool error = 1;

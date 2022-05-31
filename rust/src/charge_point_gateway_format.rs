@@ -245,8 +245,106 @@ impl Event {
         }
     }
 
+    // .gateway.CheckAvailabilityRequestData check_availability_request_data = 6;
+
+    pub fn check_availability_request_data(&self) -> &CheckAvailabilityRequestData {
+        match self.data {
+            ::std::option::Option::Some(event::Data::CheckAvailabilityRequestData(ref v)) => v,
+            _ => <CheckAvailabilityRequestData as ::protobuf::Message>::default_instance(),
+        }
+    }
+
+    pub fn clear_check_availability_request_data(&mut self) {
+        self.data = ::std::option::Option::None;
+    }
+
+    pub fn has_check_availability_request_data(&self) -> bool {
+        match self.data {
+            ::std::option::Option::Some(event::Data::CheckAvailabilityRequestData(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_check_availability_request_data(&mut self, v: CheckAvailabilityRequestData) {
+        self.data = ::std::option::Option::Some(event::Data::CheckAvailabilityRequestData(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_check_availability_request_data(&mut self) -> &mut CheckAvailabilityRequestData {
+        if let ::std::option::Option::Some(event::Data::CheckAvailabilityRequestData(_)) = self.data {
+        } else {
+            self.data = ::std::option::Option::Some(event::Data::CheckAvailabilityRequestData(CheckAvailabilityRequestData::new()));
+        }
+        match self.data {
+            ::std::option::Option::Some(event::Data::CheckAvailabilityRequestData(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_check_availability_request_data(&mut self) -> CheckAvailabilityRequestData {
+        if self.has_check_availability_request_data() {
+            match self.data.take() {
+                ::std::option::Option::Some(event::Data::CheckAvailabilityRequestData(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            CheckAvailabilityRequestData::new()
+        }
+    }
+
+    // .gateway.CheckAvailabilityRequestAckData check_availability_request_ack_data = 7;
+
+    pub fn check_availability_request_ack_data(&self) -> &CheckAvailabilityRequestAckData {
+        match self.data {
+            ::std::option::Option::Some(event::Data::CheckAvailabilityRequestAckData(ref v)) => v,
+            _ => <CheckAvailabilityRequestAckData as ::protobuf::Message>::default_instance(),
+        }
+    }
+
+    pub fn clear_check_availability_request_ack_data(&mut self) {
+        self.data = ::std::option::Option::None;
+    }
+
+    pub fn has_check_availability_request_ack_data(&self) -> bool {
+        match self.data {
+            ::std::option::Option::Some(event::Data::CheckAvailabilityRequestAckData(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_check_availability_request_ack_data(&mut self, v: CheckAvailabilityRequestAckData) {
+        self.data = ::std::option::Option::Some(event::Data::CheckAvailabilityRequestAckData(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_check_availability_request_ack_data(&mut self) -> &mut CheckAvailabilityRequestAckData {
+        if let ::std::option::Option::Some(event::Data::CheckAvailabilityRequestAckData(_)) = self.data {
+        } else {
+            self.data = ::std::option::Option::Some(event::Data::CheckAvailabilityRequestAckData(CheckAvailabilityRequestAckData::new()));
+        }
+        match self.data {
+            ::std::option::Option::Some(event::Data::CheckAvailabilityRequestAckData(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_check_availability_request_ack_data(&mut self) -> CheckAvailabilityRequestAckData {
+        if self.has_check_availability_request_ack_data() {
+            match self.data.take() {
+                ::std::option::Option::Some(event::Data::CheckAvailabilityRequestAckData(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            CheckAvailabilityRequestAckData::new()
+        }
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
-        let mut fields = ::std::vec::Vec::with_capacity(5);
+        let mut fields = ::std::vec::Vec::with_capacity(7);
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "event_id",
             |m: &Event| { &m.event_id },
@@ -280,6 +378,20 @@ impl Event {
             Event::mut_authorize_request_ack_data,
             Event::set_authorize_request_ack_data,
         ));
+        fields.push(::protobuf::reflect::rt::v2::make_oneof_message_has_get_mut_set_accessor::<_, CheckAvailabilityRequestData>(
+            "check_availability_request_data",
+            Event::has_check_availability_request_data,
+            Event::check_availability_request_data,
+            Event::mut_check_availability_request_data,
+            Event::set_check_availability_request_data,
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_oneof_message_has_get_mut_set_accessor::<_, CheckAvailabilityRequestAckData>(
+            "check_availability_request_ack_data",
+            Event::has_check_availability_request_ack_data,
+            Event::check_availability_request_ack_data,
+            Event::mut_check_availability_request_ack_data,
+            Event::set_check_availability_request_ack_data,
+        ));
         ::protobuf::reflect::GeneratedMessageDescriptorData::new::<Event>(
             "Event",
             fields,
@@ -311,6 +423,16 @@ impl ::protobuf::Message for Event {
                 return false;
             }
         }
+        if let Some(event::Data::CheckAvailabilityRequestData(ref v)) = self.data {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(event::Data::CheckAvailabilityRequestAckData(ref v)) = self.data {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
         true
     }
 
@@ -331,6 +453,12 @@ impl ::protobuf::Message for Event {
                 },
                 42 => {
                     self.data = ::std::option::Option::Some(event::Data::AuthorizeRequestAckData(is.read_message()?));
+                },
+                50 => {
+                    self.data = ::std::option::Option::Some(event::Data::CheckAvailabilityRequestData(is.read_message()?));
+                },
+                58 => {
+                    self.data = ::std::option::Option::Some(event::Data::CheckAvailabilityRequestAckData(is.read_message()?));
                 },
                 tag => {
                     ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
@@ -365,6 +493,14 @@ impl ::protobuf::Message for Event {
                     let len = v.compute_size();
                     my_size += 1 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
                 },
+                &event::Data::CheckAvailabilityRequestData(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
+                },
+                &event::Data::CheckAvailabilityRequestAckData(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
+                },
             };
         }
         my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
@@ -390,6 +526,12 @@ impl ::protobuf::Message for Event {
                 &event::Data::AuthorizeRequestAckData(ref v) => {
                     ::protobuf::rt::write_message_field_with_cached_size(5, v, os)?;
                 },
+                &event::Data::CheckAvailabilityRequestData(ref v) => {
+                    ::protobuf::rt::write_message_field_with_cached_size(6, v, os)?;
+                },
+                &event::Data::CheckAvailabilityRequestAckData(ref v) => {
+                    ::protobuf::rt::write_message_field_with_cached_size(7, v, os)?;
+                },
             };
         }
         os.write_unknown_fields(self.unknown_fields())?;
@@ -414,6 +556,8 @@ impl ::protobuf::Message for Event {
 
     fn clear(&mut self) {
         self.event_id = ::protobuf::EnumOrUnknown::new(EventType::BootNotificationRequest);
+        self.data = ::std::option::Option::None;
+        self.data = ::std::option::Option::None;
         self.data = ::std::option::Option::None;
         self.data = ::std::option::Option::None;
         self.data = ::std::option::Option::None;
@@ -463,6 +607,10 @@ pub mod event {
         AuthorizeRequestData(super::AuthorizeRequestData),
         // @@protoc_insertion_point(oneof_field:gateway.Event.authorize_request_ack_data)
         AuthorizeRequestAckData(super::AuthorizeRequestAckData),
+        // @@protoc_insertion_point(oneof_field:gateway.Event.check_availability_request_data)
+        CheckAvailabilityRequestData(super::CheckAvailabilityRequestData),
+        // @@protoc_insertion_point(oneof_field:gateway.Event.check_availability_request_ack_data)
+        CheckAvailabilityRequestAckData(super::CheckAvailabilityRequestAckData),
     }
 
     impl ::protobuf::Oneof for Data {
@@ -1153,6 +1301,278 @@ impl ::protobuf::reflect::ProtobufValue for AuthorizeRequestAckData {
 }
 
 #[derive(PartialEq,Clone,Default,Debug)]
+// @@protoc_insertion_point(message:gateway.CheckAvailabilityRequestData)
+pub struct CheckAvailabilityRequestData {
+    // message fields
+    // @@protoc_insertion_point(field:gateway.CheckAvailabilityRequestData.charge_point_id)
+    pub charge_point_id: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.CheckAvailabilityRequestData.connector_id)
+    pub connector_id: i32,
+    // special fields
+    // @@protoc_insertion_point(special_field:gateway.CheckAvailabilityRequestData.special_fields)
+    pub special_fields: ::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CheckAvailabilityRequestData {
+    fn default() -> &'a CheckAvailabilityRequestData {
+        <CheckAvailabilityRequestData as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl CheckAvailabilityRequestData {
+    pub fn new() -> CheckAvailabilityRequestData {
+        ::std::default::Default::default()
+    }
+
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
+        let mut fields = ::std::vec::Vec::with_capacity(2);
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "charge_point_id",
+            |m: &CheckAvailabilityRequestData| { &m.charge_point_id },
+            |m: &mut CheckAvailabilityRequestData| { &mut m.charge_point_id },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "connector_id",
+            |m: &CheckAvailabilityRequestData| { &m.connector_id },
+            |m: &mut CheckAvailabilityRequestData| { &mut m.connector_id },
+        ));
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<CheckAvailabilityRequestData>(
+            "CheckAvailabilityRequestData",
+            fields,
+        )
+    }
+}
+
+impl ::protobuf::Message for CheckAvailabilityRequestData {
+    const NAME: &'static str = "CheckAvailabilityRequestData";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.charge_point_id = is.read_string()?;
+                },
+                16 => {
+                    self.connector_id = is.read_int32()?;
+                },
+                tag => {
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if !self.charge_point_id.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.charge_point_id);
+        }
+        if self.connector_id != 0 {
+            my_size += ::protobuf::rt::value_size(2, self.connector_id, ::protobuf::rt::WireType::Varint);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
+        if !self.charge_point_id.is_empty() {
+            os.write_string(1, &self.charge_point_id)?;
+        }
+        if self.connector_id != 0 {
+            os.write_int32(2, self.connector_id)?;
+        }
+        os.write_unknown_fields(self.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn cached_size(&self) -> u32 {
+        self.special_fields.cached_size().get()
+    }
+
+    fn unknown_fields(&self) -> &::protobuf::UnknownFields {
+        self.special_fields.unknown_fields()
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        self.special_fields.mut_unknown_fields()
+    }
+
+    fn new() -> CheckAvailabilityRequestData {
+        CheckAvailabilityRequestData::new()
+    }
+
+    fn clear(&mut self) {
+        self.charge_point_id.clear();
+        self.connector_id = 0;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CheckAvailabilityRequestData {
+        static instance: CheckAvailabilityRequestData = CheckAvailabilityRequestData {
+            charge_point_id: ::std::string::String::new(),
+            connector_id: 0,
+            special_fields: ::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+impl ::protobuf::MessageFull for CheckAvailabilityRequestData {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("CheckAvailabilityRequestData").unwrap()).clone()
+    }
+}
+
+impl ::std::fmt::Display for CheckAvailabilityRequestData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for CheckAvailabilityRequestData {
+    type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
+}
+
+#[derive(PartialEq,Clone,Default,Debug)]
+// @@protoc_insertion_point(message:gateway.CheckAvailabilityRequestAckData)
+pub struct CheckAvailabilityRequestAckData {
+    // message fields
+    // @@protoc_insertion_point(field:gateway.CheckAvailabilityRequestAckData.resp)
+    pub resp: ::protobuf::MessageField<Response>,
+    // special fields
+    // @@protoc_insertion_point(special_field:gateway.CheckAvailabilityRequestAckData.special_fields)
+    pub special_fields: ::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a CheckAvailabilityRequestAckData {
+    fn default() -> &'a CheckAvailabilityRequestAckData {
+        <CheckAvailabilityRequestAckData as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl CheckAvailabilityRequestAckData {
+    pub fn new() -> CheckAvailabilityRequestAckData {
+        ::std::default::Default::default()
+    }
+
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
+        let mut fields = ::std::vec::Vec::with_capacity(1);
+        fields.push(::protobuf::reflect::rt::v2::make_message_field_accessor::<_, Response>(
+            "resp",
+            |m: &CheckAvailabilityRequestAckData| { &m.resp },
+            |m: &mut CheckAvailabilityRequestAckData| { &mut m.resp },
+        ));
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<CheckAvailabilityRequestAckData>(
+            "CheckAvailabilityRequestAckData",
+            fields,
+        )
+    }
+}
+
+impl ::protobuf::Message for CheckAvailabilityRequestAckData {
+    const NAME: &'static str = "CheckAvailabilityRequestAckData";
+
+    fn is_initialized(&self) -> bool {
+        for v in &self.resp {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    ::protobuf::rt::read_singular_message_into_field(is, &mut self.resp)?;
+                },
+                tag => {
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if let Some(v) = self.resp.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
+        if let Some(v) = self.resp.as_ref() {
+            ::protobuf::rt::write_message_field_with_cached_size(1, v, os)?;
+        }
+        os.write_unknown_fields(self.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn cached_size(&self) -> u32 {
+        self.special_fields.cached_size().get()
+    }
+
+    fn unknown_fields(&self) -> &::protobuf::UnknownFields {
+        self.special_fields.unknown_fields()
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        self.special_fields.mut_unknown_fields()
+    }
+
+    fn new() -> CheckAvailabilityRequestAckData {
+        CheckAvailabilityRequestAckData::new()
+    }
+
+    fn clear(&mut self) {
+        self.resp.clear();
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static CheckAvailabilityRequestAckData {
+        static instance: CheckAvailabilityRequestAckData = CheckAvailabilityRequestAckData {
+            resp: ::protobuf::MessageField::none(),
+            special_fields: ::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+impl ::protobuf::MessageFull for CheckAvailabilityRequestAckData {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("CheckAvailabilityRequestAckData").unwrap()).clone()
+    }
+}
+
+impl ::std::fmt::Display for CheckAvailabilityRequestAckData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for CheckAvailabilityRequestAckData {
+    type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
+}
+
+#[derive(PartialEq,Clone,Default,Debug)]
 // @@protoc_insertion_point(message:gateway.Response)
 pub struct Response {
     // message fields
@@ -1307,6 +1727,10 @@ pub enum EventType {
     AuthorizeRequest = 3,
     // @@protoc_insertion_point(enum_value:gateway.EventType.AuthorizeRequestAck)
     AuthorizeRequestAck = 4,
+    // @@protoc_insertion_point(enum_value:gateway.EventType.CheckAvailabilityRequest)
+    CheckAvailabilityRequest = 5,
+    // @@protoc_insertion_point(enum_value:gateway.EventType.CheckAvailabilityRequestAck)
+    CheckAvailabilityRequestAck = 6,
 }
 
 impl ::protobuf::Enum for EventType {
@@ -1323,6 +1747,8 @@ impl ::protobuf::Enum for EventType {
             2 => ::std::option::Option::Some(EventType::Log),
             3 => ::std::option::Option::Some(EventType::AuthorizeRequest),
             4 => ::std::option::Option::Some(EventType::AuthorizeRequestAck),
+            5 => ::std::option::Option::Some(EventType::CheckAvailabilityRequest),
+            6 => ::std::option::Option::Some(EventType::CheckAvailabilityRequestAck),
             _ => ::std::option::Option::None
         }
     }
@@ -1333,6 +1759,8 @@ impl ::protobuf::Enum for EventType {
         EventType::Log,
         EventType::AuthorizeRequest,
         EventType::AuthorizeRequestAck,
+        EventType::CheckAvailabilityRequest,
+        EventType::CheckAvailabilityRequestAck,
     ];
 }
 
@@ -1361,7 +1789,7 @@ impl EventType {
 }
 
 static file_descriptor_proto_data: &'static [u8] = b"\
-    \n!charge_point_gateway_format.proto\x12\x07gateway\"\x92\x03\n\x05Event\
+    \n!charge_point_gateway_format.proto\x12\x07gateway\"\xfc\x04\n\x05Event\
     \x12-\n\x08event_id\x18\x01\x20\x01(\x0e2\x12.gateway.EventTypeR\x07even\
     tId\x12k\n\x1eboot_notification_request_data\x18\x02\x20\x01(\x0b2$.gate\
     way.BootNotificationRequestDataH\0R\x1bbootNotificationRequestData\x12-\
@@ -1369,9 +1797,13 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x12U\n\x16authorize_request_data\x18\x04\x20\x01(\x0b2\x1d.gateway.Auth\
     orizeRequestDataH\0R\x14authorizeRequestData\x12_\n\x1aauthorize_request\
     _ack_data\x18\x05\x20\x01(\x0b2\x20.gateway.AuthorizeRequestAckDataH\0R\
-    \x17authorizeRequestAckDataB\x06\n\x04data\"\x95\x03\n\x1bBootNotificati\
-    onRequestData\x127\n\x18charge_box_serial_number\x18\x01\x20\x01(\tR\x15\
-    chargeBoxSerialNumber\x12,\n\x12charge_point_model\x18\x02\x20\x01(\tR\
+    \x17authorizeRequestAckData\x12n\n\x1fcheck_availability_request_data\
+    \x18\x06\x20\x01(\x0b2%.gateway.CheckAvailabilityRequestDataH\0R\x1cchec\
+    kAvailabilityRequestData\x12x\n#check_availability_request_ack_data\x18\
+    \x07\x20\x01(\x0b2(.gateway.CheckAvailabilityRequestAckDataH\0R\x1fcheck\
+    AvailabilityRequestAckDataB\x06\n\x04data\"\x95\x03\n\x1bBootNotificatio\
+    nRequestData\x127\n\x18charge_box_serial_number\x18\x01\x20\x01(\tR\x15c\
+    hargeBoxSerialNumber\x12,\n\x12charge_point_model\x18\x02\x20\x01(\tR\
     \x10chargePointModel\x12;\n\x1aCharge_point_serial_number\x18\x03\x20\
     \x01(\tR\x17ChargePointSerialNumber\x12.\n\x13Charge_point_vendor\x18\
     \x04\x20\x01(\tR\x11ChargePointVendor\x12)\n\x10firmware_version\x18\x05\
@@ -1383,87 +1815,110 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x11.gateway.ResponseR\x04resp\">\n\x14AuthorizeRequestData\x12&\n\x0fch\
     arge_point_id\x18\x01\x20\x01(\tR\rchargePointId\"@\n\x17AuthorizeReques\
     tAckData\x12%\n\x04resp\x18\x01\x20\x01(\x0b2\x11.gateway.ResponseR\x04r\
-    esp\":\n\x08Response\x12\x14\n\x05error\x18\x01\x20\x01(\x08R\x05error\
-    \x12\x18\n\x07message\x18\x02\x20\x01(\tR\x07message*v\n\tEventType\x12\
-    \x1b\n\x17BootNotificationRequest\x10\0\x12\x14\n\x10HeartbeatRequest\
-    \x10\x01\x12\x07\n\x03Log\x10\x02\x12\x14\n\x10AuthorizeRequest\x10\x03\
-    \x12\x17\n\x13AuthorizeRequestAck\x10\x04BWZUgithub.com/peaqnetwork/peaq\
-    -network-ev-charging-message-format/golang/gateway;gatewayJ\x8c\x0c\n\
-    \x06\x12\x04\0\0.\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\
+    esp\"i\n\x1cCheckAvailabilityRequestData\x12&\n\x0fcharge_point_id\x18\
+    \x01\x20\x01(\tR\rchargePointId\x12!\n\x0cconnector_id\x18\x02\x20\x01(\
+    \x05R\x0bconnectorId\"H\n\x1fCheckAvailabilityRequestAckData\x12%\n\x04r\
+    esp\x18\x01\x20\x01(\x0b2\x11.gateway.ResponseR\x04resp\":\n\x08Response\
+    \x12\x14\n\x05error\x18\x01\x20\x01(\x08R\x05error\x12\x18\n\x07message\
+    \x18\x02\x20\x01(\tR\x07message*\xb5\x01\n\tEventType\x12\x1b\n\x17BootN\
+    otificationRequest\x10\0\x12\x14\n\x10HeartbeatRequest\x10\x01\x12\x07\n\
+    \x03Log\x10\x02\x12\x14\n\x10AuthorizeRequest\x10\x03\x12\x17\n\x13Autho\
+    rizeRequestAck\x10\x04\x12\x1c\n\x18CheckAvailabilityRequest\x10\x05\x12\
+    \x1f\n\x1bCheckAvailabilityRequestAck\x10\x06BWZUgithub.com/peaqnetwork/\
+    peaq-network-ev-charging-message-format/golang/gateway;gatewayJ\xa0\x0f\
+    \n\x06\x12\x04\0\08\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\
     \x12\x03\x02\0\x10\n\x08\n\x01\x08\x12\x03\x03\0l\n\t\n\x02\x08\x0b\x12\
-    \x03\x03\0l\n\n\n\x02\x05\0\x12\x04\x05\0\x0b\x01\n\n\n\x03\x05\0\x01\
-    \x12\x03\x05\x05\x0e\n\x0b\n\x04\x05\0\x02\0\x12\x03\x06\x02\x1e\n\x0c\n\
-    \x05\x05\0\x02\0\x01\x12\x03\x06\x02\x19\n\x0c\n\x05\x05\0\x02\0\x02\x12\
-    \x03\x06\x1c\x1d\n\x0b\n\x04\x05\0\x02\x01\x12\x03\x07\x02\x17\n\x0c\n\
-    \x05\x05\0\x02\x01\x01\x12\x03\x07\x02\x12\n\x0c\n\x05\x05\0\x02\x01\x02\
-    \x12\x03\x07\x15\x16\n\x0b\n\x04\x05\0\x02\x02\x12\x03\x08\x02\n\n\x0c\n\
-    \x05\x05\0\x02\x02\x01\x12\x03\x08\x02\x05\n\x0c\n\x05\x05\0\x02\x02\x02\
-    \x12\x03\x08\x08\t\n\x0b\n\x04\x05\0\x02\x03\x12\x03\t\x02\x17\n\x0c\n\
-    \x05\x05\0\x02\x03\x01\x12\x03\t\x02\x12\n\x0c\n\x05\x05\0\x02\x03\x02\
-    \x12\x03\t\x15\x16\n\x0b\n\x04\x05\0\x02\x04\x12\x03\n\x02\x1a\n\x0c\n\
-    \x05\x05\0\x02\x04\x01\x12\x03\n\x02\x15\n\x0c\n\x05\x05\0\x02\x04\x02\
-    \x12\x03\n\x18\x19\n\n\n\x02\x04\0\x12\x04\r\0\x15\x01\n\n\n\x03\x04\0\
-    \x01\x12\x03\r\x08\r\n\x0b\n\x04\x04\0\x02\0\x12\x03\x0e\x02\x19\n\x0c\n\
-    \x05\x04\0\x02\0\x06\x12\x03\x0e\x02\x0b\n\x0c\n\x05\x04\0\x02\0\x01\x12\
-    \x03\x0e\x0c\x14\n\x0c\n\x05\x04\0\x02\0\x03\x12\x03\x0e\x17\x18\n\x0c\n\
-    \x04\x04\0\x08\0\x12\x04\x0f\x02\x14\x03\n\x0c\n\x05\x04\0\x08\0\x01\x12\
-    \x03\x0f\x08\x0c\n\x0b\n\x04\x04\0\x02\x01\x12\x03\x10\x04C\n\x0c\n\x05\
-    \x04\0\x02\x01\x06\x12\x03\x10\x04\x1f\n\x0c\n\x05\x04\0\x02\x01\x01\x12\
-    \x03\x10\x20>\n\x0c\n\x05\x04\0\x02\x01\x03\x12\x03\x10AB\n\x0b\n\x04\
-    \x04\0\x02\x02\x12\x03\x11\x04\x19\n\x0c\n\x05\x04\0\x02\x02\x06\x12\x03\
-    \x11\x04\x0b\n\x0c\n\x05\x04\0\x02\x02\x01\x12\x03\x11\x0c\x14\n\x0c\n\
-    \x05\x04\0\x02\x02\x03\x12\x03\x11\x17\x18\n\x0b\n\x04\x04\0\x02\x03\x12\
-    \x03\x12\x044\n\x0c\n\x05\x04\0\x02\x03\x06\x12\x03\x12\x04\x18\n\x0c\n\
-    \x05\x04\0\x02\x03\x01\x12\x03\x12\x19/\n\x0c\n\x05\x04\0\x02\x03\x03\
-    \x12\x03\x1223\n\x0b\n\x04\x04\0\x02\x04\x12\x03\x13\x04;\n\x0c\n\x05\
-    \x04\0\x02\x04\x06\x12\x03\x13\x04\x1b\n\x0c\n\x05\x04\0\x02\x04\x01\x12\
-    \x03\x13\x1c6\n\x0c\n\x05\x04\0\x02\x04\x03\x12\x03\x139:\n\n\n\x02\x04\
-    \x01\x12\x04\x17\0!\x01\n\n\n\x03\x04\x01\x01\x12\x03\x17\x08#\n\x0b\n\
-    \x04\x04\x01\x02\0\x12\x03\x18\x02&\n\x0c\n\x05\x04\x01\x02\0\x05\x12\
-    \x03\x18\x02\x08\n\x0c\n\x05\x04\x01\x02\0\x01\x12\x03\x18\t!\n\x0c\n\
-    \x05\x04\x01\x02\0\x03\x12\x03\x18$%\n\x0b\n\x04\x04\x01\x02\x01\x12\x03\
-    \x19\x02\x20\n\x0c\n\x05\x04\x01\x02\x01\x05\x12\x03\x19\x02\x08\n\x0c\n\
-    \x05\x04\x01\x02\x01\x01\x12\x03\x19\t\x1b\n\x0c\n\x05\x04\x01\x02\x01\
-    \x03\x12\x03\x19\x1e\x1f\n\x0b\n\x04\x04\x01\x02\x02\x12\x03\x1a\x02(\n\
-    \x0c\n\x05\x04\x01\x02\x02\x05\x12\x03\x1a\x02\x08\n\x0c\n\x05\x04\x01\
-    \x02\x02\x01\x12\x03\x1a\t#\n\x0c\n\x05\x04\x01\x02\x02\x03\x12\x03\x1a&\
-    '\n\x0b\n\x04\x04\x01\x02\x03\x12\x03\x1b\x02!\n\x0c\n\x05\x04\x01\x02\
-    \x03\x05\x12\x03\x1b\x02\x08\n\x0c\n\x05\x04\x01\x02\x03\x01\x12\x03\x1b\
-    \t\x1c\n\x0c\n\x05\x04\x01\x02\x03\x03\x12\x03\x1b\x1f\x20\n\x0b\n\x04\
-    \x04\x01\x02\x04\x12\x03\x1c\x02\x1e\n\x0c\n\x05\x04\x01\x02\x04\x05\x12\
-    \x03\x1c\x02\x08\n\x0c\n\x05\x04\x01\x02\x04\x01\x12\x03\x1c\t\x19\n\x0c\
-    \n\x05\x04\x01\x02\x04\x03\x12\x03\x1c\x1c\x1d\n\x0b\n\x04\x04\x01\x02\
-    \x05\x12\x03\x1d\x02\x13\n\x0c\n\x05\x04\x01\x02\x05\x05\x12\x03\x1d\x02\
-    \x08\n\x0c\n\x05\x04\x01\x02\x05\x01\x12\x03\x1d\t\x0e\n\x0c\n\x05\x04\
-    \x01\x02\x05\x03\x12\x03\x1d\x11\x12\n\x0b\n\x04\x04\x01\x02\x06\x12\x03\
-    \x1e\x02\x12\n\x0c\n\x05\x04\x01\x02\x06\x05\x12\x03\x1e\x02\x08\n\x0c\n\
-    \x05\x04\x01\x02\x06\x01\x12\x03\x1e\t\r\n\x0c\n\x05\x04\x01\x02\x06\x03\
-    \x12\x03\x1e\x10\x11\n\x0b\n\x04\x04\x01\x02\x07\x12\x03\x1f\x02!\n\x0c\
-    \n\x05\x04\x01\x02\x07\x05\x12\x03\x1f\x02\x08\n\x0c\n\x05\x04\x01\x02\
-    \x07\x01\x12\x03\x1f\t\x1c\n\x0c\n\x05\x04\x01\x02\x07\x03\x12\x03\x1f\
-    \x1f\x20\n\x0b\n\x04\x04\x01\x02\x08\x12\x03\x20\x02\x18\n\x0c\n\x05\x04\
-    \x01\x02\x08\x05\x12\x03\x20\x02\x08\n\x0c\n\x05\x04\x01\x02\x08\x01\x12\
-    \x03\x20\t\x13\n\x0c\n\x05\x04\x01\x02\x08\x03\x12\x03\x20\x16\x17\n\n\n\
-    \x02\x04\x02\x12\x04#\0&\x01\n\n\n\x03\x04\x02\x01\x12\x03#\x08\x0f\n\
-    \x0b\n\x04\x04\x02\x02\0\x12\x03$\x02\x1a\n\x0c\n\x05\x04\x02\x02\0\x05\
-    \x12\x03$\x02\x08\n\x0c\n\x05\x04\x02\x02\0\x01\x12\x03$\t\x15\n\x0c\n\
-    \x05\x04\x02\x02\0\x03\x12\x03$\x18\x19\n\x0b\n\x04\x04\x02\x02\x01\x12\
-    \x03%\x02\x14\n\x0c\n\x05\x04\x02\x02\x01\x06\x12\x03%\x02\n\n\x0c\n\x05\
-    \x04\x02\x02\x01\x01\x12\x03%\x0b\x0f\n\x0c\n\x05\x04\x02\x02\x01\x03\
-    \x12\x03%\x12\x13\n\t\n\x02\x04\x03\x12\x03(\0<\n\n\n\x03\x04\x03\x01\
-    \x12\x03(\x08\x1c\n\x0b\n\x04\x04\x03\x02\0\x12\x03(\x1f:\n\x0c\n\x05\
-    \x04\x03\x02\0\x05\x12\x03(\x1f%\n\x0c\n\x05\x04\x03\x02\0\x01\x12\x03(&\
-    5\n\x0c\n\x05\x04\x03\x02\0\x03\x12\x03(89\n\t\n\x02\x04\x04\x12\x03)\06\
-    \n\n\n\x03\x04\x04\x01\x12\x03)\x08\x1f\n\x0b\n\x04\x04\x04\x02\0\x12\
-    \x03)\"4\n\x0c\n\x05\x04\x04\x02\0\x06\x12\x03)\"*\n\x0c\n\x05\x04\x04\
-    \x02\0\x01\x12\x03)+/\n\x0c\n\x05\x04\x04\x02\0\x03\x12\x03)23\n\n\n\x02\
-    \x04\x05\x12\x04+\0.\x01\n\n\n\x03\x04\x05\x01\x12\x03+\x08\x10\n\x0b\n\
-    \x04\x04\x05\x02\0\x12\x03,\x02\x11\n\x0c\n\x05\x04\x05\x02\0\x05\x12\
-    \x03,\x02\x06\n\x0c\n\x05\x04\x05\x02\0\x01\x12\x03,\x07\x0c\n\x0c\n\x05\
-    \x04\x05\x02\0\x03\x12\x03,\x0f\x10\n\x0b\n\x04\x04\x05\x02\x01\x12\x03-\
-    \x02\x15\n\x0c\n\x05\x04\x05\x02\x01\x05\x12\x03-\x02\x08\n\x0c\n\x05\
-    \x04\x05\x02\x01\x01\x12\x03-\t\x10\n\x0c\n\x05\x04\x05\x02\x01\x03\x12\
-    \x03-\x13\x14b\x06proto3\
+    \x03\x03\0l\n\n\n\x02\x05\0\x12\x04\x05\0\r\x01\n\n\n\x03\x05\0\x01\x12\
+    \x03\x05\x05\x0e\n\x0b\n\x04\x05\0\x02\0\x12\x03\x06\x02\x1e\n\x0c\n\x05\
+    \x05\0\x02\0\x01\x12\x03\x06\x02\x19\n\x0c\n\x05\x05\0\x02\0\x02\x12\x03\
+    \x06\x1c\x1d\n\x0b\n\x04\x05\0\x02\x01\x12\x03\x07\x02\x17\n\x0c\n\x05\
+    \x05\0\x02\x01\x01\x12\x03\x07\x02\x12\n\x0c\n\x05\x05\0\x02\x01\x02\x12\
+    \x03\x07\x15\x16\n\x0b\n\x04\x05\0\x02\x02\x12\x03\x08\x02\n\n\x0c\n\x05\
+    \x05\0\x02\x02\x01\x12\x03\x08\x02\x05\n\x0c\n\x05\x05\0\x02\x02\x02\x12\
+    \x03\x08\x08\t\n\x0b\n\x04\x05\0\x02\x03\x12\x03\t\x02\x17\n\x0c\n\x05\
+    \x05\0\x02\x03\x01\x12\x03\t\x02\x12\n\x0c\n\x05\x05\0\x02\x03\x02\x12\
+    \x03\t\x15\x16\n\x0b\n\x04\x05\0\x02\x04\x12\x03\n\x02\x1a\n\x0c\n\x05\
+    \x05\0\x02\x04\x01\x12\x03\n\x02\x15\n\x0c\n\x05\x05\0\x02\x04\x02\x12\
+    \x03\n\x18\x19\n\x0b\n\x04\x05\0\x02\x05\x12\x03\x0b\x02\x1f\n\x0c\n\x05\
+    \x05\0\x02\x05\x01\x12\x03\x0b\x02\x1a\n\x0c\n\x05\x05\0\x02\x05\x02\x12\
+    \x03\x0b\x1d\x1e\n\x0b\n\x04\x05\0\x02\x06\x12\x03\x0c\x02\"\n\x0c\n\x05\
+    \x05\0\x02\x06\x01\x12\x03\x0c\x02\x1d\n\x0c\n\x05\x05\0\x02\x06\x02\x12\
+    \x03\x0c\x20!\n\n\n\x02\x04\0\x12\x04\x0f\0\x19\x01\n\n\n\x03\x04\0\x01\
+    \x12\x03\x0f\x08\r\n\x0b\n\x04\x04\0\x02\0\x12\x03\x10\x02\x19\n\x0c\n\
+    \x05\x04\0\x02\0\x06\x12\x03\x10\x02\x0b\n\x0c\n\x05\x04\0\x02\0\x01\x12\
+    \x03\x10\x0c\x14\n\x0c\n\x05\x04\0\x02\0\x03\x12\x03\x10\x17\x18\n\x0c\n\
+    \x04\x04\0\x08\0\x12\x04\x11\x02\x18\x03\n\x0c\n\x05\x04\0\x08\0\x01\x12\
+    \x03\x11\x08\x0c\n\x0b\n\x04\x04\0\x02\x01\x12\x03\x12\x04C\n\x0c\n\x05\
+    \x04\0\x02\x01\x06\x12\x03\x12\x04\x1f\n\x0c\n\x05\x04\0\x02\x01\x01\x12\
+    \x03\x12\x20>\n\x0c\n\x05\x04\0\x02\x01\x03\x12\x03\x12AB\n\x0b\n\x04\
+    \x04\0\x02\x02\x12\x03\x13\x04\x19\n\x0c\n\x05\x04\0\x02\x02\x06\x12\x03\
+    \x13\x04\x0b\n\x0c\n\x05\x04\0\x02\x02\x01\x12\x03\x13\x0c\x14\n\x0c\n\
+    \x05\x04\0\x02\x02\x03\x12\x03\x13\x17\x18\n\x0b\n\x04\x04\0\x02\x03\x12\
+    \x03\x14\x044\n\x0c\n\x05\x04\0\x02\x03\x06\x12\x03\x14\x04\x18\n\x0c\n\
+    \x05\x04\0\x02\x03\x01\x12\x03\x14\x19/\n\x0c\n\x05\x04\0\x02\x03\x03\
+    \x12\x03\x1423\n\x0b\n\x04\x04\0\x02\x04\x12\x03\x15\x04;\n\x0c\n\x05\
+    \x04\0\x02\x04\x06\x12\x03\x15\x04\x1b\n\x0c\n\x05\x04\0\x02\x04\x01\x12\
+    \x03\x15\x1c6\n\x0c\n\x05\x04\0\x02\x04\x03\x12\x03\x159:\n\x0b\n\x04\
+    \x04\0\x02\x05\x12\x03\x16\x04E\n\x0c\n\x05\x04\0\x02\x05\x06\x12\x03\
+    \x16\x04\x20\n\x0c\n\x05\x04\0\x02\x05\x01\x12\x03\x16!@\n\x0c\n\x05\x04\
+    \0\x02\x05\x03\x12\x03\x16CD\n\x0b\n\x04\x04\0\x02\x06\x12\x03\x17\x04L\
+    \n\x0c\n\x05\x04\0\x02\x06\x06\x12\x03\x17\x04#\n\x0c\n\x05\x04\0\x02\
+    \x06\x01\x12\x03\x17$G\n\x0c\n\x05\x04\0\x02\x06\x03\x12\x03\x17JK\n\n\n\
+    \x02\x04\x01\x12\x04\x1b\0%\x01\n\n\n\x03\x04\x01\x01\x12\x03\x1b\x08#\n\
+    \x0b\n\x04\x04\x01\x02\0\x12\x03\x1c\x02&\n\x0c\n\x05\x04\x01\x02\0\x05\
+    \x12\x03\x1c\x02\x08\n\x0c\n\x05\x04\x01\x02\0\x01\x12\x03\x1c\t!\n\x0c\
+    \n\x05\x04\x01\x02\0\x03\x12\x03\x1c$%\n\x0b\n\x04\x04\x01\x02\x01\x12\
+    \x03\x1d\x02\x20\n\x0c\n\x05\x04\x01\x02\x01\x05\x12\x03\x1d\x02\x08\n\
+    \x0c\n\x05\x04\x01\x02\x01\x01\x12\x03\x1d\t\x1b\n\x0c\n\x05\x04\x01\x02\
+    \x01\x03\x12\x03\x1d\x1e\x1f\n\x0b\n\x04\x04\x01\x02\x02\x12\x03\x1e\x02\
+    (\n\x0c\n\x05\x04\x01\x02\x02\x05\x12\x03\x1e\x02\x08\n\x0c\n\x05\x04\
+    \x01\x02\x02\x01\x12\x03\x1e\t#\n\x0c\n\x05\x04\x01\x02\x02\x03\x12\x03\
+    \x1e&'\n\x0b\n\x04\x04\x01\x02\x03\x12\x03\x1f\x02!\n\x0c\n\x05\x04\x01\
+    \x02\x03\x05\x12\x03\x1f\x02\x08\n\x0c\n\x05\x04\x01\x02\x03\x01\x12\x03\
+    \x1f\t\x1c\n\x0c\n\x05\x04\x01\x02\x03\x03\x12\x03\x1f\x1f\x20\n\x0b\n\
+    \x04\x04\x01\x02\x04\x12\x03\x20\x02\x1e\n\x0c\n\x05\x04\x01\x02\x04\x05\
+    \x12\x03\x20\x02\x08\n\x0c\n\x05\x04\x01\x02\x04\x01\x12\x03\x20\t\x19\n\
+    \x0c\n\x05\x04\x01\x02\x04\x03\x12\x03\x20\x1c\x1d\n\x0b\n\x04\x04\x01\
+    \x02\x05\x12\x03!\x02\x13\n\x0c\n\x05\x04\x01\x02\x05\x05\x12\x03!\x02\
+    \x08\n\x0c\n\x05\x04\x01\x02\x05\x01\x12\x03!\t\x0e\n\x0c\n\x05\x04\x01\
+    \x02\x05\x03\x12\x03!\x11\x12\n\x0b\n\x04\x04\x01\x02\x06\x12\x03\"\x02\
+    \x12\n\x0c\n\x05\x04\x01\x02\x06\x05\x12\x03\"\x02\x08\n\x0c\n\x05\x04\
+    \x01\x02\x06\x01\x12\x03\"\t\r\n\x0c\n\x05\x04\x01\x02\x06\x03\x12\x03\"\
+    \x10\x11\n\x0b\n\x04\x04\x01\x02\x07\x12\x03#\x02!\n\x0c\n\x05\x04\x01\
+    \x02\x07\x05\x12\x03#\x02\x08\n\x0c\n\x05\x04\x01\x02\x07\x01\x12\x03#\t\
+    \x1c\n\x0c\n\x05\x04\x01\x02\x07\x03\x12\x03#\x1f\x20\n\x0b\n\x04\x04\
+    \x01\x02\x08\x12\x03$\x02\x18\n\x0c\n\x05\x04\x01\x02\x08\x05\x12\x03$\
+    \x02\x08\n\x0c\n\x05\x04\x01\x02\x08\x01\x12\x03$\t\x13\n\x0c\n\x05\x04\
+    \x01\x02\x08\x03\x12\x03$\x16\x17\n\n\n\x02\x04\x02\x12\x04'\0*\x01\n\n\
+    \n\x03\x04\x02\x01\x12\x03'\x08\x0f\n\x0b\n\x04\x04\x02\x02\0\x12\x03(\
+    \x02\x1a\n\x0c\n\x05\x04\x02\x02\0\x05\x12\x03(\x02\x08\n\x0c\n\x05\x04\
+    \x02\x02\0\x01\x12\x03(\t\x15\n\x0c\n\x05\x04\x02\x02\0\x03\x12\x03(\x18\
+    \x19\n\x0b\n\x04\x04\x02\x02\x01\x12\x03)\x02\x14\n\x0c\n\x05\x04\x02\
+    \x02\x01\x06\x12\x03)\x02\n\n\x0c\n\x05\x04\x02\x02\x01\x01\x12\x03)\x0b\
+    \x0f\n\x0c\n\x05\x04\x02\x02\x01\x03\x12\x03)\x12\x13\n\t\n\x02\x04\x03\
+    \x12\x03,\0<\n\n\n\x03\x04\x03\x01\x12\x03,\x08\x1c\n\x0b\n\x04\x04\x03\
+    \x02\0\x12\x03,\x1f:\n\x0c\n\x05\x04\x03\x02\0\x05\x12\x03,\x1f%\n\x0c\n\
+    \x05\x04\x03\x02\0\x01\x12\x03,&5\n\x0c\n\x05\x04\x03\x02\0\x03\x12\x03,\
+    89\n\t\n\x02\x04\x04\x12\x03-\06\n\n\n\x03\x04\x04\x01\x12\x03-\x08\x1f\
+    \n\x0b\n\x04\x04\x04\x02\0\x12\x03-\"4\n\x0c\n\x05\x04\x04\x02\0\x06\x12\
+    \x03-\"*\n\x0c\n\x05\x04\x04\x02\0\x01\x12\x03-+/\n\x0c\n\x05\x04\x04\
+    \x02\0\x03\x12\x03-23\n\n\n\x02\x04\x05\x12\x04/\02\x01\n\n\n\x03\x04\
+    \x05\x01\x12\x03/\x08$\n\x0b\n\x04\x04\x05\x02\0\x12\x030\x02\x1d\n\x0c\
+    \n\x05\x04\x05\x02\0\x05\x12\x030\x02\x08\n\x0c\n\x05\x04\x05\x02\0\x01\
+    \x12\x030\t\x18\n\x0c\n\x05\x04\x05\x02\0\x03\x12\x030\x1b\x1c\n\x0b\n\
+    \x04\x04\x05\x02\x01\x12\x031\x02\x19\n\x0c\n\x05\x04\x05\x02\x01\x05\
+    \x12\x031\x02\x07\n\x0c\n\x05\x04\x05\x02\x01\x01\x12\x031\x08\x14\n\x0c\
+    \n\x05\x04\x05\x02\x01\x03\x12\x031\x17\x18\n\t\n\x02\x04\x06\x12\x033\0\
+    >\n\n\n\x03\x04\x06\x01\x12\x033\x08'\n\x0b\n\x04\x04\x06\x02\0\x12\x033\
+    *<\n\x0c\n\x05\x04\x06\x02\0\x06\x12\x033*2\n\x0c\n\x05\x04\x06\x02\0\
+    \x01\x12\x03337\n\x0c\n\x05\x04\x06\x02\0\x03\x12\x033:;\n\n\n\x02\x04\
+    \x07\x12\x045\08\x01\n\n\n\x03\x04\x07\x01\x12\x035\x08\x10\n\x0b\n\x04\
+    \x04\x07\x02\0\x12\x036\x02\x11\n\x0c\n\x05\x04\x07\x02\0\x05\x12\x036\
+    \x02\x06\n\x0c\n\x05\x04\x07\x02\0\x01\x12\x036\x07\x0c\n\x0c\n\x05\x04\
+    \x07\x02\0\x03\x12\x036\x0f\x10\n\x0b\n\x04\x04\x07\x02\x01\x12\x037\x02\
+    \x15\n\x0c\n\x05\x04\x07\x02\x01\x05\x12\x037\x02\x08\n\x0c\n\x05\x04\
+    \x07\x02\x01\x01\x12\x037\t\x10\n\x0c\n\x05\x04\x07\x02\x01\x03\x12\x037\
+    \x13\x14b\x06proto3\
 ";
 
 /// `FileDescriptorProto` object which was a source for this generated file
@@ -1479,12 +1934,14 @@ pub fn file_descriptor() -> ::protobuf::reflect::FileDescriptor {
     static file_descriptor_lazy: ::protobuf::rt::Lazy<::protobuf::reflect::GeneratedFileDescriptor> = ::protobuf::rt::Lazy::new();
     let file_descriptor = file_descriptor_lazy.get(|| {
         let mut deps = ::std::vec::Vec::with_capacity(0);
-        let mut messages = ::std::vec::Vec::with_capacity(6);
+        let mut messages = ::std::vec::Vec::with_capacity(8);
         messages.push(Event::generated_message_descriptor_data());
         messages.push(BootNotificationRequestData::generated_message_descriptor_data());
         messages.push(LogData::generated_message_descriptor_data());
         messages.push(AuthorizeRequestData::generated_message_descriptor_data());
         messages.push(AuthorizeRequestAckData::generated_message_descriptor_data());
+        messages.push(CheckAvailabilityRequestData::generated_message_descriptor_data());
+        messages.push(CheckAvailabilityRequestAckData::generated_message_descriptor_data());
         messages.push(Response::generated_message_descriptor_data());
         let mut enums = ::std::vec::Vec::with_capacity(1);
         enums.push(EventType::generated_enum_descriptor_data());
