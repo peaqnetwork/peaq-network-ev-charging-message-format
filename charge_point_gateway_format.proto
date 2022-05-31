@@ -47,7 +47,7 @@ message AuthorizeRequestAckData { Response resp = 1; }
 
 message CheckAvailabilityRequestData {
   string charge_point_id = 1;
-  string connector_id = 2;
+  int32 connector_id = 2;
 }
 message CheckAvailabilityRequestAckData { Response resp = 1; }
 
