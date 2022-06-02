@@ -11,6 +11,8 @@ enum EventType {
   AuthorizeRequestAck = 4;
   CheckAvailabilityRequest = 5;
   CheckAvailabilityRequestAck = 6;
+  StartChargeRequest = 7;
+  StartChargeRequestAck = 8;
 }
 
 message Event {
@@ -22,6 +24,8 @@ message Event {
     AuthorizeRequestAckData authorize_request_ack_data = 5;
     CheckAvailabilityRequestData check_availability_request_data = 6;
     CheckAvailabilityRequestAckData check_availability_request_ack_data = 7;
+    StartChargeRequestData start_charge_request_data = 8;
+    StartChargeRequestAckData start_charge_request_ack_data = 9;
   }
 }
 
@@ -42,14 +46,30 @@ message LogData {
   Response resp = 2;
 }
 
-message AuthorizeRequestData { string charge_point_id = 1; }
-message AuthorizeRequestAckData { Response resp = 1; }
+message AuthorizeRequestData {
+  string charge_point_client_id = 1;
+  string consumer_public_key = 2;
+}
+message AuthorizeRequestAckData {
+  string consumer_public_key = 1;
+  Response resp = 2;
+}
 
 message CheckAvailabilityRequestData {
-  string charge_point_id = 1;
+  string charge_point_client_id = 1;
   int32 connector_id = 2;
 }
 message CheckAvailabilityRequestAckData { Response resp = 1; }
+
+message StartChargeRequestData {
+  string charge_point_client_id = 1;
+  int32 connector_id = 2;
+  string consumer_public_key = 3;
+}
+message StartChargeRequestAckData {
+  string consumer_public_key = 1;
+  Response resp = 2;
+}
 
 message Response {
   bool error = 1;
