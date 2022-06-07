@@ -4,15 +4,16 @@ package gateway;
 option go_package = "github.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gateway";
 
 enum EventType {
-  BootNotificationRequest = 0;
-  HeartbeatRequest = 1;
-  Log = 2;
-  AuthorizeRequest = 3;
-  AuthorizeRequestAck = 4;
-  CheckAvailabilityRequest = 5;
-  CheckAvailabilityRequestAck = 6;
-  StartChargeRequest = 7;
-  StartChargeRequestAck = 8;
+  BOOT_NOTIFICATION_REQUEST = 0;
+  HEARTBEAT_REQUEST = 1;
+  LOG = 2;
+  AUTHORIZE_REQUEST = 3;
+  AUTHORIZE_REQUEST_ACK = 4;
+  CHECK_AVAILABILITY_REQUEST = 5;
+  CHECK_AVAILABILITY_REQUEST_ACK = 6;
+  START_CHARGE_REQUEST = 7;
+  START_CHARGE_REQUEST_ACK = 8;
+  CHARGE_STATUS = 9;
 }
 
 message Event {
@@ -26,6 +27,7 @@ message Event {
     CheckAvailabilityRequestAckData check_availability_request_ack_data = 7;
     StartChargeRequestData start_charge_request_data = 8;
     StartChargeRequestAckData start_charge_request_ack_data = 9;
+    ChargingStatusData charge_status_data = 10;
   }
 }
 
@@ -74,4 +76,12 @@ message StartChargeRequestAckData {
 message Response {
   bool error = 1;
   string message = 2;
+}
+
+message ChargingStatusData {
+  float initial_battery_level = 1;
+  float battery_level = 2;
+  float current_offered = 3;
+  string battery_unit = 4;
+  string current_unit = 5;
 }

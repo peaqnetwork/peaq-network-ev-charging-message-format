@@ -15,19 +15,20 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!charge_point_gateway_format.proto\x12\x07gateway\"\xf2\x04\n\x05\x45vent\x12$\n\x08\x65vent_id\x18\x01 \x01(\x0e\x32\x12.gateway.EventType\x12N\n\x1e\x62oot_notification_request_data\x18\x02 \x01(\x0b\x32$.gateway.BootNotificationRequestDataH\x00\x12$\n\x08log_data\x18\x03 \x01(\x0b\x32\x10.gateway.LogDataH\x00\x12?\n\x16\x61uthorize_request_data\x18\x04 \x01(\x0b\x32\x1d.gateway.AuthorizeRequestDataH\x00\x12\x46\n\x1a\x61uthorize_request_ack_data\x18\x05 \x01(\x0b\x32 .gateway.AuthorizeRequestAckDataH\x00\x12P\n\x1f\x63heck_availability_request_data\x18\x06 \x01(\x0b\x32%.gateway.CheckAvailabilityRequestDataH\x00\x12W\n#check_availability_request_ack_data\x18\x07 \x01(\x0b\x32(.gateway.CheckAvailabilityRequestAckDataH\x00\x12\x44\n\x19start_charge_request_data\x18\x08 \x01(\x0b\x32\x1f.gateway.StartChargeRequestDataH\x00\x12K\n\x1dstart_charge_request_ack_data\x18\t \x01(\x0b\x32\".gateway.StartChargeRequestAckDataH\x00\x42\x06\n\x04\x64\x61ta\"\x84\x02\n\x1b\x42ootNotificationRequestData\x12 \n\x18\x63harge_box_serial_number\x18\x01 \x01(\t\x12\x1a\n\x12\x63harge_point_model\x18\x02 \x01(\t\x12\"\n\x1a\x43harge_point_serial_number\x18\x03 \x01(\t\x12\x1b\n\x13\x43harge_point_vendor\x18\x04 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x05 \x01(\t\x12\r\n\x05iccid\x18\x06 \x01(\t\x12\x0c\n\x04imsi\x18\x07 \x01(\t\x12\x1b\n\x13meter_serial_number\x18\x08 \x01(\t\x12\x12\n\nmeter_type\x18\t \x01(\t\"@\n\x07LogData\x12\x14\n\x0c\x63urrent_time\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"S\n\x14\x41uthorizeRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x1b\n\x13\x63onsumer_public_key\x18\x02 \x01(\t\"W\n\x17\x41uthorizeRequestAckData\x12\x1b\n\x13\x63onsumer_public_key\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"T\n\x1c\x43heckAvailabilityRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x02 \x01(\x05\"B\n\x1f\x43heckAvailabilityRequestAckData\x12\x1f\n\x04resp\x18\x01 \x01(\x0b\x32\x11.gateway.Response\"k\n\x16StartChargeRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x02 \x01(\x05\x12\x1b\n\x13\x63onsumer_public_key\x18\x03 \x01(\t\"Y\n\x19StartChargeRequestAckData\x12\x1b\n\x13\x63onsumer_public_key\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"*\n\x08Response\x12\r\n\x05\x65rror\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t*\xe8\x01\n\tEventType\x12\x1b\n\x17\x42ootNotificationRequest\x10\x00\x12\x14\n\x10HeartbeatRequest\x10\x01\x12\x07\n\x03Log\x10\x02\x12\x14\n\x10\x41uthorizeRequest\x10\x03\x12\x17\n\x13\x41uthorizeRequestAck\x10\x04\x12\x1c\n\x18\x43heckAvailabilityRequest\x10\x05\x12\x1f\n\x1b\x43heckAvailabilityRequestAck\x10\x06\x12\x16\n\x12StartChargeRequest\x10\x07\x12\x19\n\x15StartChargeRequestAck\x10\x08\x42WZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gatewayb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!charge_point_gateway_format.proto\x12\x07gateway\"\xad\x05\n\x05\x45vent\x12$\n\x08\x65vent_id\x18\x01 \x01(\x0e\x32\x12.gateway.EventType\x12N\n\x1e\x62oot_notification_request_data\x18\x02 \x01(\x0b\x32$.gateway.BootNotificationRequestDataH\x00\x12$\n\x08log_data\x18\x03 \x01(\x0b\x32\x10.gateway.LogDataH\x00\x12?\n\x16\x61uthorize_request_data\x18\x04 \x01(\x0b\x32\x1d.gateway.AuthorizeRequestDataH\x00\x12\x46\n\x1a\x61uthorize_request_ack_data\x18\x05 \x01(\x0b\x32 .gateway.AuthorizeRequestAckDataH\x00\x12P\n\x1f\x63heck_availability_request_data\x18\x06 \x01(\x0b\x32%.gateway.CheckAvailabilityRequestDataH\x00\x12W\n#check_availability_request_ack_data\x18\x07 \x01(\x0b\x32(.gateway.CheckAvailabilityRequestAckDataH\x00\x12\x44\n\x19start_charge_request_data\x18\x08 \x01(\x0b\x32\x1f.gateway.StartChargeRequestDataH\x00\x12K\n\x1dstart_charge_request_ack_data\x18\t \x01(\x0b\x32\".gateway.StartChargeRequestAckDataH\x00\x12\x39\n\x12\x63harge_status_data\x18\n \x01(\x0b\x32\x1b.gateway.ChargingStatusDataH\x00\x42\x06\n\x04\x64\x61ta\"\x84\x02\n\x1b\x42ootNotificationRequestData\x12 \n\x18\x63harge_box_serial_number\x18\x01 \x01(\t\x12\x1a\n\x12\x63harge_point_model\x18\x02 \x01(\t\x12\"\n\x1a\x43harge_point_serial_number\x18\x03 \x01(\t\x12\x1b\n\x13\x43harge_point_vendor\x18\x04 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x05 \x01(\t\x12\r\n\x05iccid\x18\x06 \x01(\t\x12\x0c\n\x04imsi\x18\x07 \x01(\t\x12\x1b\n\x13meter_serial_number\x18\x08 \x01(\t\x12\x12\n\nmeter_type\x18\t \x01(\t\"@\n\x07LogData\x12\x14\n\x0c\x63urrent_time\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"S\n\x14\x41uthorizeRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x1b\n\x13\x63onsumer_public_key\x18\x02 \x01(\t\"W\n\x17\x41uthorizeRequestAckData\x12\x1b\n\x13\x63onsumer_public_key\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"T\n\x1c\x43heckAvailabilityRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x02 \x01(\x05\"B\n\x1f\x43heckAvailabilityRequestAckData\x12\x1f\n\x04resp\x18\x01 \x01(\x0b\x32\x11.gateway.Response\"k\n\x16StartChargeRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x02 \x01(\x05\x12\x1b\n\x13\x63onsumer_public_key\x18\x03 \x01(\t\"Y\n\x19StartChargeRequestAckData\x12\x1b\n\x13\x63onsumer_public_key\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"*\n\x08Response\x12\r\n\x05\x65rror\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x8f\x01\n\x12\x43hargingStatusData\x12\x1d\n\x15initial_battery_level\x18\x01 \x01(\x02\x12\x15\n\rbattery_level\x18\x02 \x01(\x02\x12\x17\n\x0f\x63urrent_offered\x18\x03 \x01(\x02\x12\x14\n\x0c\x62\x61ttery_unit\x18\x04 \x01(\t\x12\x14\n\x0c\x63urrent_unit\x18\x05 \x01(\t*\x8b\x02\n\tEventType\x12\x1d\n\x19\x42OOT_NOTIFICATION_REQUEST\x10\x00\x12\x15\n\x11HEARTBEAT_REQUEST\x10\x01\x12\x07\n\x03LOG\x10\x02\x12\x15\n\x11\x41UTHORIZE_REQUEST\x10\x03\x12\x19\n\x15\x41UTHORIZE_REQUEST_ACK\x10\x04\x12\x1e\n\x1a\x43HECK_AVAILABILITY_REQUEST\x10\x05\x12\"\n\x1e\x43HECK_AVAILABILITY_REQUEST_ACK\x10\x06\x12\x18\n\x14START_CHARGE_REQUEST\x10\x07\x12\x1c\n\x18START_CHARGE_REQUEST_ACK\x10\x08\x12\x11\n\rCHARGE_STATUS\x10\tBWZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gatewayb\x06proto3')
 
 _EVENTTYPE = DESCRIPTOR.enum_types_by_name['EventType']
 EventType = enum_type_wrapper.EnumTypeWrapper(_EVENTTYPE)
-BootNotificationRequest = 0
-HeartbeatRequest = 1
-Log = 2
-AuthorizeRequest = 3
-AuthorizeRequestAck = 4
-CheckAvailabilityRequest = 5
-CheckAvailabilityRequestAck = 6
-StartChargeRequest = 7
-StartChargeRequestAck = 8
+BOOT_NOTIFICATION_REQUEST = 0
+HEARTBEAT_REQUEST = 1
+LOG = 2
+AUTHORIZE_REQUEST = 3
+AUTHORIZE_REQUEST_ACK = 4
+CHECK_AVAILABILITY_REQUEST = 5
+CHECK_AVAILABILITY_REQUEST_ACK = 6
+START_CHARGE_REQUEST = 7
+START_CHARGE_REQUEST_ACK = 8
+CHARGE_STATUS = 9
 
 
 _EVENT = DESCRIPTOR.message_types_by_name['Event']
@@ -40,6 +41,7 @@ _CHECKAVAILABILITYREQUESTACKDATA = DESCRIPTOR.message_types_by_name['CheckAvaila
 _STARTCHARGEREQUESTDATA = DESCRIPTOR.message_types_by_name['StartChargeRequestData']
 _STARTCHARGEREQUESTACKDATA = DESCRIPTOR.message_types_by_name['StartChargeRequestAckData']
 _RESPONSE = DESCRIPTOR.message_types_by_name['Response']
+_CHARGINGSTATUSDATA = DESCRIPTOR.message_types_by_name['ChargingStatusData']
 Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), {
   'DESCRIPTOR' : _EVENT,
   '__module__' : 'charge_point_gateway_format_pb2'
@@ -110,30 +112,39 @@ Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Messag
   })
 _sym_db.RegisterMessage(Response)
 
+ChargingStatusData = _reflection.GeneratedProtocolMessageType('ChargingStatusData', (_message.Message,), {
+  'DESCRIPTOR' : _CHARGINGSTATUSDATA,
+  '__module__' : 'charge_point_gateway_format_pb2'
+  # @@protoc_insertion_point(class_scope:gateway.ChargingStatusData)
+  })
+_sym_db.RegisterMessage(ChargingStatusData)
+
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'ZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gateway'
-  _EVENTTYPE._serialized_start=1577
-  _EVENTTYPE._serialized_end=1809
+  _EVENTTYPE._serialized_start=1782
+  _EVENTTYPE._serialized_end=2049
   _EVENT._serialized_start=47
-  _EVENT._serialized_end=673
-  _BOOTNOTIFICATIONREQUESTDATA._serialized_start=676
-  _BOOTNOTIFICATIONREQUESTDATA._serialized_end=936
-  _LOGDATA._serialized_start=938
-  _LOGDATA._serialized_end=1002
-  _AUTHORIZEREQUESTDATA._serialized_start=1004
-  _AUTHORIZEREQUESTDATA._serialized_end=1087
-  _AUTHORIZEREQUESTACKDATA._serialized_start=1089
-  _AUTHORIZEREQUESTACKDATA._serialized_end=1176
-  _CHECKAVAILABILITYREQUESTDATA._serialized_start=1178
-  _CHECKAVAILABILITYREQUESTDATA._serialized_end=1262
-  _CHECKAVAILABILITYREQUESTACKDATA._serialized_start=1264
-  _CHECKAVAILABILITYREQUESTACKDATA._serialized_end=1330
-  _STARTCHARGEREQUESTDATA._serialized_start=1332
-  _STARTCHARGEREQUESTDATA._serialized_end=1439
-  _STARTCHARGEREQUESTACKDATA._serialized_start=1441
-  _STARTCHARGEREQUESTACKDATA._serialized_end=1530
-  _RESPONSE._serialized_start=1532
-  _RESPONSE._serialized_end=1574
+  _EVENT._serialized_end=732
+  _BOOTNOTIFICATIONREQUESTDATA._serialized_start=735
+  _BOOTNOTIFICATIONREQUESTDATA._serialized_end=995
+  _LOGDATA._serialized_start=997
+  _LOGDATA._serialized_end=1061
+  _AUTHORIZEREQUESTDATA._serialized_start=1063
+  _AUTHORIZEREQUESTDATA._serialized_end=1146
+  _AUTHORIZEREQUESTACKDATA._serialized_start=1148
+  _AUTHORIZEREQUESTACKDATA._serialized_end=1235
+  _CHECKAVAILABILITYREQUESTDATA._serialized_start=1237
+  _CHECKAVAILABILITYREQUESTDATA._serialized_end=1321
+  _CHECKAVAILABILITYREQUESTACKDATA._serialized_start=1323
+  _CHECKAVAILABILITYREQUESTACKDATA._serialized_end=1389
+  _STARTCHARGEREQUESTDATA._serialized_start=1391
+  _STARTCHARGEREQUESTDATA._serialized_end=1498
+  _STARTCHARGEREQUESTACKDATA._serialized_start=1500
+  _STARTCHARGEREQUESTACKDATA._serialized_end=1589
+  _RESPONSE._serialized_start=1591
+  _RESPONSE._serialized_end=1633
+  _CHARGINGSTATUSDATA._serialized_start=1636
+  _CHARGINGSTATUSDATA._serialized_end=1779
 # @@protoc_insertion_point(module_scope)
