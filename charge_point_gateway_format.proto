@@ -14,6 +14,8 @@ enum EventType {
   START_CHARGE_REQUEST = 7;
   START_CHARGE_REQUEST_ACK = 8;
   CHARGE_STATUS = 9;
+  STOP_CHARGE_REQUEST = 10;
+  STOP_CHARGE_REQUEST_ACK = 11;
 }
 
 message Event {
@@ -28,6 +30,8 @@ message Event {
     StartChargeRequestData start_charge_request_data = 8;
     StartChargeRequestAckData start_charge_request_ack_data = 9;
     ChargingStatusData charge_status_data = 10;
+    StopChargeRequestData stop_charge_request_data = 11;
+    StopChargeRequestAckData stop_charge_request_ack_data = 12;
   }
 }
 
@@ -84,4 +88,23 @@ message ChargingStatusData {
   float current_offered = 3;
   string battery_unit = 4;
   string current_unit = 5;
+}
+
+message StopChargeRequestData {
+  string charge_point_client_id = 1;
+  int32 connector_id = 2;
+  string consumer_public_key = 3;
+}
+
+message StopChargeRequestAckData {
+  string consumer_public_key = 1;
+  int32 transaction_id = 2;
+  int32 connector_id = 3;
+  string id_tag = 4;
+  string start_time = 5;
+  string end_time = 6;
+  int32 start_meter = 7;
+  int32 end_meter = 8;
+  ChargingStatusData charge_status = 9;
+  Response resp = 10;
 }
