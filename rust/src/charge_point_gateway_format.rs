@@ -2290,8 +2290,10 @@ pub struct ChargingStatusData {
     pub battery_level: f32,
     // @@protoc_insertion_point(field:gateway.ChargingStatusData.current_offered)
     pub current_offered: f32,
-    // @@protoc_insertion_point(field:gateway.ChargingStatusData.unit)
-    pub unit: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.ChargingStatusData.battery_unit)
+    pub battery_unit: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.ChargingStatusData.current_unit)
+    pub current_unit: ::std::string::String,
     // special fields
     // @@protoc_insertion_point(special_field:gateway.ChargingStatusData.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
@@ -2309,7 +2311,7 @@ impl ChargingStatusData {
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
-        let mut fields = ::std::vec::Vec::with_capacity(4);
+        let mut fields = ::std::vec::Vec::with_capacity(5);
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "initial_battery_level",
             |m: &ChargingStatusData| { &m.initial_battery_level },
@@ -2326,9 +2328,14 @@ impl ChargingStatusData {
             |m: &mut ChargingStatusData| { &mut m.current_offered },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
-            "unit",
-            |m: &ChargingStatusData| { &m.unit },
-            |m: &mut ChargingStatusData| { &mut m.unit },
+            "battery_unit",
+            |m: &ChargingStatusData| { &m.battery_unit },
+            |m: &mut ChargingStatusData| { &mut m.battery_unit },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "current_unit",
+            |m: &ChargingStatusData| { &m.current_unit },
+            |m: &mut ChargingStatusData| { &mut m.current_unit },
         ));
         ::protobuf::reflect::GeneratedMessageDescriptorData::new::<ChargingStatusData>(
             "ChargingStatusData",
@@ -2357,7 +2364,10 @@ impl ::protobuf::Message for ChargingStatusData {
                     self.current_offered = is.read_float()?;
                 },
                 34 => {
-                    self.unit = is.read_string()?;
+                    self.battery_unit = is.read_string()?;
+                },
+                42 => {
+                    self.current_unit = is.read_string()?;
                 },
                 tag => {
                     ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
@@ -2380,8 +2390,11 @@ impl ::protobuf::Message for ChargingStatusData {
         if self.current_offered != 0. {
             my_size += 5;
         }
-        if !self.unit.is_empty() {
-            my_size += ::protobuf::rt::string_size(4, &self.unit);
+        if !self.battery_unit.is_empty() {
+            my_size += ::protobuf::rt::string_size(4, &self.battery_unit);
+        }
+        if !self.current_unit.is_empty() {
+            my_size += ::protobuf::rt::string_size(5, &self.current_unit);
         }
         my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
@@ -2398,8 +2411,11 @@ impl ::protobuf::Message for ChargingStatusData {
         if self.current_offered != 0. {
             os.write_float(3, self.current_offered)?;
         }
-        if !self.unit.is_empty() {
-            os.write_string(4, &self.unit)?;
+        if !self.battery_unit.is_empty() {
+            os.write_string(4, &self.battery_unit)?;
+        }
+        if !self.current_unit.is_empty() {
+            os.write_string(5, &self.current_unit)?;
         }
         os.write_unknown_fields(self.unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -2425,7 +2441,8 @@ impl ::protobuf::Message for ChargingStatusData {
         self.initial_battery_level = 0.;
         self.battery_level = 0.;
         self.current_offered = 0.;
-        self.unit.clear();
+        self.battery_unit.clear();
+        self.current_unit.clear();
         self.special_fields.clear();
     }
 
@@ -2434,7 +2451,8 @@ impl ::protobuf::Message for ChargingStatusData {
             initial_battery_level: 0.,
             battery_level: 0.,
             current_offered: 0.,
-            unit: ::std::string::String::new(),
+            battery_unit: ::std::string::String::new(),
+            current_unit: ::std::string::String::new(),
             special_fields: ::protobuf::SpecialFields::new(),
         };
         &instance
@@ -2589,19 +2607,20 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \n\x13consumer_public_key\x18\x01\x20\x01(\tR\x11consumerPublicKey\x12%\
     \n\x04resp\x18\x02\x20\x01(\x0b2\x11.gateway.ResponseR\x04resp\":\n\x08R\
     esponse\x12\x14\n\x05error\x18\x01\x20\x01(\x08R\x05error\x12\x18\n\x07m\
-    essage\x18\x02\x20\x01(\tR\x07message\"\xaa\x01\n\x12ChargingStatusData\
+    essage\x18\x02\x20\x01(\tR\x07message\"\xdc\x01\n\x12ChargingStatusData\
     \x122\n\x15initial_battery_level\x18\x01\x20\x01(\x02R\x13initialBattery\
     Level\x12#\n\rbattery_level\x18\x02\x20\x01(\x02R\x0cbatteryLevel\x12'\n\
-    \x0fcurrent_offered\x18\x03\x20\x01(\x02R\x0ecurrentOffered\x12\x12\n\
-    \x04unit\x18\x04\x20\x01(\tR\x04unit*\x8b\x02\n\tEventType\x12\x1d\n\x19\
-    BOOT_NOTIFICATION_REQUEST\x10\0\x12\x15\n\x11HEARTBEAT_REQUEST\x10\x01\
-    \x12\x07\n\x03LOG\x10\x02\x12\x15\n\x11AUTHORIZE_REQUEST\x10\x03\x12\x19\
-    \n\x15AUTHORIZE_REQUEST_ACK\x10\x04\x12\x1e\n\x1aCHECK_AVAILABILITY_REQU\
-    EST\x10\x05\x12\"\n\x1eCHECK_AVAILABILITY_REQUEST_ACK\x10\x06\x12\x18\n\
+    \x0fcurrent_offered\x18\x03\x20\x01(\x02R\x0ecurrentOffered\x12!\n\x0cba\
+    ttery_unit\x18\x04\x20\x01(\tR\x0bbatteryUnit\x12!\n\x0ccurrent_unit\x18\
+    \x05\x20\x01(\tR\x0bcurrentUnit*\x8b\x02\n\tEventType\x12\x1d\n\x19BOOT_\
+    NOTIFICATION_REQUEST\x10\0\x12\x15\n\x11HEARTBEAT_REQUEST\x10\x01\x12\
+    \x07\n\x03LOG\x10\x02\x12\x15\n\x11AUTHORIZE_REQUEST\x10\x03\x12\x19\n\
+    \x15AUTHORIZE_REQUEST_ACK\x10\x04\x12\x1e\n\x1aCHECK_AVAILABILITY_REQUES\
+    T\x10\x05\x12\"\n\x1eCHECK_AVAILABILITY_REQUEST_ACK\x10\x06\x12\x18\n\
     \x14START_CHARGE_REQUEST\x10\x07\x12\x1c\n\x18START_CHARGE_REQUEST_ACK\
     \x10\x08\x12\x11\n\rCHARGE_STATUS\x10\tBWZUgithub.com/peaqnetwork/peaq-n\
-    etwork-ev-charging-message-format/golang/gateway;gatewayJ\xe7\x16\n\x06\
-    \x12\x04\0\0U\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\
+    etwork-ev-charging-message-format/golang/gateway;gatewayJ\x9e\x17\n\x06\
+    \x12\x04\0\0V\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\
     \x03\x02\0\x10\n\x08\n\x01\x08\x12\x03\x03\0l\n\t\n\x02\x08\x0b\x12\x03\
     \x03\0l\n\n\n\x02\x05\0\x12\x04\x05\0\x10\x01\n\n\n\x03\x05\0\x01\x12\
     \x03\x05\x05\x0e\n\x0b\n\x04\x05\0\x02\0\x12\x03\x06\x02\x20\n\x0c\n\x05\
@@ -2726,7 +2745,7 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \0\x01\x12\x03L\x07\x0c\n\x0c\n\x05\x04\t\x02\0\x03\x12\x03L\x0f\x10\n\
     \x0b\n\x04\x04\t\x02\x01\x12\x03M\x02\x15\n\x0c\n\x05\x04\t\x02\x01\x05\
     \x12\x03M\x02\x08\n\x0c\n\x05\x04\t\x02\x01\x01\x12\x03M\t\x10\n\x0c\n\
-    \x05\x04\t\x02\x01\x03\x12\x03M\x13\x14\n\n\n\x02\x04\n\x12\x04P\0U\x01\
+    \x05\x04\t\x02\x01\x03\x12\x03M\x13\x14\n\n\n\x02\x04\n\x12\x04P\0V\x01\
     \n\n\n\x03\x04\n\x01\x12\x03P\x08\x1a\n\x0b\n\x04\x04\n\x02\0\x12\x03Q\
     \x02\"\n\x0c\n\x05\x04\n\x02\0\x05\x12\x03Q\x02\x07\n\x0c\n\x05\x04\n\
     \x02\0\x01\x12\x03Q\x08\x1d\n\x0c\n\x05\x04\n\x02\0\x03\x12\x03Q\x20!\n\
@@ -2735,9 +2754,12 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x05\x04\n\x02\x01\x03\x12\x03R\x18\x19\n\x0b\n\x04\x04\n\x02\x02\x12\
     \x03S\x02\x1c\n\x0c\n\x05\x04\n\x02\x02\x05\x12\x03S\x02\x07\n\x0c\n\x05\
     \x04\n\x02\x02\x01\x12\x03S\x08\x17\n\x0c\n\x05\x04\n\x02\x02\x03\x12\
-    \x03S\x1a\x1b\n\x0b\n\x04\x04\n\x02\x03\x12\x03T\x02\x12\n\x0c\n\x05\x04\
+    \x03S\x1a\x1b\n\x0b\n\x04\x04\n\x02\x03\x12\x03T\x02\x1a\n\x0c\n\x05\x04\
     \n\x02\x03\x05\x12\x03T\x02\x08\n\x0c\n\x05\x04\n\x02\x03\x01\x12\x03T\t\
-    \r\n\x0c\n\x05\x04\n\x02\x03\x03\x12\x03T\x10\x11b\x06proto3\
+    \x15\n\x0c\n\x05\x04\n\x02\x03\x03\x12\x03T\x18\x19\n\x0b\n\x04\x04\n\
+    \x02\x04\x12\x03U\x02\x1a\n\x0c\n\x05\x04\n\x02\x04\x05\x12\x03U\x02\x08\
+    \n\x0c\n\x05\x04\n\x02\x04\x01\x12\x03U\t\x15\n\x0c\n\x05\x04\n\x02\x04\
+    \x03\x12\x03U\x18\x19b\x06proto3\
 ";
 
 /// `FileDescriptorProto` object which was a source for this generated file

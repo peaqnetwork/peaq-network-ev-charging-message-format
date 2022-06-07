@@ -82,5 +82,6 @@ message ChargingStatusData {
   float initial_battery_level = 1;
   float battery_level = 2;
   float current_offered = 3;
-  string unit = 4;
+  string battery_unit = 4;
+  string current_unit = 5;
 }
