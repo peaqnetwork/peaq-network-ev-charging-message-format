@@ -98,15 +98,8 @@ message StopChargeRequestData {
 
 message StopChargeRequestAckData {
   string consumer_public_key = 1;
-  int32 transaction_id = 2;
-  int32 connector_id = 3;
-  string id_tag = 4;
-  string start_time = 5;
-  string end_time = 6;
-  int32 start_meter = 7;
-  int32 end_meter = 8;
-  ChargingStatusData charge_status = 9;
-  Response resp = 10;
+  TransactionInfo transaction_info = 2;
+  Response resp = 3;
 }
 
 message ChargePointState {
