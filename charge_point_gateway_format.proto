@@ -108,3 +108,51 @@ message StopChargeRequestAckData {
   ChargingStatusData charge_status = 9;
   Response resp = 10;
 }
+
+message ChargePointState {
+  int32 count = 1;
+  map<string, ChargePoint> charge_points = 2;
+}
+
+message ChargePoint {
+  string status = 1;
+  map<int32, ConnectorInfo> connectors = 2;
+  map<int32, TransactionInfo> transactions = 3;
+  map<string, ConsumerAuthData> auth_list = 4;
+  int32 current_auth_list_version = 5;
+  int32 current_transaction_id = 6;
+}
+
+message ConnectorInfo {
+  string id = 1;
+  string status = 2;
+  int32 current_transaction = 3;
+}
+
+message TransactionInfo {
+  int32 id = 1;
+  string id_tag = 2;
+  int32 connector_id = 3;
+  string start_time = 4;
+  string end_time = 5;
+  int32 start_meter = 6;
+  int32 end_meter = 7;
+  ChargingStatusData progress = 8;
+}
+
+message ConsumerAuthData {
+  string public_key = 1;
+  int32 transaction_id = 2;
+  LocalAuthorizationData auth_data = 3;
+}
+
+message LocalAuthorizationData {
+  string id_tag = 1;
+  string id_tag_info = 2;
+}
+
+message IdTagInfo {
+  string expiry_date = 1;
+  string parentIdTag = 2;
+  string authorization_status = 3;
+}

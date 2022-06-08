@@ -3082,6 +3082,1218 @@ impl ::protobuf::reflect::ProtobufValue for StopChargeRequestAckData {
     type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
 }
 
+#[derive(PartialEq,Clone,Default,Debug)]
+// @@protoc_insertion_point(message:gateway.ChargePointState)
+pub struct ChargePointState {
+    // message fields
+    // @@protoc_insertion_point(field:gateway.ChargePointState.count)
+    pub count: i32,
+    // @@protoc_insertion_point(field:gateway.ChargePointState.charge_points)
+    pub charge_points: ::std::collections::HashMap<::std::string::String, ChargePoint>,
+    // special fields
+    // @@protoc_insertion_point(special_field:gateway.ChargePointState.special_fields)
+    pub special_fields: ::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a ChargePointState {
+    fn default() -> &'a ChargePointState {
+        <ChargePointState as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl ChargePointState {
+    pub fn new() -> ChargePointState {
+        ::std::default::Default::default()
+    }
+
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
+        let mut fields = ::std::vec::Vec::with_capacity(2);
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "count",
+            |m: &ChargePointState| { &m.count },
+            |m: &mut ChargePointState| { &mut m.count },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_map_simpler_accessor::<_, _, _>(
+            "charge_points",
+            |m: &ChargePointState| { &m.charge_points },
+            |m: &mut ChargePointState| { &mut m.charge_points },
+        ));
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<ChargePointState>(
+            "ChargePointState",
+            fields,
+        )
+    }
+}
+
+impl ::protobuf::Message for ChargePointState {
+    const NAME: &'static str = "ChargePointState";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.count = is.read_int32()?;
+                },
+                18 => {
+                    ::protobuf::rt::read_map_into::<::protobuf::reflect::types::ProtobufTypeString, ::protobuf::reflect::types::ProtobufTypeMessage<ChargePoint>>(is, &mut self.charge_points)?;
+                },
+                tag => {
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if self.count != 0 {
+            my_size += ::protobuf::rt::value_size(1, self.count, ::protobuf::rt::WireType::Varint);
+        }
+        my_size += ::protobuf::rt::compute_map_size::<::protobuf::reflect::types::ProtobufTypeString, ::protobuf::reflect::types::ProtobufTypeMessage<ChargePoint>>(2, &self.charge_points);
+        my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
+        if self.count != 0 {
+            os.write_int32(1, self.count)?;
+        }
+        ::protobuf::rt::write_map_with_cached_sizes::<::protobuf::reflect::types::ProtobufTypeString, ::protobuf::reflect::types::ProtobufTypeMessage<ChargePoint>>(2, &self.charge_points, os)?;
+        os.write_unknown_fields(self.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn cached_size(&self) -> u32 {
+        self.special_fields.cached_size().get()
+    }
+
+    fn unknown_fields(&self) -> &::protobuf::UnknownFields {
+        self.special_fields.unknown_fields()
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        self.special_fields.mut_unknown_fields()
+    }
+
+    fn new() -> ChargePointState {
+        ChargePointState::new()
+    }
+
+    fn clear(&mut self) {
+        self.count = 0;
+        self.charge_points.clear();
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static ChargePointState {
+        static instance: ::protobuf::rt::Lazy<ChargePointState> = ::protobuf::rt::Lazy::new();
+        instance.get(ChargePointState::new)
+    }
+}
+
+impl ::protobuf::MessageFull for ChargePointState {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("ChargePointState").unwrap()).clone()
+    }
+}
+
+impl ::std::fmt::Display for ChargePointState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ChargePointState {
+    type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
+}
+
+#[derive(PartialEq,Clone,Default,Debug)]
+// @@protoc_insertion_point(message:gateway.ChargePoint)
+pub struct ChargePoint {
+    // message fields
+    // @@protoc_insertion_point(field:gateway.ChargePoint.status)
+    pub status: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.ChargePoint.connectors)
+    pub connectors: ::std::collections::HashMap<i32, ConnectorInfo>,
+    // @@protoc_insertion_point(field:gateway.ChargePoint.transactions)
+    pub transactions: ::std::collections::HashMap<i32, TransactionInfo>,
+    // @@protoc_insertion_point(field:gateway.ChargePoint.auth_list)
+    pub auth_list: ::std::collections::HashMap<::std::string::String, ConsumerAuthData>,
+    // @@protoc_insertion_point(field:gateway.ChargePoint.current_auth_list_version)
+    pub current_auth_list_version: i32,
+    // @@protoc_insertion_point(field:gateway.ChargePoint.current_transaction_id)
+    pub current_transaction_id: i32,
+    // special fields
+    // @@protoc_insertion_point(special_field:gateway.ChargePoint.special_fields)
+    pub special_fields: ::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a ChargePoint {
+    fn default() -> &'a ChargePoint {
+        <ChargePoint as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl ChargePoint {
+    pub fn new() -> ChargePoint {
+        ::std::default::Default::default()
+    }
+
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
+        let mut fields = ::std::vec::Vec::with_capacity(6);
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "status",
+            |m: &ChargePoint| { &m.status },
+            |m: &mut ChargePoint| { &mut m.status },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_map_simpler_accessor::<_, _, _>(
+            "connectors",
+            |m: &ChargePoint| { &m.connectors },
+            |m: &mut ChargePoint| { &mut m.connectors },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_map_simpler_accessor::<_, _, _>(
+            "transactions",
+            |m: &ChargePoint| { &m.transactions },
+            |m: &mut ChargePoint| { &mut m.transactions },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_map_simpler_accessor::<_, _, _>(
+            "auth_list",
+            |m: &ChargePoint| { &m.auth_list },
+            |m: &mut ChargePoint| { &mut m.auth_list },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "current_auth_list_version",
+            |m: &ChargePoint| { &m.current_auth_list_version },
+            |m: &mut ChargePoint| { &mut m.current_auth_list_version },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "current_transaction_id",
+            |m: &ChargePoint| { &m.current_transaction_id },
+            |m: &mut ChargePoint| { &mut m.current_transaction_id },
+        ));
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<ChargePoint>(
+            "ChargePoint",
+            fields,
+        )
+    }
+}
+
+impl ::protobuf::Message for ChargePoint {
+    const NAME: &'static str = "ChargePoint";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.status = is.read_string()?;
+                },
+                18 => {
+                    ::protobuf::rt::read_map_into::<::protobuf::reflect::types::ProtobufTypeInt32, ::protobuf::reflect::types::ProtobufTypeMessage<ConnectorInfo>>(is, &mut self.connectors)?;
+                },
+                26 => {
+                    ::protobuf::rt::read_map_into::<::protobuf::reflect::types::ProtobufTypeInt32, ::protobuf::reflect::types::ProtobufTypeMessage<TransactionInfo>>(is, &mut self.transactions)?;
+                },
+                34 => {
+                    ::protobuf::rt::read_map_into::<::protobuf::reflect::types::ProtobufTypeString, ::protobuf::reflect::types::ProtobufTypeMessage<ConsumerAuthData>>(is, &mut self.auth_list)?;
+                },
+                40 => {
+                    self.current_auth_list_version = is.read_int32()?;
+                },
+                48 => {
+                    self.current_transaction_id = is.read_int32()?;
+                },
+                tag => {
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if !self.status.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.status);
+        }
+        my_size += ::protobuf::rt::compute_map_size::<::protobuf::reflect::types::ProtobufTypeInt32, ::protobuf::reflect::types::ProtobufTypeMessage<ConnectorInfo>>(2, &self.connectors);
+        my_size += ::protobuf::rt::compute_map_size::<::protobuf::reflect::types::ProtobufTypeInt32, ::protobuf::reflect::types::ProtobufTypeMessage<TransactionInfo>>(3, &self.transactions);
+        my_size += ::protobuf::rt::compute_map_size::<::protobuf::reflect::types::ProtobufTypeString, ::protobuf::reflect::types::ProtobufTypeMessage<ConsumerAuthData>>(4, &self.auth_list);
+        if self.current_auth_list_version != 0 {
+            my_size += ::protobuf::rt::value_size(5, self.current_auth_list_version, ::protobuf::rt::WireType::Varint);
+        }
+        if self.current_transaction_id != 0 {
+            my_size += ::protobuf::rt::value_size(6, self.current_transaction_id, ::protobuf::rt::WireType::Varint);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
+        if !self.status.is_empty() {
+            os.write_string(1, &self.status)?;
+        }
+        ::protobuf::rt::write_map_with_cached_sizes::<::protobuf::reflect::types::ProtobufTypeInt32, ::protobuf::reflect::types::ProtobufTypeMessage<ConnectorInfo>>(2, &self.connectors, os)?;
+        ::protobuf::rt::write_map_with_cached_sizes::<::protobuf::reflect::types::ProtobufTypeInt32, ::protobuf::reflect::types::ProtobufTypeMessage<TransactionInfo>>(3, &self.transactions, os)?;
+        ::protobuf::rt::write_map_with_cached_sizes::<::protobuf::reflect::types::ProtobufTypeString, ::protobuf::reflect::types::ProtobufTypeMessage<ConsumerAuthData>>(4, &self.auth_list, os)?;
+        if self.current_auth_list_version != 0 {
+            os.write_int32(5, self.current_auth_list_version)?;
+        }
+        if self.current_transaction_id != 0 {
+            os.write_int32(6, self.current_transaction_id)?;
+        }
+        os.write_unknown_fields(self.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn cached_size(&self) -> u32 {
+        self.special_fields.cached_size().get()
+    }
+
+    fn unknown_fields(&self) -> &::protobuf::UnknownFields {
+        self.special_fields.unknown_fields()
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        self.special_fields.mut_unknown_fields()
+    }
+
+    fn new() -> ChargePoint {
+        ChargePoint::new()
+    }
+
+    fn clear(&mut self) {
+        self.status.clear();
+        self.connectors.clear();
+        self.transactions.clear();
+        self.auth_list.clear();
+        self.current_auth_list_version = 0;
+        self.current_transaction_id = 0;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static ChargePoint {
+        static instance: ::protobuf::rt::Lazy<ChargePoint> = ::protobuf::rt::Lazy::new();
+        instance.get(ChargePoint::new)
+    }
+}
+
+impl ::protobuf::MessageFull for ChargePoint {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("ChargePoint").unwrap()).clone()
+    }
+}
+
+impl ::std::fmt::Display for ChargePoint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ChargePoint {
+    type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
+}
+
+#[derive(PartialEq,Clone,Default,Debug)]
+// @@protoc_insertion_point(message:gateway.ConnectorInfo)
+pub struct ConnectorInfo {
+    // message fields
+    // @@protoc_insertion_point(field:gateway.ConnectorInfo.id)
+    pub id: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.ConnectorInfo.status)
+    pub status: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.ConnectorInfo.current_transaction)
+    pub current_transaction: i32,
+    // special fields
+    // @@protoc_insertion_point(special_field:gateway.ConnectorInfo.special_fields)
+    pub special_fields: ::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a ConnectorInfo {
+    fn default() -> &'a ConnectorInfo {
+        <ConnectorInfo as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl ConnectorInfo {
+    pub fn new() -> ConnectorInfo {
+        ::std::default::Default::default()
+    }
+
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
+        let mut fields = ::std::vec::Vec::with_capacity(3);
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "id",
+            |m: &ConnectorInfo| { &m.id },
+            |m: &mut ConnectorInfo| { &mut m.id },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "status",
+            |m: &ConnectorInfo| { &m.status },
+            |m: &mut ConnectorInfo| { &mut m.status },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "current_transaction",
+            |m: &ConnectorInfo| { &m.current_transaction },
+            |m: &mut ConnectorInfo| { &mut m.current_transaction },
+        ));
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<ConnectorInfo>(
+            "ConnectorInfo",
+            fields,
+        )
+    }
+}
+
+impl ::protobuf::Message for ConnectorInfo {
+    const NAME: &'static str = "ConnectorInfo";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.id = is.read_string()?;
+                },
+                18 => {
+                    self.status = is.read_string()?;
+                },
+                24 => {
+                    self.current_transaction = is.read_int32()?;
+                },
+                tag => {
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if !self.id.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.id);
+        }
+        if !self.status.is_empty() {
+            my_size += ::protobuf::rt::string_size(2, &self.status);
+        }
+        if self.current_transaction != 0 {
+            my_size += ::protobuf::rt::value_size(3, self.current_transaction, ::protobuf::rt::WireType::Varint);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
+        if !self.id.is_empty() {
+            os.write_string(1, &self.id)?;
+        }
+        if !self.status.is_empty() {
+            os.write_string(2, &self.status)?;
+        }
+        if self.current_transaction != 0 {
+            os.write_int32(3, self.current_transaction)?;
+        }
+        os.write_unknown_fields(self.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn cached_size(&self) -> u32 {
+        self.special_fields.cached_size().get()
+    }
+
+    fn unknown_fields(&self) -> &::protobuf::UnknownFields {
+        self.special_fields.unknown_fields()
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        self.special_fields.mut_unknown_fields()
+    }
+
+    fn new() -> ConnectorInfo {
+        ConnectorInfo::new()
+    }
+
+    fn clear(&mut self) {
+        self.id.clear();
+        self.status.clear();
+        self.current_transaction = 0;
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static ConnectorInfo {
+        static instance: ConnectorInfo = ConnectorInfo {
+            id: ::std::string::String::new(),
+            status: ::std::string::String::new(),
+            current_transaction: 0,
+            special_fields: ::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+impl ::protobuf::MessageFull for ConnectorInfo {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("ConnectorInfo").unwrap()).clone()
+    }
+}
+
+impl ::std::fmt::Display for ConnectorInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ConnectorInfo {
+    type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
+}
+
+#[derive(PartialEq,Clone,Default,Debug)]
+// @@protoc_insertion_point(message:gateway.TransactionInfo)
+pub struct TransactionInfo {
+    // message fields
+    // @@protoc_insertion_point(field:gateway.TransactionInfo.id)
+    pub id: i32,
+    // @@protoc_insertion_point(field:gateway.TransactionInfo.id_tag)
+    pub id_tag: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.TransactionInfo.connector_id)
+    pub connector_id: i32,
+    // @@protoc_insertion_point(field:gateway.TransactionInfo.start_time)
+    pub start_time: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.TransactionInfo.end_time)
+    pub end_time: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.TransactionInfo.start_meter)
+    pub start_meter: i32,
+    // @@protoc_insertion_point(field:gateway.TransactionInfo.end_meter)
+    pub end_meter: i32,
+    // @@protoc_insertion_point(field:gateway.TransactionInfo.progress)
+    pub progress: ::protobuf::MessageField<ChargingStatusData>,
+    // special fields
+    // @@protoc_insertion_point(special_field:gateway.TransactionInfo.special_fields)
+    pub special_fields: ::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a TransactionInfo {
+    fn default() -> &'a TransactionInfo {
+        <TransactionInfo as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl TransactionInfo {
+    pub fn new() -> TransactionInfo {
+        ::std::default::Default::default()
+    }
+
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
+        let mut fields = ::std::vec::Vec::with_capacity(8);
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "id",
+            |m: &TransactionInfo| { &m.id },
+            |m: &mut TransactionInfo| { &mut m.id },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "id_tag",
+            |m: &TransactionInfo| { &m.id_tag },
+            |m: &mut TransactionInfo| { &mut m.id_tag },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "connector_id",
+            |m: &TransactionInfo| { &m.connector_id },
+            |m: &mut TransactionInfo| { &mut m.connector_id },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "start_time",
+            |m: &TransactionInfo| { &m.start_time },
+            |m: &mut TransactionInfo| { &mut m.start_time },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "end_time",
+            |m: &TransactionInfo| { &m.end_time },
+            |m: &mut TransactionInfo| { &mut m.end_time },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "start_meter",
+            |m: &TransactionInfo| { &m.start_meter },
+            |m: &mut TransactionInfo| { &mut m.start_meter },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "end_meter",
+            |m: &TransactionInfo| { &m.end_meter },
+            |m: &mut TransactionInfo| { &mut m.end_meter },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_message_field_accessor::<_, ChargingStatusData>(
+            "progress",
+            |m: &TransactionInfo| { &m.progress },
+            |m: &mut TransactionInfo| { &mut m.progress },
+        ));
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<TransactionInfo>(
+            "TransactionInfo",
+            fields,
+        )
+    }
+}
+
+impl ::protobuf::Message for TransactionInfo {
+    const NAME: &'static str = "TransactionInfo";
+
+    fn is_initialized(&self) -> bool {
+        for v in &self.progress {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                8 => {
+                    self.id = is.read_int32()?;
+                },
+                18 => {
+                    self.id_tag = is.read_string()?;
+                },
+                24 => {
+                    self.connector_id = is.read_int32()?;
+                },
+                34 => {
+                    self.start_time = is.read_string()?;
+                },
+                42 => {
+                    self.end_time = is.read_string()?;
+                },
+                48 => {
+                    self.start_meter = is.read_int32()?;
+                },
+                56 => {
+                    self.end_meter = is.read_int32()?;
+                },
+                66 => {
+                    ::protobuf::rt::read_singular_message_into_field(is, &mut self.progress)?;
+                },
+                tag => {
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if self.id != 0 {
+            my_size += ::protobuf::rt::value_size(1, self.id, ::protobuf::rt::WireType::Varint);
+        }
+        if !self.id_tag.is_empty() {
+            my_size += ::protobuf::rt::string_size(2, &self.id_tag);
+        }
+        if self.connector_id != 0 {
+            my_size += ::protobuf::rt::value_size(3, self.connector_id, ::protobuf::rt::WireType::Varint);
+        }
+        if !self.start_time.is_empty() {
+            my_size += ::protobuf::rt::string_size(4, &self.start_time);
+        }
+        if !self.end_time.is_empty() {
+            my_size += ::protobuf::rt::string_size(5, &self.end_time);
+        }
+        if self.start_meter != 0 {
+            my_size += ::protobuf::rt::value_size(6, self.start_meter, ::protobuf::rt::WireType::Varint);
+        }
+        if self.end_meter != 0 {
+            my_size += ::protobuf::rt::value_size(7, self.end_meter, ::protobuf::rt::WireType::Varint);
+        }
+        if let Some(v) = self.progress.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
+        if self.id != 0 {
+            os.write_int32(1, self.id)?;
+        }
+        if !self.id_tag.is_empty() {
+            os.write_string(2, &self.id_tag)?;
+        }
+        if self.connector_id != 0 {
+            os.write_int32(3, self.connector_id)?;
+        }
+        if !self.start_time.is_empty() {
+            os.write_string(4, &self.start_time)?;
+        }
+        if !self.end_time.is_empty() {
+            os.write_string(5, &self.end_time)?;
+        }
+        if self.start_meter != 0 {
+            os.write_int32(6, self.start_meter)?;
+        }
+        if self.end_meter != 0 {
+            os.write_int32(7, self.end_meter)?;
+        }
+        if let Some(v) = self.progress.as_ref() {
+            ::protobuf::rt::write_message_field_with_cached_size(8, v, os)?;
+        }
+        os.write_unknown_fields(self.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn cached_size(&self) -> u32 {
+        self.special_fields.cached_size().get()
+    }
+
+    fn unknown_fields(&self) -> &::protobuf::UnknownFields {
+        self.special_fields.unknown_fields()
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        self.special_fields.mut_unknown_fields()
+    }
+
+    fn new() -> TransactionInfo {
+        TransactionInfo::new()
+    }
+
+    fn clear(&mut self) {
+        self.id = 0;
+        self.id_tag.clear();
+        self.connector_id = 0;
+        self.start_time.clear();
+        self.end_time.clear();
+        self.start_meter = 0;
+        self.end_meter = 0;
+        self.progress.clear();
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static TransactionInfo {
+        static instance: TransactionInfo = TransactionInfo {
+            id: 0,
+            id_tag: ::std::string::String::new(),
+            connector_id: 0,
+            start_time: ::std::string::String::new(),
+            end_time: ::std::string::String::new(),
+            start_meter: 0,
+            end_meter: 0,
+            progress: ::protobuf::MessageField::none(),
+            special_fields: ::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+impl ::protobuf::MessageFull for TransactionInfo {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("TransactionInfo").unwrap()).clone()
+    }
+}
+
+impl ::std::fmt::Display for TransactionInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for TransactionInfo {
+    type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
+}
+
+#[derive(PartialEq,Clone,Default,Debug)]
+// @@protoc_insertion_point(message:gateway.ConsumerAuthData)
+pub struct ConsumerAuthData {
+    // message fields
+    // @@protoc_insertion_point(field:gateway.ConsumerAuthData.public_key)
+    pub public_key: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.ConsumerAuthData.transaction_id)
+    pub transaction_id: i32,
+    // @@protoc_insertion_point(field:gateway.ConsumerAuthData.auth_data)
+    pub auth_data: ::protobuf::MessageField<LocalAuthorizationData>,
+    // special fields
+    // @@protoc_insertion_point(special_field:gateway.ConsumerAuthData.special_fields)
+    pub special_fields: ::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a ConsumerAuthData {
+    fn default() -> &'a ConsumerAuthData {
+        <ConsumerAuthData as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl ConsumerAuthData {
+    pub fn new() -> ConsumerAuthData {
+        ::std::default::Default::default()
+    }
+
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
+        let mut fields = ::std::vec::Vec::with_capacity(3);
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "public_key",
+            |m: &ConsumerAuthData| { &m.public_key },
+            |m: &mut ConsumerAuthData| { &mut m.public_key },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "transaction_id",
+            |m: &ConsumerAuthData| { &m.transaction_id },
+            |m: &mut ConsumerAuthData| { &mut m.transaction_id },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_message_field_accessor::<_, LocalAuthorizationData>(
+            "auth_data",
+            |m: &ConsumerAuthData| { &m.auth_data },
+            |m: &mut ConsumerAuthData| { &mut m.auth_data },
+        ));
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<ConsumerAuthData>(
+            "ConsumerAuthData",
+            fields,
+        )
+    }
+}
+
+impl ::protobuf::Message for ConsumerAuthData {
+    const NAME: &'static str = "ConsumerAuthData";
+
+    fn is_initialized(&self) -> bool {
+        for v in &self.auth_data {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.public_key = is.read_string()?;
+                },
+                16 => {
+                    self.transaction_id = is.read_int32()?;
+                },
+                26 => {
+                    ::protobuf::rt::read_singular_message_into_field(is, &mut self.auth_data)?;
+                },
+                tag => {
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if !self.public_key.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.public_key);
+        }
+        if self.transaction_id != 0 {
+            my_size += ::protobuf::rt::value_size(2, self.transaction_id, ::protobuf::rt::WireType::Varint);
+        }
+        if let Some(v) = self.auth_data.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
+        if !self.public_key.is_empty() {
+            os.write_string(1, &self.public_key)?;
+        }
+        if self.transaction_id != 0 {
+            os.write_int32(2, self.transaction_id)?;
+        }
+        if let Some(v) = self.auth_data.as_ref() {
+            ::protobuf::rt::write_message_field_with_cached_size(3, v, os)?;
+        }
+        os.write_unknown_fields(self.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn cached_size(&self) -> u32 {
+        self.special_fields.cached_size().get()
+    }
+
+    fn unknown_fields(&self) -> &::protobuf::UnknownFields {
+        self.special_fields.unknown_fields()
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        self.special_fields.mut_unknown_fields()
+    }
+
+    fn new() -> ConsumerAuthData {
+        ConsumerAuthData::new()
+    }
+
+    fn clear(&mut self) {
+        self.public_key.clear();
+        self.transaction_id = 0;
+        self.auth_data.clear();
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static ConsumerAuthData {
+        static instance: ConsumerAuthData = ConsumerAuthData {
+            public_key: ::std::string::String::new(),
+            transaction_id: 0,
+            auth_data: ::protobuf::MessageField::none(),
+            special_fields: ::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+impl ::protobuf::MessageFull for ConsumerAuthData {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("ConsumerAuthData").unwrap()).clone()
+    }
+}
+
+impl ::std::fmt::Display for ConsumerAuthData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ConsumerAuthData {
+    type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
+}
+
+#[derive(PartialEq,Clone,Default,Debug)]
+// @@protoc_insertion_point(message:gateway.LocalAuthorizationData)
+pub struct LocalAuthorizationData {
+    // message fields
+    // @@protoc_insertion_point(field:gateway.LocalAuthorizationData.id_tag)
+    pub id_tag: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.LocalAuthorizationData.id_tag_info)
+    pub id_tag_info: ::std::string::String,
+    // special fields
+    // @@protoc_insertion_point(special_field:gateway.LocalAuthorizationData.special_fields)
+    pub special_fields: ::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a LocalAuthorizationData {
+    fn default() -> &'a LocalAuthorizationData {
+        <LocalAuthorizationData as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl LocalAuthorizationData {
+    pub fn new() -> LocalAuthorizationData {
+        ::std::default::Default::default()
+    }
+
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
+        let mut fields = ::std::vec::Vec::with_capacity(2);
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "id_tag",
+            |m: &LocalAuthorizationData| { &m.id_tag },
+            |m: &mut LocalAuthorizationData| { &mut m.id_tag },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "id_tag_info",
+            |m: &LocalAuthorizationData| { &m.id_tag_info },
+            |m: &mut LocalAuthorizationData| { &mut m.id_tag_info },
+        ));
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<LocalAuthorizationData>(
+            "LocalAuthorizationData",
+            fields,
+        )
+    }
+}
+
+impl ::protobuf::Message for LocalAuthorizationData {
+    const NAME: &'static str = "LocalAuthorizationData";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.id_tag = is.read_string()?;
+                },
+                18 => {
+                    self.id_tag_info = is.read_string()?;
+                },
+                tag => {
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if !self.id_tag.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.id_tag);
+        }
+        if !self.id_tag_info.is_empty() {
+            my_size += ::protobuf::rt::string_size(2, &self.id_tag_info);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
+        if !self.id_tag.is_empty() {
+            os.write_string(1, &self.id_tag)?;
+        }
+        if !self.id_tag_info.is_empty() {
+            os.write_string(2, &self.id_tag_info)?;
+        }
+        os.write_unknown_fields(self.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn cached_size(&self) -> u32 {
+        self.special_fields.cached_size().get()
+    }
+
+    fn unknown_fields(&self) -> &::protobuf::UnknownFields {
+        self.special_fields.unknown_fields()
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        self.special_fields.mut_unknown_fields()
+    }
+
+    fn new() -> LocalAuthorizationData {
+        LocalAuthorizationData::new()
+    }
+
+    fn clear(&mut self) {
+        self.id_tag.clear();
+        self.id_tag_info.clear();
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static LocalAuthorizationData {
+        static instance: LocalAuthorizationData = LocalAuthorizationData {
+            id_tag: ::std::string::String::new(),
+            id_tag_info: ::std::string::String::new(),
+            special_fields: ::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+impl ::protobuf::MessageFull for LocalAuthorizationData {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("LocalAuthorizationData").unwrap()).clone()
+    }
+}
+
+impl ::std::fmt::Display for LocalAuthorizationData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for LocalAuthorizationData {
+    type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
+}
+
+#[derive(PartialEq,Clone,Default,Debug)]
+// @@protoc_insertion_point(message:gateway.IdTagInfo)
+pub struct IdTagInfo {
+    // message fields
+    // @@protoc_insertion_point(field:gateway.IdTagInfo.expiry_date)
+    pub expiry_date: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.IdTagInfo.parentIdTag)
+    pub parentIdTag: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.IdTagInfo.authorization_status)
+    pub authorization_status: ::std::string::String,
+    // special fields
+    // @@protoc_insertion_point(special_field:gateway.IdTagInfo.special_fields)
+    pub special_fields: ::protobuf::SpecialFields,
+}
+
+impl<'a> ::std::default::Default for &'a IdTagInfo {
+    fn default() -> &'a IdTagInfo {
+        <IdTagInfo as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl IdTagInfo {
+    pub fn new() -> IdTagInfo {
+        ::std::default::Default::default()
+    }
+
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
+        let mut fields = ::std::vec::Vec::with_capacity(3);
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "expiry_date",
+            |m: &IdTagInfo| { &m.expiry_date },
+            |m: &mut IdTagInfo| { &mut m.expiry_date },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "parentIdTag",
+            |m: &IdTagInfo| { &m.parentIdTag },
+            |m: &mut IdTagInfo| { &mut m.parentIdTag },
+        ));
+        fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
+            "authorization_status",
+            |m: &IdTagInfo| { &m.authorization_status },
+            |m: &mut IdTagInfo| { &mut m.authorization_status },
+        ));
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<IdTagInfo>(
+            "IdTagInfo",
+            fields,
+        )
+    }
+}
+
+impl ::protobuf::Message for IdTagInfo {
+    const NAME: &'static str = "IdTagInfo";
+
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
+        while let Some(tag) = is.read_raw_tag_or_eof()? {
+            match tag {
+                10 => {
+                    self.expiry_date = is.read_string()?;
+                },
+                18 => {
+                    self.parentIdTag = is.read_string()?;
+                },
+                26 => {
+                    self.authorization_status = is.read_string()?;
+                },
+                tag => {
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u64 {
+        let mut my_size = 0;
+        if !self.expiry_date.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.expiry_date);
+        }
+        if !self.parentIdTag.is_empty() {
+            my_size += ::protobuf::rt::string_size(2, &self.parentIdTag);
+        }
+        if !self.authorization_status.is_empty() {
+            my_size += ::protobuf::rt::string_size(3, &self.authorization_status);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
+        self.special_fields.cached_size().set(my_size as u32);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
+        if !self.expiry_date.is_empty() {
+            os.write_string(1, &self.expiry_date)?;
+        }
+        if !self.parentIdTag.is_empty() {
+            os.write_string(2, &self.parentIdTag)?;
+        }
+        if !self.authorization_status.is_empty() {
+            os.write_string(3, &self.authorization_status)?;
+        }
+        os.write_unknown_fields(self.unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn cached_size(&self) -> u32 {
+        self.special_fields.cached_size().get()
+    }
+
+    fn unknown_fields(&self) -> &::protobuf::UnknownFields {
+        self.special_fields.unknown_fields()
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        self.special_fields.mut_unknown_fields()
+    }
+
+    fn new() -> IdTagInfo {
+        IdTagInfo::new()
+    }
+
+    fn clear(&mut self) {
+        self.expiry_date.clear();
+        self.parentIdTag.clear();
+        self.authorization_status.clear();
+        self.special_fields.clear();
+    }
+
+    fn default_instance() -> &'static IdTagInfo {
+        static instance: IdTagInfo = IdTagInfo {
+            expiry_date: ::std::string::String::new(),
+            parentIdTag: ::std::string::String::new(),
+            authorization_status: ::std::string::String::new(),
+            special_fields: ::protobuf::SpecialFields::new(),
+        };
+        &instance
+    }
+}
+
+impl ::protobuf::MessageFull for IdTagInfo {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("IdTagInfo").unwrap()).clone()
+    }
+}
+
+impl ::std::fmt::Display for IdTagInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for IdTagInfo {
+    type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
+}
+
 #[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
 // @@protoc_insertion_point(enum:gateway.EventType)
 pub enum EventType {
@@ -3242,201 +4454,321 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \n\x0bstart_meter\x18\x07\x20\x01(\x05R\nstartMeter\x12\x1b\n\tend_meter\
     \x18\x08\x20\x01(\x05R\x08endMeter\x12@\n\rcharge_status\x18\t\x20\x01(\
     \x0b2\x1b.gateway.ChargingStatusDataR\x0cchargeStatus\x12%\n\x04resp\x18\
-    \n\x20\x01(\x0b2\x11.gateway.ResponseR\x04resp*\xc1\x02\n\tEventType\x12\
-    \x1d\n\x19BOOT_NOTIFICATION_REQUEST\x10\0\x12\x15\n\x11HEARTBEAT_REQUEST\
-    \x10\x01\x12\x07\n\x03LOG\x10\x02\x12\x15\n\x11AUTHORIZE_REQUEST\x10\x03\
-    \x12\x19\n\x15AUTHORIZE_REQUEST_ACK\x10\x04\x12\x1e\n\x1aCHECK_AVAILABIL\
-    ITY_REQUEST\x10\x05\x12\"\n\x1eCHECK_AVAILABILITY_REQUEST_ACK\x10\x06\
-    \x12\x18\n\x14START_CHARGE_REQUEST\x10\x07\x12\x1c\n\x18START_CHARGE_REQ\
-    UEST_ACK\x10\x08\x12\x11\n\rCHARGE_STATUS\x10\t\x12\x17\n\x13STOP_CHARGE\
-    _REQUEST\x10\n\x12\x1b\n\x17STOP_CHARGE_REQUEST_ACK\x10\x0bBWZUgithub.co\
-    m/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gat\
-    ewayJ\xd9\x1e\n\x06\x12\x04\0\0m\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\
-    \x08\n\x01\x02\x12\x03\x02\0\x10\n\x08\n\x01\x08\x12\x03\x03\0l\n\t\n\
-    \x02\x08\x0b\x12\x03\x03\0l\n\n\n\x02\x05\0\x12\x04\x05\0\x12\x01\n\n\n\
-    \x03\x05\0\x01\x12\x03\x05\x05\x0e\n\x0b\n\x04\x05\0\x02\0\x12\x03\x06\
-    \x02\x20\n\x0c\n\x05\x05\0\x02\0\x01\x12\x03\x06\x02\x1b\n\x0c\n\x05\x05\
-    \0\x02\0\x02\x12\x03\x06\x1e\x1f\n\x0b\n\x04\x05\0\x02\x01\x12\x03\x07\
-    \x02\x18\n\x0c\n\x05\x05\0\x02\x01\x01\x12\x03\x07\x02\x13\n\x0c\n\x05\
-    \x05\0\x02\x01\x02\x12\x03\x07\x16\x17\n\x0b\n\x04\x05\0\x02\x02\x12\x03\
-    \x08\x02\n\n\x0c\n\x05\x05\0\x02\x02\x01\x12\x03\x08\x02\x05\n\x0c\n\x05\
-    \x05\0\x02\x02\x02\x12\x03\x08\x08\t\n\x0b\n\x04\x05\0\x02\x03\x12\x03\t\
-    \x02\x18\n\x0c\n\x05\x05\0\x02\x03\x01\x12\x03\t\x02\x13\n\x0c\n\x05\x05\
-    \0\x02\x03\x02\x12\x03\t\x16\x17\n\x0b\n\x04\x05\0\x02\x04\x12\x03\n\x02\
-    \x1c\n\x0c\n\x05\x05\0\x02\x04\x01\x12\x03\n\x02\x17\n\x0c\n\x05\x05\0\
-    \x02\x04\x02\x12\x03\n\x1a\x1b\n\x0b\n\x04\x05\0\x02\x05\x12\x03\x0b\x02\
-    !\n\x0c\n\x05\x05\0\x02\x05\x01\x12\x03\x0b\x02\x1c\n\x0c\n\x05\x05\0\
-    \x02\x05\x02\x12\x03\x0b\x1f\x20\n\x0b\n\x04\x05\0\x02\x06\x12\x03\x0c\
-    \x02%\n\x0c\n\x05\x05\0\x02\x06\x01\x12\x03\x0c\x02\x20\n\x0c\n\x05\x05\
-    \0\x02\x06\x02\x12\x03\x0c#$\n\x0b\n\x04\x05\0\x02\x07\x12\x03\r\x02\x1b\
-    \n\x0c\n\x05\x05\0\x02\x07\x01\x12\x03\r\x02\x16\n\x0c\n\x05\x05\0\x02\
-    \x07\x02\x12\x03\r\x19\x1a\n\x0b\n\x04\x05\0\x02\x08\x12\x03\x0e\x02\x1f\
-    \n\x0c\n\x05\x05\0\x02\x08\x01\x12\x03\x0e\x02\x1a\n\x0c\n\x05\x05\0\x02\
-    \x08\x02\x12\x03\x0e\x1d\x1e\n\x0b\n\x04\x05\0\x02\t\x12\x03\x0f\x02\x14\
-    \n\x0c\n\x05\x05\0\x02\t\x01\x12\x03\x0f\x02\x0f\n\x0c\n\x05\x05\0\x02\t\
-    \x02\x12\x03\x0f\x12\x13\n\x0b\n\x04\x05\0\x02\n\x12\x03\x10\x02\x1b\n\
-    \x0c\n\x05\x05\0\x02\n\x01\x12\x03\x10\x02\x15\n\x0c\n\x05\x05\0\x02\n\
-    \x02\x12\x03\x10\x18\x1a\n\x0b\n\x04\x05\0\x02\x0b\x12\x03\x11\x02\x1f\n\
-    \x0c\n\x05\x05\0\x02\x0b\x01\x12\x03\x11\x02\x19\n\x0c\n\x05\x05\0\x02\
-    \x0b\x02\x12\x03\x11\x1c\x1e\n\n\n\x02\x04\0\x12\x04\x14\0#\x01\n\n\n\
-    \x03\x04\0\x01\x12\x03\x14\x08\r\n\x0b\n\x04\x04\0\x02\0\x12\x03\x15\x02\
-    \x19\n\x0c\n\x05\x04\0\x02\0\x06\x12\x03\x15\x02\x0b\n\x0c\n\x05\x04\0\
-    \x02\0\x01\x12\x03\x15\x0c\x14\n\x0c\n\x05\x04\0\x02\0\x03\x12\x03\x15\
-    \x17\x18\n\x0c\n\x04\x04\0\x08\0\x12\x04\x16\x02\"\x03\n\x0c\n\x05\x04\0\
-    \x08\0\x01\x12\x03\x16\x08\x0c\n\x0b\n\x04\x04\0\x02\x01\x12\x03\x17\x04\
-    C\n\x0c\n\x05\x04\0\x02\x01\x06\x12\x03\x17\x04\x1f\n\x0c\n\x05\x04\0\
-    \x02\x01\x01\x12\x03\x17\x20>\n\x0c\n\x05\x04\0\x02\x01\x03\x12\x03\x17A\
-    B\n\x0b\n\x04\x04\0\x02\x02\x12\x03\x18\x04\x19\n\x0c\n\x05\x04\0\x02\
-    \x02\x06\x12\x03\x18\x04\x0b\n\x0c\n\x05\x04\0\x02\x02\x01\x12\x03\x18\
-    \x0c\x14\n\x0c\n\x05\x04\0\x02\x02\x03\x12\x03\x18\x17\x18\n\x0b\n\x04\
-    \x04\0\x02\x03\x12\x03\x19\x044\n\x0c\n\x05\x04\0\x02\x03\x06\x12\x03\
-    \x19\x04\x18\n\x0c\n\x05\x04\0\x02\x03\x01\x12\x03\x19\x19/\n\x0c\n\x05\
-    \x04\0\x02\x03\x03\x12\x03\x1923\n\x0b\n\x04\x04\0\x02\x04\x12\x03\x1a\
-    \x04;\n\x0c\n\x05\x04\0\x02\x04\x06\x12\x03\x1a\x04\x1b\n\x0c\n\x05\x04\
-    \0\x02\x04\x01\x12\x03\x1a\x1c6\n\x0c\n\x05\x04\0\x02\x04\x03\x12\x03\
-    \x1a9:\n\x0b\n\x04\x04\0\x02\x05\x12\x03\x1b\x04E\n\x0c\n\x05\x04\0\x02\
-    \x05\x06\x12\x03\x1b\x04\x20\n\x0c\n\x05\x04\0\x02\x05\x01\x12\x03\x1b!@\
-    \n\x0c\n\x05\x04\0\x02\x05\x03\x12\x03\x1bCD\n\x0b\n\x04\x04\0\x02\x06\
-    \x12\x03\x1c\x04L\n\x0c\n\x05\x04\0\x02\x06\x06\x12\x03\x1c\x04#\n\x0c\n\
-    \x05\x04\0\x02\x06\x01\x12\x03\x1c$G\n\x0c\n\x05\x04\0\x02\x06\x03\x12\
-    \x03\x1cJK\n\x0b\n\x04\x04\0\x02\x07\x12\x03\x1d\x049\n\x0c\n\x05\x04\0\
-    \x02\x07\x06\x12\x03\x1d\x04\x1a\n\x0c\n\x05\x04\0\x02\x07\x01\x12\x03\
-    \x1d\x1b4\n\x0c\n\x05\x04\0\x02\x07\x03\x12\x03\x1d78\n\x0b\n\x04\x04\0\
-    \x02\x08\x12\x03\x1e\x04@\n\x0c\n\x05\x04\0\x02\x08\x06\x12\x03\x1e\x04\
-    \x1d\n\x0c\n\x05\x04\0\x02\x08\x01\x12\x03\x1e\x1e;\n\x0c\n\x05\x04\0\
-    \x02\x08\x03\x12\x03\x1e>?\n\x0b\n\x04\x04\0\x02\t\x12\x03\x1f\x04/\n\
-    \x0c\n\x05\x04\0\x02\t\x06\x12\x03\x1f\x04\x16\n\x0c\n\x05\x04\0\x02\t\
-    \x01\x12\x03\x1f\x17)\n\x0c\n\x05\x04\0\x02\t\x03\x12\x03\x1f,.\n\x0b\n\
-    \x04\x04\0\x02\n\x12\x03\x20\x048\n\x0c\n\x05\x04\0\x02\n\x06\x12\x03\
-    \x20\x04\x19\n\x0c\n\x05\x04\0\x02\n\x01\x12\x03\x20\x1a2\n\x0c\n\x05\
-    \x04\0\x02\n\x03\x12\x03\x2057\n\x0b\n\x04\x04\0\x02\x0b\x12\x03!\x04?\n\
-    \x0c\n\x05\x04\0\x02\x0b\x06\x12\x03!\x04\x1c\n\x0c\n\x05\x04\0\x02\x0b\
-    \x01\x12\x03!\x1d9\n\x0c\n\x05\x04\0\x02\x0b\x03\x12\x03!<>\n\n\n\x02\
-    \x04\x01\x12\x04%\0/\x01\n\n\n\x03\x04\x01\x01\x12\x03%\x08#\n\x0b\n\x04\
-    \x04\x01\x02\0\x12\x03&\x02&\n\x0c\n\x05\x04\x01\x02\0\x05\x12\x03&\x02\
-    \x08\n\x0c\n\x05\x04\x01\x02\0\x01\x12\x03&\t!\n\x0c\n\x05\x04\x01\x02\0\
-    \x03\x12\x03&$%\n\x0b\n\x04\x04\x01\x02\x01\x12\x03'\x02\x20\n\x0c\n\x05\
-    \x04\x01\x02\x01\x05\x12\x03'\x02\x08\n\x0c\n\x05\x04\x01\x02\x01\x01\
-    \x12\x03'\t\x1b\n\x0c\n\x05\x04\x01\x02\x01\x03\x12\x03'\x1e\x1f\n\x0b\n\
-    \x04\x04\x01\x02\x02\x12\x03(\x02(\n\x0c\n\x05\x04\x01\x02\x02\x05\x12\
-    \x03(\x02\x08\n\x0c\n\x05\x04\x01\x02\x02\x01\x12\x03(\t#\n\x0c\n\x05\
-    \x04\x01\x02\x02\x03\x12\x03(&'\n\x0b\n\x04\x04\x01\x02\x03\x12\x03)\x02\
-    !\n\x0c\n\x05\x04\x01\x02\x03\x05\x12\x03)\x02\x08\n\x0c\n\x05\x04\x01\
-    \x02\x03\x01\x12\x03)\t\x1c\n\x0c\n\x05\x04\x01\x02\x03\x03\x12\x03)\x1f\
-    \x20\n\x0b\n\x04\x04\x01\x02\x04\x12\x03*\x02\x1e\n\x0c\n\x05\x04\x01\
-    \x02\x04\x05\x12\x03*\x02\x08\n\x0c\n\x05\x04\x01\x02\x04\x01\x12\x03*\t\
-    \x19\n\x0c\n\x05\x04\x01\x02\x04\x03\x12\x03*\x1c\x1d\n\x0b\n\x04\x04\
-    \x01\x02\x05\x12\x03+\x02\x13\n\x0c\n\x05\x04\x01\x02\x05\x05\x12\x03+\
-    \x02\x08\n\x0c\n\x05\x04\x01\x02\x05\x01\x12\x03+\t\x0e\n\x0c\n\x05\x04\
-    \x01\x02\x05\x03\x12\x03+\x11\x12\n\x0b\n\x04\x04\x01\x02\x06\x12\x03,\
-    \x02\x12\n\x0c\n\x05\x04\x01\x02\x06\x05\x12\x03,\x02\x08\n\x0c\n\x05\
-    \x04\x01\x02\x06\x01\x12\x03,\t\r\n\x0c\n\x05\x04\x01\x02\x06\x03\x12\
-    \x03,\x10\x11\n\x0b\n\x04\x04\x01\x02\x07\x12\x03-\x02!\n\x0c\n\x05\x04\
-    \x01\x02\x07\x05\x12\x03-\x02\x08\n\x0c\n\x05\x04\x01\x02\x07\x01\x12\
-    \x03-\t\x1c\n\x0c\n\x05\x04\x01\x02\x07\x03\x12\x03-\x1f\x20\n\x0b\n\x04\
-    \x04\x01\x02\x08\x12\x03.\x02\x18\n\x0c\n\x05\x04\x01\x02\x08\x05\x12\
-    \x03.\x02\x08\n\x0c\n\x05\x04\x01\x02\x08\x01\x12\x03.\t\x13\n\x0c\n\x05\
-    \x04\x01\x02\x08\x03\x12\x03.\x16\x17\n\n\n\x02\x04\x02\x12\x041\04\x01\
-    \n\n\n\x03\x04\x02\x01\x12\x031\x08\x0f\n\x0b\n\x04\x04\x02\x02\0\x12\
-    \x032\x02\x1a\n\x0c\n\x05\x04\x02\x02\0\x05\x12\x032\x02\x08\n\x0c\n\x05\
-    \x04\x02\x02\0\x01\x12\x032\t\x15\n\x0c\n\x05\x04\x02\x02\0\x03\x12\x032\
-    \x18\x19\n\x0b\n\x04\x04\x02\x02\x01\x12\x033\x02\x14\n\x0c\n\x05\x04\
-    \x02\x02\x01\x06\x12\x033\x02\n\n\x0c\n\x05\x04\x02\x02\x01\x01\x12\x033\
-    \x0b\x0f\n\x0c\n\x05\x04\x02\x02\x01\x03\x12\x033\x12\x13\n\n\n\x02\x04\
-    \x03\x12\x046\09\x01\n\n\n\x03\x04\x03\x01\x12\x036\x08\x1c\n\x0b\n\x04\
-    \x04\x03\x02\0\x12\x037\x02$\n\x0c\n\x05\x04\x03\x02\0\x05\x12\x037\x02\
-    \x08\n\x0c\n\x05\x04\x03\x02\0\x01\x12\x037\t\x1f\n\x0c\n\x05\x04\x03\
-    \x02\0\x03\x12\x037\"#\n\x0b\n\x04\x04\x03\x02\x01\x12\x038\x02!\n\x0c\n\
-    \x05\x04\x03\x02\x01\x05\x12\x038\x02\x08\n\x0c\n\x05\x04\x03\x02\x01\
-    \x01\x12\x038\t\x1c\n\x0c\n\x05\x04\x03\x02\x01\x03\x12\x038\x1f\x20\n\n\
-    \n\x02\x04\x04\x12\x04:\0=\x01\n\n\n\x03\x04\x04\x01\x12\x03:\x08\x1f\n\
-    \x0b\n\x04\x04\x04\x02\0\x12\x03;\x02!\n\x0c\n\x05\x04\x04\x02\0\x05\x12\
-    \x03;\x02\x08\n\x0c\n\x05\x04\x04\x02\0\x01\x12\x03;\t\x1c\n\x0c\n\x05\
-    \x04\x04\x02\0\x03\x12\x03;\x1f\x20\n\x0b\n\x04\x04\x04\x02\x01\x12\x03<\
-    \x02\x14\n\x0c\n\x05\x04\x04\x02\x01\x06\x12\x03<\x02\n\n\x0c\n\x05\x04\
-    \x04\x02\x01\x01\x12\x03<\x0b\x0f\n\x0c\n\x05\x04\x04\x02\x01\x03\x12\
-    \x03<\x12\x13\n\n\n\x02\x04\x05\x12\x04?\0B\x01\n\n\n\x03\x04\x05\x01\
-    \x12\x03?\x08$\n\x0b\n\x04\x04\x05\x02\0\x12\x03@\x02$\n\x0c\n\x05\x04\
-    \x05\x02\0\x05\x12\x03@\x02\x08\n\x0c\n\x05\x04\x05\x02\0\x01\x12\x03@\t\
-    \x1f\n\x0c\n\x05\x04\x05\x02\0\x03\x12\x03@\"#\n\x0b\n\x04\x04\x05\x02\
-    \x01\x12\x03A\x02\x19\n\x0c\n\x05\x04\x05\x02\x01\x05\x12\x03A\x02\x07\n\
-    \x0c\n\x05\x04\x05\x02\x01\x01\x12\x03A\x08\x14\n\x0c\n\x05\x04\x05\x02\
-    \x01\x03\x12\x03A\x17\x18\n\t\n\x02\x04\x06\x12\x03C\0>\n\n\n\x03\x04\
-    \x06\x01\x12\x03C\x08'\n\x0b\n\x04\x04\x06\x02\0\x12\x03C*<\n\x0c\n\x05\
-    \x04\x06\x02\0\x06\x12\x03C*2\n\x0c\n\x05\x04\x06\x02\0\x01\x12\x03C37\n\
-    \x0c\n\x05\x04\x06\x02\0\x03\x12\x03C:;\n\n\n\x02\x04\x07\x12\x04E\0I\
-    \x01\n\n\n\x03\x04\x07\x01\x12\x03E\x08\x1e\n\x0b\n\x04\x04\x07\x02\0\
-    \x12\x03F\x02$\n\x0c\n\x05\x04\x07\x02\0\x05\x12\x03F\x02\x08\n\x0c\n\
-    \x05\x04\x07\x02\0\x01\x12\x03F\t\x1f\n\x0c\n\x05\x04\x07\x02\0\x03\x12\
-    \x03F\"#\n\x0b\n\x04\x04\x07\x02\x01\x12\x03G\x02\x19\n\x0c\n\x05\x04\
-    \x07\x02\x01\x05\x12\x03G\x02\x07\n\x0c\n\x05\x04\x07\x02\x01\x01\x12\
-    \x03G\x08\x14\n\x0c\n\x05\x04\x07\x02\x01\x03\x12\x03G\x17\x18\n\x0b\n\
-    \x04\x04\x07\x02\x02\x12\x03H\x02!\n\x0c\n\x05\x04\x07\x02\x02\x05\x12\
-    \x03H\x02\x08\n\x0c\n\x05\x04\x07\x02\x02\x01\x12\x03H\t\x1c\n\x0c\n\x05\
-    \x04\x07\x02\x02\x03\x12\x03H\x1f\x20\n\n\n\x02\x04\x08\x12\x04J\0M\x01\
-    \n\n\n\x03\x04\x08\x01\x12\x03J\x08!\n\x0b\n\x04\x04\x08\x02\0\x12\x03K\
-    \x02!\n\x0c\n\x05\x04\x08\x02\0\x05\x12\x03K\x02\x08\n\x0c\n\x05\x04\x08\
-    \x02\0\x01\x12\x03K\t\x1c\n\x0c\n\x05\x04\x08\x02\0\x03\x12\x03K\x1f\x20\
-    \n\x0b\n\x04\x04\x08\x02\x01\x12\x03L\x02\x14\n\x0c\n\x05\x04\x08\x02\
-    \x01\x06\x12\x03L\x02\n\n\x0c\n\x05\x04\x08\x02\x01\x01\x12\x03L\x0b\x0f\
-    \n\x0c\n\x05\x04\x08\x02\x01\x03\x12\x03L\x12\x13\n\n\n\x02\x04\t\x12\
-    \x04O\0R\x01\n\n\n\x03\x04\t\x01\x12\x03O\x08\x10\n\x0b\n\x04\x04\t\x02\
-    \0\x12\x03P\x02\x11\n\x0c\n\x05\x04\t\x02\0\x05\x12\x03P\x02\x06\n\x0c\n\
-    \x05\x04\t\x02\0\x01\x12\x03P\x07\x0c\n\x0c\n\x05\x04\t\x02\0\x03\x12\
-    \x03P\x0f\x10\n\x0b\n\x04\x04\t\x02\x01\x12\x03Q\x02\x15\n\x0c\n\x05\x04\
-    \t\x02\x01\x05\x12\x03Q\x02\x08\n\x0c\n\x05\x04\t\x02\x01\x01\x12\x03Q\t\
-    \x10\n\x0c\n\x05\x04\t\x02\x01\x03\x12\x03Q\x13\x14\n\n\n\x02\x04\n\x12\
-    \x04T\0Z\x01\n\n\n\x03\x04\n\x01\x12\x03T\x08\x1a\n\x0b\n\x04\x04\n\x02\
-    \0\x12\x03U\x02\"\n\x0c\n\x05\x04\n\x02\0\x05\x12\x03U\x02\x07\n\x0c\n\
-    \x05\x04\n\x02\0\x01\x12\x03U\x08\x1d\n\x0c\n\x05\x04\n\x02\0\x03\x12\
-    \x03U\x20!\n\x0b\n\x04\x04\n\x02\x01\x12\x03V\x02\x1a\n\x0c\n\x05\x04\n\
-    \x02\x01\x05\x12\x03V\x02\x07\n\x0c\n\x05\x04\n\x02\x01\x01\x12\x03V\x08\
-    \x15\n\x0c\n\x05\x04\n\x02\x01\x03\x12\x03V\x18\x19\n\x0b\n\x04\x04\n\
-    \x02\x02\x12\x03W\x02\x1c\n\x0c\n\x05\x04\n\x02\x02\x05\x12\x03W\x02\x07\
-    \n\x0c\n\x05\x04\n\x02\x02\x01\x12\x03W\x08\x17\n\x0c\n\x05\x04\n\x02\
-    \x02\x03\x12\x03W\x1a\x1b\n\x0b\n\x04\x04\n\x02\x03\x12\x03X\x02\x1a\n\
-    \x0c\n\x05\x04\n\x02\x03\x05\x12\x03X\x02\x08\n\x0c\n\x05\x04\n\x02\x03\
-    \x01\x12\x03X\t\x15\n\x0c\n\x05\x04\n\x02\x03\x03\x12\x03X\x18\x19\n\x0b\
-    \n\x04\x04\n\x02\x04\x12\x03Y\x02\x1a\n\x0c\n\x05\x04\n\x02\x04\x05\x12\
-    \x03Y\x02\x08\n\x0c\n\x05\x04\n\x02\x04\x01\x12\x03Y\t\x15\n\x0c\n\x05\
-    \x04\n\x02\x04\x03\x12\x03Y\x18\x19\n\n\n\x02\x04\x0b\x12\x04\\\0`\x01\n\
-    \n\n\x03\x04\x0b\x01\x12\x03\\\x08\x1d\n\x0b\n\x04\x04\x0b\x02\0\x12\x03\
-    ]\x02$\n\x0c\n\x05\x04\x0b\x02\0\x05\x12\x03]\x02\x08\n\x0c\n\x05\x04\
-    \x0b\x02\0\x01\x12\x03]\t\x1f\n\x0c\n\x05\x04\x0b\x02\0\x03\x12\x03]\"#\
-    \n\x0b\n\x04\x04\x0b\x02\x01\x12\x03^\x02\x19\n\x0c\n\x05\x04\x0b\x02\
-    \x01\x05\x12\x03^\x02\x07\n\x0c\n\x05\x04\x0b\x02\x01\x01\x12\x03^\x08\
-    \x14\n\x0c\n\x05\x04\x0b\x02\x01\x03\x12\x03^\x17\x18\n\x0b\n\x04\x04\
-    \x0b\x02\x02\x12\x03_\x02!\n\x0c\n\x05\x04\x0b\x02\x02\x05\x12\x03_\x02\
-    \x08\n\x0c\n\x05\x04\x0b\x02\x02\x01\x12\x03_\t\x1c\n\x0c\n\x05\x04\x0b\
-    \x02\x02\x03\x12\x03_\x1f\x20\n\n\n\x02\x04\x0c\x12\x04b\0m\x01\n\n\n\
-    \x03\x04\x0c\x01\x12\x03b\x08\x20\n\x0b\n\x04\x04\x0c\x02\0\x12\x03c\x02\
-    !\n\x0c\n\x05\x04\x0c\x02\0\x05\x12\x03c\x02\x08\n\x0c\n\x05\x04\x0c\x02\
-    \0\x01\x12\x03c\t\x1c\n\x0c\n\x05\x04\x0c\x02\0\x03\x12\x03c\x1f\x20\n\
-    \x0b\n\x04\x04\x0c\x02\x01\x12\x03d\x02\x1b\n\x0c\n\x05\x04\x0c\x02\x01\
-    \x05\x12\x03d\x02\x07\n\x0c\n\x05\x04\x0c\x02\x01\x01\x12\x03d\x08\x16\n\
-    \x0c\n\x05\x04\x0c\x02\x01\x03\x12\x03d\x19\x1a\n\x0b\n\x04\x04\x0c\x02\
-    \x02\x12\x03e\x02\x19\n\x0c\n\x05\x04\x0c\x02\x02\x05\x12\x03e\x02\x07\n\
-    \x0c\n\x05\x04\x0c\x02\x02\x01\x12\x03e\x08\x14\n\x0c\n\x05\x04\x0c\x02\
-    \x02\x03\x12\x03e\x17\x18\n\x0b\n\x04\x04\x0c\x02\x03\x12\x03f\x02\x14\n\
-    \x0c\n\x05\x04\x0c\x02\x03\x05\x12\x03f\x02\x08\n\x0c\n\x05\x04\x0c\x02\
-    \x03\x01\x12\x03f\t\x0f\n\x0c\n\x05\x04\x0c\x02\x03\x03\x12\x03f\x12\x13\
-    \n\x0b\n\x04\x04\x0c\x02\x04\x12\x03g\x02\x18\n\x0c\n\x05\x04\x0c\x02\
-    \x04\x05\x12\x03g\x02\x08\n\x0c\n\x05\x04\x0c\x02\x04\x01\x12\x03g\t\x13\
-    \n\x0c\n\x05\x04\x0c\x02\x04\x03\x12\x03g\x16\x17\n\x0b\n\x04\x04\x0c\
-    \x02\x05\x12\x03h\x02\x16\n\x0c\n\x05\x04\x0c\x02\x05\x05\x12\x03h\x02\
-    \x08\n\x0c\n\x05\x04\x0c\x02\x05\x01\x12\x03h\t\x11\n\x0c\n\x05\x04\x0c\
-    \x02\x05\x03\x12\x03h\x14\x15\n\x0b\n\x04\x04\x0c\x02\x06\x12\x03i\x02\
-    \x18\n\x0c\n\x05\x04\x0c\x02\x06\x05\x12\x03i\x02\x07\n\x0c\n\x05\x04\
-    \x0c\x02\x06\x01\x12\x03i\x08\x13\n\x0c\n\x05\x04\x0c\x02\x06\x03\x12\
-    \x03i\x16\x17\n\x0b\n\x04\x04\x0c\x02\x07\x12\x03j\x02\x16\n\x0c\n\x05\
-    \x04\x0c\x02\x07\x05\x12\x03j\x02\x07\n\x0c\n\x05\x04\x0c\x02\x07\x01\
-    \x12\x03j\x08\x11\n\x0c\n\x05\x04\x0c\x02\x07\x03\x12\x03j\x14\x15\n\x0b\
-    \n\x04\x04\x0c\x02\x08\x12\x03k\x02'\n\x0c\n\x05\x04\x0c\x02\x08\x06\x12\
-    \x03k\x02\x14\n\x0c\n\x05\x04\x0c\x02\x08\x01\x12\x03k\x15\"\n\x0c\n\x05\
-    \x04\x0c\x02\x08\x03\x12\x03k%&\n\x0b\n\x04\x04\x0c\x02\t\x12\x03l\x02\
-    \x15\n\x0c\n\x05\x04\x0c\x02\t\x06\x12\x03l\x02\n\n\x0c\n\x05\x04\x0c\
-    \x02\t\x01\x12\x03l\x0b\x0f\n\x0c\n\x05\x04\x0c\x02\t\x03\x12\x03l\x12\
-    \x14b\x06proto3\
+    \n\x20\x01(\x0b2\x11.gateway.ResponseR\x04resp\"\xd1\x01\n\x10ChargePoin\
+    tState\x12\x14\n\x05count\x18\x01\x20\x01(\x05R\x05count\x12P\n\rcharge_\
+    points\x18\x02\x20\x03(\x0b2+.gateway.ChargePointState.ChargePointsEntry\
+    R\x0cchargePoints\x1aU\n\x11ChargePointsEntry\x12\x10\n\x03key\x18\x01\
+    \x20\x01(\tR\x03key\x12*\n\x05value\x18\x02\x20\x01(\x0b2\x14.gateway.Ch\
+    argePointR\x05value:\x028\x01\"\xf3\x04\n\x0bChargePoint\x12\x16\n\x06st\
+    atus\x18\x01\x20\x01(\tR\x06status\x12D\n\nconnectors\x18\x02\x20\x03(\
+    \x0b2$.gateway.ChargePoint.ConnectorsEntryR\nconnectors\x12J\n\x0ctransa\
+    ctions\x18\x03\x20\x03(\x0b2&.gateway.ChargePoint.TransactionsEntryR\x0c\
+    transactions\x12?\n\tauth_list\x18\x04\x20\x03(\x0b2\".gateway.ChargePoi\
+    nt.AuthListEntryR\x08authList\x129\n\x19current_auth_list_version\x18\
+    \x05\x20\x01(\x05R\x16currentAuthListVersion\x124\n\x16current_transacti\
+    on_id\x18\x06\x20\x01(\x05R\x14currentTransactionId\x1aU\n\x0fConnectors\
+    Entry\x12\x10\n\x03key\x18\x01\x20\x01(\x05R\x03key\x12,\n\x05value\x18\
+    \x02\x20\x01(\x0b2\x16.gateway.ConnectorInfoR\x05value:\x028\x01\x1aY\n\
+    \x11TransactionsEntry\x12\x10\n\x03key\x18\x01\x20\x01(\x05R\x03key\x12.\
+    \n\x05value\x18\x02\x20\x01(\x0b2\x18.gateway.TransactionInfoR\x05value:\
+    \x028\x01\x1aV\n\rAuthListEntry\x12\x10\n\x03key\x18\x01\x20\x01(\tR\x03\
+    key\x12/\n\x05value\x18\x02\x20\x01(\x0b2\x19.gateway.ConsumerAuthDataR\
+    \x05value:\x028\x01\"h\n\rConnectorInfo\x12\x0e\n\x02id\x18\x01\x20\x01(\
+    \tR\x02id\x12\x16\n\x06status\x18\x02\x20\x01(\tR\x06status\x12/\n\x13cu\
+    rrent_transaction\x18\x03\x20\x01(\x05R\x12currentTransaction\"\x8c\x02\
+    \n\x0fTransactionInfo\x12\x0e\n\x02id\x18\x01\x20\x01(\x05R\x02id\x12\
+    \x15\n\x06id_tag\x18\x02\x20\x01(\tR\x05idTag\x12!\n\x0cconnector_id\x18\
+    \x03\x20\x01(\x05R\x0bconnectorId\x12\x1d\n\nstart_time\x18\x04\x20\x01(\
+    \tR\tstartTime\x12\x19\n\x08end_time\x18\x05\x20\x01(\tR\x07endTime\x12\
+    \x1f\n\x0bstart_meter\x18\x06\x20\x01(\x05R\nstartMeter\x12\x1b\n\tend_m\
+    eter\x18\x07\x20\x01(\x05R\x08endMeter\x127\n\x08progress\x18\x08\x20\
+    \x01(\x0b2\x1b.gateway.ChargingStatusDataR\x08progress\"\x96\x01\n\x10Co\
+    nsumerAuthData\x12\x1d\n\npublic_key\x18\x01\x20\x01(\tR\tpublicKey\x12%\
+    \n\x0etransaction_id\x18\x02\x20\x01(\x05R\rtransactionId\x12<\n\tauth_d\
+    ata\x18\x03\x20\x01(\x0b2\x1f.gateway.LocalAuthorizationDataR\x08authDat\
+    a\"O\n\x16LocalAuthorizationData\x12\x15\n\x06id_tag\x18\x01\x20\x01(\tR\
+    \x05idTag\x12\x1e\n\x0bid_tag_info\x18\x02\x20\x01(\tR\tidTagInfo\"\x81\
+    \x01\n\tIdTagInfo\x12\x1f\n\x0bexpiry_date\x18\x01\x20\x01(\tR\nexpiryDa\
+    te\x12\x20\n\x0bparentIdTag\x18\x02\x20\x01(\tR\x0bparentIdTag\x121\n\
+    \x14authorization_status\x18\x03\x20\x01(\tR\x13authorizationStatus*\xc1\
+    \x02\n\tEventType\x12\x1d\n\x19BOOT_NOTIFICATION_REQUEST\x10\0\x12\x15\n\
+    \x11HEARTBEAT_REQUEST\x10\x01\x12\x07\n\x03LOG\x10\x02\x12\x15\n\x11AUTH\
+    ORIZE_REQUEST\x10\x03\x12\x19\n\x15AUTHORIZE_REQUEST_ACK\x10\x04\x12\x1e\
+    \n\x1aCHECK_AVAILABILITY_REQUEST\x10\x05\x12\"\n\x1eCHECK_AVAILABILITY_R\
+    EQUEST_ACK\x10\x06\x12\x18\n\x14START_CHARGE_REQUEST\x10\x07\x12\x1c\n\
+    \x18START_CHARGE_REQUEST_ACK\x10\x08\x12\x11\n\rCHARGE_STATUS\x10\t\x12\
+    \x17\n\x13STOP_CHARGE_REQUEST\x10\n\x12\x1b\n\x17STOP_CHARGE_REQUEST_ACK\
+    \x10\x0bBWZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-form\
+    at/golang/gateway;gatewayJ\xa0,\n\x07\x12\x05\0\0\x9d\x01\x01\n\x08\n\
+    \x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x02\0\x10\n\x08\n\x01\
+    \x08\x12\x03\x03\0l\n\t\n\x02\x08\x0b\x12\x03\x03\0l\n\n\n\x02\x05\0\x12\
+    \x04\x05\0\x12\x01\n\n\n\x03\x05\0\x01\x12\x03\x05\x05\x0e\n\x0b\n\x04\
+    \x05\0\x02\0\x12\x03\x06\x02\x20\n\x0c\n\x05\x05\0\x02\0\x01\x12\x03\x06\
+    \x02\x1b\n\x0c\n\x05\x05\0\x02\0\x02\x12\x03\x06\x1e\x1f\n\x0b\n\x04\x05\
+    \0\x02\x01\x12\x03\x07\x02\x18\n\x0c\n\x05\x05\0\x02\x01\x01\x12\x03\x07\
+    \x02\x13\n\x0c\n\x05\x05\0\x02\x01\x02\x12\x03\x07\x16\x17\n\x0b\n\x04\
+    \x05\0\x02\x02\x12\x03\x08\x02\n\n\x0c\n\x05\x05\0\x02\x02\x01\x12\x03\
+    \x08\x02\x05\n\x0c\n\x05\x05\0\x02\x02\x02\x12\x03\x08\x08\t\n\x0b\n\x04\
+    \x05\0\x02\x03\x12\x03\t\x02\x18\n\x0c\n\x05\x05\0\x02\x03\x01\x12\x03\t\
+    \x02\x13\n\x0c\n\x05\x05\0\x02\x03\x02\x12\x03\t\x16\x17\n\x0b\n\x04\x05\
+    \0\x02\x04\x12\x03\n\x02\x1c\n\x0c\n\x05\x05\0\x02\x04\x01\x12\x03\n\x02\
+    \x17\n\x0c\n\x05\x05\0\x02\x04\x02\x12\x03\n\x1a\x1b\n\x0b\n\x04\x05\0\
+    \x02\x05\x12\x03\x0b\x02!\n\x0c\n\x05\x05\0\x02\x05\x01\x12\x03\x0b\x02\
+    \x1c\n\x0c\n\x05\x05\0\x02\x05\x02\x12\x03\x0b\x1f\x20\n\x0b\n\x04\x05\0\
+    \x02\x06\x12\x03\x0c\x02%\n\x0c\n\x05\x05\0\x02\x06\x01\x12\x03\x0c\x02\
+    \x20\n\x0c\n\x05\x05\0\x02\x06\x02\x12\x03\x0c#$\n\x0b\n\x04\x05\0\x02\
+    \x07\x12\x03\r\x02\x1b\n\x0c\n\x05\x05\0\x02\x07\x01\x12\x03\r\x02\x16\n\
+    \x0c\n\x05\x05\0\x02\x07\x02\x12\x03\r\x19\x1a\n\x0b\n\x04\x05\0\x02\x08\
+    \x12\x03\x0e\x02\x1f\n\x0c\n\x05\x05\0\x02\x08\x01\x12\x03\x0e\x02\x1a\n\
+    \x0c\n\x05\x05\0\x02\x08\x02\x12\x03\x0e\x1d\x1e\n\x0b\n\x04\x05\0\x02\t\
+    \x12\x03\x0f\x02\x14\n\x0c\n\x05\x05\0\x02\t\x01\x12\x03\x0f\x02\x0f\n\
+    \x0c\n\x05\x05\0\x02\t\x02\x12\x03\x0f\x12\x13\n\x0b\n\x04\x05\0\x02\n\
+    \x12\x03\x10\x02\x1b\n\x0c\n\x05\x05\0\x02\n\x01\x12\x03\x10\x02\x15\n\
+    \x0c\n\x05\x05\0\x02\n\x02\x12\x03\x10\x18\x1a\n\x0b\n\x04\x05\0\x02\x0b\
+    \x12\x03\x11\x02\x1f\n\x0c\n\x05\x05\0\x02\x0b\x01\x12\x03\x11\x02\x19\n\
+    \x0c\n\x05\x05\0\x02\x0b\x02\x12\x03\x11\x1c\x1e\n\n\n\x02\x04\0\x12\x04\
+    \x14\0#\x01\n\n\n\x03\x04\0\x01\x12\x03\x14\x08\r\n\x0b\n\x04\x04\0\x02\
+    \0\x12\x03\x15\x02\x19\n\x0c\n\x05\x04\0\x02\0\x06\x12\x03\x15\x02\x0b\n\
+    \x0c\n\x05\x04\0\x02\0\x01\x12\x03\x15\x0c\x14\n\x0c\n\x05\x04\0\x02\0\
+    \x03\x12\x03\x15\x17\x18\n\x0c\n\x04\x04\0\x08\0\x12\x04\x16\x02\"\x03\n\
+    \x0c\n\x05\x04\0\x08\0\x01\x12\x03\x16\x08\x0c\n\x0b\n\x04\x04\0\x02\x01\
+    \x12\x03\x17\x04C\n\x0c\n\x05\x04\0\x02\x01\x06\x12\x03\x17\x04\x1f\n\
+    \x0c\n\x05\x04\0\x02\x01\x01\x12\x03\x17\x20>\n\x0c\n\x05\x04\0\x02\x01\
+    \x03\x12\x03\x17AB\n\x0b\n\x04\x04\0\x02\x02\x12\x03\x18\x04\x19\n\x0c\n\
+    \x05\x04\0\x02\x02\x06\x12\x03\x18\x04\x0b\n\x0c\n\x05\x04\0\x02\x02\x01\
+    \x12\x03\x18\x0c\x14\n\x0c\n\x05\x04\0\x02\x02\x03\x12\x03\x18\x17\x18\n\
+    \x0b\n\x04\x04\0\x02\x03\x12\x03\x19\x044\n\x0c\n\x05\x04\0\x02\x03\x06\
+    \x12\x03\x19\x04\x18\n\x0c\n\x05\x04\0\x02\x03\x01\x12\x03\x19\x19/\n\
+    \x0c\n\x05\x04\0\x02\x03\x03\x12\x03\x1923\n\x0b\n\x04\x04\0\x02\x04\x12\
+    \x03\x1a\x04;\n\x0c\n\x05\x04\0\x02\x04\x06\x12\x03\x1a\x04\x1b\n\x0c\n\
+    \x05\x04\0\x02\x04\x01\x12\x03\x1a\x1c6\n\x0c\n\x05\x04\0\x02\x04\x03\
+    \x12\x03\x1a9:\n\x0b\n\x04\x04\0\x02\x05\x12\x03\x1b\x04E\n\x0c\n\x05\
+    \x04\0\x02\x05\x06\x12\x03\x1b\x04\x20\n\x0c\n\x05\x04\0\x02\x05\x01\x12\
+    \x03\x1b!@\n\x0c\n\x05\x04\0\x02\x05\x03\x12\x03\x1bCD\n\x0b\n\x04\x04\0\
+    \x02\x06\x12\x03\x1c\x04L\n\x0c\n\x05\x04\0\x02\x06\x06\x12\x03\x1c\x04#\
+    \n\x0c\n\x05\x04\0\x02\x06\x01\x12\x03\x1c$G\n\x0c\n\x05\x04\0\x02\x06\
+    \x03\x12\x03\x1cJK\n\x0b\n\x04\x04\0\x02\x07\x12\x03\x1d\x049\n\x0c\n\
+    \x05\x04\0\x02\x07\x06\x12\x03\x1d\x04\x1a\n\x0c\n\x05\x04\0\x02\x07\x01\
+    \x12\x03\x1d\x1b4\n\x0c\n\x05\x04\0\x02\x07\x03\x12\x03\x1d78\n\x0b\n\
+    \x04\x04\0\x02\x08\x12\x03\x1e\x04@\n\x0c\n\x05\x04\0\x02\x08\x06\x12\
+    \x03\x1e\x04\x1d\n\x0c\n\x05\x04\0\x02\x08\x01\x12\x03\x1e\x1e;\n\x0c\n\
+    \x05\x04\0\x02\x08\x03\x12\x03\x1e>?\n\x0b\n\x04\x04\0\x02\t\x12\x03\x1f\
+    \x04/\n\x0c\n\x05\x04\0\x02\t\x06\x12\x03\x1f\x04\x16\n\x0c\n\x05\x04\0\
+    \x02\t\x01\x12\x03\x1f\x17)\n\x0c\n\x05\x04\0\x02\t\x03\x12\x03\x1f,.\n\
+    \x0b\n\x04\x04\0\x02\n\x12\x03\x20\x048\n\x0c\n\x05\x04\0\x02\n\x06\x12\
+    \x03\x20\x04\x19\n\x0c\n\x05\x04\0\x02\n\x01\x12\x03\x20\x1a2\n\x0c\n\
+    \x05\x04\0\x02\n\x03\x12\x03\x2057\n\x0b\n\x04\x04\0\x02\x0b\x12\x03!\
+    \x04?\n\x0c\n\x05\x04\0\x02\x0b\x06\x12\x03!\x04\x1c\n\x0c\n\x05\x04\0\
+    \x02\x0b\x01\x12\x03!\x1d9\n\x0c\n\x05\x04\0\x02\x0b\x03\x12\x03!<>\n\n\
+    \n\x02\x04\x01\x12\x04%\0/\x01\n\n\n\x03\x04\x01\x01\x12\x03%\x08#\n\x0b\
+    \n\x04\x04\x01\x02\0\x12\x03&\x02&\n\x0c\n\x05\x04\x01\x02\0\x05\x12\x03\
+    &\x02\x08\n\x0c\n\x05\x04\x01\x02\0\x01\x12\x03&\t!\n\x0c\n\x05\x04\x01\
+    \x02\0\x03\x12\x03&$%\n\x0b\n\x04\x04\x01\x02\x01\x12\x03'\x02\x20\n\x0c\
+    \n\x05\x04\x01\x02\x01\x05\x12\x03'\x02\x08\n\x0c\n\x05\x04\x01\x02\x01\
+    \x01\x12\x03'\t\x1b\n\x0c\n\x05\x04\x01\x02\x01\x03\x12\x03'\x1e\x1f\n\
+    \x0b\n\x04\x04\x01\x02\x02\x12\x03(\x02(\n\x0c\n\x05\x04\x01\x02\x02\x05\
+    \x12\x03(\x02\x08\n\x0c\n\x05\x04\x01\x02\x02\x01\x12\x03(\t#\n\x0c\n\
+    \x05\x04\x01\x02\x02\x03\x12\x03(&'\n\x0b\n\x04\x04\x01\x02\x03\x12\x03)\
+    \x02!\n\x0c\n\x05\x04\x01\x02\x03\x05\x12\x03)\x02\x08\n\x0c\n\x05\x04\
+    \x01\x02\x03\x01\x12\x03)\t\x1c\n\x0c\n\x05\x04\x01\x02\x03\x03\x12\x03)\
+    \x1f\x20\n\x0b\n\x04\x04\x01\x02\x04\x12\x03*\x02\x1e\n\x0c\n\x05\x04\
+    \x01\x02\x04\x05\x12\x03*\x02\x08\n\x0c\n\x05\x04\x01\x02\x04\x01\x12\
+    \x03*\t\x19\n\x0c\n\x05\x04\x01\x02\x04\x03\x12\x03*\x1c\x1d\n\x0b\n\x04\
+    \x04\x01\x02\x05\x12\x03+\x02\x13\n\x0c\n\x05\x04\x01\x02\x05\x05\x12\
+    \x03+\x02\x08\n\x0c\n\x05\x04\x01\x02\x05\x01\x12\x03+\t\x0e\n\x0c\n\x05\
+    \x04\x01\x02\x05\x03\x12\x03+\x11\x12\n\x0b\n\x04\x04\x01\x02\x06\x12\
+    \x03,\x02\x12\n\x0c\n\x05\x04\x01\x02\x06\x05\x12\x03,\x02\x08\n\x0c\n\
+    \x05\x04\x01\x02\x06\x01\x12\x03,\t\r\n\x0c\n\x05\x04\x01\x02\x06\x03\
+    \x12\x03,\x10\x11\n\x0b\n\x04\x04\x01\x02\x07\x12\x03-\x02!\n\x0c\n\x05\
+    \x04\x01\x02\x07\x05\x12\x03-\x02\x08\n\x0c\n\x05\x04\x01\x02\x07\x01\
+    \x12\x03-\t\x1c\n\x0c\n\x05\x04\x01\x02\x07\x03\x12\x03-\x1f\x20\n\x0b\n\
+    \x04\x04\x01\x02\x08\x12\x03.\x02\x18\n\x0c\n\x05\x04\x01\x02\x08\x05\
+    \x12\x03.\x02\x08\n\x0c\n\x05\x04\x01\x02\x08\x01\x12\x03.\t\x13\n\x0c\n\
+    \x05\x04\x01\x02\x08\x03\x12\x03.\x16\x17\n\n\n\x02\x04\x02\x12\x041\04\
+    \x01\n\n\n\x03\x04\x02\x01\x12\x031\x08\x0f\n\x0b\n\x04\x04\x02\x02\0\
+    \x12\x032\x02\x1a\n\x0c\n\x05\x04\x02\x02\0\x05\x12\x032\x02\x08\n\x0c\n\
+    \x05\x04\x02\x02\0\x01\x12\x032\t\x15\n\x0c\n\x05\x04\x02\x02\0\x03\x12\
+    \x032\x18\x19\n\x0b\n\x04\x04\x02\x02\x01\x12\x033\x02\x14\n\x0c\n\x05\
+    \x04\x02\x02\x01\x06\x12\x033\x02\n\n\x0c\n\x05\x04\x02\x02\x01\x01\x12\
+    \x033\x0b\x0f\n\x0c\n\x05\x04\x02\x02\x01\x03\x12\x033\x12\x13\n\n\n\x02\
+    \x04\x03\x12\x046\09\x01\n\n\n\x03\x04\x03\x01\x12\x036\x08\x1c\n\x0b\n\
+    \x04\x04\x03\x02\0\x12\x037\x02$\n\x0c\n\x05\x04\x03\x02\0\x05\x12\x037\
+    \x02\x08\n\x0c\n\x05\x04\x03\x02\0\x01\x12\x037\t\x1f\n\x0c\n\x05\x04\
+    \x03\x02\0\x03\x12\x037\"#\n\x0b\n\x04\x04\x03\x02\x01\x12\x038\x02!\n\
+    \x0c\n\x05\x04\x03\x02\x01\x05\x12\x038\x02\x08\n\x0c\n\x05\x04\x03\x02\
+    \x01\x01\x12\x038\t\x1c\n\x0c\n\x05\x04\x03\x02\x01\x03\x12\x038\x1f\x20\
+    \n\n\n\x02\x04\x04\x12\x04:\0=\x01\n\n\n\x03\x04\x04\x01\x12\x03:\x08\
+    \x1f\n\x0b\n\x04\x04\x04\x02\0\x12\x03;\x02!\n\x0c\n\x05\x04\x04\x02\0\
+    \x05\x12\x03;\x02\x08\n\x0c\n\x05\x04\x04\x02\0\x01\x12\x03;\t\x1c\n\x0c\
+    \n\x05\x04\x04\x02\0\x03\x12\x03;\x1f\x20\n\x0b\n\x04\x04\x04\x02\x01\
+    \x12\x03<\x02\x14\n\x0c\n\x05\x04\x04\x02\x01\x06\x12\x03<\x02\n\n\x0c\n\
+    \x05\x04\x04\x02\x01\x01\x12\x03<\x0b\x0f\n\x0c\n\x05\x04\x04\x02\x01\
+    \x03\x12\x03<\x12\x13\n\n\n\x02\x04\x05\x12\x04?\0B\x01\n\n\n\x03\x04\
+    \x05\x01\x12\x03?\x08$\n\x0b\n\x04\x04\x05\x02\0\x12\x03@\x02$\n\x0c\n\
+    \x05\x04\x05\x02\0\x05\x12\x03@\x02\x08\n\x0c\n\x05\x04\x05\x02\0\x01\
+    \x12\x03@\t\x1f\n\x0c\n\x05\x04\x05\x02\0\x03\x12\x03@\"#\n\x0b\n\x04\
+    \x04\x05\x02\x01\x12\x03A\x02\x19\n\x0c\n\x05\x04\x05\x02\x01\x05\x12\
+    \x03A\x02\x07\n\x0c\n\x05\x04\x05\x02\x01\x01\x12\x03A\x08\x14\n\x0c\n\
+    \x05\x04\x05\x02\x01\x03\x12\x03A\x17\x18\n\t\n\x02\x04\x06\x12\x03C\0>\
+    \n\n\n\x03\x04\x06\x01\x12\x03C\x08'\n\x0b\n\x04\x04\x06\x02\0\x12\x03C*\
+    <\n\x0c\n\x05\x04\x06\x02\0\x06\x12\x03C*2\n\x0c\n\x05\x04\x06\x02\0\x01\
+    \x12\x03C37\n\x0c\n\x05\x04\x06\x02\0\x03\x12\x03C:;\n\n\n\x02\x04\x07\
+    \x12\x04E\0I\x01\n\n\n\x03\x04\x07\x01\x12\x03E\x08\x1e\n\x0b\n\x04\x04\
+    \x07\x02\0\x12\x03F\x02$\n\x0c\n\x05\x04\x07\x02\0\x05\x12\x03F\x02\x08\
+    \n\x0c\n\x05\x04\x07\x02\0\x01\x12\x03F\t\x1f\n\x0c\n\x05\x04\x07\x02\0\
+    \x03\x12\x03F\"#\n\x0b\n\x04\x04\x07\x02\x01\x12\x03G\x02\x19\n\x0c\n\
+    \x05\x04\x07\x02\x01\x05\x12\x03G\x02\x07\n\x0c\n\x05\x04\x07\x02\x01\
+    \x01\x12\x03G\x08\x14\n\x0c\n\x05\x04\x07\x02\x01\x03\x12\x03G\x17\x18\n\
+    \x0b\n\x04\x04\x07\x02\x02\x12\x03H\x02!\n\x0c\n\x05\x04\x07\x02\x02\x05\
+    \x12\x03H\x02\x08\n\x0c\n\x05\x04\x07\x02\x02\x01\x12\x03H\t\x1c\n\x0c\n\
+    \x05\x04\x07\x02\x02\x03\x12\x03H\x1f\x20\n\n\n\x02\x04\x08\x12\x04J\0M\
+    \x01\n\n\n\x03\x04\x08\x01\x12\x03J\x08!\n\x0b\n\x04\x04\x08\x02\0\x12\
+    \x03K\x02!\n\x0c\n\x05\x04\x08\x02\0\x05\x12\x03K\x02\x08\n\x0c\n\x05\
+    \x04\x08\x02\0\x01\x12\x03K\t\x1c\n\x0c\n\x05\x04\x08\x02\0\x03\x12\x03K\
+    \x1f\x20\n\x0b\n\x04\x04\x08\x02\x01\x12\x03L\x02\x14\n\x0c\n\x05\x04\
+    \x08\x02\x01\x06\x12\x03L\x02\n\n\x0c\n\x05\x04\x08\x02\x01\x01\x12\x03L\
+    \x0b\x0f\n\x0c\n\x05\x04\x08\x02\x01\x03\x12\x03L\x12\x13\n\n\n\x02\x04\
+    \t\x12\x04O\0R\x01\n\n\n\x03\x04\t\x01\x12\x03O\x08\x10\n\x0b\n\x04\x04\
+    \t\x02\0\x12\x03P\x02\x11\n\x0c\n\x05\x04\t\x02\0\x05\x12\x03P\x02\x06\n\
+    \x0c\n\x05\x04\t\x02\0\x01\x12\x03P\x07\x0c\n\x0c\n\x05\x04\t\x02\0\x03\
+    \x12\x03P\x0f\x10\n\x0b\n\x04\x04\t\x02\x01\x12\x03Q\x02\x15\n\x0c\n\x05\
+    \x04\t\x02\x01\x05\x12\x03Q\x02\x08\n\x0c\n\x05\x04\t\x02\x01\x01\x12\
+    \x03Q\t\x10\n\x0c\n\x05\x04\t\x02\x01\x03\x12\x03Q\x13\x14\n\n\n\x02\x04\
+    \n\x12\x04T\0Z\x01\n\n\n\x03\x04\n\x01\x12\x03T\x08\x1a\n\x0b\n\x04\x04\
+    \n\x02\0\x12\x03U\x02\"\n\x0c\n\x05\x04\n\x02\0\x05\x12\x03U\x02\x07\n\
+    \x0c\n\x05\x04\n\x02\0\x01\x12\x03U\x08\x1d\n\x0c\n\x05\x04\n\x02\0\x03\
+    \x12\x03U\x20!\n\x0b\n\x04\x04\n\x02\x01\x12\x03V\x02\x1a\n\x0c\n\x05\
+    \x04\n\x02\x01\x05\x12\x03V\x02\x07\n\x0c\n\x05\x04\n\x02\x01\x01\x12\
+    \x03V\x08\x15\n\x0c\n\x05\x04\n\x02\x01\x03\x12\x03V\x18\x19\n\x0b\n\x04\
+    \x04\n\x02\x02\x12\x03W\x02\x1c\n\x0c\n\x05\x04\n\x02\x02\x05\x12\x03W\
+    \x02\x07\n\x0c\n\x05\x04\n\x02\x02\x01\x12\x03W\x08\x17\n\x0c\n\x05\x04\
+    \n\x02\x02\x03\x12\x03W\x1a\x1b\n\x0b\n\x04\x04\n\x02\x03\x12\x03X\x02\
+    \x1a\n\x0c\n\x05\x04\n\x02\x03\x05\x12\x03X\x02\x08\n\x0c\n\x05\x04\n\
+    \x02\x03\x01\x12\x03X\t\x15\n\x0c\n\x05\x04\n\x02\x03\x03\x12\x03X\x18\
+    \x19\n\x0b\n\x04\x04\n\x02\x04\x12\x03Y\x02\x1a\n\x0c\n\x05\x04\n\x02\
+    \x04\x05\x12\x03Y\x02\x08\n\x0c\n\x05\x04\n\x02\x04\x01\x12\x03Y\t\x15\n\
+    \x0c\n\x05\x04\n\x02\x04\x03\x12\x03Y\x18\x19\n\n\n\x02\x04\x0b\x12\x04\
+    \\\0`\x01\n\n\n\x03\x04\x0b\x01\x12\x03\\\x08\x1d\n\x0b\n\x04\x04\x0b\
+    \x02\0\x12\x03]\x02$\n\x0c\n\x05\x04\x0b\x02\0\x05\x12\x03]\x02\x08\n\
+    \x0c\n\x05\x04\x0b\x02\0\x01\x12\x03]\t\x1f\n\x0c\n\x05\x04\x0b\x02\0\
+    \x03\x12\x03]\"#\n\x0b\n\x04\x04\x0b\x02\x01\x12\x03^\x02\x19\n\x0c\n\
+    \x05\x04\x0b\x02\x01\x05\x12\x03^\x02\x07\n\x0c\n\x05\x04\x0b\x02\x01\
+    \x01\x12\x03^\x08\x14\n\x0c\n\x05\x04\x0b\x02\x01\x03\x12\x03^\x17\x18\n\
+    \x0b\n\x04\x04\x0b\x02\x02\x12\x03_\x02!\n\x0c\n\x05\x04\x0b\x02\x02\x05\
+    \x12\x03_\x02\x08\n\x0c\n\x05\x04\x0b\x02\x02\x01\x12\x03_\t\x1c\n\x0c\n\
+    \x05\x04\x0b\x02\x02\x03\x12\x03_\x1f\x20\n\n\n\x02\x04\x0c\x12\x04b\0m\
+    \x01\n\n\n\x03\x04\x0c\x01\x12\x03b\x08\x20\n\x0b\n\x04\x04\x0c\x02\0\
+    \x12\x03c\x02!\n\x0c\n\x05\x04\x0c\x02\0\x05\x12\x03c\x02\x08\n\x0c\n\
+    \x05\x04\x0c\x02\0\x01\x12\x03c\t\x1c\n\x0c\n\x05\x04\x0c\x02\0\x03\x12\
+    \x03c\x1f\x20\n\x0b\n\x04\x04\x0c\x02\x01\x12\x03d\x02\x1b\n\x0c\n\x05\
+    \x04\x0c\x02\x01\x05\x12\x03d\x02\x07\n\x0c\n\x05\x04\x0c\x02\x01\x01\
+    \x12\x03d\x08\x16\n\x0c\n\x05\x04\x0c\x02\x01\x03\x12\x03d\x19\x1a\n\x0b\
+    \n\x04\x04\x0c\x02\x02\x12\x03e\x02\x19\n\x0c\n\x05\x04\x0c\x02\x02\x05\
+    \x12\x03e\x02\x07\n\x0c\n\x05\x04\x0c\x02\x02\x01\x12\x03e\x08\x14\n\x0c\
+    \n\x05\x04\x0c\x02\x02\x03\x12\x03e\x17\x18\n\x0b\n\x04\x04\x0c\x02\x03\
+    \x12\x03f\x02\x14\n\x0c\n\x05\x04\x0c\x02\x03\x05\x12\x03f\x02\x08\n\x0c\
+    \n\x05\x04\x0c\x02\x03\x01\x12\x03f\t\x0f\n\x0c\n\x05\x04\x0c\x02\x03\
+    \x03\x12\x03f\x12\x13\n\x0b\n\x04\x04\x0c\x02\x04\x12\x03g\x02\x18\n\x0c\
+    \n\x05\x04\x0c\x02\x04\x05\x12\x03g\x02\x08\n\x0c\n\x05\x04\x0c\x02\x04\
+    \x01\x12\x03g\t\x13\n\x0c\n\x05\x04\x0c\x02\x04\x03\x12\x03g\x16\x17\n\
+    \x0b\n\x04\x04\x0c\x02\x05\x12\x03h\x02\x16\n\x0c\n\x05\x04\x0c\x02\x05\
+    \x05\x12\x03h\x02\x08\n\x0c\n\x05\x04\x0c\x02\x05\x01\x12\x03h\t\x11\n\
+    \x0c\n\x05\x04\x0c\x02\x05\x03\x12\x03h\x14\x15\n\x0b\n\x04\x04\x0c\x02\
+    \x06\x12\x03i\x02\x18\n\x0c\n\x05\x04\x0c\x02\x06\x05\x12\x03i\x02\x07\n\
+    \x0c\n\x05\x04\x0c\x02\x06\x01\x12\x03i\x08\x13\n\x0c\n\x05\x04\x0c\x02\
+    \x06\x03\x12\x03i\x16\x17\n\x0b\n\x04\x04\x0c\x02\x07\x12\x03j\x02\x16\n\
+    \x0c\n\x05\x04\x0c\x02\x07\x05\x12\x03j\x02\x07\n\x0c\n\x05\x04\x0c\x02\
+    \x07\x01\x12\x03j\x08\x11\n\x0c\n\x05\x04\x0c\x02\x07\x03\x12\x03j\x14\
+    \x15\n\x0b\n\x04\x04\x0c\x02\x08\x12\x03k\x02'\n\x0c\n\x05\x04\x0c\x02\
+    \x08\x06\x12\x03k\x02\x14\n\x0c\n\x05\x04\x0c\x02\x08\x01\x12\x03k\x15\"\
+    \n\x0c\n\x05\x04\x0c\x02\x08\x03\x12\x03k%&\n\x0b\n\x04\x04\x0c\x02\t\
+    \x12\x03l\x02\x15\n\x0c\n\x05\x04\x0c\x02\t\x06\x12\x03l\x02\n\n\x0c\n\
+    \x05\x04\x0c\x02\t\x01\x12\x03l\x0b\x0f\n\x0c\n\x05\x04\x0c\x02\t\x03\
+    \x12\x03l\x12\x14\n\n\n\x02\x04\r\x12\x04o\0r\x01\n\n\n\x03\x04\r\x01\
+    \x12\x03o\x08\x18\n\x0b\n\x04\x04\r\x02\0\x12\x03p\x02\x12\n\x0c\n\x05\
+    \x04\r\x02\0\x05\x12\x03p\x02\x07\n\x0c\n\x05\x04\r\x02\0\x01\x12\x03p\
+    \x08\r\n\x0c\n\x05\x04\r\x02\0\x03\x12\x03p\x10\x11\n\x0b\n\x04\x04\r\
+    \x02\x01\x12\x03q\x02-\n\x0c\n\x05\x04\r\x02\x01\x06\x12\x03q\x02\x1a\n\
+    \x0c\n\x05\x04\r\x02\x01\x01\x12\x03q\x1b(\n\x0c\n\x05\x04\r\x02\x01\x03\
+    \x12\x03q+,\n\n\n\x02\x04\x0e\x12\x04t\0{\x01\n\n\n\x03\x04\x0e\x01\x12\
+    \x03t\x08\x13\n\x0b\n\x04\x04\x0e\x02\0\x12\x03u\x02\x14\n\x0c\n\x05\x04\
+    \x0e\x02\0\x05\x12\x03u\x02\x08\n\x0c\n\x05\x04\x0e\x02\0\x01\x12\x03u\t\
+    \x0f\n\x0c\n\x05\x04\x0e\x02\0\x03\x12\x03u\x12\x13\n\x0b\n\x04\x04\x0e\
+    \x02\x01\x12\x03v\x02+\n\x0c\n\x05\x04\x0e\x02\x01\x06\x12\x03v\x02\x1b\
+    \n\x0c\n\x05\x04\x0e\x02\x01\x01\x12\x03v\x1c&\n\x0c\n\x05\x04\x0e\x02\
+    \x01\x03\x12\x03v)*\n\x0b\n\x04\x04\x0e\x02\x02\x12\x03w\x02/\n\x0c\n\
+    \x05\x04\x0e\x02\x02\x06\x12\x03w\x02\x1d\n\x0c\n\x05\x04\x0e\x02\x02\
+    \x01\x12\x03w\x1e*\n\x0c\n\x05\x04\x0e\x02\x02\x03\x12\x03w-.\n\x0b\n\
+    \x04\x04\x0e\x02\x03\x12\x03x\x02.\n\x0c\n\x05\x04\x0e\x02\x03\x06\x12\
+    \x03x\x02\x1f\n\x0c\n\x05\x04\x0e\x02\x03\x01\x12\x03x\x20)\n\x0c\n\x05\
+    \x04\x0e\x02\x03\x03\x12\x03x,-\n\x0b\n\x04\x04\x0e\x02\x04\x12\x03y\x02\
+    &\n\x0c\n\x05\x04\x0e\x02\x04\x05\x12\x03y\x02\x07\n\x0c\n\x05\x04\x0e\
+    \x02\x04\x01\x12\x03y\x08!\n\x0c\n\x05\x04\x0e\x02\x04\x03\x12\x03y$%\n\
+    \x0b\n\x04\x04\x0e\x02\x05\x12\x03z\x02#\n\x0c\n\x05\x04\x0e\x02\x05\x05\
+    \x12\x03z\x02\x07\n\x0c\n\x05\x04\x0e\x02\x05\x01\x12\x03z\x08\x1e\n\x0c\
+    \n\x05\x04\x0e\x02\x05\x03\x12\x03z!\"\n\x0b\n\x02\x04\x0f\x12\x05}\0\
+    \x81\x01\x01\n\n\n\x03\x04\x0f\x01\x12\x03}\x08\x15\n\x0b\n\x04\x04\x0f\
+    \x02\0\x12\x03~\x02\x10\n\x0c\n\x05\x04\x0f\x02\0\x05\x12\x03~\x02\x08\n\
+    \x0c\n\x05\x04\x0f\x02\0\x01\x12\x03~\t\x0b\n\x0c\n\x05\x04\x0f\x02\0\
+    \x03\x12\x03~\x0e\x0f\n\x0b\n\x04\x04\x0f\x02\x01\x12\x03\x7f\x02\x14\n\
+    \x0c\n\x05\x04\x0f\x02\x01\x05\x12\x03\x7f\x02\x08\n\x0c\n\x05\x04\x0f\
+    \x02\x01\x01\x12\x03\x7f\t\x0f\n\x0c\n\x05\x04\x0f\x02\x01\x03\x12\x03\
+    \x7f\x12\x13\n\x0c\n\x04\x04\x0f\x02\x02\x12\x04\x80\x01\x02\x20\n\r\n\
+    \x05\x04\x0f\x02\x02\x05\x12\x04\x80\x01\x02\x07\n\r\n\x05\x04\x0f\x02\
+    \x02\x01\x12\x04\x80\x01\x08\x1b\n\r\n\x05\x04\x0f\x02\x02\x03\x12\x04\
+    \x80\x01\x1e\x1f\n\x0c\n\x02\x04\x10\x12\x06\x83\x01\0\x8c\x01\x01\n\x0b\
+    \n\x03\x04\x10\x01\x12\x04\x83\x01\x08\x17\n\x0c\n\x04\x04\x10\x02\0\x12\
+    \x04\x84\x01\x02\x0f\n\r\n\x05\x04\x10\x02\0\x05\x12\x04\x84\x01\x02\x07\
+    \n\r\n\x05\x04\x10\x02\0\x01\x12\x04\x84\x01\x08\n\n\r\n\x05\x04\x10\x02\
+    \0\x03\x12\x04\x84\x01\r\x0e\n\x0c\n\x04\x04\x10\x02\x01\x12\x04\x85\x01\
+    \x02\x14\n\r\n\x05\x04\x10\x02\x01\x05\x12\x04\x85\x01\x02\x08\n\r\n\x05\
+    \x04\x10\x02\x01\x01\x12\x04\x85\x01\t\x0f\n\r\n\x05\x04\x10\x02\x01\x03\
+    \x12\x04\x85\x01\x12\x13\n\x0c\n\x04\x04\x10\x02\x02\x12\x04\x86\x01\x02\
+    \x19\n\r\n\x05\x04\x10\x02\x02\x05\x12\x04\x86\x01\x02\x07\n\r\n\x05\x04\
+    \x10\x02\x02\x01\x12\x04\x86\x01\x08\x14\n\r\n\x05\x04\x10\x02\x02\x03\
+    \x12\x04\x86\x01\x17\x18\n\x0c\n\x04\x04\x10\x02\x03\x12\x04\x87\x01\x02\
+    \x18\n\r\n\x05\x04\x10\x02\x03\x05\x12\x04\x87\x01\x02\x08\n\r\n\x05\x04\
+    \x10\x02\x03\x01\x12\x04\x87\x01\t\x13\n\r\n\x05\x04\x10\x02\x03\x03\x12\
+    \x04\x87\x01\x16\x17\n\x0c\n\x04\x04\x10\x02\x04\x12\x04\x88\x01\x02\x16\
+    \n\r\n\x05\x04\x10\x02\x04\x05\x12\x04\x88\x01\x02\x08\n\r\n\x05\x04\x10\
+    \x02\x04\x01\x12\x04\x88\x01\t\x11\n\r\n\x05\x04\x10\x02\x04\x03\x12\x04\
+    \x88\x01\x14\x15\n\x0c\n\x04\x04\x10\x02\x05\x12\x04\x89\x01\x02\x18\n\r\
+    \n\x05\x04\x10\x02\x05\x05\x12\x04\x89\x01\x02\x07\n\r\n\x05\x04\x10\x02\
+    \x05\x01\x12\x04\x89\x01\x08\x13\n\r\n\x05\x04\x10\x02\x05\x03\x12\x04\
+    \x89\x01\x16\x17\n\x0c\n\x04\x04\x10\x02\x06\x12\x04\x8a\x01\x02\x16\n\r\
+    \n\x05\x04\x10\x02\x06\x05\x12\x04\x8a\x01\x02\x07\n\r\n\x05\x04\x10\x02\
+    \x06\x01\x12\x04\x8a\x01\x08\x11\n\r\n\x05\x04\x10\x02\x06\x03\x12\x04\
+    \x8a\x01\x14\x15\n\x0c\n\x04\x04\x10\x02\x07\x12\x04\x8b\x01\x02\"\n\r\n\
+    \x05\x04\x10\x02\x07\x06\x12\x04\x8b\x01\x02\x14\n\r\n\x05\x04\x10\x02\
+    \x07\x01\x12\x04\x8b\x01\x15\x1d\n\r\n\x05\x04\x10\x02\x07\x03\x12\x04\
+    \x8b\x01\x20!\n\x0c\n\x02\x04\x11\x12\x06\x8e\x01\0\x92\x01\x01\n\x0b\n\
+    \x03\x04\x11\x01\x12\x04\x8e\x01\x08\x18\n\x0c\n\x04\x04\x11\x02\0\x12\
+    \x04\x8f\x01\x02\x18\n\r\n\x05\x04\x11\x02\0\x05\x12\x04\x8f\x01\x02\x08\
+    \n\r\n\x05\x04\x11\x02\0\x01\x12\x04\x8f\x01\t\x13\n\r\n\x05\x04\x11\x02\
+    \0\x03\x12\x04\x8f\x01\x16\x17\n\x0c\n\x04\x04\x11\x02\x01\x12\x04\x90\
+    \x01\x02\x1b\n\r\n\x05\x04\x11\x02\x01\x05\x12\x04\x90\x01\x02\x07\n\r\n\
+    \x05\x04\x11\x02\x01\x01\x12\x04\x90\x01\x08\x16\n\r\n\x05\x04\x11\x02\
+    \x01\x03\x12\x04\x90\x01\x19\x1a\n\x0c\n\x04\x04\x11\x02\x02\x12\x04\x91\
+    \x01\x02'\n\r\n\x05\x04\x11\x02\x02\x06\x12\x04\x91\x01\x02\x18\n\r\n\
+    \x05\x04\x11\x02\x02\x01\x12\x04\x91\x01\x19\"\n\r\n\x05\x04\x11\x02\x02\
+    \x03\x12\x04\x91\x01%&\n\x0c\n\x02\x04\x12\x12\x06\x94\x01\0\x97\x01\x01\
+    \n\x0b\n\x03\x04\x12\x01\x12\x04\x94\x01\x08\x1e\n\x0c\n\x04\x04\x12\x02\
+    \0\x12\x04\x95\x01\x02\x14\n\r\n\x05\x04\x12\x02\0\x05\x12\x04\x95\x01\
+    \x02\x08\n\r\n\x05\x04\x12\x02\0\x01\x12\x04\x95\x01\t\x0f\n\r\n\x05\x04\
+    \x12\x02\0\x03\x12\x04\x95\x01\x12\x13\n\x0c\n\x04\x04\x12\x02\x01\x12\
+    \x04\x96\x01\x02\x19\n\r\n\x05\x04\x12\x02\x01\x05\x12\x04\x96\x01\x02\
+    \x08\n\r\n\x05\x04\x12\x02\x01\x01\x12\x04\x96\x01\t\x14\n\r\n\x05\x04\
+    \x12\x02\x01\x03\x12\x04\x96\x01\x17\x18\n\x0c\n\x02\x04\x13\x12\x06\x99\
+    \x01\0\x9d\x01\x01\n\x0b\n\x03\x04\x13\x01\x12\x04\x99\x01\x08\x11\n\x0c\
+    \n\x04\x04\x13\x02\0\x12\x04\x9a\x01\x02\x19\n\r\n\x05\x04\x13\x02\0\x05\
+    \x12\x04\x9a\x01\x02\x08\n\r\n\x05\x04\x13\x02\0\x01\x12\x04\x9a\x01\t\
+    \x14\n\r\n\x05\x04\x13\x02\0\x03\x12\x04\x9a\x01\x17\x18\n\x0c\n\x04\x04\
+    \x13\x02\x01\x12\x04\x9b\x01\x02\x19\n\r\n\x05\x04\x13\x02\x01\x05\x12\
+    \x04\x9b\x01\x02\x08\n\r\n\x05\x04\x13\x02\x01\x01\x12\x04\x9b\x01\t\x14\
+    \n\r\n\x05\x04\x13\x02\x01\x03\x12\x04\x9b\x01\x17\x18\n\x0c\n\x04\x04\
+    \x13\x02\x02\x12\x04\x9c\x01\x02\"\n\r\n\x05\x04\x13\x02\x02\x05\x12\x04\
+    \x9c\x01\x02\x08\n\r\n\x05\x04\x13\x02\x02\x01\x12\x04\x9c\x01\t\x1d\n\r\
+    \n\x05\x04\x13\x02\x02\x03\x12\x04\x9c\x01\x20!b\x06proto3\
 ";
 
 /// `FileDescriptorProto` object which was a source for this generated file
@@ -3452,7 +4784,7 @@ pub fn file_descriptor() -> ::protobuf::reflect::FileDescriptor {
     static file_descriptor_lazy: ::protobuf::rt::Lazy<::protobuf::reflect::GeneratedFileDescriptor> = ::protobuf::rt::Lazy::new();
     let file_descriptor = file_descriptor_lazy.get(|| {
         let mut deps = ::std::vec::Vec::with_capacity(0);
-        let mut messages = ::std::vec::Vec::with_capacity(13);
+        let mut messages = ::std::vec::Vec::with_capacity(20);
         messages.push(Event::generated_message_descriptor_data());
         messages.push(BootNotificationRequestData::generated_message_descriptor_data());
         messages.push(LogData::generated_message_descriptor_data());
@@ -3466,6 +4798,13 @@ pub fn file_descriptor() -> ::protobuf::reflect::FileDescriptor {
         messages.push(ChargingStatusData::generated_message_descriptor_data());
         messages.push(StopChargeRequestData::generated_message_descriptor_data());
         messages.push(StopChargeRequestAckData::generated_message_descriptor_data());
+        messages.push(ChargePointState::generated_message_descriptor_data());
+        messages.push(ChargePoint::generated_message_descriptor_data());
+        messages.push(ConnectorInfo::generated_message_descriptor_data());
+        messages.push(TransactionInfo::generated_message_descriptor_data());
+        messages.push(ConsumerAuthData::generated_message_descriptor_data());
+        messages.push(LocalAuthorizationData::generated_message_descriptor_data());
+        messages.push(IdTagInfo::generated_message_descriptor_data());
         let mut enums = ::std::vec::Vec::with_capacity(1);
         enums.push(EventType::generated_enum_descriptor_data());
         ::protobuf::reflect::GeneratedFileDescriptor::new_generated(
