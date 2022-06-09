@@ -163,6 +163,6 @@ message LocalAuthorizationData {
 
 message IdTagInfo {
   string expiry_date = 1;
-  string parentIdTag = 2;
-  string authorization_status = 3;
+  string parent_id_Tag = 2;
+  string status = 3;
 }
