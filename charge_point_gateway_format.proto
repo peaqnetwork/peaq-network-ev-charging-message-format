@@ -157,12 +157,12 @@ message ConsumerAuthData {
 }
 
 message LocalAuthorizationData {
-  string id_tag = 1;
-  IdTagInfo id_tag_info = 2;
+  string idTag = 1;
+  IdTagInfo idTagInfo = 2;
 }
 
 message IdTagInfo {
-  string expiry_date = 1;
-  string parent_id_Tag = 2;
+  string expiryDate = 1;
+  string parentIdTag = 2;
   string status = 3;
 }

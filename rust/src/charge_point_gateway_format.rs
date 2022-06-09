@@ -3774,10 +3774,10 @@ impl ::protobuf::reflect::ProtobufValue for ConsumerAuthData {
 // @@protoc_insertion_point(message:gateway.LocalAuthorizationData)
 pub struct LocalAuthorizationData {
     // message fields
-    // @@protoc_insertion_point(field:gateway.LocalAuthorizationData.id_tag)
-    pub id_tag: ::std::string::String,
-    // @@protoc_insertion_point(field:gateway.LocalAuthorizationData.id_tag_info)
-    pub id_tag_info: ::protobuf::MessageField<IdTagInfo>,
+    // @@protoc_insertion_point(field:gateway.LocalAuthorizationData.idTag)
+    pub idTag: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.LocalAuthorizationData.idTagInfo)
+    pub idTagInfo: ::protobuf::MessageField<IdTagInfo>,
     // special fields
     // @@protoc_insertion_point(special_field:gateway.LocalAuthorizationData.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
@@ -3797,14 +3797,14 @@ impl LocalAuthorizationData {
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(2);
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
-            "id_tag",
-            |m: &LocalAuthorizationData| { &m.id_tag },
-            |m: &mut LocalAuthorizationData| { &mut m.id_tag },
+            "idTag",
+            |m: &LocalAuthorizationData| { &m.idTag },
+            |m: &mut LocalAuthorizationData| { &mut m.idTag },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_message_field_accessor::<_, IdTagInfo>(
-            "id_tag_info",
-            |m: &LocalAuthorizationData| { &m.id_tag_info },
-            |m: &mut LocalAuthorizationData| { &mut m.id_tag_info },
+            "idTagInfo",
+            |m: &LocalAuthorizationData| { &m.idTagInfo },
+            |m: &mut LocalAuthorizationData| { &mut m.idTagInfo },
         ));
         ::protobuf::reflect::GeneratedMessageDescriptorData::new::<LocalAuthorizationData>(
             "LocalAuthorizationData",
@@ -3817,7 +3817,7 @@ impl ::protobuf::Message for LocalAuthorizationData {
     const NAME: &'static str = "LocalAuthorizationData";
 
     fn is_initialized(&self) -> bool {
-        for v in &self.id_tag_info {
+        for v in &self.idTagInfo {
             if !v.is_initialized() {
                 return false;
             }
@@ -3829,10 +3829,10 @@ impl ::protobuf::Message for LocalAuthorizationData {
         while let Some(tag) = is.read_raw_tag_or_eof()? {
             match tag {
                 10 => {
-                    self.id_tag = is.read_string()?;
+                    self.idTag = is.read_string()?;
                 },
                 18 => {
-                    ::protobuf::rt::read_singular_message_into_field(is, &mut self.id_tag_info)?;
+                    ::protobuf::rt::read_singular_message_into_field(is, &mut self.idTagInfo)?;
                 },
                 tag => {
                     ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
@@ -3846,10 +3846,10 @@ impl ::protobuf::Message for LocalAuthorizationData {
     #[allow(unused_variables)]
     fn compute_size(&self) -> u64 {
         let mut my_size = 0;
-        if !self.id_tag.is_empty() {
-            my_size += ::protobuf::rt::string_size(1, &self.id_tag);
+        if !self.idTag.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.idTag);
         }
-        if let Some(v) = self.id_tag_info.as_ref() {
+        if let Some(v) = self.idTagInfo.as_ref() {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
         }
@@ -3859,10 +3859,10 @@ impl ::protobuf::Message for LocalAuthorizationData {
     }
 
     fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
-        if !self.id_tag.is_empty() {
-            os.write_string(1, &self.id_tag)?;
+        if !self.idTag.is_empty() {
+            os.write_string(1, &self.idTag)?;
         }
-        if let Some(v) = self.id_tag_info.as_ref() {
+        if let Some(v) = self.idTagInfo.as_ref() {
             ::protobuf::rt::write_message_field_with_cached_size(2, v, os)?;
         }
         os.write_unknown_fields(self.unknown_fields())?;
@@ -3886,15 +3886,15 @@ impl ::protobuf::Message for LocalAuthorizationData {
     }
 
     fn clear(&mut self) {
-        self.id_tag.clear();
-        self.id_tag_info.clear();
+        self.idTag.clear();
+        self.idTagInfo.clear();
         self.special_fields.clear();
     }
 
     fn default_instance() -> &'static LocalAuthorizationData {
         static instance: LocalAuthorizationData = LocalAuthorizationData {
-            id_tag: ::std::string::String::new(),
-            id_tag_info: ::protobuf::MessageField::none(),
+            idTag: ::std::string::String::new(),
+            idTagInfo: ::protobuf::MessageField::none(),
             special_fields: ::protobuf::SpecialFields::new(),
         };
         &instance
@@ -3922,10 +3922,10 @@ impl ::protobuf::reflect::ProtobufValue for LocalAuthorizationData {
 // @@protoc_insertion_point(message:gateway.IdTagInfo)
 pub struct IdTagInfo {
     // message fields
-    // @@protoc_insertion_point(field:gateway.IdTagInfo.expiry_date)
-    pub expiry_date: ::std::string::String,
-    // @@protoc_insertion_point(field:gateway.IdTagInfo.parent_id_Tag)
-    pub parent_id_Tag: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.IdTagInfo.expiryDate)
+    pub expiryDate: ::std::string::String,
+    // @@protoc_insertion_point(field:gateway.IdTagInfo.parentIdTag)
+    pub parentIdTag: ::std::string::String,
     // @@protoc_insertion_point(field:gateway.IdTagInfo.status)
     pub status: ::std::string::String,
     // special fields
@@ -3947,14 +3947,14 @@ impl IdTagInfo {
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
-            "expiry_date",
-            |m: &IdTagInfo| { &m.expiry_date },
-            |m: &mut IdTagInfo| { &mut m.expiry_date },
+            "expiryDate",
+            |m: &IdTagInfo| { &m.expiryDate },
+            |m: &mut IdTagInfo| { &mut m.expiryDate },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
-            "parent_id_Tag",
-            |m: &IdTagInfo| { &m.parent_id_Tag },
-            |m: &mut IdTagInfo| { &mut m.parent_id_Tag },
+            "parentIdTag",
+            |m: &IdTagInfo| { &m.parentIdTag },
+            |m: &mut IdTagInfo| { &mut m.parentIdTag },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "status",
@@ -3979,10 +3979,10 @@ impl ::protobuf::Message for IdTagInfo {
         while let Some(tag) = is.read_raw_tag_or_eof()? {
             match tag {
                 10 => {
-                    self.expiry_date = is.read_string()?;
+                    self.expiryDate = is.read_string()?;
                 },
                 18 => {
-                    self.parent_id_Tag = is.read_string()?;
+                    self.parentIdTag = is.read_string()?;
                 },
                 26 => {
                     self.status = is.read_string()?;
@@ -3999,11 +3999,11 @@ impl ::protobuf::Message for IdTagInfo {
     #[allow(unused_variables)]
     fn compute_size(&self) -> u64 {
         let mut my_size = 0;
-        if !self.expiry_date.is_empty() {
-            my_size += ::protobuf::rt::string_size(1, &self.expiry_date);
+        if !self.expiryDate.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.expiryDate);
         }
-        if !self.parent_id_Tag.is_empty() {
-            my_size += ::protobuf::rt::string_size(2, &self.parent_id_Tag);
+        if !self.parentIdTag.is_empty() {
+            my_size += ::protobuf::rt::string_size(2, &self.parentIdTag);
         }
         if !self.status.is_empty() {
             my_size += ::protobuf::rt::string_size(3, &self.status);
@@ -4014,11 +4014,11 @@ impl ::protobuf::Message for IdTagInfo {
     }
 
     fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
-        if !self.expiry_date.is_empty() {
-            os.write_string(1, &self.expiry_date)?;
+        if !self.expiryDate.is_empty() {
+            os.write_string(1, &self.expiryDate)?;
         }
-        if !self.parent_id_Tag.is_empty() {
-            os.write_string(2, &self.parent_id_Tag)?;
+        if !self.parentIdTag.is_empty() {
+            os.write_string(2, &self.parentIdTag)?;
         }
         if !self.status.is_empty() {
             os.write_string(3, &self.status)?;
@@ -4044,16 +4044,16 @@ impl ::protobuf::Message for IdTagInfo {
     }
 
     fn clear(&mut self) {
-        self.expiry_date.clear();
-        self.parent_id_Tag.clear();
+        self.expiryDate.clear();
+        self.parentIdTag.clear();
         self.status.clear();
         self.special_fields.clear();
     }
 
     fn default_instance() -> &'static IdTagInfo {
         static instance: IdTagInfo = IdTagInfo {
-            expiry_date: ::std::string::String::new(),
-            parent_id_Tag: ::std::string::String::new(),
+            expiryDate: ::std::string::String::new(),
+            parentIdTag: ::std::string::String::new(),
             status: ::std::string::String::new(),
             special_fields: ::protobuf::SpecialFields::new(),
         };
@@ -4260,21 +4260,21 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     way.ChargingStatusDataR\x08progress\"\x96\x01\n\x10ConsumerAuthData\x12\
     \x1d\n\npublic_key\x18\x01\x20\x01(\tR\tpublicKey\x12%\n\x0etransaction_\
     id\x18\x02\x20\x01(\x05R\rtransactionId\x12<\n\tauth_data\x18\x03\x20\
-    \x01(\x0b2\x1f.gateway.LocalAuthorizationDataR\x08authData\"c\n\x16Local\
-    AuthorizationData\x12\x15\n\x06id_tag\x18\x01\x20\x01(\tR\x05idTag\x122\
-    \n\x0bid_tag_info\x18\x02\x20\x01(\x0b2\x12.gateway.IdTagInfoR\tidTagInf\
-    o\"h\n\tIdTagInfo\x12\x1f\n\x0bexpiry_date\x18\x01\x20\x01(\tR\nexpiryDa\
-    te\x12\"\n\rparent_id_Tag\x18\x02\x20\x01(\tR\x0bparentIdTag\x12\x16\n\
-    \x06status\x18\x03\x20\x01(\tR\x06status*\xc1\x02\n\tEventType\x12\x1d\n\
-    \x19BOOT_NOTIFICATION_REQUEST\x10\0\x12\x15\n\x11HEARTBEAT_REQUEST\x10\
-    \x01\x12\x07\n\x03LOG\x10\x02\x12\x15\n\x11AUTHORIZE_REQUEST\x10\x03\x12\
-    \x19\n\x15AUTHORIZE_REQUEST_ACK\x10\x04\x12\x1e\n\x1aCHECK_AVAILABILITY_\
-    REQUEST\x10\x05\x12\"\n\x1eCHECK_AVAILABILITY_REQUEST_ACK\x10\x06\x12\
-    \x18\n\x14START_CHARGE_REQUEST\x10\x07\x12\x1c\n\x18START_CHARGE_REQUEST\
-    _ACK\x10\x08\x12\x11\n\rCHARGE_STATUS\x10\t\x12\x17\n\x13STOP_CHARGE_REQ\
-    UEST\x10\n\x12\x1b\n\x17STOP_CHARGE_REQUEST_ACK\x10\x0bBWZUgithub.com/pe\
-    aqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gateway\
-    J\x8a2\n\x07\x12\x05\0\0\xa7\x01\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\
+    \x01(\x0b2\x1f.gateway.LocalAuthorizationDataR\x08authData\"`\n\x16Local\
+    AuthorizationData\x12\x14\n\x05idTag\x18\x01\x20\x01(\tR\x05idTag\x120\n\
+    \tidTagInfo\x18\x02\x20\x01(\x0b2\x12.gateway.IdTagInfoR\tidTagInfo\"e\n\
+    \tIdTagInfo\x12\x1e\n\nexpiryDate\x18\x01\x20\x01(\tR\nexpiryDate\x12\
+    \x20\n\x0bparentIdTag\x18\x02\x20\x01(\tR\x0bparentIdTag\x12\x16\n\x06st\
+    atus\x18\x03\x20\x01(\tR\x06status*\xc1\x02\n\tEventType\x12\x1d\n\x19BO\
+    OT_NOTIFICATION_REQUEST\x10\0\x12\x15\n\x11HEARTBEAT_REQUEST\x10\x01\x12\
+    \x07\n\x03LOG\x10\x02\x12\x15\n\x11AUTHORIZE_REQUEST\x10\x03\x12\x19\n\
+    \x15AUTHORIZE_REQUEST_ACK\x10\x04\x12\x1e\n\x1aCHECK_AVAILABILITY_REQUES\
+    T\x10\x05\x12\"\n\x1eCHECK_AVAILABILITY_REQUEST_ACK\x10\x06\x12\x18\n\
+    \x14START_CHARGE_REQUEST\x10\x07\x12\x1c\n\x18START_CHARGE_REQUEST_ACK\
+    \x10\x08\x12\x11\n\rCHARGE_STATUS\x10\t\x12\x17\n\x13STOP_CHARGE_REQUEST\
+    \x10\n\x12\x1b\n\x17STOP_CHARGE_REQUEST_ACK\x10\x0bBWZUgithub.com/peaqne\
+    twork/peaq-network-ev-charging-message-format/golang/gateway;gatewayJ\
+    \x8a2\n\x07\x12\x05\0\0\xa7\x01\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\
     \x08\n\x01\x02\x12\x03\x02\0\x10\n\x08\n\x01\x08\x12\x03\x03\0l\n\t\n\
     \x02\x08\x0b\x12\x03\x03\0l\n\n\n\x02\x05\0\x12\x04\x05\0\x12\x01\n\n\n\
     \x03\x05\0\x01\x12\x03\x05\x05\x0e\n\x0b\n\x04\x05\0\x02\0\x12\x03\x06\
@@ -4530,20 +4530,20 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x9b\x01\x02\x18\n\r\n\x05\x04\x10\x02\x02\x01\x12\x04\x9b\x01\x19\"\n\r\
     \n\x05\x04\x10\x02\x02\x03\x12\x04\x9b\x01%&\n\x0c\n\x02\x04\x11\x12\x06\
     \x9e\x01\0\xa1\x01\x01\n\x0b\n\x03\x04\x11\x01\x12\x04\x9e\x01\x08\x1e\n\
-    \x0c\n\x04\x04\x11\x02\0\x12\x04\x9f\x01\x02\x14\n\r\n\x05\x04\x11\x02\0\
+    \x0c\n\x04\x04\x11\x02\0\x12\x04\x9f\x01\x02\x13\n\r\n\x05\x04\x11\x02\0\
     \x05\x12\x04\x9f\x01\x02\x08\n\r\n\x05\x04\x11\x02\0\x01\x12\x04\x9f\x01\
-    \t\x0f\n\r\n\x05\x04\x11\x02\0\x03\x12\x04\x9f\x01\x12\x13\n\x0c\n\x04\
-    \x04\x11\x02\x01\x12\x04\xa0\x01\x02\x1c\n\r\n\x05\x04\x11\x02\x01\x06\
+    \t\x0e\n\r\n\x05\x04\x11\x02\0\x03\x12\x04\x9f\x01\x11\x12\n\x0c\n\x04\
+    \x04\x11\x02\x01\x12\x04\xa0\x01\x02\x1a\n\r\n\x05\x04\x11\x02\x01\x06\
     \x12\x04\xa0\x01\x02\x0b\n\r\n\x05\x04\x11\x02\x01\x01\x12\x04\xa0\x01\
-    \x0c\x17\n\r\n\x05\x04\x11\x02\x01\x03\x12\x04\xa0\x01\x1a\x1b\n\x0c\n\
+    \x0c\x15\n\r\n\x05\x04\x11\x02\x01\x03\x12\x04\xa0\x01\x18\x19\n\x0c\n\
     \x02\x04\x12\x12\x06\xa3\x01\0\xa7\x01\x01\n\x0b\n\x03\x04\x12\x01\x12\
-    \x04\xa3\x01\x08\x11\n\x0c\n\x04\x04\x12\x02\0\x12\x04\xa4\x01\x02\x19\n\
+    \x04\xa3\x01\x08\x11\n\x0c\n\x04\x04\x12\x02\0\x12\x04\xa4\x01\x02\x18\n\
     \r\n\x05\x04\x12\x02\0\x05\x12\x04\xa4\x01\x02\x08\n\r\n\x05\x04\x12\x02\
-    \0\x01\x12\x04\xa4\x01\t\x14\n\r\n\x05\x04\x12\x02\0\x03\x12\x04\xa4\x01\
-    \x17\x18\n\x0c\n\x04\x04\x12\x02\x01\x12\x04\xa5\x01\x02\x1b\n\r\n\x05\
+    \0\x01\x12\x04\xa4\x01\t\x13\n\r\n\x05\x04\x12\x02\0\x03\x12\x04\xa4\x01\
+    \x16\x17\n\x0c\n\x04\x04\x12\x02\x01\x12\x04\xa5\x01\x02\x19\n\r\n\x05\
     \x04\x12\x02\x01\x05\x12\x04\xa5\x01\x02\x08\n\r\n\x05\x04\x12\x02\x01\
-    \x01\x12\x04\xa5\x01\t\x16\n\r\n\x05\x04\x12\x02\x01\x03\x12\x04\xa5\x01\
-    \x19\x1a\n\x0c\n\x04\x04\x12\x02\x02\x12\x04\xa6\x01\x02\x14\n\r\n\x05\
+    \x01\x12\x04\xa5\x01\t\x14\n\r\n\x05\x04\x12\x02\x01\x03\x12\x04\xa5\x01\
+    \x17\x18\n\x0c\n\x04\x04\x12\x02\x02\x12\x04\xa6\x01\x02\x14\n\r\n\x05\
     \x04\x12\x02\x02\x05\x12\x04\xa6\x01\x02\x08\n\r\n\x05\x04\x12\x02\x02\
     \x01\x12\x04\xa6\x01\t\x0f\n\r\n\x05\x04\x12\x02\x02\x03\x12\x04\xa6\x01\
     \x12\x13b\x06proto3\
