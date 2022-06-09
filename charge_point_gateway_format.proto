@@ -112,7 +112,7 @@ message ChargePointState {
 }
 
 message ConnectorInfo {
-  string id = 1;
+  int32 id = 1;
   string status = 2;
   int32 current_transaction = 3;
 }

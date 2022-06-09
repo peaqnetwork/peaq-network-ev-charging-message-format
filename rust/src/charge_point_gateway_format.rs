@@ -3155,7 +3155,7 @@ impl ::protobuf::reflect::ProtobufValue for ChargePointState {
 pub struct ConnectorInfo {
     // message fields
     // @@protoc_insertion_point(field:gateway.ConnectorInfo.id)
-    pub id: ::std::string::String,
+    pub id: i32,
     // @@protoc_insertion_point(field:gateway.ConnectorInfo.status)
     pub status: ::std::string::String,
     // @@protoc_insertion_point(field:gateway.ConnectorInfo.current_transaction)
@@ -3210,8 +3210,8 @@ impl ::protobuf::Message for ConnectorInfo {
     fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
         while let Some(tag) = is.read_raw_tag_or_eof()? {
             match tag {
-                10 => {
-                    self.id = is.read_string()?;
+                8 => {
+                    self.id = is.read_int32()?;
                 },
                 18 => {
                     self.status = is.read_string()?;
@@ -3231,8 +3231,8 @@ impl ::protobuf::Message for ConnectorInfo {
     #[allow(unused_variables)]
     fn compute_size(&self) -> u64 {
         let mut my_size = 0;
-        if !self.id.is_empty() {
-            my_size += ::protobuf::rt::string_size(1, &self.id);
+        if self.id != 0 {
+            my_size += ::protobuf::rt::value_size(1, self.id, ::protobuf::rt::WireType::Varint);
         }
         if !self.status.is_empty() {
             my_size += ::protobuf::rt::string_size(2, &self.status);
@@ -3246,8 +3246,8 @@ impl ::protobuf::Message for ConnectorInfo {
     }
 
     fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
-        if !self.id.is_empty() {
-            os.write_string(1, &self.id)?;
+        if self.id != 0 {
+            os.write_int32(1, self.id)?;
         }
         if !self.status.is_empty() {
             os.write_string(2, &self.status)?;
@@ -3276,7 +3276,7 @@ impl ::protobuf::Message for ConnectorInfo {
     }
 
     fn clear(&mut self) {
-        self.id.clear();
+        self.id = 0;
         self.status.clear();
         self.current_transaction = 0;
         self.special_fields.clear();
@@ -3284,7 +3284,7 @@ impl ::protobuf::Message for ConnectorInfo {
 
     fn default_instance() -> &'static ConnectorInfo {
         static instance: ConnectorInfo = ConnectorInfo {
-            id: ::std::string::String::new(),
+            id: 0,
             status: ::std::string::String::new(),
             current_transaction: 0,
             special_fields: ::protobuf::SpecialFields::new(),
@@ -4204,8 +4204,8 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     alue:\x028\x01\x1aV\n\rAuthListEntry\x12\x10\n\x03key\x18\x01\x20\x01(\t\
     R\x03key\x12/\n\x05value\x18\x02\x20\x01(\x0b2\x19.gateway.ConsumerAuthD\
     ataR\x05value:\x028\x01\"h\n\rConnectorInfo\x12\x0e\n\x02id\x18\x01\x20\
-    \x01(\tR\x02id\x12\x16\n\x06status\x18\x02\x20\x01(\tR\x06status\x12/\n\
-    \x13current_transaction\x18\x03\x20\x01(\x05R\x12currentTransaction\"\
+    \x01(\x05R\x02id\x12\x16\n\x06status\x18\x02\x20\x01(\tR\x06status\x12/\
+    \n\x13current_transaction\x18\x03\x20\x01(\x05R\x12currentTransaction\"\
     \x8c\x02\n\x0fTransactionInfo\x12\x0e\n\x02id\x18\x01\x20\x01(\x05R\x02i\
     d\x12\x15\n\x06id_tag\x18\x02\x20\x01(\tR\x05idTag\x12!\n\x0cconnector_i\
     d\x18\x03\x20\x01(\x05R\x0bconnectorId\x12\x1d\n\nstart_time\x18\x04\x20\
@@ -4412,10 +4412,10 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x04\r\x02\x05\x12\x03n\x02#\n\x0c\n\x05\x04\r\x02\x05\x05\x12\x03n\x02\
     \x07\n\x0c\n\x05\x04\r\x02\x05\x01\x12\x03n\x08\x1e\n\x0c\n\x05\x04\r\
     \x02\x05\x03\x12\x03n!\"\n\n\n\x02\x04\x0e\x12\x04q\0u\x01\n\n\n\x03\x04\
-    \x0e\x01\x12\x03q\x08\x15\n\x0b\n\x04\x04\x0e\x02\0\x12\x03r\x02\x10\n\
-    \x0c\n\x05\x04\x0e\x02\0\x05\x12\x03r\x02\x08\n\x0c\n\x05\x04\x0e\x02\0\
-    \x01\x12\x03r\t\x0b\n\x0c\n\x05\x04\x0e\x02\0\x03\x12\x03r\x0e\x0f\n\x0b\
-    \n\x04\x04\x0e\x02\x01\x12\x03s\x02\x14\n\x0c\n\x05\x04\x0e\x02\x01\x05\
+    \x0e\x01\x12\x03q\x08\x15\n\x0b\n\x04\x04\x0e\x02\0\x12\x03r\x02\x0f\n\
+    \x0c\n\x05\x04\x0e\x02\0\x05\x12\x03r\x02\x07\n\x0c\n\x05\x04\x0e\x02\0\
+    \x01\x12\x03r\x08\n\n\x0c\n\x05\x04\x0e\x02\0\x03\x12\x03r\r\x0e\n\x0b\n\
+    \x04\x04\x0e\x02\x01\x12\x03s\x02\x14\n\x0c\n\x05\x04\x0e\x02\x01\x05\
     \x12\x03s\x02\x08\n\x0c\n\x05\x04\x0e\x02\x01\x01\x12\x03s\t\x0f\n\x0c\n\
     \x05\x04\x0e\x02\x01\x03\x12\x03s\x12\x13\n\x0b\n\x04\x04\x0e\x02\x02\
     \x12\x03t\x02\x20\n\x0c\n\x05\x04\x0e\x02\x02\x05\x12\x03t\x02\x07\n\x0c\
