@@ -103,11 +103,6 @@ message StopChargeRequestAckData {
 }
 
 message ChargePointState {
-  int32 count = 1;
-  map<string, ChargePoint> charge_points = 2;
-}
-
-message ChargePoint {
   string status = 1;
   map<int32, ConnectorInfo> connectors = 2;
   map<int32, TransactionInfo> transactions = 3;

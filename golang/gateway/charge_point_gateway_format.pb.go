@@ -1071,8 +1071,12 @@ type ChargePointState struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Count        int32                   `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
-	ChargePoints map[string]*ChargePoint `protobuf:"bytes,2,rep,name=charge_points,json=chargePoints,proto3" json:"charge_points,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Status                 string                       `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	Connectors             map[int32]*ConnectorInfo     `protobuf:"bytes,2,rep,name=connectors,proto3" json:"connectors,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Transactions           map[int32]*TransactionInfo   `protobuf:"bytes,3,rep,name=transactions,proto3" json:"transactions,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	AuthList               map[string]*ConsumerAuthData `protobuf:"bytes,4,rep,name=auth_list,json=authList,proto3" json:"auth_list,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	CurrentAuthListVersion int32                        `protobuf:"varint,5,opt,name=current_auth_list_version,json=currentAuthListVersion,proto3" json:"current_auth_list_version,omitempty"`
+	CurrentTransactionId   int32                        `protobuf:"varint,6,opt,name=current_transaction_id,json=currentTransactionId,proto3" json:"current_transaction_id,omitempty"`
 }
 
 func (x *ChargePointState) Reset() {
@@ -1107,101 +1111,42 @@ func (*ChargePointState) Descriptor() ([]byte, []int) {
 	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{13}
 }
 
-func (x *ChargePointState) GetCount() int32 {
-	if x != nil {
-		return x.Count
-	}
-	return 0
-}
-
-func (x *ChargePointState) GetChargePoints() map[string]*ChargePoint {
-	if x != nil {
-		return x.ChargePoints
-	}
-	return nil
-}
-
-type ChargePoint struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Status                 string                       `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
-	Connectors             map[int32]*ConnectorInfo     `protobuf:"bytes,2,rep,name=connectors,proto3" json:"connectors,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Transactions           map[int32]*TransactionInfo   `protobuf:"bytes,3,rep,name=transactions,proto3" json:"transactions,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	AuthList               map[string]*ConsumerAuthData `protobuf:"bytes,4,rep,name=auth_list,json=authList,proto3" json:"auth_list,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	CurrentAuthListVersion int32                        `protobuf:"varint,5,opt,name=current_auth_list_version,json=currentAuthListVersion,proto3" json:"current_auth_list_version,omitempty"`
-	CurrentTransactionId   int32                        `protobuf:"varint,6,opt,name=current_transaction_id,json=currentTransactionId,proto3" json:"current_transaction_id,omitempty"`
-}
-
-func (x *ChargePoint) Reset() {
-	*x = ChargePoint{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_charge_point_gateway_format_proto_msgTypes[14]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ChargePoint) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ChargePoint) ProtoMessage() {}
-
-func (x *ChargePoint) ProtoReflect() protoreflect.Message {
-	mi := &file_charge_point_gateway_format_proto_msgTypes[14]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ChargePoint.ProtoReflect.Descriptor instead.
-func (*ChargePoint) Descriptor() ([]byte, []int) {
-	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{14}
-}
-
-func (x *ChargePoint) GetStatus() string {
+func (x *ChargePointState) GetStatus() string {
 	if x != nil {
 		return x.Status
 	}
 	return ""
 }
 
-func (x *ChargePoint) GetConnectors() map[int32]*ConnectorInfo {
+func (x *ChargePointState) GetConnectors() map[int32]*ConnectorInfo {
 	if x != nil {
 		return x.Connectors
 	}
 	return nil
 }
 
-func (x *ChargePoint) GetTransactions() map[int32]*TransactionInfo {
+func (x *ChargePointState) GetTransactions() map[int32]*TransactionInfo {
 	if x != nil {
 		return x.Transactions
 	}
 	return nil
 }
 
-func (x *ChargePoint) GetAuthList() map[string]*ConsumerAuthData {
+func (x *ChargePointState) GetAuthList() map[string]*ConsumerAuthData {
 	if x != nil {
 		return x.AuthList
 	}
 	return nil
 }
 
-func (x *ChargePoint) GetCurrentAuthListVersion() int32 {
+func (x *ChargePointState) GetCurrentAuthListVersion() int32 {
 	if x != nil {
 		return x.CurrentAuthListVersion
 	}
 	return 0
 }
 
-func (x *ChargePoint) GetCurrentTransactionId() int32 {
+func (x *ChargePointState) GetCurrentTransactionId() int32 {
 	if x != nil {
 		return x.CurrentTransactionId
 	}
@@ -1221,7 +1166,7 @@ type ConnectorInfo struct {
 func (x *ConnectorInfo) Reset() {
 	*x = ConnectorInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_charge_point_gateway_format_proto_msgTypes[15]
+		mi := &file_charge_point_gateway_format_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1234,7 +1179,7 @@ func (x *ConnectorInfo) String() string {
 func (*ConnectorInfo) ProtoMessage() {}
 
 func (x *ConnectorInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_charge_point_gateway_format_proto_msgTypes[15]
+	mi := &file_charge_point_gateway_format_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1247,7 +1192,7 @@ func (x *ConnectorInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConnectorInfo.ProtoReflect.Descriptor instead.
 func (*ConnectorInfo) Descriptor() ([]byte, []int) {
-	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{15}
+	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ConnectorInfo) GetId() string {
@@ -1289,7 +1234,7 @@ type TransactionInfo struct {
 func (x *TransactionInfo) Reset() {
 	*x = TransactionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_charge_point_gateway_format_proto_msgTypes[16]
+		mi := &file_charge_point_gateway_format_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1302,7 +1247,7 @@ func (x *TransactionInfo) String() string {
 func (*TransactionInfo) ProtoMessage() {}
 
 func (x *TransactionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_charge_point_gateway_format_proto_msgTypes[16]
+	mi := &file_charge_point_gateway_format_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1315,7 +1260,7 @@ func (x *TransactionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TransactionInfo.ProtoReflect.Descriptor instead.
 func (*TransactionInfo) Descriptor() ([]byte, []int) {
-	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{16}
+	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *TransactionInfo) GetId() int32 {
@@ -1387,7 +1332,7 @@ type ConsumerAuthData struct {
 func (x *ConsumerAuthData) Reset() {
 	*x = ConsumerAuthData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_charge_point_gateway_format_proto_msgTypes[17]
+		mi := &file_charge_point_gateway_format_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1400,7 +1345,7 @@ func (x *ConsumerAuthData) String() string {
 func (*ConsumerAuthData) ProtoMessage() {}
 
 func (x *ConsumerAuthData) ProtoReflect() protoreflect.Message {
-	mi := &file_charge_point_gateway_format_proto_msgTypes[17]
+	mi := &file_charge_point_gateway_format_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1413,7 +1358,7 @@ func (x *ConsumerAuthData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConsumerAuthData.ProtoReflect.Descriptor instead.
 func (*ConsumerAuthData) Descriptor() ([]byte, []int) {
-	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{17}
+	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ConsumerAuthData) GetPublicKey() string {
@@ -1449,7 +1394,7 @@ type LocalAuthorizationData struct {
 func (x *LocalAuthorizationData) Reset() {
 	*x = LocalAuthorizationData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_charge_point_gateway_format_proto_msgTypes[18]
+		mi := &file_charge_point_gateway_format_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1462,7 +1407,7 @@ func (x *LocalAuthorizationData) String() string {
 func (*LocalAuthorizationData) ProtoMessage() {}
 
 func (x *LocalAuthorizationData) ProtoReflect() protoreflect.Message {
-	mi := &file_charge_point_gateway_format_proto_msgTypes[18]
+	mi := &file_charge_point_gateway_format_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1475,7 +1420,7 @@ func (x *LocalAuthorizationData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocalAuthorizationData.ProtoReflect.Descriptor instead.
 func (*LocalAuthorizationData) Descriptor() ([]byte, []int) {
-	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{18}
+	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *LocalAuthorizationData) GetIdTag() string {
@@ -1505,7 +1450,7 @@ type IdTagInfo struct {
 func (x *IdTagInfo) Reset() {
 	*x = IdTagInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_charge_point_gateway_format_proto_msgTypes[19]
+		mi := &file_charge_point_gateway_format_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1518,7 +1463,7 @@ func (x *IdTagInfo) String() string {
 func (*IdTagInfo) ProtoMessage() {}
 
 func (x *IdTagInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_charge_point_gateway_format_proto_msgTypes[19]
+	mi := &file_charge_point_gateway_format_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1531,7 +1476,7 @@ func (x *IdTagInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IdTagInfo.ProtoReflect.Descriptor instead.
 func (*IdTagInfo) Descriptor() ([]byte, []int) {
-	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{19}
+	return file_charge_point_gateway_format_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *IdTagInfo) GetExpiryDate() string {
@@ -1744,34 +1689,22 @@ var file_charge_point_gateway_format_proto_rawDesc = []byte{
 	0x6f, 0x52, 0x0f, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e,
 	0x66, 0x6f, 0x12, 0x25, 0x0a, 0x04, 0x72, 0x65, 0x73, 0x70, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x11, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x52, 0x04, 0x72, 0x65, 0x73, 0x70, 0x22, 0xd1, 0x01, 0x0a, 0x10, 0x43, 0x68,
-	0x61, 0x72, 0x67, 0x65, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x14,
-	0x0a, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x63,
-	0x6f, 0x75, 0x6e, 0x74, 0x12, 0x50, 0x0a, 0x0d, 0x63, 0x68, 0x61, 0x72, 0x67, 0x65, 0x5f, 0x70,
-	0x6f, 0x69, 0x6e, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x67, 0x61,
-	0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x67, 0x65, 0x50, 0x6f, 0x69, 0x6e,
-	0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x67, 0x65, 0x50, 0x6f, 0x69,
-	0x6e, 0x74, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x0c, 0x63, 0x68, 0x61, 0x72, 0x67, 0x65,
-	0x50, 0x6f, 0x69, 0x6e, 0x74, 0x73, 0x1a, 0x55, 0x0a, 0x11, 0x43, 0x68, 0x61, 0x72, 0x67, 0x65,
-	0x50, 0x6f, 0x69, 0x6e, 0x74, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b,
-	0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x2a, 0x0a,
-	0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67,
-	0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x67, 0x65, 0x50, 0x6f, 0x69,
-	0x6e, 0x74, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x22, 0xf3, 0x04,
-	0x0a, 0x0b, 0x43, 0x68, 0x61, 0x72, 0x67, 0x65, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x12, 0x16, 0x0a,
-	0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73,
-	0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x44, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74,
-	0x6f, 0x72, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x67, 0x61, 0x74, 0x65,
-	0x77, 0x61, 0x79, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x67, 0x65, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x2e,
-	0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52,
-	0x0a, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x73, 0x12, 0x4a, 0x0a, 0x0c, 0x74,
-	0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28,
-	0x0b, 0x32, 0x26, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x43, 0x68, 0x61, 0x72,
-	0x67, 0x65, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74,
-	0x69, 0x6f, 0x6e, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x0c, 0x74, 0x72, 0x61, 0x6e, 0x73,
-	0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x3f, 0x0a, 0x09, 0x61, 0x75, 0x74, 0x68, 0x5f,
-	0x6c, 0x69, 0x73, 0x74, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x67, 0x61, 0x74,
+	0x6e, 0x73, 0x65, 0x52, 0x04, 0x72, 0x65, 0x73, 0x70, 0x22, 0x87, 0x05, 0x0a, 0x10, 0x43, 0x68,
+	0x61, 0x72, 0x67, 0x65, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x16,
+	0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x49, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63,
+	0x74, 0x6f, 0x72, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x67, 0x61, 0x74,
 	0x65, 0x77, 0x61, 0x79, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x67, 0x65, 0x50, 0x6f, 0x69, 0x6e, 0x74,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x2e, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x73,
+	0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x0a, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x6f, 0x72,
+	0x73, 0x12, 0x4f, 0x0a, 0x0c, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61,
+	0x79, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x67, 0x65, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x53, 0x74, 0x61,
+	0x74, 0x65, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x45,
+	0x6e, 0x74, 0x72, 0x79, 0x52, 0x0c, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f,
+	0x6e, 0x73, 0x12, 0x44, 0x0a, 0x09, 0x61, 0x75, 0x74, 0x68, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18,
+	0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e,
+	0x43, 0x68, 0x61, 0x72, 0x67, 0x65, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65,
 	0x2e, 0x41, 0x75, 0x74, 0x68, 0x4c, 0x69, 0x73, 0x74, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x08,
 	0x61, 0x75, 0x74, 0x68, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x19, 0x63, 0x75, 0x72, 0x72,
 	0x65, 0x6e, 0x74, 0x5f, 0x61, 0x75, 0x74, 0x68, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x5f, 0x76, 0x65,
@@ -1885,7 +1818,7 @@ func file_charge_point_gateway_format_proto_rawDescGZIP() []byte {
 }
 
 var file_charge_point_gateway_format_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_charge_point_gateway_format_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
+var file_charge_point_gateway_format_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
 var file_charge_point_gateway_format_proto_goTypes = []interface{}{
 	(EventType)(0),                          // 0: gateway.EventType
 	(*Event)(nil),                           // 1: gateway.Event
@@ -1902,16 +1835,14 @@ var file_charge_point_gateway_format_proto_goTypes = []interface{}{
 	(*StopChargeRequestData)(nil),           // 12: gateway.StopChargeRequestData
 	(*StopChargeRequestAckData)(nil),        // 13: gateway.StopChargeRequestAckData
 	(*ChargePointState)(nil),                // 14: gateway.ChargePointState
-	(*ChargePoint)(nil),                     // 15: gateway.ChargePoint
-	(*ConnectorInfo)(nil),                   // 16: gateway.ConnectorInfo
-	(*TransactionInfo)(nil),                 // 17: gateway.TransactionInfo
-	(*ConsumerAuthData)(nil),                // 18: gateway.ConsumerAuthData
-	(*LocalAuthorizationData)(nil),          // 19: gateway.LocalAuthorizationData
-	(*IdTagInfo)(nil),                       // 20: gateway.IdTagInfo
-	nil,                                     // 21: gateway.ChargePointState.ChargePointsEntry
-	nil,                                     // 22: gateway.ChargePoint.ConnectorsEntry
-	nil,                                     // 23: gateway.ChargePoint.TransactionsEntry
-	nil,                                     // 24: gateway.ChargePoint.AuthListEntry
+	(*ConnectorInfo)(nil),                   // 15: gateway.ConnectorInfo
+	(*TransactionInfo)(nil),                 // 16: gateway.TransactionInfo
+	(*ConsumerAuthData)(nil),                // 17: gateway.ConsumerAuthData
+	(*LocalAuthorizationData)(nil),          // 18: gateway.LocalAuthorizationData
+	(*IdTagInfo)(nil),                       // 19: gateway.IdTagInfo
+	nil,                                     // 20: gateway.ChargePointState.ConnectorsEntry
+	nil,                                     // 21: gateway.ChargePointState.TransactionsEntry
+	nil,                                     // 22: gateway.ChargePointState.AuthListEntry
 }
 var file_charge_point_gateway_format_proto_depIdxs = []int32{
 	0,  // 0: gateway.Event.event_id:type_name -> gateway.EventType
@@ -1930,23 +1861,21 @@ var file_charge_point_gateway_format_proto_depIdxs = []int32{
 	10, // 13: gateway.AuthorizeRequestAckData.resp:type_name -> gateway.Response
 	10, // 14: gateway.CheckAvailabilityRequestAckData.resp:type_name -> gateway.Response
 	10, // 15: gateway.StartChargeRequestAckData.resp:type_name -> gateway.Response
-	17, // 16: gateway.StopChargeRequestAckData.transaction_info:type_name -> gateway.TransactionInfo
+	16, // 16: gateway.StopChargeRequestAckData.transaction_info:type_name -> gateway.TransactionInfo
 	10, // 17: gateway.StopChargeRequestAckData.resp:type_name -> gateway.Response
-	21, // 18: gateway.ChargePointState.charge_points:type_name -> gateway.ChargePointState.ChargePointsEntry
-	22, // 19: gateway.ChargePoint.connectors:type_name -> gateway.ChargePoint.ConnectorsEntry
-	23, // 20: gateway.ChargePoint.transactions:type_name -> gateway.ChargePoint.TransactionsEntry
-	24, // 21: gateway.ChargePoint.auth_list:type_name -> gateway.ChargePoint.AuthListEntry
-	11, // 22: gateway.TransactionInfo.progress:type_name -> gateway.ChargingStatusData
-	19, // 23: gateway.ConsumerAuthData.auth_data:type_name -> gateway.LocalAuthorizationData
-	15, // 24: gateway.ChargePointState.ChargePointsEntry.value:type_name -> gateway.ChargePoint
-	16, // 25: gateway.ChargePoint.ConnectorsEntry.value:type_name -> gateway.ConnectorInfo
-	17, // 26: gateway.ChargePoint.TransactionsEntry.value:type_name -> gateway.TransactionInfo
-	18, // 27: gateway.ChargePoint.AuthListEntry.value:type_name -> gateway.ConsumerAuthData
-	28, // [28:28] is the sub-list for method output_type
-	28, // [28:28] is the sub-list for method input_type
-	28, // [28:28] is the sub-list for extension type_name
-	28, // [28:28] is the sub-list for extension extendee
-	0,  // [0:28] is the sub-list for field type_name
+	20, // 18: gateway.ChargePointState.connectors:type_name -> gateway.ChargePointState.ConnectorsEntry
+	21, // 19: gateway.ChargePointState.transactions:type_name -> gateway.ChargePointState.TransactionsEntry
+	22, // 20: gateway.ChargePointState.auth_list:type_name -> gateway.ChargePointState.AuthListEntry
+	11, // 21: gateway.TransactionInfo.progress:type_name -> gateway.ChargingStatusData
+	18, // 22: gateway.ConsumerAuthData.auth_data:type_name -> gateway.LocalAuthorizationData
+	15, // 23: gateway.ChargePointState.ConnectorsEntry.value:type_name -> gateway.ConnectorInfo
+	16, // 24: gateway.ChargePointState.TransactionsEntry.value:type_name -> gateway.TransactionInfo
+	17, // 25: gateway.ChargePointState.AuthListEntry.value:type_name -> gateway.ConsumerAuthData
+	26, // [26:26] is the sub-list for method output_type
+	26, // [26:26] is the sub-list for method input_type
+	26, // [26:26] is the sub-list for extension type_name
+	26, // [26:26] is the sub-list for extension extendee
+	0,  // [0:26] is the sub-list for field type_name
 }
 
 func init() { file_charge_point_gateway_format_proto_init() }
@@ -2124,18 +2053,6 @@ func file_charge_point_gateway_format_proto_init() {
 			}
 		}
 		file_charge_point_gateway_format_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ChargePoint); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_charge_point_gateway_format_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConnectorInfo); i {
 			case 0:
 				return &v.state
@@ -2147,7 +2064,7 @@ func file_charge_point_gateway_format_proto_init() {
 				return nil
 			}
 		}
-		file_charge_point_gateway_format_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_charge_point_gateway_format_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TransactionInfo); i {
 			case 0:
 				return &v.state
@@ -2159,7 +2076,7 @@ func file_charge_point_gateway_format_proto_init() {
 				return nil
 			}
 		}
-		file_charge_point_gateway_format_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_charge_point_gateway_format_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConsumerAuthData); i {
 			case 0:
 				return &v.state
@@ -2171,7 +2088,7 @@ func file_charge_point_gateway_format_proto_init() {
 				return nil
 			}
 		}
-		file_charge_point_gateway_format_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_charge_point_gateway_format_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LocalAuthorizationData); i {
 			case 0:
 				return &v.state
@@ -2183,7 +2100,7 @@ func file_charge_point_gateway_format_proto_init() {
 				return nil
 			}
 		}
-		file_charge_point_gateway_format_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_charge_point_gateway_format_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*IdTagInfo); i {
 			case 0:
 				return &v.state
@@ -2215,7 +2132,7 @@ func file_charge_point_gateway_format_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_charge_point_gateway_format_proto_rawDesc,
 			NumEnums:      1,
-			NumMessages:   24,
+			NumMessages:   22,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
