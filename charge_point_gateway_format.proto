@@ -82,11 +82,17 @@ message Response {
   string message = 2;
 }
 
+// ChargingStatusData contains status of the current ongoing charging
 message ChargingStatusData {
+  // initial EV battery level in percentage before charging
   float initial_battery_level = 1;
+  // current EV battery level in percentage before charging
   float battery_level = 2;
+  // the electrical current offered to EV
   float current_offered = 3;
+  // the initial_battery_level and battery_level value unit - Percent
   string battery_unit = 4;
+  // the current offered value unit - A
   string current_unit = 5;
 }
 
@@ -102,21 +108,33 @@ message StopChargeRequestAckData {
   Response resp = 3;
 }
 
+// ChargePointState defined connected charge point state data
 message ChargePointState {
-  string status = 1;
-  map<int32, ConnectorInfo> connectors = 2;
-  map<int32, TransactionInfo> transactions = 3;
-  map<string, ConsumerAuthData> auth_list = 4;
-  int32 current_auth_list_version = 5;
-  int32 current_transaction_id = 6;
+  string id = 1;
+  string status = 2;
+  // Charge point connector data using connector Id as key
+  map<int32, ConnectorInfo> connectors = 3;
+  // Charge point transactions data using transaction Id as key
+  map<int32, TransactionInfo> transactions = 4;
+  // current auth data using IdTag as key
+  map<string, ConsumerAuthData> auth_list = 5;
+  // used to inncrement local auth list version
+  // ocpp requires SendLocalAuthList request to contain new version
+  int32 current_auth_list_version = 6;
+  // used to inncrement transacton Ids by keep the last transaction Id
+  int32 current_transaction_id = 7;
 }
 
+// ConnectorInfo contains status and ongoing transaction ID for a connector
 message ConnectorInfo {
   int32 id = 1;
+  // status of the connector e.g AVAILABLE, PREPARING, CHARGING
   string status = 2;
+  // holds the current Id of ongoing transacton
   int32 current_transaction = 3;
 }
 
+// TransactionInfo contains info about a transaction
 message TransactionInfo {
   int32 id = 1;
   string id_tag = 2;
@@ -128,9 +146,13 @@ message TransactionInfo {
   ChargingStatusData progress = 8;
 }
 
+// ConsumerAuthData contains the consumer public key assigned to the local
+// authorized data. This keeps track of consumer auth ownership.
 message ConsumerAuthData {
+  // consumer of the service public key
   string public_key = 1;
   int32 transaction_id = 2;
+  // local charge point auth data assigned to consumer
   LocalAuthorizationData auth_data = 3;
 }
 
