@@ -158,7 +158,7 @@ message ConsumerAuthData {
 
 message LocalAuthorizationData {
   string id_tag = 1;
-  string id_tag_info = 2;
+  IdTagInfo id_tag_info = 2;
 }
 
 message IdTagInfo {
