@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-package event;
-option go_package = "github.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/event;event";
+package events;
+option go_package = "github.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/events;events";
 
 import "charge_point_gateway_format.proto";
 import "p2p_message_format.proto";

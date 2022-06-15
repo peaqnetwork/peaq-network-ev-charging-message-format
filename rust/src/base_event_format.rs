@@ -26,15 +26,15 @@
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_0_0_ALPHA_10;
 
 #[derive(PartialEq,Clone,Default,Debug)]
-// @@protoc_insertion_point(message:event.Event)
+// @@protoc_insertion_point(message:events.Event)
 pub struct Event {
     // message fields
-    // @@protoc_insertion_point(field:event.Event.event_id)
+    // @@protoc_insertion_point(field:events.Event.event_id)
     pub event_id: ::protobuf::EnumOrUnknown<EventType>,
     // message oneof groups
     pub data: ::std::option::Option<event::Data>,
     // special fields
-    // @@protoc_insertion_point(special_field:event.Event.special_fields)
+    // @@protoc_insertion_point(special_field:events.Event.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
 
@@ -2037,59 +2037,59 @@ pub mod event {
 
     #[derive(Clone,PartialEq,Debug)]
     #[non_exhaustive]
-    // @@protoc_insertion_point(oneof:event.Event.data)
+    // @@protoc_insertion_point(oneof:events.Event.data)
     pub enum Data {
-        // @@protoc_insertion_point(oneof_field:event.Event.charging_status_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.charging_status_data)
         ChargingStatusData(super::super::p2p_message_format::ChargingStatusData),
-        // @@protoc_insertion_point(oneof_field:event.Event.service_ack_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.service_ack_data)
         ServiceAckData(super::super::p2p_message_format::ServiceAckData),
-        // @@protoc_insertion_point(oneof_field:event.Event.service_requested_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.service_requested_data)
         ServiceRequestedData(super::super::p2p_message_format::ServiceRequestedData),
-        // @@protoc_insertion_point(oneof_field:event.Event.service_delivered_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.service_delivered_data)
         ServiceDeliveredData(super::super::p2p_message_format::ServiceDeliveredData),
-        // @@protoc_insertion_point(oneof_field:event.Event.stop_charge_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.stop_charge_data)
         StopChargeData(super::super::p2p_message_format::StopChargeData),
-        // @@protoc_insertion_point(oneof_field:event.Event.stop_charge_resp_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.stop_charge_resp_data)
         StopChargeRespData(super::super::p2p_message_format::StopChargeResponseData),
-        // @@protoc_insertion_point(oneof_field:event.Event.identity_challenge_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.identity_challenge_data)
         IdentityChallengeData(super::super::p2p_message_format::IdentityChallengeData),
-        // @@protoc_insertion_point(oneof_field:event.Event.identity_response_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.identity_response_data)
         IdentityResponseData(super::super::p2p_message_format::IdentityResponseData),
-        // @@protoc_insertion_point(oneof_field:event.Event.chain_event_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.chain_event_data)
         ChainEventData(super::super::p2p_message_format::ChainEventData),
-        // @@protoc_insertion_point(oneof_field:event.Event.emit_show_info_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.emit_show_info_data)
         EmitShowInfoData(super::super::p2p_message_format::EmitShowInfoData),
-        // @@protoc_insertion_point(oneof_field:event.Event.get_balance_ack_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.get_balance_ack_data)
         GetBalanceAckData(super::super::p2p_message_format::GetBalanceAckData),
-        // @@protoc_insertion_point(oneof_field:event.Event.get_pk_ack_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.get_pk_ack_data)
         GetPkAckData(super::super::p2p_message_format::GetPKAckData),
-        // @@protoc_insertion_point(oneof_field:event.Event.republish_ack_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.republish_ack_data)
         RepublishAckData(super::super::p2p_message_format::RePublishDIDAckData),
-        // @@protoc_insertion_point(oneof_field:event.Event.reconnect_ack_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.reconnect_ack_data)
         ReconnectAckData(super::super::p2p_message_format::ReconnectAckData),
-        // @@protoc_insertion_point(oneof_field:event.Event.service_requested_ack_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.service_requested_ack_data)
         ServiceRequestedAckData(super::super::p2p_message_format::ServiceRequestedAckData),
-        // @@protoc_insertion_point(oneof_field:event.Event.boot_notification_request_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.boot_notification_request_data)
         BootNotificationRequestData(super::super::charge_point_gateway_format::BootNotificationRequestData),
-        // @@protoc_insertion_point(oneof_field:event.Event.log_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.log_data)
         LogData(super::super::charge_point_gateway_format::LogData),
-        // @@protoc_insertion_point(oneof_field:event.Event.authorize_request_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.authorize_request_data)
         AuthorizeRequestData(super::super::charge_point_gateway_format::AuthorizeRequestData),
-        // @@protoc_insertion_point(oneof_field:event.Event.authorize_response_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.authorize_response_data)
         AuthorizeResponseData(super::super::charge_point_gateway_format::AuthorizeResponseData),
-        // @@protoc_insertion_point(oneof_field:event.Event.check_availability_request_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.check_availability_request_data)
         CheckAvailabilityRequestData(super::super::charge_point_gateway_format::CheckAvailabilityRequestData),
-        // @@protoc_insertion_point(oneof_field:event.Event.check_availability_response_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.check_availability_response_data)
         CheckAvailabilityResponseData(super::super::charge_point_gateway_format::CheckAvailabilityResponseData),
-        // @@protoc_insertion_point(oneof_field:event.Event.start_charge_request_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.start_charge_request_data)
         StartChargeRequestData(super::super::charge_point_gateway_format::StartChargeRequestData),
-        // @@protoc_insertion_point(oneof_field:event.Event.start_charge_response_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.start_charge_response_data)
         StartChargeResponseData(super::super::charge_point_gateway_format::StartChargeResponseData),
-        // @@protoc_insertion_point(oneof_field:event.Event.ev_charge_status_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.ev_charge_status_data)
         EvChargeStatusData(super::super::charge_point_gateway_format::EVChargingStatusData),
-        // @@protoc_insertion_point(oneof_field:event.Event.stop_charge_request_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.stop_charge_request_data)
         StopChargeRequestData(super::super::charge_point_gateway_format::StopChargeRequestData),
-        // @@protoc_insertion_point(oneof_field:event.Event.stop_charge_response_data)
+        // @@protoc_insertion_point(oneof_field:events.Event.stop_charge_response_data)
         StopChargeResponseData(super::super::charge_point_gateway_format::StopChargeResponseData),
     }
 
@@ -2112,71 +2112,71 @@ pub mod event {
 
 ///  Events types
 #[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
-// @@protoc_insertion_point(enum:event.EventType)
+// @@protoc_insertion_point(enum:events.EventType)
 pub enum EventType {
-    // @@protoc_insertion_point(enum_value:event.EventType.CHARGING_STATUS)
+    // @@protoc_insertion_point(enum_value:events.EventType.CHARGING_STATUS)
     CHARGING_STATUS = 0,
-    // @@protoc_insertion_point(enum_value:event.EventType.SERVICE_REQUEST_ACK)
+    // @@protoc_insertion_point(enum_value:events.EventType.SERVICE_REQUEST_ACK)
     SERVICE_REQUEST_ACK = 1,
-    // @@protoc_insertion_point(enum_value:event.EventType.SERVICE_DELIVERY_ACK)
+    // @@protoc_insertion_point(enum_value:events.EventType.SERVICE_DELIVERY_ACK)
     SERVICE_DELIVERY_ACK = 2,
-    // @@protoc_insertion_point(enum_value:event.EventType.SERVICE_REQUESTED)
+    // @@protoc_insertion_point(enum_value:events.EventType.SERVICE_REQUESTED)
     SERVICE_REQUESTED = 3,
-    // @@protoc_insertion_point(enum_value:event.EventType.SERVICE_DELIVERED)
+    // @@protoc_insertion_point(enum_value:events.EventType.SERVICE_DELIVERED)
     SERVICE_DELIVERED = 4,
-    // @@protoc_insertion_point(enum_value:event.EventType.STOP_CHARGE_REQUEST)
+    // @@protoc_insertion_point(enum_value:events.EventType.STOP_CHARGE_REQUEST)
     STOP_CHARGE_REQUEST = 5,
-    // @@protoc_insertion_point(enum_value:event.EventType.STOP_CHARGE_RESPONSE)
+    // @@protoc_insertion_point(enum_value:events.EventType.STOP_CHARGE_RESPONSE)
     STOP_CHARGE_RESPONSE = 6,
-    // @@protoc_insertion_point(enum_value:event.EventType.IDENTITY_CHALLENGE)
+    // @@protoc_insertion_point(enum_value:events.EventType.IDENTITY_CHALLENGE)
     IDENTITY_CHALLENGE = 7,
-    // @@protoc_insertion_point(enum_value:event.EventType.IDENTITY_RESPONSE)
+    // @@protoc_insertion_point(enum_value:events.EventType.IDENTITY_RESPONSE)
     IDENTITY_RESPONSE = 8,
-    // @@protoc_insertion_point(enum_value:event.EventType.RECEIVE_CHAIN_EVENT)
+    // @@protoc_insertion_point(enum_value:events.EventType.RECEIVE_CHAIN_EVENT)
     RECEIVE_CHAIN_EVENT = 9,
-    // @@protoc_insertion_point(enum_value:event.EventType.EMIT_SHOW_INFO)
+    // @@protoc_insertion_point(enum_value:events.EventType.EMIT_SHOW_INFO)
     EMIT_SHOW_INFO = 10,
-    // @@protoc_insertion_point(enum_value:event.EventType.GET_BALANCE)
+    // @@protoc_insertion_point(enum_value:events.EventType.GET_BALANCE)
     GET_BALANCE = 11,
-    // @@protoc_insertion_point(enum_value:event.EventType.GET_BALANCE_ACK)
+    // @@protoc_insertion_point(enum_value:events.EventType.GET_BALANCE_ACK)
     GET_BALANCE_ACK = 12,
-    // @@protoc_insertion_point(enum_value:event.EventType.GET_PK)
+    // @@protoc_insertion_point(enum_value:events.EventType.GET_PK)
     GET_PK = 13,
-    // @@protoc_insertion_point(enum_value:event.EventType.GET_PK_ACK)
+    // @@protoc_insertion_point(enum_value:events.EventType.GET_PK_ACK)
     GET_PK_ACK = 14,
-    // @@protoc_insertion_point(enum_value:event.EventType.REPUBLISH_DID)
+    // @@protoc_insertion_point(enum_value:events.EventType.REPUBLISH_DID)
     REPUBLISH_DID = 15,
-    // @@protoc_insertion_point(enum_value:event.EventType.REPUBLISH_DID_ACK)
+    // @@protoc_insertion_point(enum_value:events.EventType.REPUBLISH_DID_ACK)
     REPUBLISH_DID_ACK = 16,
-    // @@protoc_insertion_point(enum_value:event.EventType.RECONNECT)
+    // @@protoc_insertion_point(enum_value:events.EventType.RECONNECT)
     RECONNECT = 17,
-    // @@protoc_insertion_point(enum_value:event.EventType.RECONNECT_ACK)
+    // @@protoc_insertion_point(enum_value:events.EventType.RECONNECT_ACK)
     RECONNECT_ACK = 18,
-    // @@protoc_insertion_point(enum_value:event.EventType.PEER_CONNECTED)
+    // @@protoc_insertion_point(enum_value:events.EventType.PEER_CONNECTED)
     PEER_CONNECTED = 19,
-    // @@protoc_insertion_point(enum_value:event.EventType.PEER_SUBSCRIBED)
+    // @@protoc_insertion_point(enum_value:events.EventType.PEER_SUBSCRIBED)
     PEER_SUBSCRIBED = 20,
-    // @@protoc_insertion_point(enum_value:event.EventType.PEER_CONNECTION_FAILED)
+    // @@protoc_insertion_point(enum_value:events.EventType.PEER_CONNECTION_FAILED)
     PEER_CONNECTION_FAILED = 21,
-    // @@protoc_insertion_point(enum_value:event.EventType.PEER_SUBSCRIPTION_FAILED)
+    // @@protoc_insertion_point(enum_value:events.EventType.PEER_SUBSCRIPTION_FAILED)
     PEER_SUBSCRIPTION_FAILED = 22,
-    // @@protoc_insertion_point(enum_value:event.EventType.BOOT_NOTIFICATION_REQUEST)
+    // @@protoc_insertion_point(enum_value:events.EventType.BOOT_NOTIFICATION_REQUEST)
     BOOT_NOTIFICATION_REQUEST = 23,
-    // @@protoc_insertion_point(enum_value:event.EventType.LOG)
+    // @@protoc_insertion_point(enum_value:events.EventType.LOG)
     LOG = 24,
-    // @@protoc_insertion_point(enum_value:event.EventType.AUTHORIZE_REQUEST)
+    // @@protoc_insertion_point(enum_value:events.EventType.AUTHORIZE_REQUEST)
     AUTHORIZE_REQUEST = 25,
-    // @@protoc_insertion_point(enum_value:event.EventType.AUTHORIZE_REQUEST_ACK)
+    // @@protoc_insertion_point(enum_value:events.EventType.AUTHORIZE_REQUEST_ACK)
     AUTHORIZE_REQUEST_ACK = 26,
-    // @@protoc_insertion_point(enum_value:event.EventType.CHECK_AVAILABILITY_REQUEST)
+    // @@protoc_insertion_point(enum_value:events.EventType.CHECK_AVAILABILITY_REQUEST)
     CHECK_AVAILABILITY_REQUEST = 27,
-    // @@protoc_insertion_point(enum_value:event.EventType.CHECK_AVAILABILITY_RESPONSE)
+    // @@protoc_insertion_point(enum_value:events.EventType.CHECK_AVAILABILITY_RESPONSE)
     CHECK_AVAILABILITY_RESPONSE = 28,
-    // @@protoc_insertion_point(enum_value:event.EventType.START_CHARGE_REQUEST)
+    // @@protoc_insertion_point(enum_value:events.EventType.START_CHARGE_REQUEST)
     START_CHARGE_REQUEST = 29,
-    // @@protoc_insertion_point(enum_value:event.EventType.START_CHARGE_RESPONSE)
+    // @@protoc_insertion_point(enum_value:events.EventType.START_CHARGE_RESPONSE)
     START_CHARGE_RESPONSE = 30,
-    // @@protoc_insertion_point(enum_value:event.EventType.EV_CHARGE_STATUS)
+    // @@protoc_insertion_point(enum_value:events.EventType.EV_CHARGE_STATUS)
     EV_CHARGE_STATUS = 31,
 }
 
@@ -2286,55 +2286,55 @@ impl EventType {
 }
 
 static file_descriptor_proto_data: &'static [u8] = b"\
-    \n\x17base_event_format.proto\x12\x05event\x1a!charge_point_gateway_form\
-    at.proto\x1a\x18p2p_message_format.proto\"\xa6\x11\n\x05Event\x12+\n\x08\
-    event_id\x18\x01\x20\x01(\x0e2\x10.event.EventTypeR\x07eventId\x12K\n\
-    \x14charging_status_data\x18\x02\x20\x01(\x0b2\x17.p2p.ChargingStatusDat\
-    aH\0R\x12chargingStatusData\x12?\n\x10service_ack_data\x18\x03\x20\x01(\
-    \x0b2\x13.p2p.ServiceAckDataH\0R\x0eserviceAckData\x12Q\n\x16service_req\
-    uested_data\x18\x04\x20\x01(\x0b2\x19.p2p.ServiceRequestedDataH\0R\x14se\
-    rviceRequestedData\x12Q\n\x16service_delivered_data\x18\x05\x20\x01(\x0b\
-    2\x19.p2p.ServiceDeliveredDataH\0R\x14serviceDeliveredData\x12?\n\x10sto\
-    p_charge_data\x18\x06\x20\x01(\x0b2\x13.p2p.StopChargeDataH\0R\x0estopCh\
-    argeData\x12P\n\x15stop_charge_resp_data\x18\x07\x20\x01(\x0b2\x1b.p2p.S\
-    topChargeResponseDataH\0R\x12stopChargeRespData\x12T\n\x17identity_chall\
-    enge_data\x18\x08\x20\x01(\x0b2\x1a.p2p.IdentityChallengeDataH\0R\x15ide\
-    ntityChallengeData\x12Q\n\x16identity_response_data\x18\t\x20\x01(\x0b2\
-    \x19.p2p.IdentityResponseDataH\0R\x14identityResponseData\x12?\n\x10chai\
-    n_event_data\x18\n\x20\x01(\x0b2\x13.p2p.ChainEventDataH\0R\x0echainEven\
-    tData\x12F\n\x13emit_show_info_data\x18\x0b\x20\x01(\x0b2\x15.p2p.EmitSh\
-    owInfoDataH\0R\x10emitShowInfoData\x12I\n\x14get_balance_ack_data\x18\
-    \x0c\x20\x01(\x0b2\x16.p2p.GetBalanceAckDataH\0R\x11getBalanceAckData\
-    \x12:\n\x0fget_pk_ack_data\x18\r\x20\x01(\x0b2\x11.p2p.GetPKAckDataH\0R\
-    \x0cgetPkAckData\x12H\n\x12republish_ack_data\x18\x0e\x20\x01(\x0b2\x18.\
-    p2p.RePublishDIDAckDataH\0R\x10republishAckData\x12E\n\x12reconnect_ack_\
-    data\x18\x0f\x20\x01(\x0b2\x15.p2p.ReconnectAckDataH\0R\x10reconnectAckD\
-    ata\x12[\n\x1aservice_requested_ack_data\x18\x10\x20\x01(\x0b2\x1c.p2p.S\
-    erviceRequestedAckDataH\0R\x17serviceRequestedAckData\x12k\n\x1eboot_not\
-    ification_request_data\x18\x11\x20\x01(\x0b2$.gateway.BootNotificationRe\
-    questDataH\0R\x1bbootNotificationRequestData\x12-\n\x08log_data\x18\x12\
-    \x20\x01(\x0b2\x10.gateway.LogDataH\0R\x07logData\x12U\n\x16authorize_re\
-    quest_data\x18\x13\x20\x01(\x0b2\x1d.gateway.AuthorizeRequestDataH\0R\
-    \x14authorizeRequestData\x12X\n\x17authorize_response_data\x18\x14\x20\
-    \x01(\x0b2\x1e.gateway.AuthorizeResponseDataH\0R\x15authorizeResponseDat\
-    a\x12n\n\x1fcheck_availability_request_data\x18\x15\x20\x01(\x0b2%.gatew\
-    ay.CheckAvailabilityRequestDataH\0R\x1ccheckAvailabilityRequestData\x12q\
-    \n\x20check_availability_response_data\x18\x16\x20\x01(\x0b2&.gateway.Ch\
-    eckAvailabilityResponseDataH\0R\x1dcheckAvailabilityResponseData\x12\\\n\
-    \x19start_charge_request_data\x18\x18\x20\x01(\x0b2\x1f.gateway.StartCha\
-    rgeRequestDataH\0R\x16startChargeRequestData\x12_\n\x1astart_charge_resp\
-    onse_data\x18\x19\x20\x01(\x0b2\x20.gateway.StartChargeResponseDataH\0R\
-    \x17startChargeResponseData\x12R\n\x15ev_charge_status_data\x18\x1a\x20\
-    \x01(\x0b2\x1d.gateway.EVChargingStatusDataH\0R\x12evChargeStatusData\
-    \x12Y\n\x18stop_charge_request_data\x18\x1b\x20\x01(\x0b2\x1e.gateway.St\
-    opChargeRequestDataH\0R\x15stopChargeRequestData\x12\\\n\x19stop_charge_\
-    response_data\x18\x1c\x20\x01(\x0b2\x1f.gateway.StopChargeResponseDataH\
-    \0R\x16stopChargeResponseDataB\x06\n\x04data*\xe7\x05\n\tEventType\x12\
-    \x13\n\x0fCHARGING_STATUS\x10\0\x12\x17\n\x13SERVICE_REQUEST_ACK\x10\x01\
-    \x12\x18\n\x14SERVICE_DELIVERY_ACK\x10\x02\x12\x15\n\x11SERVICE_REQUESTE\
-    D\x10\x03\x12\x15\n\x11SERVICE_DELIVERED\x10\x04\x12\x17\n\x13STOP_CHARG\
-    E_REQUEST\x10\x05\x12\x18\n\x14STOP_CHARGE_RESPONSE\x10\x06\x12\x16\n\
-    \x12IDENTITY_CHALLENGE\x10\x07\x12\x15\n\x11IDENTITY_RESPONSE\x10\x08\
+    \n\x17base_event_format.proto\x12\x06events\x1a!charge_point_gateway_for\
+    mat.proto\x1a\x18p2p_message_format.proto\"\xa7\x11\n\x05Event\x12,\n\
+    \x08event_id\x18\x01\x20\x01(\x0e2\x11.events.EventTypeR\x07eventId\x12K\
+    \n\x14charging_status_data\x18\x02\x20\x01(\x0b2\x17.p2p.ChargingStatusD\
+    ataH\0R\x12chargingStatusData\x12?\n\x10service_ack_data\x18\x03\x20\x01\
+    (\x0b2\x13.p2p.ServiceAckDataH\0R\x0eserviceAckData\x12Q\n\x16service_re\
+    quested_data\x18\x04\x20\x01(\x0b2\x19.p2p.ServiceRequestedDataH\0R\x14s\
+    erviceRequestedData\x12Q\n\x16service_delivered_data\x18\x05\x20\x01(\
+    \x0b2\x19.p2p.ServiceDeliveredDataH\0R\x14serviceDeliveredData\x12?\n\
+    \x10stop_charge_data\x18\x06\x20\x01(\x0b2\x13.p2p.StopChargeDataH\0R\
+    \x0estopChargeData\x12P\n\x15stop_charge_resp_data\x18\x07\x20\x01(\x0b2\
+    \x1b.p2p.StopChargeResponseDataH\0R\x12stopChargeRespData\x12T\n\x17iden\
+    tity_challenge_data\x18\x08\x20\x01(\x0b2\x1a.p2p.IdentityChallengeDataH\
+    \0R\x15identityChallengeData\x12Q\n\x16identity_response_data\x18\t\x20\
+    \x01(\x0b2\x19.p2p.IdentityResponseDataH\0R\x14identityResponseData\x12?\
+    \n\x10chain_event_data\x18\n\x20\x01(\x0b2\x13.p2p.ChainEventDataH\0R\
+    \x0echainEventData\x12F\n\x13emit_show_info_data\x18\x0b\x20\x01(\x0b2\
+    \x15.p2p.EmitShowInfoDataH\0R\x10emitShowInfoData\x12I\n\x14get_balance_\
+    ack_data\x18\x0c\x20\x01(\x0b2\x16.p2p.GetBalanceAckDataH\0R\x11getBalan\
+    ceAckData\x12:\n\x0fget_pk_ack_data\x18\r\x20\x01(\x0b2\x11.p2p.GetPKAck\
+    DataH\0R\x0cgetPkAckData\x12H\n\x12republish_ack_data\x18\x0e\x20\x01(\
+    \x0b2\x18.p2p.RePublishDIDAckDataH\0R\x10republishAckData\x12E\n\x12reco\
+    nnect_ack_data\x18\x0f\x20\x01(\x0b2\x15.p2p.ReconnectAckDataH\0R\x10rec\
+    onnectAckData\x12[\n\x1aservice_requested_ack_data\x18\x10\x20\x01(\x0b2\
+    \x1c.p2p.ServiceRequestedAckDataH\0R\x17serviceRequestedAckData\x12k\n\
+    \x1eboot_notification_request_data\x18\x11\x20\x01(\x0b2$.gateway.BootNo\
+    tificationRequestDataH\0R\x1bbootNotificationRequestData\x12-\n\x08log_d\
+    ata\x18\x12\x20\x01(\x0b2\x10.gateway.LogDataH\0R\x07logData\x12U\n\x16a\
+    uthorize_request_data\x18\x13\x20\x01(\x0b2\x1d.gateway.AuthorizeRequest\
+    DataH\0R\x14authorizeRequestData\x12X\n\x17authorize_response_data\x18\
+    \x14\x20\x01(\x0b2\x1e.gateway.AuthorizeResponseDataH\0R\x15authorizeRes\
+    ponseData\x12n\n\x1fcheck_availability_request_data\x18\x15\x20\x01(\x0b\
+    2%.gateway.CheckAvailabilityRequestDataH\0R\x1ccheckAvailabilityRequestD\
+    ata\x12q\n\x20check_availability_response_data\x18\x16\x20\x01(\x0b2&.ga\
+    teway.CheckAvailabilityResponseDataH\0R\x1dcheckAvailabilityResponseData\
+    \x12\\\n\x19start_charge_request_data\x18\x18\x20\x01(\x0b2\x1f.gateway.\
+    StartChargeRequestDataH\0R\x16startChargeRequestData\x12_\n\x1astart_cha\
+    rge_response_data\x18\x19\x20\x01(\x0b2\x20.gateway.StartChargeResponseD\
+    ataH\0R\x17startChargeResponseData\x12R\n\x15ev_charge_status_data\x18\
+    \x1a\x20\x01(\x0b2\x1d.gateway.EVChargingStatusDataH\0R\x12evChargeStatu\
+    sData\x12Y\n\x18stop_charge_request_data\x18\x1b\x20\x01(\x0b2\x1e.gatew\
+    ay.StopChargeRequestDataH\0R\x15stopChargeRequestData\x12\\\n\x19stop_ch\
+    arge_response_data\x18\x1c\x20\x01(\x0b2\x1f.gateway.StopChargeResponseD\
+    ataH\0R\x16stopChargeResponseDataB\x06\n\x04data*\xe7\x05\n\tEventType\
+    \x12\x13\n\x0fCHARGING_STATUS\x10\0\x12\x17\n\x13SERVICE_REQUEST_ACK\x10\
+    \x01\x12\x18\n\x14SERVICE_DELIVERY_ACK\x10\x02\x12\x15\n\x11SERVICE_REQU\
+    ESTED\x10\x03\x12\x15\n\x11SERVICE_DELIVERED\x10\x04\x12\x17\n\x13STOP_C\
+    HARGE_REQUEST\x10\x05\x12\x18\n\x14STOP_CHARGE_RESPONSE\x10\x06\x12\x16\
+    \n\x12IDENTITY_CHALLENGE\x10\x07\x12\x15\n\x11IDENTITY_RESPONSE\x10\x08\
     \x12\x17\n\x13RECEIVE_CHAIN_EVENT\x10\t\x12\x12\n\x0eEMIT_SHOW_INFO\x10\
     \n\x12\x0f\n\x0bGET_BALANCE\x10\x0b\x12\x13\n\x0fGET_BALANCE_ACK\x10\x0c\
     \x12\n\n\x06GET_PK\x10\r\x12\x0e\n\nGET_PK_ACK\x10\x0e\x12\x11\n\rREPUBL\
@@ -2347,10 +2347,10 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x1a\x12\x1e\n\x1aCHECK_AVAILABILITY_REQUEST\x10\x1b\x12\x1f\n\x1bCHECK_\
     AVAILABILITY_RESPONSE\x10\x1c\x12\x18\n\x14START_CHARGE_REQUEST\x10\x1d\
     \x12\x19\n\x15START_CHARGE_RESPONSE\x10\x1e\x12\x14\n\x10EV_CHARGE_STATU\
-    S\x10\x1fBSZQgithub.com/peaqnetwork/peaq-network-ev-charging-message-for\
-    mat/golang/event;eventJ\xb0\x18\n\x06\x12\x04\0\0X\x01\n\x08\n\x01\x0c\
-    \x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x02\0\x0e\n\x08\n\x01\x08\x12\
-    \x03\x03\0h\n\t\n\x02\x08\x0b\x12\x03\x03\0h\n\t\n\x02\x03\0\x12\x03\x05\
+    S\x10\x1fBUZSgithub.com/peaqnetwork/peaq-network-ev-charging-message-for\
+    mat/golang/events;eventsJ\xb0\x18\n\x06\x12\x04\0\0X\x01\n\x08\n\x01\x0c\
+    \x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x02\0\x0f\n\x08\n\x01\x08\x12\
+    \x03\x03\0j\n\t\n\x02\x08\x0b\x12\x03\x03\0j\n\t\n\x02\x03\0\x12\x03\x05\
     \0+\n\t\n\x02\x03\x01\x12\x03\x06\0\"\n\x1a\n\x02\x05\0\x12\x04\t\03\x01\
     \x1a\x0e\x20Events\x20types\n\n\n\n\x03\x05\0\x01\x12\x03\t\x05\x0e\n\
     \x0b\n\x04\x05\0\x02\0\x12\x03\n\x02\x16\n\x0c\n\x05\x05\0\x02\0\x01\x12\
