@@ -1323,8 +1323,57 @@ impl Event {
         }
     }
 
+    // .gateway.NotifyChargePointStateChangeData notify_charge_point_state_change_data = 29;
+
+    pub fn notify_charge_point_state_change_data(&self) -> &super::charge_point_gateway_format::NotifyChargePointStateChangeData {
+        match self.data {
+            ::std::option::Option::Some(event::Data::NotifyChargePointStateChangeData(ref v)) => v,
+            _ => <super::charge_point_gateway_format::NotifyChargePointStateChangeData as ::protobuf::Message>::default_instance(),
+        }
+    }
+
+    pub fn clear_notify_charge_point_state_change_data(&mut self) {
+        self.data = ::std::option::Option::None;
+    }
+
+    pub fn has_notify_charge_point_state_change_data(&self) -> bool {
+        match self.data {
+            ::std::option::Option::Some(event::Data::NotifyChargePointStateChangeData(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_notify_charge_point_state_change_data(&mut self, v: super::charge_point_gateway_format::NotifyChargePointStateChangeData) {
+        self.data = ::std::option::Option::Some(event::Data::NotifyChargePointStateChangeData(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_notify_charge_point_state_change_data(&mut self) -> &mut super::charge_point_gateway_format::NotifyChargePointStateChangeData {
+        if let ::std::option::Option::Some(event::Data::NotifyChargePointStateChangeData(_)) = self.data {
+        } else {
+            self.data = ::std::option::Option::Some(event::Data::NotifyChargePointStateChangeData(super::charge_point_gateway_format::NotifyChargePointStateChangeData::new()));
+        }
+        match self.data {
+            ::std::option::Option::Some(event::Data::NotifyChargePointStateChangeData(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_notify_charge_point_state_change_data(&mut self) -> super::charge_point_gateway_format::NotifyChargePointStateChangeData {
+        if self.has_notify_charge_point_state_change_data() {
+            match self.data.take() {
+                ::std::option::Option::Some(event::Data::NotifyChargePointStateChangeData(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            super::charge_point_gateway_format::NotifyChargePointStateChangeData::new()
+        }
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
-        let mut fields = ::std::vec::Vec::with_capacity(27);
+        let mut fields = ::std::vec::Vec::with_capacity(28);
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "event_id",
             |m: &Event| { &m.event_id },
@@ -1512,6 +1561,13 @@ impl Event {
             Event::mut_stop_charge_response_data,
             Event::set_stop_charge_response_data,
         ));
+        fields.push(::protobuf::reflect::rt::v2::make_oneof_message_has_get_mut_set_accessor::<_, super::charge_point_gateway_format::NotifyChargePointStateChangeData>(
+            "notify_charge_point_state_change_data",
+            Event::has_notify_charge_point_state_change_data,
+            Event::notify_charge_point_state_change_data,
+            Event::mut_notify_charge_point_state_change_data,
+            Event::set_notify_charge_point_state_change_data,
+        ));
         ::protobuf::reflect::GeneratedMessageDescriptorData::new::<Event>(
             "Event",
             fields,
@@ -1653,6 +1709,11 @@ impl ::protobuf::Message for Event {
                 return false;
             }
         }
+        if let Some(event::Data::NotifyChargePointStateChangeData(ref v)) = self.data {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
         true
     }
 
@@ -1739,6 +1800,9 @@ impl ::protobuf::Message for Event {
                 },
                 226 => {
                     self.data = ::std::option::Option::Some(event::Data::StopChargeResponseData(is.read_message()?));
+                },
+                234 => {
+                    self.data = ::std::option::Option::Some(event::Data::NotifyChargePointStateChangeData(is.read_message()?));
                 },
                 tag => {
                     ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.mut_unknown_fields())?;
@@ -1861,6 +1925,10 @@ impl ::protobuf::Message for Event {
                     let len = v.compute_size();
                     my_size += 2 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
                 },
+                &event::Data::NotifyChargePointStateChangeData(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 2 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
+                },
             };
         }
         my_size += ::protobuf::rt::unknown_fields_size(self.unknown_fields());
@@ -1952,6 +2020,9 @@ impl ::protobuf::Message for Event {
                 &event::Data::StopChargeResponseData(ref v) => {
                     ::protobuf::rt::write_message_field_with_cached_size(28, v, os)?;
                 },
+                &event::Data::NotifyChargePointStateChangeData(ref v) => {
+                    ::protobuf::rt::write_message_field_with_cached_size(29, v, os)?;
+                },
             };
         }
         os.write_unknown_fields(self.unknown_fields())?;
@@ -1976,6 +2047,7 @@ impl ::protobuf::Message for Event {
 
     fn clear(&mut self) {
         self.event_id = ::protobuf::EnumOrUnknown::new(EventType::CHARGING_STATUS);
+        self.data = ::std::option::Option::None;
         self.data = ::std::option::Option::None;
         self.data = ::std::option::Option::None;
         self.data = ::std::option::Option::None;
@@ -2091,6 +2163,8 @@ pub mod event {
         StopChargeRequestData(super::super::charge_point_gateway_format::StopChargeRequestData),
         // @@protoc_insertion_point(oneof_field:events.Event.stop_charge_response_data)
         StopChargeResponseData(super::super::charge_point_gateway_format::StopChargeResponseData),
+        // @@protoc_insertion_point(oneof_field:events.Event.notify_charge_point_state_change_data)
+        NotifyChargePointStateChangeData(super::super::charge_point_gateway_format::NotifyChargePointStateChangeData),
     }
 
     impl ::protobuf::Oneof for Data {
@@ -2291,7 +2365,7 @@ impl EventType {
 
 static file_descriptor_proto_data: &'static [u8] = b"\
     \n\x17base_event_format.proto\x12\x06events\x1a!charge_point_gateway_for\
-    mat.proto\x1a\x18p2p_message_format.proto\"\xa7\x11\n\x05Event\x12,\n\
+    mat.proto\x1a\x18p2p_message_format.proto\"\xa5\x12\n\x05Event\x12,\n\
     \x08event_id\x18\x01\x20\x01(\x0e2\x11.events.EventTypeR\x07eventId\x12K\
     \n\x14charging_status_data\x18\x02\x20\x01(\x0b2\x17.p2p.ChargingStatusD\
     ataH\0R\x12chargingStatusData\x12?\n\x10service_ack_data\x18\x03\x20\x01\
@@ -2333,28 +2407,30 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     sData\x12Y\n\x18stop_charge_request_data\x18\x1b\x20\x01(\x0b2\x1e.gatew\
     ay.StopChargeRequestDataH\0R\x15stopChargeRequestData\x12\\\n\x19stop_ch\
     arge_response_data\x18\x1c\x20\x01(\x0b2\x1f.gateway.StopChargeResponseD\
-    ataH\0R\x16stopChargeResponseDataB\x06\n\x04data*\x8d\x06\n\tEventType\
-    \x12\x13\n\x0fCHARGING_STATUS\x10\0\x12\x17\n\x13SERVICE_REQUEST_ACK\x10\
-    \x01\x12\x18\n\x14SERVICE_DELIVERY_ACK\x10\x02\x12\x15\n\x11SERVICE_REQU\
-    ESTED\x10\x03\x12\x15\n\x11SERVICE_DELIVERED\x10\x04\x12\x17\n\x13STOP_C\
-    HARGE_REQUEST\x10\x05\x12\x18\n\x14STOP_CHARGE_RESPONSE\x10\x06\x12\x16\
-    \n\x12IDENTITY_CHALLENGE\x10\x07\x12\x15\n\x11IDENTITY_RESPONSE\x10\x08\
-    \x12\x17\n\x13RECEIVE_CHAIN_EVENT\x10\t\x12\x12\n\x0eEMIT_SHOW_INFO\x10\
-    \n\x12\x0f\n\x0bGET_BALANCE\x10\x0b\x12\x13\n\x0fGET_BALANCE_ACK\x10\x0c\
-    \x12\n\n\x06GET_PK\x10\r\x12\x0e\n\nGET_PK_ACK\x10\x0e\x12\x11\n\rREPUBL\
-    ISH_DID\x10\x0f\x12\x15\n\x11REPUBLISH_DID_ACK\x10\x10\x12\r\n\tRECONNEC\
-    T\x10\x11\x12\x11\n\rRECONNECT_ACK\x10\x12\x12\x12\n\x0ePEER_CONNECTED\
-    \x10\x13\x12\x13\n\x0fPEER_SUBSCRIBED\x10\x14\x12\x1a\n\x16PEER_CONNECTI\
-    ON_FAILED\x10\x15\x12\x1c\n\x18PEER_SUBSCRIPTION_FAILED\x10\x16\x12\x1d\
-    \n\x19BOOT_NOTIFICATION_REQUEST\x10\x17\x12\x07\n\x03LOG\x10\x18\x12\x15\
-    \n\x11AUTHORIZE_REQUEST\x10\x19\x12\x19\n\x15AUTHORIZE_REQUEST_ACK\x10\
-    \x1a\x12\x1e\n\x1aCHECK_AVAILABILITY_REQUEST\x10\x1b\x12\x1f\n\x1bCHECK_\
-    AVAILABILITY_RESPONSE\x10\x1c\x12\x18\n\x14START_CHARGE_REQUEST\x10\x1d\
-    \x12\x19\n\x15START_CHARGE_RESPONSE\x10\x1e\x12\x14\n\x10EV_CHARGE_STATU\
-    S\x10\x1f\x12$\n\x20NOTIFY_CHARGE_POINT_STATE_CHANGE\x10\x20BUZSgithub.c\
-    om/peaqnetwork/peaq-network-ev-charging-message-format/golang/events;eve\
-    ntsJ\xd9\x18\n\x06\x12\x04\0\0Y\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\
-    \x08\n\x01\x02\x12\x03\x02\0\x0f\n\x08\n\x01\x08\x12\x03\x03\0j\n\t\n\
+    ataH\0R\x16stopChargeResponseData\x12|\n%notify_charge_point_state_chang\
+    e_data\x18\x1d\x20\x01(\x0b2).gateway.NotifyChargePointStateChangeDataH\
+    \0R\x20notifyChargePointStateChangeDataB\x06\n\x04data*\x8d\x06\n\tEvent\
+    Type\x12\x13\n\x0fCHARGING_STATUS\x10\0\x12\x17\n\x13SERVICE_REQUEST_ACK\
+    \x10\x01\x12\x18\n\x14SERVICE_DELIVERY_ACK\x10\x02\x12\x15\n\x11SERVICE_\
+    REQUESTED\x10\x03\x12\x15\n\x11SERVICE_DELIVERED\x10\x04\x12\x17\n\x13ST\
+    OP_CHARGE_REQUEST\x10\x05\x12\x18\n\x14STOP_CHARGE_RESPONSE\x10\x06\x12\
+    \x16\n\x12IDENTITY_CHALLENGE\x10\x07\x12\x15\n\x11IDENTITY_RESPONSE\x10\
+    \x08\x12\x17\n\x13RECEIVE_CHAIN_EVENT\x10\t\x12\x12\n\x0eEMIT_SHOW_INFO\
+    \x10\n\x12\x0f\n\x0bGET_BALANCE\x10\x0b\x12\x13\n\x0fGET_BALANCE_ACK\x10\
+    \x0c\x12\n\n\x06GET_PK\x10\r\x12\x0e\n\nGET_PK_ACK\x10\x0e\x12\x11\n\rRE\
+    PUBLISH_DID\x10\x0f\x12\x15\n\x11REPUBLISH_DID_ACK\x10\x10\x12\r\n\tRECO\
+    NNECT\x10\x11\x12\x11\n\rRECONNECT_ACK\x10\x12\x12\x12\n\x0ePEER_CONNECT\
+    ED\x10\x13\x12\x13\n\x0fPEER_SUBSCRIBED\x10\x14\x12\x1a\n\x16PEER_CONNEC\
+    TION_FAILED\x10\x15\x12\x1c\n\x18PEER_SUBSCRIPTION_FAILED\x10\x16\x12\
+    \x1d\n\x19BOOT_NOTIFICATION_REQUEST\x10\x17\x12\x07\n\x03LOG\x10\x18\x12\
+    \x15\n\x11AUTHORIZE_REQUEST\x10\x19\x12\x19\n\x15AUTHORIZE_REQUEST_ACK\
+    \x10\x1a\x12\x1e\n\x1aCHECK_AVAILABILITY_REQUEST\x10\x1b\x12\x1f\n\x1bCH\
+    ECK_AVAILABILITY_RESPONSE\x10\x1c\x12\x18\n\x14START_CHARGE_REQUEST\x10\
+    \x1d\x12\x19\n\x15START_CHARGE_RESPONSE\x10\x1e\x12\x14\n\x10EV_CHARGE_S\
+    TATUS\x10\x1f\x12$\n\x20NOTIFY_CHARGE_POINT_STATE_CHANGE\x10\x20BUZSgith\
+    ub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/events\
+    ;eventsJ\x91\x19\n\x06\x12\x04\0\0[\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\
+    \n\x08\n\x01\x02\x12\x03\x02\0\x0f\n\x08\n\x01\x08\x12\x03\x03\0j\n\t\n\
     \x02\x08\x0b\x12\x03\x03\0j\n\t\n\x02\x03\0\x12\x03\x05\0+\n\t\n\x02\x03\
     \x01\x12\x03\x06\0\"\n\x1a\n\x02\x05\0\x12\x04\t\04\x01\x1a\x0e\x20Event\
     s\x20types\n\n\n\n\x03\x05\0\x01\x12\x03\t\x05\x0e\n\x0b\n\x04\x05\0\x02\
@@ -2425,11 +2501,11 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x04\x05\0\x02\x1f\x12\x032\x02\x18\n\x0c\n\x05\x05\0\x02\x1f\x01\x12\
     \x032\x02\x12\n\x0c\n\x05\x05\0\x02\x1f\x02\x12\x032\x15\x17\n\x0b\n\x04\
     \x05\0\x02\x20\x12\x033\x02(\n\x0c\n\x05\x05\0\x02\x20\x01\x12\x033\x02\
-    \"\n\x0c\n\x05\x05\0\x02\x20\x02\x12\x033%'\n\n\n\x02\x04\0\x12\x046\0Y\
+    \"\n\x0c\n\x05\x05\0\x02\x20\x02\x12\x033%'\n\n\n\x02\x04\0\x12\x046\0[\
     \x01\n\n\n\x03\x04\0\x01\x12\x036\x08\r\n\x0b\n\x04\x04\0\x02\0\x12\x037\
     \x02\x19\n\x0c\n\x05\x04\0\x02\0\x06\x12\x037\x02\x0b\n\x0c\n\x05\x04\0\
     \x02\0\x01\x12\x037\x0c\x14\n\x0c\n\x05\x04\0\x02\0\x03\x12\x037\x17\x18\
-    \n\x0c\n\x04\x04\0\x08\0\x12\x048\x02X\x03\n\x0c\n\x05\x04\0\x08\0\x01\
+    \n\x0c\n\x04\x04\0\x08\0\x12\x048\x02Z\x03\n\x0c\n\x05\x04\0\x08\0\x01\
     \x12\x038\x08\x0c\n\x0b\n\x04\x04\0\x02\x01\x12\x039\x044\n\x0c\n\x05\
     \x04\0\x02\x01\x06\x12\x039\x04\x1a\n\x0c\n\x05\x04\0\x02\x01\x01\x12\
     \x039\x1b/\n\x0c\n\x05\x04\0\x02\x01\x03\x12\x03923\n\x0b\n\x04\x04\0\
@@ -2493,7 +2569,9 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x05\x04\0\x02\x19\x01\x12\x03V\":\n\x0c\n\x05\x04\0\x02\x19\x03\x12\x03\
     V=?\n\x0b\n\x04\x04\0\x02\x1a\x12\x03W\x04B\n\x0c\n\x05\x04\0\x02\x1a\
     \x06\x12\x03W\x04\"\n\x0c\n\x05\x04\0\x02\x1a\x01\x12\x03W#<\n\x0c\n\x05\
-    \x04\0\x02\x1a\x03\x12\x03W?Ab\x06proto3\
+    \x04\0\x02\x1a\x03\x12\x03W?A\n\x0c\n\x04\x04\0\x02\x1b\x12\x04X\x04Y3\n\
+    \x0c\n\x05\x04\0\x02\x1b\x06\x12\x03X\x04,\n\x0c\n\x05\x04\0\x02\x1b\x01\
+    \x12\x03Y\x08-\n\x0c\n\x05\x04\0\x02\x1b\x03\x12\x03Y02b\x06proto3\
 ";
 
 /// `FileDescriptorProto` object which was a source for this generated file

@@ -45,6 +45,8 @@ message StartChargeResponseData {
   Response resp = 2;
 }
 
+message NotifyChargePointStateChangeData { string charge_point_client_id = 1; }
+
 message Response {
   bool error = 1;
   string message = 2;

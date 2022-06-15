@@ -86,5 +86,7 @@ message Event {
     gateway.EVChargingStatusData ev_charge_status_data = 26;
     gateway.StopChargeRequestData stop_charge_request_data = 27;
     gateway.StopChargeResponseData stop_charge_response_data = 28;
+    gateway.NotifyChargePointStateChangeData
+        notify_charge_point_state_change_data = 29;
   }
 }
