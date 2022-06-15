@@ -3,64 +3,6 @@ syntax = "proto3";
 package p2p;
 option go_package = "github.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/message;message";
 
-// Events types
-enum EventType {
-  CHARGING_STATUS = 0;
-  SERVICE_REQUEST_ACK = 1;
-  SERVICE_DELIVERY_ACK = 2;
-  SERVICE_REQUESTED = 3;
-  SERVICE_DELIVERED = 4;
-  STOP_CHARGE = 5;
-  STOP_CHARGE_RESPONSE = 6;
-  IDENTITY_CHALLENGE = 7;
-  IDENTITY_RESPONSE = 8;
-
-  // For substarte's event
-  RECEIVE_CHAIN_EVENT = 9;
-  // For simulator log
-  EMIT_SHOW_INFO = 10;
-
-  // For simulator actions
-  GET_BALANCE = 11;
-  GET_BALANCE_ACK = 12;
-  GET_PK = 13;
-  GET_PK_ACK = 14;
-  REPUBLISH_DID = 15;
-  REPUBLISH_DID_ACK = 16;
-  RECONNECT = 17;
-  RECONNECT_ACK = 18;
-
-  // For charmev actions
-  PEER_CONNECTED = 19;
-  PEER_SUBSCRIBED = 20;
-  PEER_CONNECTION_FAILED = 21;
-  PEER_SUBSCRIPTION_FAILED = 22;
-}
-
-message Event {
-  EventType event_id = 1;
-  oneof data {
-    ChargingStatusData charging_status_data = 2;
-    ServiceAckData service_ack_data = 3;
-    ServiceRequestedData service_requested_data = 4;
-    ServiceDeliveredData service_delivered_data = 5;
-    StopChargeData stop_charge_data = 6;
-    StopChargeResponseData stop_charge_resp_data = 7;
-    IdentityChallengeData identity_challenge_data = 8;
-    IdentityResponseData identity_response_data = 9;
-
-    ChainEventData chain_event_data = 10;
-    EmitShowInfoData emit_show_info_data = 11;
-
-    GetBalanceAckData get_balance_ack_data = 12;
-    GetPKAckData get_pk_ack_data = 13;
-    RePublishDIDAckData republish_ack_data = 14;
-    ReconnectAckData reconnect_ack_data = 15;
-
-    ServiceRequestedAckData service_requested_ack_data = 16;
-  }
-}
-
 message ChargingStatusData {
   float progress = 1;
   string charging_period = 2;

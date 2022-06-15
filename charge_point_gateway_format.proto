@@ -3,38 +3,6 @@ syntax = "proto3";
 package gateway;
 option go_package = "github.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gateway";
 
-enum EventType {
-  BOOT_NOTIFICATION_REQUEST = 0;
-  HEARTBEAT_REQUEST = 1;
-  LOG = 2;
-  AUTHORIZE_REQUEST = 3;
-  AUTHORIZE_REQUEST_ACK = 4;
-  CHECK_AVAILABILITY_REQUEST = 5;
-  CHECK_AVAILABILITY_REQUEST_ACK = 6;
-  START_CHARGE_REQUEST = 7;
-  START_CHARGE_REQUEST_ACK = 8;
-  CHARGE_STATUS = 9;
-  STOP_CHARGE_REQUEST = 10;
-  STOP_CHARGE_REQUEST_ACK = 11;
-}
-
-message Event {
-  EventType event_id = 1;
-  oneof data {
-    BootNotificationRequestData boot_notification_request_data = 2;
-    LogData log_data = 3;
-    AuthorizeRequestData authorize_request_data = 4;
-    AuthorizeRequestAckData authorize_request_ack_data = 5;
-    CheckAvailabilityRequestData check_availability_request_data = 6;
-    CheckAvailabilityRequestAckData check_availability_request_ack_data = 7;
-    StartChargeRequestData start_charge_request_data = 8;
-    StartChargeRequestAckData start_charge_request_ack_data = 9;
-    ChargingStatusData charge_status_data = 10;
-    StopChargeRequestData stop_charge_request_data = 11;
-    StopChargeRequestAckData stop_charge_request_ack_data = 12;
-  }
-}
-
 message BootNotificationRequestData {
   string charge_box_serial_number = 1;
   string charge_point_model = 2;
@@ -56,7 +24,7 @@ message AuthorizeRequestData {
   string charge_point_client_id = 1;
   string consumer_public_key = 2;
 }
-message AuthorizeRequestAckData {
+message AuthorizeResponseData {
   string consumer_public_key = 1;
   Response resp = 2;
 }
@@ -65,14 +33,14 @@ message CheckAvailabilityRequestData {
   string charge_point_client_id = 1;
   int32 connector_id = 2;
 }
-message CheckAvailabilityRequestAckData { Response resp = 1; }
+message CheckAvailabilityResponseData { Response resp = 1; }
 
 message StartChargeRequestData {
   string charge_point_client_id = 1;
   int32 connector_id = 2;
   string consumer_public_key = 3;
 }
-message StartChargeRequestAckData {
+message StartChargeResponseData {
   string consumer_public_key = 1;
   Response resp = 2;
 }
@@ -82,8 +50,8 @@ message Response {
   string message = 2;
 }
 
-// ChargingStatusData contains status of the current ongoing charging
-message ChargingStatusData {
+// EVChargingStatusData contains status of the current ongoing charging
+message EVChargingStatusData {
   // initial EV battery level in percentage before charging
   float initial_battery_level = 1;
   // current EV battery level in percentage before charging
@@ -102,7 +70,7 @@ message StopChargeRequestData {
   string consumer_public_key = 3;
 }
 
-message StopChargeRequestAckData {
+message StopChargeResponseData {
   string consumer_public_key = 1;
   TransactionInfo transaction_info = 2;
   Response resp = 3;
@@ -143,7 +111,7 @@ message TransactionInfo {
   string end_time = 5;
   int32 start_meter = 6;
   int32 end_meter = 7;
-  ChargingStatusData progress = 8;
+  EVChargingStatusData progress = 8;
 }
 
 // ConsumerAuthData contains the consumer public key assigned to the local
