@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18p2p_message_format.proto\x12\x03p2p\"p\n\x12\x43hargingStatusData\x12\x10\n\x08progress\x18\x01 \x01(\x02\x12\x17\n\x0f\x63harging_period\x18\x02 \x01(\t\x12\x1a\n\x12\x65nergy_consumption\x18\x03 \x01(\t\x12\x13\n\x0btoken_spent\x18\x04 \x01(\t\"-\n\x0eServiceAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\"I\n\x17ServiceRequestedAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x11\n\twait_time\x18\x02 \x01(\x03\"S\n\x14ServiceRequestedData\x12\x10\n\x08\x63onsumer\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x17\n\x0ftoken_deposited\x18\x03 \x01(\t\"\x91\x01\n\x14ServiceDeliveredData\x12\x10\n\x08\x63onsumer\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12*\n\x0brefund_info\x18\x03 \x01(\x0b\x32\x15.p2p.TransactionValue\x12)\n\nspent_info\x18\x04 \x01(\x0b\x32\x15.p2p.TransactionValue\"5\n\x16StopChargeResponseData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\"+\n\x15IdentityChallengeData\x12\x12\n\nplain_data\x18\x01 \x01(\t\"F\n\x14IdentityResponseData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x11\n\tsignature\x18\x03 \x01(\t\"*\n\x08Response\x12\r\n\x05\x65rror\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xaa\x01\n\x10TransactionValue\x12\x11\n\ttoken_num\x18\x01 \x01(\t\x12\x0f\n\x07tx_hash\x18\x02 \x01(\t\x12\x33\n\ntime_point\x18\x03 \x01(\x0b\x32\x1f.p2p.TransactionValue.TimePoint\x12\x11\n\tcall_hash\x18\x04 \x01(\t\x1a*\n\tTimePoint\x12\x0e\n\x06height\x18\x01 \x01(\x03\x12\r\n\x05index\x18\x02 \x01(\x03\"6\n\x0e\x43hainEventData\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\t\x12\x12\n\nattributes\x18\x02 \x01(\t\"\x80\x01\n\x10\x45mitShowInfoData\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\".p2p.EmitShowInfoData.ShowInfoType\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\",\n\x0cShowInfoType\x12\x0c\n\x08LOG_INFO\x10\x00\x12\x0e\n\nEVENT_INFO\x10\x01\"A\n\x11GetBalanceAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x0f\n\x07\x62\x61lance\x18\x02 \x01(\t\"7\n\x0cGetPKAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\n\n\x02pk\x18\x02 \x01(\t\">\n\x13RePublishDIDAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\n\n\x02pk\x18\x02 \x01(\t\"@\n\x10ReconnectAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x0f\n\x07message\x18\x02 \x01(\t\"!\n\x0eStopChargeData\x12\x0f\n\x07success\x18\x01 \x01(\x08\x42WZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/message;messageb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18p2p_message_format.proto\x12\x03p2p\"p\n\x12\x43hargingStatusData\x12\x10\n\x08progress\x18\x01 \x01(\x02\x12\x17\n\x0f\x63harging_period\x18\x02 \x01(\t\x12\x1a\n\x12\x65nergy_consumption\x18\x03 \x01(\t\x12\x13\n\x0btoken_spent\x18\x04 \x01(\t\"-\n\x0eServiceAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\"I\n\x17ServiceRequestedAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x11\n\twait_time\x18\x02 \x01(\x03\"i\n\x14ServiceRequestedData\x12\x10\n\x08\x63onsumer\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x17\n\x0ftoken_deposited\x18\x03 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x04 \x01(\x05\"\x91\x01\n\x14ServiceDeliveredData\x12\x10\n\x08\x63onsumer\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12*\n\x0brefund_info\x18\x03 \x01(\x0b\x32\x15.p2p.TransactionValue\x12)\n\nspent_info\x18\x04 \x01(\x0b\x32\x15.p2p.TransactionValue\"5\n\x16StopChargeResponseData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\"+\n\x15IdentityChallengeData\x12\x12\n\nplain_data\x18\x01 \x01(\t\"F\n\x14IdentityResponseData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x11\n\tsignature\x18\x03 \x01(\t\"*\n\x08Response\x12\r\n\x05\x65rror\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xaa\x01\n\x10TransactionValue\x12\x11\n\ttoken_num\x18\x01 \x01(\t\x12\x0f\n\x07tx_hash\x18\x02 \x01(\t\x12\x33\n\ntime_point\x18\x03 \x01(\x0b\x32\x1f.p2p.TransactionValue.TimePoint\x12\x11\n\tcall_hash\x18\x04 \x01(\t\x1a*\n\tTimePoint\x12\x0e\n\x06height\x18\x01 \x01(\x03\x12\r\n\x05index\x18\x02 \x01(\x03\"6\n\x0e\x43hainEventData\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\t\x12\x12\n\nattributes\x18\x02 \x01(\t\"\x80\x01\n\x10\x45mitShowInfoData\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\".p2p.EmitShowInfoData.ShowInfoType\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\",\n\x0cShowInfoType\x12\x0c\n\x08LOG_INFO\x10\x00\x12\x0e\n\nEVENT_INFO\x10\x01\"A\n\x11GetBalanceAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x0f\n\x07\x62\x61lance\x18\x02 \x01(\t\"7\n\x0cGetPKAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\n\n\x02pk\x18\x02 \x01(\t\">\n\x13RePublishDIDAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\n\n\x02pk\x18\x02 \x01(\t\"@\n\x10ReconnectAckData\x12\x1b\n\x04resp\x18\x01 \x01(\x0b\x32\r.p2p.Response\x12\x0f\n\x07message\x18\x02 \x01(\t\"!\n\x0eStopChargeData\x12\x0f\n\x07success\x18\x01 \x01(\x08\x42WZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/message;messageb\x06proto3')
 
 
 
@@ -175,35 +175,35 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SERVICEREQUESTEDACKDATA._serialized_start=194
   _SERVICEREQUESTEDACKDATA._serialized_end=267
   _SERVICEREQUESTEDDATA._serialized_start=269
-  _SERVICEREQUESTEDDATA._serialized_end=352
-  _SERVICEDELIVEREDDATA._serialized_start=355
-  _SERVICEDELIVEREDDATA._serialized_end=500
-  _STOPCHARGERESPONSEDATA._serialized_start=502
-  _STOPCHARGERESPONSEDATA._serialized_end=555
-  _IDENTITYCHALLENGEDATA._serialized_start=557
-  _IDENTITYCHALLENGEDATA._serialized_end=600
-  _IDENTITYRESPONSEDATA._serialized_start=602
-  _IDENTITYRESPONSEDATA._serialized_end=672
-  _RESPONSE._serialized_start=674
-  _RESPONSE._serialized_end=716
-  _TRANSACTIONVALUE._serialized_start=719
-  _TRANSACTIONVALUE._serialized_end=889
-  _TRANSACTIONVALUE_TIMEPOINT._serialized_start=847
-  _TRANSACTIONVALUE_TIMEPOINT._serialized_end=889
-  _CHAINEVENTDATA._serialized_start=891
-  _CHAINEVENTDATA._serialized_end=945
-  _EMITSHOWINFODATA._serialized_start=948
-  _EMITSHOWINFODATA._serialized_end=1076
-  _EMITSHOWINFODATA_SHOWINFOTYPE._serialized_start=1032
-  _EMITSHOWINFODATA_SHOWINFOTYPE._serialized_end=1076
-  _GETBALANCEACKDATA._serialized_start=1078
-  _GETBALANCEACKDATA._serialized_end=1143
-  _GETPKACKDATA._serialized_start=1145
-  _GETPKACKDATA._serialized_end=1200
-  _REPUBLISHDIDACKDATA._serialized_start=1202
-  _REPUBLISHDIDACKDATA._serialized_end=1264
-  _RECONNECTACKDATA._serialized_start=1266
-  _RECONNECTACKDATA._serialized_end=1330
-  _STOPCHARGEDATA._serialized_start=1332
-  _STOPCHARGEDATA._serialized_end=1365
+  _SERVICEREQUESTEDDATA._serialized_end=374
+  _SERVICEDELIVEREDDATA._serialized_start=377
+  _SERVICEDELIVEREDDATA._serialized_end=522
+  _STOPCHARGERESPONSEDATA._serialized_start=524
+  _STOPCHARGERESPONSEDATA._serialized_end=577
+  _IDENTITYCHALLENGEDATA._serialized_start=579
+  _IDENTITYCHALLENGEDATA._serialized_end=622
+  _IDENTITYRESPONSEDATA._serialized_start=624
+  _IDENTITYRESPONSEDATA._serialized_end=694
+  _RESPONSE._serialized_start=696
+  _RESPONSE._serialized_end=738
+  _TRANSACTIONVALUE._serialized_start=741
+  _TRANSACTIONVALUE._serialized_end=911
+  _TRANSACTIONVALUE_TIMEPOINT._serialized_start=869
+  _TRANSACTIONVALUE_TIMEPOINT._serialized_end=911
+  _CHAINEVENTDATA._serialized_start=913
+  _CHAINEVENTDATA._serialized_end=967
+  _EMITSHOWINFODATA._serialized_start=970
+  _EMITSHOWINFODATA._serialized_end=1098
+  _EMITSHOWINFODATA_SHOWINFOTYPE._serialized_start=1054
+  _EMITSHOWINFODATA_SHOWINFOTYPE._serialized_end=1098
+  _GETBALANCEACKDATA._serialized_start=1100
+  _GETBALANCEACKDATA._serialized_end=1165
+  _GETPKACKDATA._serialized_start=1167
+  _GETPKACKDATA._serialized_end=1222
+  _REPUBLISHDIDACKDATA._serialized_start=1224
+  _REPUBLISHDIDACKDATA._serialized_end=1286
+  _RECONNECTACKDATA._serialized_start=1288
+  _RECONNECTACKDATA._serialized_end=1352
+  _STOPCHARGEDATA._serialized_start=1354
+  _STOPCHARGEDATA._serialized_end=1387
 # @@protoc_insertion_point(module_scope)

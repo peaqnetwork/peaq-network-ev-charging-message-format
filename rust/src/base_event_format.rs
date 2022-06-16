@@ -2240,8 +2240,8 @@ pub enum EventType {
     LOG = 24,
     // @@protoc_insertion_point(enum_value:events.EventType.AUTHORIZE_REQUEST)
     AUTHORIZE_REQUEST = 25,
-    // @@protoc_insertion_point(enum_value:events.EventType.AUTHORIZE_REQUEST_ACK)
-    AUTHORIZE_REQUEST_ACK = 26,
+    // @@protoc_insertion_point(enum_value:events.EventType.AUTHORIZE_RESPONSE)
+    AUTHORIZE_RESPONSE = 26,
     // @@protoc_insertion_point(enum_value:events.EventType.CHECK_AVAILABILITY_REQUEST)
     CHECK_AVAILABILITY_REQUEST = 27,
     // @@protoc_insertion_point(enum_value:events.EventType.CHECK_AVAILABILITY_RESPONSE)
@@ -2291,7 +2291,7 @@ impl ::protobuf::Enum for EventType {
             23 => ::std::option::Option::Some(EventType::BOOT_NOTIFICATION_REQUEST),
             24 => ::std::option::Option::Some(EventType::LOG),
             25 => ::std::option::Option::Some(EventType::AUTHORIZE_REQUEST),
-            26 => ::std::option::Option::Some(EventType::AUTHORIZE_REQUEST_ACK),
+            26 => ::std::option::Option::Some(EventType::AUTHORIZE_RESPONSE),
             27 => ::std::option::Option::Some(EventType::CHECK_AVAILABILITY_REQUEST),
             28 => ::std::option::Option::Some(EventType::CHECK_AVAILABILITY_RESPONSE),
             29 => ::std::option::Option::Some(EventType::START_CHARGE_REQUEST),
@@ -2329,7 +2329,7 @@ impl ::protobuf::Enum for EventType {
         EventType::BOOT_NOTIFICATION_REQUEST,
         EventType::LOG,
         EventType::AUTHORIZE_REQUEST,
-        EventType::AUTHORIZE_REQUEST_ACK,
+        EventType::AUTHORIZE_RESPONSE,
         EventType::CHECK_AVAILABILITY_REQUEST,
         EventType::CHECK_AVAILABILITY_RESPONSE,
         EventType::START_CHARGE_REQUEST,
@@ -2409,7 +2409,7 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     arge_response_data\x18\x1c\x20\x01(\x0b2\x1f.gateway.StopChargeResponseD\
     ataH\0R\x16stopChargeResponseData\x12|\n%notify_charge_point_state_chang\
     e_data\x18\x1d\x20\x01(\x0b2).gateway.NotifyChargePointStateChangeDataH\
-    \0R\x20notifyChargePointStateChangeDataB\x06\n\x04data*\x8d\x06\n\tEvent\
+    \0R\x20notifyChargePointStateChangeDataB\x06\n\x04data*\x8a\x06\n\tEvent\
     Type\x12\x13\n\x0fCHARGING_STATUS\x10\0\x12\x17\n\x13SERVICE_REQUEST_ACK\
     \x10\x01\x12\x18\n\x14SERVICE_DELIVERY_ACK\x10\x02\x12\x15\n\x11SERVICE_\
     REQUESTED\x10\x03\x12\x15\n\x11SERVICE_DELIVERED\x10\x04\x12\x17\n\x13ST\
@@ -2423,14 +2423,14 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     ED\x10\x13\x12\x13\n\x0fPEER_SUBSCRIBED\x10\x14\x12\x1a\n\x16PEER_CONNEC\
     TION_FAILED\x10\x15\x12\x1c\n\x18PEER_SUBSCRIPTION_FAILED\x10\x16\x12\
     \x1d\n\x19BOOT_NOTIFICATION_REQUEST\x10\x17\x12\x07\n\x03LOG\x10\x18\x12\
-    \x15\n\x11AUTHORIZE_REQUEST\x10\x19\x12\x19\n\x15AUTHORIZE_REQUEST_ACK\
-    \x10\x1a\x12\x1e\n\x1aCHECK_AVAILABILITY_REQUEST\x10\x1b\x12\x1f\n\x1bCH\
-    ECK_AVAILABILITY_RESPONSE\x10\x1c\x12\x18\n\x14START_CHARGE_REQUEST\x10\
-    \x1d\x12\x19\n\x15START_CHARGE_RESPONSE\x10\x1e\x12\x14\n\x10EV_CHARGE_S\
-    TATUS\x10\x1f\x12$\n\x20NOTIFY_CHARGE_POINT_STATE_CHANGE\x10\x20BUZSgith\
-    ub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/events\
-    ;eventsJ\x91\x19\n\x06\x12\x04\0\0[\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\
-    \n\x08\n\x01\x02\x12\x03\x02\0\x0f\n\x08\n\x01\x08\x12\x03\x03\0j\n\t\n\
+    \x15\n\x11AUTHORIZE_REQUEST\x10\x19\x12\x16\n\x12AUTHORIZE_RESPONSE\x10\
+    \x1a\x12\x1e\n\x1aCHECK_AVAILABILITY_REQUEST\x10\x1b\x12\x1f\n\x1bCHECK_\
+    AVAILABILITY_RESPONSE\x10\x1c\x12\x18\n\x14START_CHARGE_REQUEST\x10\x1d\
+    \x12\x19\n\x15START_CHARGE_RESPONSE\x10\x1e\x12\x14\n\x10EV_CHARGE_STATU\
+    S\x10\x1f\x12$\n\x20NOTIFY_CHARGE_POINT_STATE_CHANGE\x10\x20BUZSgithub.c\
+    om/peaqnetwork/peaq-network-ev-charging-message-format/golang/events;eve\
+    ntsJ\x91\x19\n\x06\x12\x04\0\0[\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\
+    \x08\n\x01\x02\x12\x03\x02\0\x0f\n\x08\n\x01\x08\x12\x03\x03\0j\n\t\n\
     \x02\x08\x0b\x12\x03\x03\0j\n\t\n\x02\x03\0\x12\x03\x05\0+\n\t\n\x02\x03\
     \x01\x12\x03\x06\0\"\n\x1a\n\x02\x05\0\x12\x04\t\04\x01\x1a\x0e\x20Event\
     s\x20types\n\n\n\n\x03\x05\0\x01\x12\x03\t\x05\x0e\n\x0b\n\x04\x05\0\x02\
@@ -2488,9 +2488,9 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x02\x0b\n\x0c\n\x05\x05\0\x02\x18\x01\x12\x03+\x02\x05\n\x0c\n\x05\x05\
     \0\x02\x18\x02\x12\x03+\x08\n\n\x0b\n\x04\x05\0\x02\x19\x12\x03,\x02\x19\
     \n\x0c\n\x05\x05\0\x02\x19\x01\x12\x03,\x02\x13\n\x0c\n\x05\x05\0\x02\
-    \x19\x02\x12\x03,\x16\x18\n\x0b\n\x04\x05\0\x02\x1a\x12\x03-\x02\x1d\n\
-    \x0c\n\x05\x05\0\x02\x1a\x01\x12\x03-\x02\x17\n\x0c\n\x05\x05\0\x02\x1a\
-    \x02\x12\x03-\x1a\x1c\n\x0b\n\x04\x05\0\x02\x1b\x12\x03.\x02\"\n\x0c\n\
+    \x19\x02\x12\x03,\x16\x18\n\x0b\n\x04\x05\0\x02\x1a\x12\x03-\x02\x1a\n\
+    \x0c\n\x05\x05\0\x02\x1a\x01\x12\x03-\x02\x14\n\x0c\n\x05\x05\0\x02\x1a\
+    \x02\x12\x03-\x17\x19\n\x0b\n\x04\x05\0\x02\x1b\x12\x03.\x02\"\n\x0c\n\
     \x05\x05\0\x02\x1b\x01\x12\x03.\x02\x1c\n\x0c\n\x05\x05\0\x02\x1b\x02\
     \x12\x03.\x1f!\n\x0b\n\x04\x05\0\x02\x1c\x12\x03/\x02#\n\x0c\n\x05\x05\0\
     \x02\x1c\x01\x12\x03/\x02\x1d\n\x0c\n\x05\x05\0\x02\x1c\x02\x12\x03/\x20\
