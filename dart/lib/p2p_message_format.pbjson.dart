@@ -49,11 +49,12 @@ const ServiceRequestedData$json = const {
     const {'1': 'consumer', '3': 1, '4': 1, '5': 9, '10': 'consumer'},
     const {'1': 'provider', '3': 2, '4': 1, '5': 9, '10': 'provider'},
     const {'1': 'token_deposited', '3': 3, '4': 1, '5': 9, '10': 'tokenDeposited'},
+    const {'1': 'connector_id', '3': 4, '4': 1, '5': 5, '10': 'connectorId'},
   ],
 };
 
 /// Descriptor for `ServiceRequestedData`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List serviceRequestedDataDescriptor = $convert.base64Decode('ChRTZXJ2aWNlUmVxdWVzdGVkRGF0YRIaCghjb25zdW1lchgBIAEoCVIIY29uc3VtZXISGgoIcHJvdmlkZXIYAiABKAlSCHByb3ZpZGVyEicKD3Rva2VuX2RlcG9zaXRlZBgDIAEoCVIOdG9rZW5EZXBvc2l0ZWQ=');
+final $typed_data.Uint8List serviceRequestedDataDescriptor = $convert.base64Decode('ChRTZXJ2aWNlUmVxdWVzdGVkRGF0YRIaCghjb25zdW1lchgBIAEoCVIIY29uc3VtZXISGgoIcHJvdmlkZXIYAiABKAlSCHByb3ZpZGVyEicKD3Rva2VuX2RlcG9zaXRlZBgDIAEoCVIOdG9rZW5EZXBvc2l0ZWQSIQoMY29ubmVjdG9yX2lkGAQgASgFUgtjb25uZWN0b3JJZA==');
 @$core.Deprecated('Use serviceDeliveredDataDescriptor instead')
 const ServiceDeliveredData$json = const {
   '1': 'ServiceDeliveredData',

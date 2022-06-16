@@ -220,6 +220,7 @@ class ServiceRequestedData extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'consumer')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'provider')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenDeposited')
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'connectorId', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -228,6 +229,7 @@ class ServiceRequestedData extends $pb.GeneratedMessage {
     $core.String? consumer,
     $core.String? provider,
     $core.String? tokenDeposited,
+    $core.int? connectorId,
   }) {
     final _result = create();
     if (consumer != null) {
@@ -238,6 +240,9 @@ class ServiceRequestedData extends $pb.GeneratedMessage {
     }
     if (tokenDeposited != null) {
       _result.tokenDeposited = tokenDeposited;
+    }
+    if (connectorId != null) {
+      _result.connectorId = connectorId;
     }
     return _result;
   }
@@ -288,6 +293,15 @@ class ServiceRequestedData extends $pb.GeneratedMessage {
   $core.bool hasTokenDeposited() => $_has(2);
   @$pb.TagNumber(3)
   void clearTokenDeposited() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get connectorId => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set connectorId($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasConnectorId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConnectorId() => clearField(4);
 }
 
 class ServiceDeliveredData extends $pb.GeneratedMessage {

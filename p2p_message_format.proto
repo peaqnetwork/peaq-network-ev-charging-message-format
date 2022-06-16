@@ -20,6 +20,7 @@ message ServiceRequestedData {
   string consumer = 1;
   string provider = 2;
   string token_deposited = 3;
+  int32 connector_id = 4;
 }
 
 message ServiceDeliveredData {

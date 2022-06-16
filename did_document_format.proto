@@ -36,6 +36,8 @@ message Metadata {
   string plugType = 1;
   string power = 2;
   Status status = 3;
+  string chargePointClientId = 4;
+  int32 connectorsCount = 5;
 }
 
 message Service {

@@ -182,6 +182,8 @@ class Metadata extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'plugType', protoName: 'plugType')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'power')
     ..e<Status>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: Status.AVAILABLE, valueOf: Status.valueOf, enumValues: Status.values)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chargePointClientId', protoName: 'chargePointClientId')
+    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'connectorsCount', $pb.PbFieldType.O3, protoName: 'connectorsCount')
     ..hasRequiredFields = false
   ;
 
@@ -190,6 +192,8 @@ class Metadata extends $pb.GeneratedMessage {
     $core.String? plugType,
     $core.String? power,
     Status? status,
+    $core.String? chargePointClientId,
+    $core.int? connectorsCount,
   }) {
     final _result = create();
     if (plugType != null) {
@@ -200,6 +204,12 @@ class Metadata extends $pb.GeneratedMessage {
     }
     if (status != null) {
       _result.status = status;
+    }
+    if (chargePointClientId != null) {
+      _result.chargePointClientId = chargePointClientId;
+    }
+    if (connectorsCount != null) {
+      _result.connectorsCount = connectorsCount;
     }
     return _result;
   }
@@ -250,6 +260,24 @@ class Metadata extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(2);
   @$pb.TagNumber(3)
   void clearStatus() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get chargePointClientId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set chargePointClientId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasChargePointClientId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChargePointClientId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get connectorsCount => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set connectorsCount($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasConnectorsCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearConnectorsCount() => clearField(5);
 }
 
 enum Service_ServiceEndpoint {
