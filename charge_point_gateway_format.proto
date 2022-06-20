@@ -66,13 +66,13 @@ message EVChargingStatusData {
   string current_unit = 5;
 }
 
-message StopChargeRequestData {
+message StopTransactionRequestData {
   string charge_point_client_id = 1;
   int32 connector_id = 2;
   string consumer_public_key = 3;
 }
 
-message StopChargeResponseData {
+message StopTransactionResponseData {
   string consumer_public_key = 1;
   TransactionInfo transaction_info = 2;
   Response resp = 3;
