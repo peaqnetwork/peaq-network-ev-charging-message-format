@@ -1004,28 +1004,28 @@ impl ::protobuf::reflect::ProtobufValue for CheckAvailabilityResponseData {
 }
 
 #[derive(PartialEq,Clone,Default,Debug)]
-// @@protoc_insertion_point(message:gateway.StartChargeRequestData)
-pub struct StartChargeRequestData {
+// @@protoc_insertion_point(message:gateway.StartTransactionRequestData)
+pub struct StartTransactionRequestData {
     // message fields
-    // @@protoc_insertion_point(field:gateway.StartChargeRequestData.charge_point_client_id)
+    // @@protoc_insertion_point(field:gateway.StartTransactionRequestData.charge_point_client_id)
     pub charge_point_client_id: ::std::string::String,
-    // @@protoc_insertion_point(field:gateway.StartChargeRequestData.connector_id)
+    // @@protoc_insertion_point(field:gateway.StartTransactionRequestData.connector_id)
     pub connector_id: i32,
-    // @@protoc_insertion_point(field:gateway.StartChargeRequestData.consumer_public_key)
+    // @@protoc_insertion_point(field:gateway.StartTransactionRequestData.consumer_public_key)
     pub consumer_public_key: ::std::string::String,
     // special fields
-    // @@protoc_insertion_point(special_field:gateway.StartChargeRequestData.special_fields)
+    // @@protoc_insertion_point(special_field:gateway.StartTransactionRequestData.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
 
-impl<'a> ::std::default::Default for &'a StartChargeRequestData {
-    fn default() -> &'a StartChargeRequestData {
-        <StartChargeRequestData as ::protobuf::Message>::default_instance()
+impl<'a> ::std::default::Default for &'a StartTransactionRequestData {
+    fn default() -> &'a StartTransactionRequestData {
+        <StartTransactionRequestData as ::protobuf::Message>::default_instance()
     }
 }
 
-impl StartChargeRequestData {
-    pub fn new() -> StartChargeRequestData {
+impl StartTransactionRequestData {
+    pub fn new() -> StartTransactionRequestData {
         ::std::default::Default::default()
     }
 
@@ -1033,28 +1033,28 @@ impl StartChargeRequestData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "charge_point_client_id",
-            |m: &StartChargeRequestData| { &m.charge_point_client_id },
-            |m: &mut StartChargeRequestData| { &mut m.charge_point_client_id },
+            |m: &StartTransactionRequestData| { &m.charge_point_client_id },
+            |m: &mut StartTransactionRequestData| { &mut m.charge_point_client_id },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "connector_id",
-            |m: &StartChargeRequestData| { &m.connector_id },
-            |m: &mut StartChargeRequestData| { &mut m.connector_id },
+            |m: &StartTransactionRequestData| { &m.connector_id },
+            |m: &mut StartTransactionRequestData| { &mut m.connector_id },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "consumer_public_key",
-            |m: &StartChargeRequestData| { &m.consumer_public_key },
-            |m: &mut StartChargeRequestData| { &mut m.consumer_public_key },
+            |m: &StartTransactionRequestData| { &m.consumer_public_key },
+            |m: &mut StartTransactionRequestData| { &mut m.consumer_public_key },
         ));
-        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<StartChargeRequestData>(
-            "StartChargeRequestData",
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<StartTransactionRequestData>(
+            "StartTransactionRequestData",
             fields,
         )
     }
 }
 
-impl ::protobuf::Message for StartChargeRequestData {
-    const NAME: &'static str = "StartChargeRequestData";
+impl ::protobuf::Message for StartTransactionRequestData {
+    const NAME: &'static str = "StartTransactionRequestData";
 
     fn is_initialized(&self) -> bool {
         true
@@ -1124,8 +1124,8 @@ impl ::protobuf::Message for StartChargeRequestData {
         self.special_fields.mut_unknown_fields()
     }
 
-    fn new() -> StartChargeRequestData {
-        StartChargeRequestData::new()
+    fn new() -> StartTransactionRequestData {
+        StartTransactionRequestData::new()
     }
 
     fn clear(&mut self) {
@@ -1135,8 +1135,8 @@ impl ::protobuf::Message for StartChargeRequestData {
         self.special_fields.clear();
     }
 
-    fn default_instance() -> &'static StartChargeRequestData {
-        static instance: StartChargeRequestData = StartChargeRequestData {
+    fn default_instance() -> &'static StartTransactionRequestData {
+        static instance: StartTransactionRequestData = StartTransactionRequestData {
             charge_point_client_id: ::std::string::String::new(),
             connector_id: 0,
             consumer_public_key: ::std::string::String::new(),
@@ -1146,44 +1146,44 @@ impl ::protobuf::Message for StartChargeRequestData {
     }
 }
 
-impl ::protobuf::MessageFull for StartChargeRequestData {
+impl ::protobuf::MessageFull for StartTransactionRequestData {
     fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
         static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
-        descriptor.get(|| file_descriptor().message_by_package_relative_name("StartChargeRequestData").unwrap()).clone()
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("StartTransactionRequestData").unwrap()).clone()
     }
 }
 
-impl ::std::fmt::Display for StartChargeRequestData {
+impl ::std::fmt::Display for StartTransactionRequestData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl ::protobuf::reflect::ProtobufValue for StartChargeRequestData {
+impl ::protobuf::reflect::ProtobufValue for StartTransactionRequestData {
     type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
 }
 
 #[derive(PartialEq,Clone,Default,Debug)]
-// @@protoc_insertion_point(message:gateway.StartChargeResponseData)
-pub struct StartChargeResponseData {
+// @@protoc_insertion_point(message:gateway.StartTransactionResponseData)
+pub struct StartTransactionResponseData {
     // message fields
-    // @@protoc_insertion_point(field:gateway.StartChargeResponseData.consumer_public_key)
+    // @@protoc_insertion_point(field:gateway.StartTransactionResponseData.consumer_public_key)
     pub consumer_public_key: ::std::string::String,
-    // @@protoc_insertion_point(field:gateway.StartChargeResponseData.resp)
+    // @@protoc_insertion_point(field:gateway.StartTransactionResponseData.resp)
     pub resp: ::protobuf::MessageField<Response>,
     // special fields
-    // @@protoc_insertion_point(special_field:gateway.StartChargeResponseData.special_fields)
+    // @@protoc_insertion_point(special_field:gateway.StartTransactionResponseData.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
 
-impl<'a> ::std::default::Default for &'a StartChargeResponseData {
-    fn default() -> &'a StartChargeResponseData {
-        <StartChargeResponseData as ::protobuf::Message>::default_instance()
+impl<'a> ::std::default::Default for &'a StartTransactionResponseData {
+    fn default() -> &'a StartTransactionResponseData {
+        <StartTransactionResponseData as ::protobuf::Message>::default_instance()
     }
 }
 
-impl StartChargeResponseData {
-    pub fn new() -> StartChargeResponseData {
+impl StartTransactionResponseData {
+    pub fn new() -> StartTransactionResponseData {
         ::std::default::Default::default()
     }
 
@@ -1191,23 +1191,23 @@ impl StartChargeResponseData {
         let mut fields = ::std::vec::Vec::with_capacity(2);
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "consumer_public_key",
-            |m: &StartChargeResponseData| { &m.consumer_public_key },
-            |m: &mut StartChargeResponseData| { &mut m.consumer_public_key },
+            |m: &StartTransactionResponseData| { &m.consumer_public_key },
+            |m: &mut StartTransactionResponseData| { &mut m.consumer_public_key },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_message_field_accessor::<_, Response>(
             "resp",
-            |m: &StartChargeResponseData| { &m.resp },
-            |m: &mut StartChargeResponseData| { &mut m.resp },
+            |m: &StartTransactionResponseData| { &m.resp },
+            |m: &mut StartTransactionResponseData| { &mut m.resp },
         ));
-        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<StartChargeResponseData>(
-            "StartChargeResponseData",
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<StartTransactionResponseData>(
+            "StartTransactionResponseData",
             fields,
         )
     }
 }
 
-impl ::protobuf::Message for StartChargeResponseData {
-    const NAME: &'static str = "StartChargeResponseData";
+impl ::protobuf::Message for StartTransactionResponseData {
+    const NAME: &'static str = "StartTransactionResponseData";
 
     fn is_initialized(&self) -> bool {
         for v in &self.resp {
@@ -1274,8 +1274,8 @@ impl ::protobuf::Message for StartChargeResponseData {
         self.special_fields.mut_unknown_fields()
     }
 
-    fn new() -> StartChargeResponseData {
-        StartChargeResponseData::new()
+    fn new() -> StartTransactionResponseData {
+        StartTransactionResponseData::new()
     }
 
     fn clear(&mut self) {
@@ -1284,8 +1284,8 @@ impl ::protobuf::Message for StartChargeResponseData {
         self.special_fields.clear();
     }
 
-    fn default_instance() -> &'static StartChargeResponseData {
-        static instance: StartChargeResponseData = StartChargeResponseData {
+    fn default_instance() -> &'static StartTransactionResponseData {
+        static instance: StartTransactionResponseData = StartTransactionResponseData {
             consumer_public_key: ::std::string::String::new(),
             resp: ::protobuf::MessageField::none(),
             special_fields: ::protobuf::SpecialFields::new(),
@@ -1294,20 +1294,20 @@ impl ::protobuf::Message for StartChargeResponseData {
     }
 }
 
-impl ::protobuf::MessageFull for StartChargeResponseData {
+impl ::protobuf::MessageFull for StartTransactionResponseData {
     fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
         static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
-        descriptor.get(|| file_descriptor().message_by_package_relative_name("StartChargeResponseData").unwrap()).clone()
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("StartTransactionResponseData").unwrap()).clone()
     }
 }
 
-impl ::std::fmt::Display for StartChargeResponseData {
+impl ::std::fmt::Display for StartTransactionResponseData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl ::protobuf::reflect::ProtobufValue for StartChargeResponseData {
+impl ::protobuf::reflect::ProtobufValue for StartTransactionResponseData {
     type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
 }
 
@@ -1780,28 +1780,28 @@ impl ::protobuf::reflect::ProtobufValue for EVChargingStatusData {
 }
 
 #[derive(PartialEq,Clone,Default,Debug)]
-// @@protoc_insertion_point(message:gateway.StopChargeRequestData)
-pub struct StopChargeRequestData {
+// @@protoc_insertion_point(message:gateway.StopTransactionRequestData)
+pub struct StopTransactionRequestData {
     // message fields
-    // @@protoc_insertion_point(field:gateway.StopChargeRequestData.charge_point_client_id)
+    // @@protoc_insertion_point(field:gateway.StopTransactionRequestData.charge_point_client_id)
     pub charge_point_client_id: ::std::string::String,
-    // @@protoc_insertion_point(field:gateway.StopChargeRequestData.connector_id)
+    // @@protoc_insertion_point(field:gateway.StopTransactionRequestData.connector_id)
     pub connector_id: i32,
-    // @@protoc_insertion_point(field:gateway.StopChargeRequestData.consumer_public_key)
+    // @@protoc_insertion_point(field:gateway.StopTransactionRequestData.consumer_public_key)
     pub consumer_public_key: ::std::string::String,
     // special fields
-    // @@protoc_insertion_point(special_field:gateway.StopChargeRequestData.special_fields)
+    // @@protoc_insertion_point(special_field:gateway.StopTransactionRequestData.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
 
-impl<'a> ::std::default::Default for &'a StopChargeRequestData {
-    fn default() -> &'a StopChargeRequestData {
-        <StopChargeRequestData as ::protobuf::Message>::default_instance()
+impl<'a> ::std::default::Default for &'a StopTransactionRequestData {
+    fn default() -> &'a StopTransactionRequestData {
+        <StopTransactionRequestData as ::protobuf::Message>::default_instance()
     }
 }
 
-impl StopChargeRequestData {
-    pub fn new() -> StopChargeRequestData {
+impl StopTransactionRequestData {
+    pub fn new() -> StopTransactionRequestData {
         ::std::default::Default::default()
     }
 
@@ -1809,28 +1809,28 @@ impl StopChargeRequestData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "charge_point_client_id",
-            |m: &StopChargeRequestData| { &m.charge_point_client_id },
-            |m: &mut StopChargeRequestData| { &mut m.charge_point_client_id },
+            |m: &StopTransactionRequestData| { &m.charge_point_client_id },
+            |m: &mut StopTransactionRequestData| { &mut m.charge_point_client_id },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "connector_id",
-            |m: &StopChargeRequestData| { &m.connector_id },
-            |m: &mut StopChargeRequestData| { &mut m.connector_id },
+            |m: &StopTransactionRequestData| { &m.connector_id },
+            |m: &mut StopTransactionRequestData| { &mut m.connector_id },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "consumer_public_key",
-            |m: &StopChargeRequestData| { &m.consumer_public_key },
-            |m: &mut StopChargeRequestData| { &mut m.consumer_public_key },
+            |m: &StopTransactionRequestData| { &m.consumer_public_key },
+            |m: &mut StopTransactionRequestData| { &mut m.consumer_public_key },
         ));
-        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<StopChargeRequestData>(
-            "StopChargeRequestData",
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<StopTransactionRequestData>(
+            "StopTransactionRequestData",
             fields,
         )
     }
 }
 
-impl ::protobuf::Message for StopChargeRequestData {
-    const NAME: &'static str = "StopChargeRequestData";
+impl ::protobuf::Message for StopTransactionRequestData {
+    const NAME: &'static str = "StopTransactionRequestData";
 
     fn is_initialized(&self) -> bool {
         true
@@ -1900,8 +1900,8 @@ impl ::protobuf::Message for StopChargeRequestData {
         self.special_fields.mut_unknown_fields()
     }
 
-    fn new() -> StopChargeRequestData {
-        StopChargeRequestData::new()
+    fn new() -> StopTransactionRequestData {
+        StopTransactionRequestData::new()
     }
 
     fn clear(&mut self) {
@@ -1911,8 +1911,8 @@ impl ::protobuf::Message for StopChargeRequestData {
         self.special_fields.clear();
     }
 
-    fn default_instance() -> &'static StopChargeRequestData {
-        static instance: StopChargeRequestData = StopChargeRequestData {
+    fn default_instance() -> &'static StopTransactionRequestData {
+        static instance: StopTransactionRequestData = StopTransactionRequestData {
             charge_point_client_id: ::std::string::String::new(),
             connector_id: 0,
             consumer_public_key: ::std::string::String::new(),
@@ -1922,46 +1922,46 @@ impl ::protobuf::Message for StopChargeRequestData {
     }
 }
 
-impl ::protobuf::MessageFull for StopChargeRequestData {
+impl ::protobuf::MessageFull for StopTransactionRequestData {
     fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
         static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
-        descriptor.get(|| file_descriptor().message_by_package_relative_name("StopChargeRequestData").unwrap()).clone()
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("StopTransactionRequestData").unwrap()).clone()
     }
 }
 
-impl ::std::fmt::Display for StopChargeRequestData {
+impl ::std::fmt::Display for StopTransactionRequestData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl ::protobuf::reflect::ProtobufValue for StopChargeRequestData {
+impl ::protobuf::reflect::ProtobufValue for StopTransactionRequestData {
     type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
 }
 
 #[derive(PartialEq,Clone,Default,Debug)]
-// @@protoc_insertion_point(message:gateway.StopChargeResponseData)
-pub struct StopChargeResponseData {
+// @@protoc_insertion_point(message:gateway.StopTransactionResponseData)
+pub struct StopTransactionResponseData {
     // message fields
-    // @@protoc_insertion_point(field:gateway.StopChargeResponseData.consumer_public_key)
+    // @@protoc_insertion_point(field:gateway.StopTransactionResponseData.consumer_public_key)
     pub consumer_public_key: ::std::string::String,
-    // @@protoc_insertion_point(field:gateway.StopChargeResponseData.transaction_info)
+    // @@protoc_insertion_point(field:gateway.StopTransactionResponseData.transaction_info)
     pub transaction_info: ::protobuf::MessageField<TransactionInfo>,
-    // @@protoc_insertion_point(field:gateway.StopChargeResponseData.resp)
+    // @@protoc_insertion_point(field:gateway.StopTransactionResponseData.resp)
     pub resp: ::protobuf::MessageField<Response>,
     // special fields
-    // @@protoc_insertion_point(special_field:gateway.StopChargeResponseData.special_fields)
+    // @@protoc_insertion_point(special_field:gateway.StopTransactionResponseData.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
 
-impl<'a> ::std::default::Default for &'a StopChargeResponseData {
-    fn default() -> &'a StopChargeResponseData {
-        <StopChargeResponseData as ::protobuf::Message>::default_instance()
+impl<'a> ::std::default::Default for &'a StopTransactionResponseData {
+    fn default() -> &'a StopTransactionResponseData {
+        <StopTransactionResponseData as ::protobuf::Message>::default_instance()
     }
 }
 
-impl StopChargeResponseData {
-    pub fn new() -> StopChargeResponseData {
+impl StopTransactionResponseData {
+    pub fn new() -> StopTransactionResponseData {
         ::std::default::Default::default()
     }
 
@@ -1969,28 +1969,28 @@ impl StopChargeResponseData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         fields.push(::protobuf::reflect::rt::v2::make_simpler_field_accessor::<_, _>(
             "consumer_public_key",
-            |m: &StopChargeResponseData| { &m.consumer_public_key },
-            |m: &mut StopChargeResponseData| { &mut m.consumer_public_key },
+            |m: &StopTransactionResponseData| { &m.consumer_public_key },
+            |m: &mut StopTransactionResponseData| { &mut m.consumer_public_key },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_message_field_accessor::<_, TransactionInfo>(
             "transaction_info",
-            |m: &StopChargeResponseData| { &m.transaction_info },
-            |m: &mut StopChargeResponseData| { &mut m.transaction_info },
+            |m: &StopTransactionResponseData| { &m.transaction_info },
+            |m: &mut StopTransactionResponseData| { &mut m.transaction_info },
         ));
         fields.push(::protobuf::reflect::rt::v2::make_message_field_accessor::<_, Response>(
             "resp",
-            |m: &StopChargeResponseData| { &m.resp },
-            |m: &mut StopChargeResponseData| { &mut m.resp },
+            |m: &StopTransactionResponseData| { &m.resp },
+            |m: &mut StopTransactionResponseData| { &mut m.resp },
         ));
-        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<StopChargeResponseData>(
-            "StopChargeResponseData",
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new::<StopTransactionResponseData>(
+            "StopTransactionResponseData",
             fields,
         )
     }
 }
 
-impl ::protobuf::Message for StopChargeResponseData {
-    const NAME: &'static str = "StopChargeResponseData";
+impl ::protobuf::Message for StopTransactionResponseData {
+    const NAME: &'static str = "StopTransactionResponseData";
 
     fn is_initialized(&self) -> bool {
         for v in &self.transaction_info {
@@ -2072,8 +2072,8 @@ impl ::protobuf::Message for StopChargeResponseData {
         self.special_fields.mut_unknown_fields()
     }
 
-    fn new() -> StopChargeResponseData {
-        StopChargeResponseData::new()
+    fn new() -> StopTransactionResponseData {
+        StopTransactionResponseData::new()
     }
 
     fn clear(&mut self) {
@@ -2083,8 +2083,8 @@ impl ::protobuf::Message for StopChargeResponseData {
         self.special_fields.clear();
     }
 
-    fn default_instance() -> &'static StopChargeResponseData {
-        static instance: StopChargeResponseData = StopChargeResponseData {
+    fn default_instance() -> &'static StopTransactionResponseData {
+        static instance: StopTransactionResponseData = StopTransactionResponseData {
             consumer_public_key: ::std::string::String::new(),
             transaction_info: ::protobuf::MessageField::none(),
             resp: ::protobuf::MessageField::none(),
@@ -2094,20 +2094,20 @@ impl ::protobuf::Message for StopChargeResponseData {
     }
 }
 
-impl ::protobuf::MessageFull for StopChargeResponseData {
+impl ::protobuf::MessageFull for StopTransactionResponseData {
     fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
         static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
-        descriptor.get(|| file_descriptor().message_by_package_relative_name("StopChargeResponseData").unwrap()).clone()
+        descriptor.get(|| file_descriptor().message_by_package_relative_name("StopTransactionResponseData").unwrap()).clone()
     }
 }
 
-impl ::std::fmt::Display for StopChargeResponseData {
+impl ::std::fmt::Display for StopTransactionResponseData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl ::protobuf::reflect::ProtobufValue for StopChargeResponseData {
+impl ::protobuf::reflect::ProtobufValue for StopTransactionResponseData {
     type RuntimeType = ::protobuf::reflect::runtime_types::RuntimeTypeMessage<Self>;
 }
 
@@ -3248,234 +3248,234 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \n\x16charge_point_client_id\x18\x01\x20\x01(\tR\x13chargePointClientId\
     \x12!\n\x0cconnector_id\x18\x02\x20\x01(\x05R\x0bconnectorId\"F\n\x1dChe\
     ckAvailabilityResponseData\x12%\n\x04resp\x18\x01\x20\x01(\x0b2\x11.gate\
-    way.ResponseR\x04resp\"\xa0\x01\n\x16StartChargeRequestData\x123\n\x16ch\
-    arge_point_client_id\x18\x01\x20\x01(\tR\x13chargePointClientId\x12!\n\
-    \x0cconnector_id\x18\x02\x20\x01(\x05R\x0bconnectorId\x12.\n\x13consumer\
-    _public_key\x18\x03\x20\x01(\tR\x11consumerPublicKey\"p\n\x17StartCharge\
-    ResponseData\x12.\n\x13consumer_public_key\x18\x01\x20\x01(\tR\x11consum\
-    erPublicKey\x12%\n\x04resp\x18\x02\x20\x01(\x0b2\x11.gateway.ResponseR\
-    \x04resp\"W\n\x20NotifyChargePointStateChangeData\x123\n\x16charge_point\
-    _client_id\x18\x01\x20\x01(\tR\x13chargePointClientId\":\n\x08Response\
-    \x12\x14\n\x05error\x18\x01\x20\x01(\x08R\x05error\x12\x18\n\x07message\
-    \x18\x02\x20\x01(\tR\x07message\"\xde\x01\n\x14EVChargingStatusData\x122\
-    \n\x15initial_battery_level\x18\x01\x20\x01(\x02R\x13initialBatteryLevel\
-    \x12#\n\rbattery_level\x18\x02\x20\x01(\x02R\x0cbatteryLevel\x12'\n\x0fc\
-    urrent_offered\x18\x03\x20\x01(\x02R\x0ecurrentOffered\x12!\n\x0cbattery\
-    _unit\x18\x04\x20\x01(\tR\x0bbatteryUnit\x12!\n\x0ccurrent_unit\x18\x05\
-    \x20\x01(\tR\x0bcurrentUnit\"\x9f\x01\n\x15StopChargeRequestData\x123\n\
+    way.ResponseR\x04resp\"\xa5\x01\n\x1bStartTransactionRequestData\x123\n\
     \x16charge_point_client_id\x18\x01\x20\x01(\tR\x13chargePointClientId\
     \x12!\n\x0cconnector_id\x18\x02\x20\x01(\x05R\x0bconnectorId\x12.\n\x13c\
-    onsumer_public_key\x18\x03\x20\x01(\tR\x11consumerPublicKey\"\xb4\x01\n\
-    \x16StopChargeResponseData\x12.\n\x13consumer_public_key\x18\x01\x20\x01\
-    (\tR\x11consumerPublicKey\x12C\n\x10transaction_info\x18\x02\x20\x01(\
-    \x0b2\x18.gateway.TransactionInfoR\x0ftransactionInfo\x12%\n\x04resp\x18\
-    \x03\x20\x01(\x0b2\x11.gateway.ResponseR\x04resp\"\x97\x05\n\x10ChargePo\
-    intState\x12\x0e\n\x02id\x18\x01\x20\x01(\tR\x02id\x12\x16\n\x06status\
-    \x18\x02\x20\x01(\tR\x06status\x12I\n\nconnectors\x18\x03\x20\x03(\x0b2)\
-    .gateway.ChargePointState.ConnectorsEntryR\nconnectors\x12O\n\x0ctransac\
-    tions\x18\x04\x20\x03(\x0b2+.gateway.ChargePointState.TransactionsEntryR\
-    \x0ctransactions\x12D\n\tauth_list\x18\x05\x20\x03(\x0b2'.gateway.Charge\
-    PointState.AuthListEntryR\x08authList\x129\n\x19current_auth_list_versio\
-    n\x18\x06\x20\x01(\x05R\x16currentAuthListVersion\x124\n\x16current_tran\
-    saction_id\x18\x07\x20\x01(\x05R\x14currentTransactionId\x1aU\n\x0fConne\
-    ctorsEntry\x12\x10\n\x03key\x18\x01\x20\x01(\x05R\x03key\x12,\n\x05value\
-    \x18\x02\x20\x01(\x0b2\x16.gateway.ConnectorInfoR\x05value:\x028\x01\x1a\
-    Y\n\x11TransactionsEntry\x12\x10\n\x03key\x18\x01\x20\x01(\x05R\x03key\
-    \x12.\n\x05value\x18\x02\x20\x01(\x0b2\x18.gateway.TransactionInfoR\x05v\
-    alue:\x028\x01\x1aV\n\rAuthListEntry\x12\x10\n\x03key\x18\x01\x20\x01(\t\
-    R\x03key\x12/\n\x05value\x18\x02\x20\x01(\x0b2\x19.gateway.ConsumerAuthD\
-    ataR\x05value:\x028\x01\"h\n\rConnectorInfo\x12\x0e\n\x02id\x18\x01\x20\
-    \x01(\x05R\x02id\x12\x16\n\x06status\x18\x02\x20\x01(\tR\x06status\x12/\
-    \n\x13current_transaction\x18\x03\x20\x01(\x05R\x12currentTransaction\"\
-    \x8e\x02\n\x0fTransactionInfo\x12\x0e\n\x02id\x18\x01\x20\x01(\x05R\x02i\
-    d\x12\x15\n\x06id_tag\x18\x02\x20\x01(\tR\x05idTag\x12!\n\x0cconnector_i\
-    d\x18\x03\x20\x01(\x05R\x0bconnectorId\x12\x1d\n\nstart_time\x18\x04\x20\
-    \x01(\tR\tstartTime\x12\x19\n\x08end_time\x18\x05\x20\x01(\tR\x07endTime\
-    \x12\x1f\n\x0bstart_meter\x18\x06\x20\x01(\x05R\nstartMeter\x12\x1b\n\te\
-    nd_meter\x18\x07\x20\x01(\x05R\x08endMeter\x129\n\x08progress\x18\x08\
-    \x20\x01(\x0b2\x1d.gateway.EVChargingStatusDataR\x08progress\"\x96\x01\n\
-    \x10ConsumerAuthData\x12\x1d\n\npublic_key\x18\x01\x20\x01(\tR\tpublicKe\
-    y\x12%\n\x0etransaction_id\x18\x02\x20\x01(\x05R\rtransactionId\x12<\n\t\
-    auth_data\x18\x03\x20\x01(\x0b2\x1f.gateway.LocalAuthorizationDataR\x08a\
-    uthData\"`\n\x16LocalAuthorizationData\x12\x14\n\x05idTag\x18\x01\x20\
-    \x01(\tR\x05idTag\x120\n\tidTagInfo\x18\x02\x20\x01(\x0b2\x12.gateway.Id\
-    TagInfoR\tidTagInfo\"e\n\tIdTagInfo\x12\x1e\n\nexpiryDate\x18\x01\x20\
-    \x01(\tR\nexpiryDate\x12\x20\n\x0bparentIdTag\x18\x02\x20\x01(\tR\x0bpar\
-    entIdTag\x12\x16\n\x06status\x18\x03\x20\x01(\tR\x06statusBWZUgithub.com\
-    /peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gate\
-    wayJ\xcd(\n\x07\x12\x05\0\0\x89\x01\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\
-    \n\x08\n\x01\x02\x12\x03\x02\0\x10\n\x08\n\x01\x08\x12\x03\x03\0l\n\t\n\
-    \x02\x08\x0b\x12\x03\x03\0l\n\n\n\x02\x04\0\x12\x04\x05\0\x0f\x01\n\n\n\
-    \x03\x04\0\x01\x12\x03\x05\x08#\n\x0b\n\x04\x04\0\x02\0\x12\x03\x06\x02&\
-    \n\x0c\n\x05\x04\0\x02\0\x05\x12\x03\x06\x02\x08\n\x0c\n\x05\x04\0\x02\0\
-    \x01\x12\x03\x06\t!\n\x0c\n\x05\x04\0\x02\0\x03\x12\x03\x06$%\n\x0b\n\
-    \x04\x04\0\x02\x01\x12\x03\x07\x02\x20\n\x0c\n\x05\x04\0\x02\x01\x05\x12\
-    \x03\x07\x02\x08\n\x0c\n\x05\x04\0\x02\x01\x01\x12\x03\x07\t\x1b\n\x0c\n\
-    \x05\x04\0\x02\x01\x03\x12\x03\x07\x1e\x1f\n\x0b\n\x04\x04\0\x02\x02\x12\
-    \x03\x08\x02(\n\x0c\n\x05\x04\0\x02\x02\x05\x12\x03\x08\x02\x08\n\x0c\n\
-    \x05\x04\0\x02\x02\x01\x12\x03\x08\t#\n\x0c\n\x05\x04\0\x02\x02\x03\x12\
-    \x03\x08&'\n\x0b\n\x04\x04\0\x02\x03\x12\x03\t\x02!\n\x0c\n\x05\x04\0\
-    \x02\x03\x05\x12\x03\t\x02\x08\n\x0c\n\x05\x04\0\x02\x03\x01\x12\x03\t\t\
-    \x1c\n\x0c\n\x05\x04\0\x02\x03\x03\x12\x03\t\x1f\x20\n\x0b\n\x04\x04\0\
-    \x02\x04\x12\x03\n\x02\x1e\n\x0c\n\x05\x04\0\x02\x04\x05\x12\x03\n\x02\
-    \x08\n\x0c\n\x05\x04\0\x02\x04\x01\x12\x03\n\t\x19\n\x0c\n\x05\x04\0\x02\
-    \x04\x03\x12\x03\n\x1c\x1d\n\x0b\n\x04\x04\0\x02\x05\x12\x03\x0b\x02\x13\
-    \n\x0c\n\x05\x04\0\x02\x05\x05\x12\x03\x0b\x02\x08\n\x0c\n\x05\x04\0\x02\
-    \x05\x01\x12\x03\x0b\t\x0e\n\x0c\n\x05\x04\0\x02\x05\x03\x12\x03\x0b\x11\
-    \x12\n\x0b\n\x04\x04\0\x02\x06\x12\x03\x0c\x02\x12\n\x0c\n\x05\x04\0\x02\
-    \x06\x05\x12\x03\x0c\x02\x08\n\x0c\n\x05\x04\0\x02\x06\x01\x12\x03\x0c\t\
-    \r\n\x0c\n\x05\x04\0\x02\x06\x03\x12\x03\x0c\x10\x11\n\x0b\n\x04\x04\0\
-    \x02\x07\x12\x03\r\x02!\n\x0c\n\x05\x04\0\x02\x07\x05\x12\x03\r\x02\x08\
-    \n\x0c\n\x05\x04\0\x02\x07\x01\x12\x03\r\t\x1c\n\x0c\n\x05\x04\0\x02\x07\
-    \x03\x12\x03\r\x1f\x20\n\x0b\n\x04\x04\0\x02\x08\x12\x03\x0e\x02\x18\n\
-    \x0c\n\x05\x04\0\x02\x08\x05\x12\x03\x0e\x02\x08\n\x0c\n\x05\x04\0\x02\
-    \x08\x01\x12\x03\x0e\t\x13\n\x0c\n\x05\x04\0\x02\x08\x03\x12\x03\x0e\x16\
-    \x17\n\n\n\x02\x04\x01\x12\x04\x11\0\x14\x01\n\n\n\x03\x04\x01\x01\x12\
-    \x03\x11\x08\x0f\n\x0b\n\x04\x04\x01\x02\0\x12\x03\x12\x02\x1a\n\x0c\n\
-    \x05\x04\x01\x02\0\x05\x12\x03\x12\x02\x08\n\x0c\n\x05\x04\x01\x02\0\x01\
-    \x12\x03\x12\t\x15\n\x0c\n\x05\x04\x01\x02\0\x03\x12\x03\x12\x18\x19\n\
-    \x0b\n\x04\x04\x01\x02\x01\x12\x03\x13\x02\x14\n\x0c\n\x05\x04\x01\x02\
-    \x01\x06\x12\x03\x13\x02\n\n\x0c\n\x05\x04\x01\x02\x01\x01\x12\x03\x13\
-    \x0b\x0f\n\x0c\n\x05\x04\x01\x02\x01\x03\x12\x03\x13\x12\x13\n\n\n\x02\
-    \x04\x02\x12\x04\x16\0\x19\x01\n\n\n\x03\x04\x02\x01\x12\x03\x16\x08\x1c\
-    \n\x0b\n\x04\x04\x02\x02\0\x12\x03\x17\x02$\n\x0c\n\x05\x04\x02\x02\0\
-    \x05\x12\x03\x17\x02\x08\n\x0c\n\x05\x04\x02\x02\0\x01\x12\x03\x17\t\x1f\
-    \n\x0c\n\x05\x04\x02\x02\0\x03\x12\x03\x17\"#\n\x0b\n\x04\x04\x02\x02\
-    \x01\x12\x03\x18\x02!\n\x0c\n\x05\x04\x02\x02\x01\x05\x12\x03\x18\x02\
-    \x08\n\x0c\n\x05\x04\x02\x02\x01\x01\x12\x03\x18\t\x1c\n\x0c\n\x05\x04\
-    \x02\x02\x01\x03\x12\x03\x18\x1f\x20\n\n\n\x02\x04\x03\x12\x04\x1a\0\x1d\
-    \x01\n\n\n\x03\x04\x03\x01\x12\x03\x1a\x08\x1d\n\x0b\n\x04\x04\x03\x02\0\
-    \x12\x03\x1b\x02!\n\x0c\n\x05\x04\x03\x02\0\x05\x12\x03\x1b\x02\x08\n\
-    \x0c\n\x05\x04\x03\x02\0\x01\x12\x03\x1b\t\x1c\n\x0c\n\x05\x04\x03\x02\0\
-    \x03\x12\x03\x1b\x1f\x20\n\x0b\n\x04\x04\x03\x02\x01\x12\x03\x1c\x02\x14\
-    \n\x0c\n\x05\x04\x03\x02\x01\x06\x12\x03\x1c\x02\n\n\x0c\n\x05\x04\x03\
-    \x02\x01\x01\x12\x03\x1c\x0b\x0f\n\x0c\n\x05\x04\x03\x02\x01\x03\x12\x03\
-    \x1c\x12\x13\n\n\n\x02\x04\x04\x12\x04\x1f\0\"\x01\n\n\n\x03\x04\x04\x01\
-    \x12\x03\x1f\x08$\n\x0b\n\x04\x04\x04\x02\0\x12\x03\x20\x02$\n\x0c\n\x05\
-    \x04\x04\x02\0\x05\x12\x03\x20\x02\x08\n\x0c\n\x05\x04\x04\x02\0\x01\x12\
-    \x03\x20\t\x1f\n\x0c\n\x05\x04\x04\x02\0\x03\x12\x03\x20\"#\n\x0b\n\x04\
-    \x04\x04\x02\x01\x12\x03!\x02\x19\n\x0c\n\x05\x04\x04\x02\x01\x05\x12\
-    \x03!\x02\x07\n\x0c\n\x05\x04\x04\x02\x01\x01\x12\x03!\x08\x14\n\x0c\n\
-    \x05\x04\x04\x02\x01\x03\x12\x03!\x17\x18\n\t\n\x02\x04\x05\x12\x03#\0<\
-    \n\n\n\x03\x04\x05\x01\x12\x03#\x08%\n\x0b\n\x04\x04\x05\x02\0\x12\x03#(\
-    :\n\x0c\n\x05\x04\x05\x02\0\x06\x12\x03#(0\n\x0c\n\x05\x04\x05\x02\0\x01\
-    \x12\x03#15\n\x0c\n\x05\x04\x05\x02\0\x03\x12\x03#89\n\n\n\x02\x04\x06\
-    \x12\x04%\0)\x01\n\n\n\x03\x04\x06\x01\x12\x03%\x08\x1e\n\x0b\n\x04\x04\
-    \x06\x02\0\x12\x03&\x02$\n\x0c\n\x05\x04\x06\x02\0\x05\x12\x03&\x02\x08\
-    \n\x0c\n\x05\x04\x06\x02\0\x01\x12\x03&\t\x1f\n\x0c\n\x05\x04\x06\x02\0\
-    \x03\x12\x03&\"#\n\x0b\n\x04\x04\x06\x02\x01\x12\x03'\x02\x19\n\x0c\n\
-    \x05\x04\x06\x02\x01\x05\x12\x03'\x02\x07\n\x0c\n\x05\x04\x06\x02\x01\
-    \x01\x12\x03'\x08\x14\n\x0c\n\x05\x04\x06\x02\x01\x03\x12\x03'\x17\x18\n\
-    \x0b\n\x04\x04\x06\x02\x02\x12\x03(\x02!\n\x0c\n\x05\x04\x06\x02\x02\x05\
-    \x12\x03(\x02\x08\n\x0c\n\x05\x04\x06\x02\x02\x01\x12\x03(\t\x1c\n\x0c\n\
-    \x05\x04\x06\x02\x02\x03\x12\x03(\x1f\x20\n\n\n\x02\x04\x07\x12\x04*\0-\
-    \x01\n\n\n\x03\x04\x07\x01\x12\x03*\x08\x1f\n\x0b\n\x04\x04\x07\x02\0\
-    \x12\x03+\x02!\n\x0c\n\x05\x04\x07\x02\0\x05\x12\x03+\x02\x08\n\x0c\n\
-    \x05\x04\x07\x02\0\x01\x12\x03+\t\x1c\n\x0c\n\x05\x04\x07\x02\0\x03\x12\
-    \x03+\x1f\x20\n\x0b\n\x04\x04\x07\x02\x01\x12\x03,\x02\x14\n\x0c\n\x05\
-    \x04\x07\x02\x01\x06\x12\x03,\x02\n\n\x0c\n\x05\x04\x07\x02\x01\x01\x12\
-    \x03,\x0b\x0f\n\x0c\n\x05\x04\x07\x02\x01\x03\x12\x03,\x12\x13\n\t\n\x02\
-    \x04\x08\x12\x03/\0O\n\n\n\x03\x04\x08\x01\x12\x03/\x08(\n\x0b\n\x04\x04\
-    \x08\x02\0\x12\x03/+M\n\x0c\n\x05\x04\x08\x02\0\x05\x12\x03/+1\n\x0c\n\
-    \x05\x04\x08\x02\0\x01\x12\x03/2H\n\x0c\n\x05\x04\x08\x02\0\x03\x12\x03/\
-    KL\n\n\n\x02\x04\t\x12\x041\04\x01\n\n\n\x03\x04\t\x01\x12\x031\x08\x10\
-    \n\x0b\n\x04\x04\t\x02\0\x12\x032\x02\x11\n\x0c\n\x05\x04\t\x02\0\x05\
-    \x12\x032\x02\x06\n\x0c\n\x05\x04\t\x02\0\x01\x12\x032\x07\x0c\n\x0c\n\
-    \x05\x04\t\x02\0\x03\x12\x032\x0f\x10\n\x0b\n\x04\x04\t\x02\x01\x12\x033\
-    \x02\x15\n\x0c\n\x05\x04\t\x02\x01\x05\x12\x033\x02\x08\n\x0c\n\x05\x04\
-    \t\x02\x01\x01\x12\x033\t\x10\n\x0c\n\x05\x04\t\x02\x01\x03\x12\x033\x13\
-    \x14\nR\n\x02\x04\n\x12\x047\0B\x01\x1aF\x20EVChargingStatusData\x20cont\
-    ains\x20status\x20of\x20the\x20current\x20ongoing\x20charging\n\n\n\n\
-    \x03\x04\n\x01\x12\x037\x08\x1c\nE\n\x04\x04\n\x02\0\x12\x039\x02\"\x1a8\
-    \x20initial\x20EV\x20battery\x20level\x20in\x20percentage\x20before\x20c\
-    harging\n\n\x0c\n\x05\x04\n\x02\0\x05\x12\x039\x02\x07\n\x0c\n\x05\x04\n\
-    \x02\0\x01\x12\x039\x08\x1d\n\x0c\n\x05\x04\n\x02\0\x03\x12\x039\x20!\nE\
-    \n\x04\x04\n\x02\x01\x12\x03;\x02\x1a\x1a8\x20current\x20EV\x20battery\
-    \x20level\x20in\x20percentage\x20before\x20charging\n\n\x0c\n\x05\x04\n\
-    \x02\x01\x05\x12\x03;\x02\x07\n\x0c\n\x05\x04\n\x02\x01\x01\x12\x03;\x08\
-    \x15\n\x0c\n\x05\x04\n\x02\x01\x03\x12\x03;\x18\x19\n3\n\x04\x04\n\x02\
-    \x02\x12\x03=\x02\x1c\x1a&\x20the\x20electrical\x20current\x20offered\
-    \x20to\x20EV\n\n\x0c\n\x05\x04\n\x02\x02\x05\x12\x03=\x02\x07\n\x0c\n\
-    \x05\x04\n\x02\x02\x01\x12\x03=\x08\x17\n\x0c\n\x05\x04\n\x02\x02\x03\
-    \x12\x03=\x1a\x1b\nO\n\x04\x04\n\x02\x03\x12\x03?\x02\x1a\x1aB\x20the\
-    \x20initial_battery_level\x20and\x20battery_level\x20value\x20unit\x20-\
-    \x20Percent\n\n\x0c\n\x05\x04\n\x02\x03\x05\x12\x03?\x02\x08\n\x0c\n\x05\
-    \x04\n\x02\x03\x01\x12\x03?\t\x15\n\x0c\n\x05\x04\n\x02\x03\x03\x12\x03?\
-    \x18\x19\n1\n\x04\x04\n\x02\x04\x12\x03A\x02\x1a\x1a$\x20the\x20current\
-    \x20offered\x20value\x20unit\x20-\x20A\n\n\x0c\n\x05\x04\n\x02\x04\x05\
-    \x12\x03A\x02\x08\n\x0c\n\x05\x04\n\x02\x04\x01\x12\x03A\t\x15\n\x0c\n\
-    \x05\x04\n\x02\x04\x03\x12\x03A\x18\x19\n\n\n\x02\x04\x0b\x12\x04D\0H\
-    \x01\n\n\n\x03\x04\x0b\x01\x12\x03D\x08\x1d\n\x0b\n\x04\x04\x0b\x02\0\
-    \x12\x03E\x02$\n\x0c\n\x05\x04\x0b\x02\0\x05\x12\x03E\x02\x08\n\x0c\n\
-    \x05\x04\x0b\x02\0\x01\x12\x03E\t\x1f\n\x0c\n\x05\x04\x0b\x02\0\x03\x12\
-    \x03E\"#\n\x0b\n\x04\x04\x0b\x02\x01\x12\x03F\x02\x19\n\x0c\n\x05\x04\
-    \x0b\x02\x01\x05\x12\x03F\x02\x07\n\x0c\n\x05\x04\x0b\x02\x01\x01\x12\
-    \x03F\x08\x14\n\x0c\n\x05\x04\x0b\x02\x01\x03\x12\x03F\x17\x18\n\x0b\n\
-    \x04\x04\x0b\x02\x02\x12\x03G\x02!\n\x0c\n\x05\x04\x0b\x02\x02\x05\x12\
-    \x03G\x02\x08\n\x0c\n\x05\x04\x0b\x02\x02\x01\x12\x03G\t\x1c\n\x0c\n\x05\
-    \x04\x0b\x02\x02\x03\x12\x03G\x1f\x20\n\n\n\x02\x04\x0c\x12\x04J\0N\x01\
-    \n\n\n\x03\x04\x0c\x01\x12\x03J\x08\x1e\n\x0b\n\x04\x04\x0c\x02\0\x12\
-    \x03K\x02!\n\x0c\n\x05\x04\x0c\x02\0\x05\x12\x03K\x02\x08\n\x0c\n\x05\
-    \x04\x0c\x02\0\x01\x12\x03K\t\x1c\n\x0c\n\x05\x04\x0c\x02\0\x03\x12\x03K\
-    \x1f\x20\n\x0b\n\x04\x04\x0c\x02\x01\x12\x03L\x02'\n\x0c\n\x05\x04\x0c\
-    \x02\x01\x06\x12\x03L\x02\x11\n\x0c\n\x05\x04\x0c\x02\x01\x01\x12\x03L\
-    \x12\"\n\x0c\n\x05\x04\x0c\x02\x01\x03\x12\x03L%&\n\x0b\n\x04\x04\x0c\
-    \x02\x02\x12\x03M\x02\x14\n\x0c\n\x05\x04\x0c\x02\x02\x06\x12\x03M\x02\n\
-    \n\x0c\n\x05\x04\x0c\x02\x02\x01\x12\x03M\x0b\x0f\n\x0c\n\x05\x04\x0c\
-    \x02\x02\x03\x12\x03M\x12\x13\nH\n\x02\x04\r\x12\x04Q\0_\x01\x1a<\x20Cha\
-    rgePointState\x20defined\x20connected\x20charge\x20point\x20state\x20dat\
-    a\n\n\n\n\x03\x04\r\x01\x12\x03Q\x08\x18\n\x0b\n\x04\x04\r\x02\0\x12\x03\
-    R\x02\x10\n\x0c\n\x05\x04\r\x02\0\x05\x12\x03R\x02\x08\n\x0c\n\x05\x04\r\
-    \x02\0\x01\x12\x03R\t\x0b\n\x0c\n\x05\x04\r\x02\0\x03\x12\x03R\x0e\x0f\n\
-    \x0b\n\x04\x04\r\x02\x01\x12\x03S\x02\x14\n\x0c\n\x05\x04\r\x02\x01\x05\
-    \x12\x03S\x02\x08\n\x0c\n\x05\x04\r\x02\x01\x01\x12\x03S\t\x0f\n\x0c\n\
-    \x05\x04\r\x02\x01\x03\x12\x03S\x12\x13\nD\n\x04\x04\r\x02\x02\x12\x03U\
-    \x02+\x1a7\x20Charge\x20point\x20connector\x20data\x20using\x20connector\
-    \x20Id\x20as\x20key\n\n\x0c\n\x05\x04\r\x02\x02\x06\x12\x03U\x02\x1b\n\
-    \x0c\n\x05\x04\r\x02\x02\x01\x12\x03U\x1c&\n\x0c\n\x05\x04\r\x02\x02\x03\
-    \x12\x03U)*\nI\n\x04\x04\r\x02\x03\x12\x03W\x02/\x1a<\x20Charge\x20point\
-    \x20transactions\x20data\x20using\x20transaction\x20Id\x20as\x20key\n\n\
-    \x0c\n\x05\x04\r\x02\x03\x06\x12\x03W\x02\x1d\n\x0c\n\x05\x04\r\x02\x03\
-    \x01\x12\x03W\x1e*\n\x0c\n\x05\x04\r\x02\x03\x03\x12\x03W-.\n3\n\x04\x04\
-    \r\x02\x04\x12\x03Y\x02.\x1a&\x20current\x20auth\x20data\x20using\x20IdT\
-    ag\x20as\x20key\n\n\x0c\n\x05\x04\r\x02\x04\x06\x12\x03Y\x02\x1f\n\x0c\n\
-    \x05\x04\r\x02\x04\x01\x12\x03Y\x20)\n\x0c\n\x05\x04\r\x02\x04\x03\x12\
-    \x03Y,-\ny\n\x04\x04\r\x02\x05\x12\x03\\\x02&\x1al\x20used\x20to\x20innc\
-    rement\x20local\x20auth\x20list\x20version\n\x20ocpp\x20requires\x20Send\
-    LocalAuthList\x20request\x20to\x20contain\x20new\x20version\n\n\x0c\n\
-    \x05\x04\r\x02\x05\x05\x12\x03\\\x02\x07\n\x0c\n\x05\x04\r\x02\x05\x01\
-    \x12\x03\\\x08!\n\x0c\n\x05\x04\r\x02\x05\x03\x12\x03\\$%\nP\n\x04\x04\r\
-    \x02\x06\x12\x03^\x02#\x1aC\x20used\x20to\x20inncrement\x20transacton\
-    \x20Ids\x20by\x20keep\x20the\x20last\x20transaction\x20Id\n\n\x0c\n\x05\
-    \x04\r\x02\x06\x05\x12\x03^\x02\x07\n\x0c\n\x05\x04\r\x02\x06\x01\x12\
-    \x03^\x08\x1e\n\x0c\n\x05\x04\r\x02\x06\x03\x12\x03^!\"\nV\n\x02\x04\x0e\
-    \x12\x04b\0h\x01\x1aJ\x20ConnectorInfo\x20contains\x20status\x20and\x20o\
-    ngoing\x20transaction\x20ID\x20for\x20a\x20connector\n\n\n\n\x03\x04\x0e\
-    \x01\x12\x03b\x08\x15\n\x0b\n\x04\x04\x0e\x02\0\x12\x03c\x02\x0f\n\x0c\n\
-    \x05\x04\x0e\x02\0\x05\x12\x03c\x02\x07\n\x0c\n\x05\x04\x0e\x02\0\x01\
-    \x12\x03c\x08\n\n\x0c\n\x05\x04\x0e\x02\0\x03\x12\x03c\r\x0e\nI\n\x04\
-    \x04\x0e\x02\x01\x12\x03e\x02\x14\x1a<\x20status\x20of\x20the\x20connect\
-    or\x20e.g\x20AVAILABLE,\x20PREPARING,\x20CHARGING\n\n\x0c\n\x05\x04\x0e\
-    \x02\x01\x05\x12\x03e\x02\x08\n\x0c\n\x05\x04\x0e\x02\x01\x01\x12\x03e\t\
-    \x0f\n\x0c\n\x05\x04\x0e\x02\x01\x03\x12\x03e\x12\x13\n9\n\x04\x04\x0e\
-    \x02\x02\x12\x03g\x02\x20\x1a,\x20holds\x20the\x20current\x20Id\x20of\
-    \x20ongoing\x20transacton\n\n\x0c\n\x05\x04\x0e\x02\x02\x05\x12\x03g\x02\
-    \x07\n\x0c\n\x05\x04\x0e\x02\x02\x01\x12\x03g\x08\x1b\n\x0c\n\x05\x04\
-    \x0e\x02\x02\x03\x12\x03g\x1e\x1f\n?\n\x02\x04\x0f\x12\x04k\0t\x01\x1a3\
-    \x20TransactionInfo\x20contains\x20info\x20about\x20a\x20transaction\n\n\
-    \n\n\x03\x04\x0f\x01\x12\x03k\x08\x17\n\x0b\n\x04\x04\x0f\x02\0\x12\x03l\
-    \x02\x0f\n\x0c\n\x05\x04\x0f\x02\0\x05\x12\x03l\x02\x07\n\x0c\n\x05\x04\
-    \x0f\x02\0\x01\x12\x03l\x08\n\n\x0c\n\x05\x04\x0f\x02\0\x03\x12\x03l\r\
-    \x0e\n\x0b\n\x04\x04\x0f\x02\x01\x12\x03m\x02\x14\n\x0c\n\x05\x04\x0f\
-    \x02\x01\x05\x12\x03m\x02\x08\n\x0c\n\x05\x04\x0f\x02\x01\x01\x12\x03m\t\
-    \x0f\n\x0c\n\x05\x04\x0f\x02\x01\x03\x12\x03m\x12\x13\n\x0b\n\x04\x04\
-    \x0f\x02\x02\x12\x03n\x02\x19\n\x0c\n\x05\x04\x0f\x02\x02\x05\x12\x03n\
-    \x02\x07\n\x0c\n\x05\x04\x0f\x02\x02\x01\x12\x03n\x08\x14\n\x0c\n\x05\
-    \x04\x0f\x02\x02\x03\x12\x03n\x17\x18\n\x0b\n\x04\x04\x0f\x02\x03\x12\
-    \x03o\x02\x18\n\x0c\n\x05\x04\x0f\x02\x03\x05\x12\x03o\x02\x08\n\x0c\n\
-    \x05\x04\x0f\x02\x03\x01\x12\x03o\t\x13\n\x0c\n\x05\x04\x0f\x02\x03\x03\
-    \x12\x03o\x16\x17\n\x0b\n\x04\x04\x0f\x02\x04\x12\x03p\x02\x16\n\x0c\n\
-    \x05\x04\x0f\x02\x04\x05\x12\x03p\x02\x08\n\x0c\n\x05\x04\x0f\x02\x04\
+    onsumer_public_key\x18\x03\x20\x01(\tR\x11consumerPublicKey\"u\n\x1cStar\
+    tTransactionResponseData\x12.\n\x13consumer_public_key\x18\x01\x20\x01(\
+    \tR\x11consumerPublicKey\x12%\n\x04resp\x18\x02\x20\x01(\x0b2\x11.gatewa\
+    y.ResponseR\x04resp\"W\n\x20NotifyChargePointStateChangeData\x123\n\x16c\
+    harge_point_client_id\x18\x01\x20\x01(\tR\x13chargePointClientId\":\n\
+    \x08Response\x12\x14\n\x05error\x18\x01\x20\x01(\x08R\x05error\x12\x18\n\
+    \x07message\x18\x02\x20\x01(\tR\x07message\"\xde\x01\n\x14EVChargingStat\
+    usData\x122\n\x15initial_battery_level\x18\x01\x20\x01(\x02R\x13initialB\
+    atteryLevel\x12#\n\rbattery_level\x18\x02\x20\x01(\x02R\x0cbatteryLevel\
+    \x12'\n\x0fcurrent_offered\x18\x03\x20\x01(\x02R\x0ecurrentOffered\x12!\
+    \n\x0cbattery_unit\x18\x04\x20\x01(\tR\x0bbatteryUnit\x12!\n\x0ccurrent_\
+    unit\x18\x05\x20\x01(\tR\x0bcurrentUnit\"\xa4\x01\n\x1aStopTransactionRe\
+    questData\x123\n\x16charge_point_client_id\x18\x01\x20\x01(\tR\x13charge\
+    PointClientId\x12!\n\x0cconnector_id\x18\x02\x20\x01(\x05R\x0bconnectorI\
+    d\x12.\n\x13consumer_public_key\x18\x03\x20\x01(\tR\x11consumerPublicKey\
+    \"\xb9\x01\n\x1bStopTransactionResponseData\x12.\n\x13consumer_public_ke\
+    y\x18\x01\x20\x01(\tR\x11consumerPublicKey\x12C\n\x10transaction_info\
+    \x18\x02\x20\x01(\x0b2\x18.gateway.TransactionInfoR\x0ftransactionInfo\
+    \x12%\n\x04resp\x18\x03\x20\x01(\x0b2\x11.gateway.ResponseR\x04resp\"\
+    \x97\x05\n\x10ChargePointState\x12\x0e\n\x02id\x18\x01\x20\x01(\tR\x02id\
+    \x12\x16\n\x06status\x18\x02\x20\x01(\tR\x06status\x12I\n\nconnectors\
+    \x18\x03\x20\x03(\x0b2).gateway.ChargePointState.ConnectorsEntryR\nconne\
+    ctors\x12O\n\x0ctransactions\x18\x04\x20\x03(\x0b2+.gateway.ChargePointS\
+    tate.TransactionsEntryR\x0ctransactions\x12D\n\tauth_list\x18\x05\x20\
+    \x03(\x0b2'.gateway.ChargePointState.AuthListEntryR\x08authList\x129\n\
+    \x19current_auth_list_version\x18\x06\x20\x01(\x05R\x16currentAuthListVe\
+    rsion\x124\n\x16current_transaction_id\x18\x07\x20\x01(\x05R\x14currentT\
+    ransactionId\x1aU\n\x0fConnectorsEntry\x12\x10\n\x03key\x18\x01\x20\x01(\
+    \x05R\x03key\x12,\n\x05value\x18\x02\x20\x01(\x0b2\x16.gateway.Connector\
+    InfoR\x05value:\x028\x01\x1aY\n\x11TransactionsEntry\x12\x10\n\x03key\
+    \x18\x01\x20\x01(\x05R\x03key\x12.\n\x05value\x18\x02\x20\x01(\x0b2\x18.\
+    gateway.TransactionInfoR\x05value:\x028\x01\x1aV\n\rAuthListEntry\x12\
+    \x10\n\x03key\x18\x01\x20\x01(\tR\x03key\x12/\n\x05value\x18\x02\x20\x01\
+    (\x0b2\x19.gateway.ConsumerAuthDataR\x05value:\x028\x01\"h\n\rConnectorI\
+    nfo\x12\x0e\n\x02id\x18\x01\x20\x01(\x05R\x02id\x12\x16\n\x06status\x18\
+    \x02\x20\x01(\tR\x06status\x12/\n\x13current_transaction\x18\x03\x20\x01\
+    (\x05R\x12currentTransaction\"\x8e\x02\n\x0fTransactionInfo\x12\x0e\n\
+    \x02id\x18\x01\x20\x01(\x05R\x02id\x12\x15\n\x06id_tag\x18\x02\x20\x01(\
+    \tR\x05idTag\x12!\n\x0cconnector_id\x18\x03\x20\x01(\x05R\x0bconnectorId\
+    \x12\x1d\n\nstart_time\x18\x04\x20\x01(\tR\tstartTime\x12\x19\n\x08end_t\
+    ime\x18\x05\x20\x01(\tR\x07endTime\x12\x1f\n\x0bstart_meter\x18\x06\x20\
+    \x01(\x05R\nstartMeter\x12\x1b\n\tend_meter\x18\x07\x20\x01(\x05R\x08end\
+    Meter\x129\n\x08progress\x18\x08\x20\x01(\x0b2\x1d.gateway.EVChargingSta\
+    tusDataR\x08progress\"\x96\x01\n\x10ConsumerAuthData\x12\x1d\n\npublic_k\
+    ey\x18\x01\x20\x01(\tR\tpublicKey\x12%\n\x0etransaction_id\x18\x02\x20\
+    \x01(\x05R\rtransactionId\x12<\n\tauth_data\x18\x03\x20\x01(\x0b2\x1f.ga\
+    teway.LocalAuthorizationDataR\x08authData\"`\n\x16LocalAuthorizationData\
+    \x12\x14\n\x05idTag\x18\x01\x20\x01(\tR\x05idTag\x120\n\tidTagInfo\x18\
+    \x02\x20\x01(\x0b2\x12.gateway.IdTagInfoR\tidTagInfo\"e\n\tIdTagInfo\x12\
+    \x1e\n\nexpiryDate\x18\x01\x20\x01(\tR\nexpiryDate\x12\x20\n\x0bparentId\
+    Tag\x18\x02\x20\x01(\tR\x0bparentIdTag\x12\x16\n\x06status\x18\x03\x20\
+    \x01(\tR\x06statusBWZUgithub.com/peaqnetwork/peaq-network-ev-charging-me\
+    ssage-format/golang/gateway;gatewayJ\xcd(\n\x07\x12\x05\0\0\x89\x01\x01\
+    \n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x02\0\x10\n\x08\
+    \n\x01\x08\x12\x03\x03\0l\n\t\n\x02\x08\x0b\x12\x03\x03\0l\n\n\n\x02\x04\
+    \0\x12\x04\x05\0\x0f\x01\n\n\n\x03\x04\0\x01\x12\x03\x05\x08#\n\x0b\n\
+    \x04\x04\0\x02\0\x12\x03\x06\x02&\n\x0c\n\x05\x04\0\x02\0\x05\x12\x03\
+    \x06\x02\x08\n\x0c\n\x05\x04\0\x02\0\x01\x12\x03\x06\t!\n\x0c\n\x05\x04\
+    \0\x02\0\x03\x12\x03\x06$%\n\x0b\n\x04\x04\0\x02\x01\x12\x03\x07\x02\x20\
+    \n\x0c\n\x05\x04\0\x02\x01\x05\x12\x03\x07\x02\x08\n\x0c\n\x05\x04\0\x02\
+    \x01\x01\x12\x03\x07\t\x1b\n\x0c\n\x05\x04\0\x02\x01\x03\x12\x03\x07\x1e\
+    \x1f\n\x0b\n\x04\x04\0\x02\x02\x12\x03\x08\x02(\n\x0c\n\x05\x04\0\x02\
+    \x02\x05\x12\x03\x08\x02\x08\n\x0c\n\x05\x04\0\x02\x02\x01\x12\x03\x08\t\
+    #\n\x0c\n\x05\x04\0\x02\x02\x03\x12\x03\x08&'\n\x0b\n\x04\x04\0\x02\x03\
+    \x12\x03\t\x02!\n\x0c\n\x05\x04\0\x02\x03\x05\x12\x03\t\x02\x08\n\x0c\n\
+    \x05\x04\0\x02\x03\x01\x12\x03\t\t\x1c\n\x0c\n\x05\x04\0\x02\x03\x03\x12\
+    \x03\t\x1f\x20\n\x0b\n\x04\x04\0\x02\x04\x12\x03\n\x02\x1e\n\x0c\n\x05\
+    \x04\0\x02\x04\x05\x12\x03\n\x02\x08\n\x0c\n\x05\x04\0\x02\x04\x01\x12\
+    \x03\n\t\x19\n\x0c\n\x05\x04\0\x02\x04\x03\x12\x03\n\x1c\x1d\n\x0b\n\x04\
+    \x04\0\x02\x05\x12\x03\x0b\x02\x13\n\x0c\n\x05\x04\0\x02\x05\x05\x12\x03\
+    \x0b\x02\x08\n\x0c\n\x05\x04\0\x02\x05\x01\x12\x03\x0b\t\x0e\n\x0c\n\x05\
+    \x04\0\x02\x05\x03\x12\x03\x0b\x11\x12\n\x0b\n\x04\x04\0\x02\x06\x12\x03\
+    \x0c\x02\x12\n\x0c\n\x05\x04\0\x02\x06\x05\x12\x03\x0c\x02\x08\n\x0c\n\
+    \x05\x04\0\x02\x06\x01\x12\x03\x0c\t\r\n\x0c\n\x05\x04\0\x02\x06\x03\x12\
+    \x03\x0c\x10\x11\n\x0b\n\x04\x04\0\x02\x07\x12\x03\r\x02!\n\x0c\n\x05\
+    \x04\0\x02\x07\x05\x12\x03\r\x02\x08\n\x0c\n\x05\x04\0\x02\x07\x01\x12\
+    \x03\r\t\x1c\n\x0c\n\x05\x04\0\x02\x07\x03\x12\x03\r\x1f\x20\n\x0b\n\x04\
+    \x04\0\x02\x08\x12\x03\x0e\x02\x18\n\x0c\n\x05\x04\0\x02\x08\x05\x12\x03\
+    \x0e\x02\x08\n\x0c\n\x05\x04\0\x02\x08\x01\x12\x03\x0e\t\x13\n\x0c\n\x05\
+    \x04\0\x02\x08\x03\x12\x03\x0e\x16\x17\n\n\n\x02\x04\x01\x12\x04\x11\0\
+    \x14\x01\n\n\n\x03\x04\x01\x01\x12\x03\x11\x08\x0f\n\x0b\n\x04\x04\x01\
+    \x02\0\x12\x03\x12\x02\x1a\n\x0c\n\x05\x04\x01\x02\0\x05\x12\x03\x12\x02\
+    \x08\n\x0c\n\x05\x04\x01\x02\0\x01\x12\x03\x12\t\x15\n\x0c\n\x05\x04\x01\
+    \x02\0\x03\x12\x03\x12\x18\x19\n\x0b\n\x04\x04\x01\x02\x01\x12\x03\x13\
+    \x02\x14\n\x0c\n\x05\x04\x01\x02\x01\x06\x12\x03\x13\x02\n\n\x0c\n\x05\
+    \x04\x01\x02\x01\x01\x12\x03\x13\x0b\x0f\n\x0c\n\x05\x04\x01\x02\x01\x03\
+    \x12\x03\x13\x12\x13\n\n\n\x02\x04\x02\x12\x04\x16\0\x19\x01\n\n\n\x03\
+    \x04\x02\x01\x12\x03\x16\x08\x1c\n\x0b\n\x04\x04\x02\x02\0\x12\x03\x17\
+    \x02$\n\x0c\n\x05\x04\x02\x02\0\x05\x12\x03\x17\x02\x08\n\x0c\n\x05\x04\
+    \x02\x02\0\x01\x12\x03\x17\t\x1f\n\x0c\n\x05\x04\x02\x02\0\x03\x12\x03\
+    \x17\"#\n\x0b\n\x04\x04\x02\x02\x01\x12\x03\x18\x02!\n\x0c\n\x05\x04\x02\
+    \x02\x01\x05\x12\x03\x18\x02\x08\n\x0c\n\x05\x04\x02\x02\x01\x01\x12\x03\
+    \x18\t\x1c\n\x0c\n\x05\x04\x02\x02\x01\x03\x12\x03\x18\x1f\x20\n\n\n\x02\
+    \x04\x03\x12\x04\x1a\0\x1d\x01\n\n\n\x03\x04\x03\x01\x12\x03\x1a\x08\x1d\
+    \n\x0b\n\x04\x04\x03\x02\0\x12\x03\x1b\x02!\n\x0c\n\x05\x04\x03\x02\0\
+    \x05\x12\x03\x1b\x02\x08\n\x0c\n\x05\x04\x03\x02\0\x01\x12\x03\x1b\t\x1c\
+    \n\x0c\n\x05\x04\x03\x02\0\x03\x12\x03\x1b\x1f\x20\n\x0b\n\x04\x04\x03\
+    \x02\x01\x12\x03\x1c\x02\x14\n\x0c\n\x05\x04\x03\x02\x01\x06\x12\x03\x1c\
+    \x02\n\n\x0c\n\x05\x04\x03\x02\x01\x01\x12\x03\x1c\x0b\x0f\n\x0c\n\x05\
+    \x04\x03\x02\x01\x03\x12\x03\x1c\x12\x13\n\n\n\x02\x04\x04\x12\x04\x1f\0\
+    \"\x01\n\n\n\x03\x04\x04\x01\x12\x03\x1f\x08$\n\x0b\n\x04\x04\x04\x02\0\
+    \x12\x03\x20\x02$\n\x0c\n\x05\x04\x04\x02\0\x05\x12\x03\x20\x02\x08\n\
+    \x0c\n\x05\x04\x04\x02\0\x01\x12\x03\x20\t\x1f\n\x0c\n\x05\x04\x04\x02\0\
+    \x03\x12\x03\x20\"#\n\x0b\n\x04\x04\x04\x02\x01\x12\x03!\x02\x19\n\x0c\n\
+    \x05\x04\x04\x02\x01\x05\x12\x03!\x02\x07\n\x0c\n\x05\x04\x04\x02\x01\
+    \x01\x12\x03!\x08\x14\n\x0c\n\x05\x04\x04\x02\x01\x03\x12\x03!\x17\x18\n\
+    \t\n\x02\x04\x05\x12\x03#\0<\n\n\n\x03\x04\x05\x01\x12\x03#\x08%\n\x0b\n\
+    \x04\x04\x05\x02\0\x12\x03#(:\n\x0c\n\x05\x04\x05\x02\0\x06\x12\x03#(0\n\
+    \x0c\n\x05\x04\x05\x02\0\x01\x12\x03#15\n\x0c\n\x05\x04\x05\x02\0\x03\
+    \x12\x03#89\n\n\n\x02\x04\x06\x12\x04%\0)\x01\n\n\n\x03\x04\x06\x01\x12\
+    \x03%\x08#\n\x0b\n\x04\x04\x06\x02\0\x12\x03&\x02$\n\x0c\n\x05\x04\x06\
+    \x02\0\x05\x12\x03&\x02\x08\n\x0c\n\x05\x04\x06\x02\0\x01\x12\x03&\t\x1f\
+    \n\x0c\n\x05\x04\x06\x02\0\x03\x12\x03&\"#\n\x0b\n\x04\x04\x06\x02\x01\
+    \x12\x03'\x02\x19\n\x0c\n\x05\x04\x06\x02\x01\x05\x12\x03'\x02\x07\n\x0c\
+    \n\x05\x04\x06\x02\x01\x01\x12\x03'\x08\x14\n\x0c\n\x05\x04\x06\x02\x01\
+    \x03\x12\x03'\x17\x18\n\x0b\n\x04\x04\x06\x02\x02\x12\x03(\x02!\n\x0c\n\
+    \x05\x04\x06\x02\x02\x05\x12\x03(\x02\x08\n\x0c\n\x05\x04\x06\x02\x02\
+    \x01\x12\x03(\t\x1c\n\x0c\n\x05\x04\x06\x02\x02\x03\x12\x03(\x1f\x20\n\n\
+    \n\x02\x04\x07\x12\x04*\0-\x01\n\n\n\x03\x04\x07\x01\x12\x03*\x08$\n\x0b\
+    \n\x04\x04\x07\x02\0\x12\x03+\x02!\n\x0c\n\x05\x04\x07\x02\0\x05\x12\x03\
+    +\x02\x08\n\x0c\n\x05\x04\x07\x02\0\x01\x12\x03+\t\x1c\n\x0c\n\x05\x04\
+    \x07\x02\0\x03\x12\x03+\x1f\x20\n\x0b\n\x04\x04\x07\x02\x01\x12\x03,\x02\
+    \x14\n\x0c\n\x05\x04\x07\x02\x01\x06\x12\x03,\x02\n\n\x0c\n\x05\x04\x07\
+    \x02\x01\x01\x12\x03,\x0b\x0f\n\x0c\n\x05\x04\x07\x02\x01\x03\x12\x03,\
+    \x12\x13\n\t\n\x02\x04\x08\x12\x03/\0O\n\n\n\x03\x04\x08\x01\x12\x03/\
+    \x08(\n\x0b\n\x04\x04\x08\x02\0\x12\x03/+M\n\x0c\n\x05\x04\x08\x02\0\x05\
+    \x12\x03/+1\n\x0c\n\x05\x04\x08\x02\0\x01\x12\x03/2H\n\x0c\n\x05\x04\x08\
+    \x02\0\x03\x12\x03/KL\n\n\n\x02\x04\t\x12\x041\04\x01\n\n\n\x03\x04\t\
+    \x01\x12\x031\x08\x10\n\x0b\n\x04\x04\t\x02\0\x12\x032\x02\x11\n\x0c\n\
+    \x05\x04\t\x02\0\x05\x12\x032\x02\x06\n\x0c\n\x05\x04\t\x02\0\x01\x12\
+    \x032\x07\x0c\n\x0c\n\x05\x04\t\x02\0\x03\x12\x032\x0f\x10\n\x0b\n\x04\
+    \x04\t\x02\x01\x12\x033\x02\x15\n\x0c\n\x05\x04\t\x02\x01\x05\x12\x033\
+    \x02\x08\n\x0c\n\x05\x04\t\x02\x01\x01\x12\x033\t\x10\n\x0c\n\x05\x04\t\
+    \x02\x01\x03\x12\x033\x13\x14\nR\n\x02\x04\n\x12\x047\0B\x01\x1aF\x20EVC\
+    hargingStatusData\x20contains\x20status\x20of\x20the\x20current\x20ongoi\
+    ng\x20charging\n\n\n\n\x03\x04\n\x01\x12\x037\x08\x1c\nE\n\x04\x04\n\x02\
+    \0\x12\x039\x02\"\x1a8\x20initial\x20EV\x20battery\x20level\x20in\x20per\
+    centage\x20before\x20charging\n\n\x0c\n\x05\x04\n\x02\0\x05\x12\x039\x02\
+    \x07\n\x0c\n\x05\x04\n\x02\0\x01\x12\x039\x08\x1d\n\x0c\n\x05\x04\n\x02\
+    \0\x03\x12\x039\x20!\nE\n\x04\x04\n\x02\x01\x12\x03;\x02\x1a\x1a8\x20cur\
+    rent\x20EV\x20battery\x20level\x20in\x20percentage\x20before\x20charging\
+    \n\n\x0c\n\x05\x04\n\x02\x01\x05\x12\x03;\x02\x07\n\x0c\n\x05\x04\n\x02\
+    \x01\x01\x12\x03;\x08\x15\n\x0c\n\x05\x04\n\x02\x01\x03\x12\x03;\x18\x19\
+    \n3\n\x04\x04\n\x02\x02\x12\x03=\x02\x1c\x1a&\x20the\x20electrical\x20cu\
+    rrent\x20offered\x20to\x20EV\n\n\x0c\n\x05\x04\n\x02\x02\x05\x12\x03=\
+    \x02\x07\n\x0c\n\x05\x04\n\x02\x02\x01\x12\x03=\x08\x17\n\x0c\n\x05\x04\
+    \n\x02\x02\x03\x12\x03=\x1a\x1b\nO\n\x04\x04\n\x02\x03\x12\x03?\x02\x1a\
+    \x1aB\x20the\x20initial_battery_level\x20and\x20battery_level\x20value\
+    \x20unit\x20-\x20Percent\n\n\x0c\n\x05\x04\n\x02\x03\x05\x12\x03?\x02\
+    \x08\n\x0c\n\x05\x04\n\x02\x03\x01\x12\x03?\t\x15\n\x0c\n\x05\x04\n\x02\
+    \x03\x03\x12\x03?\x18\x19\n1\n\x04\x04\n\x02\x04\x12\x03A\x02\x1a\x1a$\
+    \x20the\x20current\x20offered\x20value\x20unit\x20-\x20A\n\n\x0c\n\x05\
+    \x04\n\x02\x04\x05\x12\x03A\x02\x08\n\x0c\n\x05\x04\n\x02\x04\x01\x12\
+    \x03A\t\x15\n\x0c\n\x05\x04\n\x02\x04\x03\x12\x03A\x18\x19\n\n\n\x02\x04\
+    \x0b\x12\x04D\0H\x01\n\n\n\x03\x04\x0b\x01\x12\x03D\x08\"\n\x0b\n\x04\
+    \x04\x0b\x02\0\x12\x03E\x02$\n\x0c\n\x05\x04\x0b\x02\0\x05\x12\x03E\x02\
+    \x08\n\x0c\n\x05\x04\x0b\x02\0\x01\x12\x03E\t\x1f\n\x0c\n\x05\x04\x0b\
+    \x02\0\x03\x12\x03E\"#\n\x0b\n\x04\x04\x0b\x02\x01\x12\x03F\x02\x19\n\
+    \x0c\n\x05\x04\x0b\x02\x01\x05\x12\x03F\x02\x07\n\x0c\n\x05\x04\x0b\x02\
+    \x01\x01\x12\x03F\x08\x14\n\x0c\n\x05\x04\x0b\x02\x01\x03\x12\x03F\x17\
+    \x18\n\x0b\n\x04\x04\x0b\x02\x02\x12\x03G\x02!\n\x0c\n\x05\x04\x0b\x02\
+    \x02\x05\x12\x03G\x02\x08\n\x0c\n\x05\x04\x0b\x02\x02\x01\x12\x03G\t\x1c\
+    \n\x0c\n\x05\x04\x0b\x02\x02\x03\x12\x03G\x1f\x20\n\n\n\x02\x04\x0c\x12\
+    \x04J\0N\x01\n\n\n\x03\x04\x0c\x01\x12\x03J\x08#\n\x0b\n\x04\x04\x0c\x02\
+    \0\x12\x03K\x02!\n\x0c\n\x05\x04\x0c\x02\0\x05\x12\x03K\x02\x08\n\x0c\n\
+    \x05\x04\x0c\x02\0\x01\x12\x03K\t\x1c\n\x0c\n\x05\x04\x0c\x02\0\x03\x12\
+    \x03K\x1f\x20\n\x0b\n\x04\x04\x0c\x02\x01\x12\x03L\x02'\n\x0c\n\x05\x04\
+    \x0c\x02\x01\x06\x12\x03L\x02\x11\n\x0c\n\x05\x04\x0c\x02\x01\x01\x12\
+    \x03L\x12\"\n\x0c\n\x05\x04\x0c\x02\x01\x03\x12\x03L%&\n\x0b\n\x04\x04\
+    \x0c\x02\x02\x12\x03M\x02\x14\n\x0c\n\x05\x04\x0c\x02\x02\x06\x12\x03M\
+    \x02\n\n\x0c\n\x05\x04\x0c\x02\x02\x01\x12\x03M\x0b\x0f\n\x0c\n\x05\x04\
+    \x0c\x02\x02\x03\x12\x03M\x12\x13\nH\n\x02\x04\r\x12\x04Q\0_\x01\x1a<\
+    \x20ChargePointState\x20defined\x20connected\x20charge\x20point\x20state\
+    \x20data\n\n\n\n\x03\x04\r\x01\x12\x03Q\x08\x18\n\x0b\n\x04\x04\r\x02\0\
+    \x12\x03R\x02\x10\n\x0c\n\x05\x04\r\x02\0\x05\x12\x03R\x02\x08\n\x0c\n\
+    \x05\x04\r\x02\0\x01\x12\x03R\t\x0b\n\x0c\n\x05\x04\r\x02\0\x03\x12\x03R\
+    \x0e\x0f\n\x0b\n\x04\x04\r\x02\x01\x12\x03S\x02\x14\n\x0c\n\x05\x04\r\
+    \x02\x01\x05\x12\x03S\x02\x08\n\x0c\n\x05\x04\r\x02\x01\x01\x12\x03S\t\
+    \x0f\n\x0c\n\x05\x04\r\x02\x01\x03\x12\x03S\x12\x13\nD\n\x04\x04\r\x02\
+    \x02\x12\x03U\x02+\x1a7\x20Charge\x20point\x20connector\x20data\x20using\
+    \x20connector\x20Id\x20as\x20key\n\n\x0c\n\x05\x04\r\x02\x02\x06\x12\x03\
+    U\x02\x1b\n\x0c\n\x05\x04\r\x02\x02\x01\x12\x03U\x1c&\n\x0c\n\x05\x04\r\
+    \x02\x02\x03\x12\x03U)*\nI\n\x04\x04\r\x02\x03\x12\x03W\x02/\x1a<\x20Cha\
+    rge\x20point\x20transactions\x20data\x20using\x20transaction\x20Id\x20as\
+    \x20key\n\n\x0c\n\x05\x04\r\x02\x03\x06\x12\x03W\x02\x1d\n\x0c\n\x05\x04\
+    \r\x02\x03\x01\x12\x03W\x1e*\n\x0c\n\x05\x04\r\x02\x03\x03\x12\x03W-.\n3\
+    \n\x04\x04\r\x02\x04\x12\x03Y\x02.\x1a&\x20current\x20auth\x20data\x20us\
+    ing\x20IdTag\x20as\x20key\n\n\x0c\n\x05\x04\r\x02\x04\x06\x12\x03Y\x02\
+    \x1f\n\x0c\n\x05\x04\r\x02\x04\x01\x12\x03Y\x20)\n\x0c\n\x05\x04\r\x02\
+    \x04\x03\x12\x03Y,-\ny\n\x04\x04\r\x02\x05\x12\x03\\\x02&\x1al\x20used\
+    \x20to\x20inncrement\x20local\x20auth\x20list\x20version\n\x20ocpp\x20re\
+    quires\x20SendLocalAuthList\x20request\x20to\x20contain\x20new\x20versio\
+    n\n\n\x0c\n\x05\x04\r\x02\x05\x05\x12\x03\\\x02\x07\n\x0c\n\x05\x04\r\
+    \x02\x05\x01\x12\x03\\\x08!\n\x0c\n\x05\x04\r\x02\x05\x03\x12\x03\\$%\nP\
+    \n\x04\x04\r\x02\x06\x12\x03^\x02#\x1aC\x20used\x20to\x20inncrement\x20t\
+    ransacton\x20Ids\x20by\x20keep\x20the\x20last\x20transaction\x20Id\n\n\
+    \x0c\n\x05\x04\r\x02\x06\x05\x12\x03^\x02\x07\n\x0c\n\x05\x04\r\x02\x06\
+    \x01\x12\x03^\x08\x1e\n\x0c\n\x05\x04\r\x02\x06\x03\x12\x03^!\"\nV\n\x02\
+    \x04\x0e\x12\x04b\0h\x01\x1aJ\x20ConnectorInfo\x20contains\x20status\x20\
+    and\x20ongoing\x20transaction\x20ID\x20for\x20a\x20connector\n\n\n\n\x03\
+    \x04\x0e\x01\x12\x03b\x08\x15\n\x0b\n\x04\x04\x0e\x02\0\x12\x03c\x02\x0f\
+    \n\x0c\n\x05\x04\x0e\x02\0\x05\x12\x03c\x02\x07\n\x0c\n\x05\x04\x0e\x02\
+    \0\x01\x12\x03c\x08\n\n\x0c\n\x05\x04\x0e\x02\0\x03\x12\x03c\r\x0e\nI\n\
+    \x04\x04\x0e\x02\x01\x12\x03e\x02\x14\x1a<\x20status\x20of\x20the\x20con\
+    nector\x20e.g\x20AVAILABLE,\x20PREPARING,\x20CHARGING\n\n\x0c\n\x05\x04\
+    \x0e\x02\x01\x05\x12\x03e\x02\x08\n\x0c\n\x05\x04\x0e\x02\x01\x01\x12\
+    \x03e\t\x0f\n\x0c\n\x05\x04\x0e\x02\x01\x03\x12\x03e\x12\x13\n9\n\x04\
+    \x04\x0e\x02\x02\x12\x03g\x02\x20\x1a,\x20holds\x20the\x20current\x20Id\
+    \x20of\x20ongoing\x20transacton\n\n\x0c\n\x05\x04\x0e\x02\x02\x05\x12\
+    \x03g\x02\x07\n\x0c\n\x05\x04\x0e\x02\x02\x01\x12\x03g\x08\x1b\n\x0c\n\
+    \x05\x04\x0e\x02\x02\x03\x12\x03g\x1e\x1f\n?\n\x02\x04\x0f\x12\x04k\0t\
+    \x01\x1a3\x20TransactionInfo\x20contains\x20info\x20about\x20a\x20transa\
+    ction\n\n\n\n\x03\x04\x0f\x01\x12\x03k\x08\x17\n\x0b\n\x04\x04\x0f\x02\0\
+    \x12\x03l\x02\x0f\n\x0c\n\x05\x04\x0f\x02\0\x05\x12\x03l\x02\x07\n\x0c\n\
+    \x05\x04\x0f\x02\0\x01\x12\x03l\x08\n\n\x0c\n\x05\x04\x0f\x02\0\x03\x12\
+    \x03l\r\x0e\n\x0b\n\x04\x04\x0f\x02\x01\x12\x03m\x02\x14\n\x0c\n\x05\x04\
+    \x0f\x02\x01\x05\x12\x03m\x02\x08\n\x0c\n\x05\x04\x0f\x02\x01\x01\x12\
+    \x03m\t\x0f\n\x0c\n\x05\x04\x0f\x02\x01\x03\x12\x03m\x12\x13\n\x0b\n\x04\
+    \x04\x0f\x02\x02\x12\x03n\x02\x19\n\x0c\n\x05\x04\x0f\x02\x02\x05\x12\
+    \x03n\x02\x07\n\x0c\n\x05\x04\x0f\x02\x02\x01\x12\x03n\x08\x14\n\x0c\n\
+    \x05\x04\x0f\x02\x02\x03\x12\x03n\x17\x18\n\x0b\n\x04\x04\x0f\x02\x03\
+    \x12\x03o\x02\x18\n\x0c\n\x05\x04\x0f\x02\x03\x05\x12\x03o\x02\x08\n\x0c\
+    \n\x05\x04\x0f\x02\x03\x01\x12\x03o\t\x13\n\x0c\n\x05\x04\x0f\x02\x03\
+    \x03\x12\x03o\x16\x17\n\x0b\n\x04\x04\x0f\x02\x04\x12\x03p\x02\x16\n\x0c\
+    \n\x05\x04\x0f\x02\x04\x05\x12\x03p\x02\x08\n\x0c\n\x05\x04\x0f\x02\x04\
     \x01\x12\x03p\t\x11\n\x0c\n\x05\x04\x0f\x02\x04\x03\x12\x03p\x14\x15\n\
     \x0b\n\x04\x04\x0f\x02\x05\x12\x03q\x02\x18\n\x0c\n\x05\x04\x0f\x02\x05\
     \x05\x12\x03q\x02\x07\n\x0c\n\x05\x04\x0f\x02\x05\x01\x12\x03q\x08\x13\n\
@@ -3539,13 +3539,13 @@ pub fn file_descriptor() -> ::protobuf::reflect::FileDescriptor {
         messages.push(AuthorizeResponseData::generated_message_descriptor_data());
         messages.push(CheckAvailabilityRequestData::generated_message_descriptor_data());
         messages.push(CheckAvailabilityResponseData::generated_message_descriptor_data());
-        messages.push(StartChargeRequestData::generated_message_descriptor_data());
-        messages.push(StartChargeResponseData::generated_message_descriptor_data());
+        messages.push(StartTransactionRequestData::generated_message_descriptor_data());
+        messages.push(StartTransactionResponseData::generated_message_descriptor_data());
         messages.push(NotifyChargePointStateChangeData::generated_message_descriptor_data());
         messages.push(Response::generated_message_descriptor_data());
         messages.push(EVChargingStatusData::generated_message_descriptor_data());
-        messages.push(StopChargeRequestData::generated_message_descriptor_data());
-        messages.push(StopChargeResponseData::generated_message_descriptor_data());
+        messages.push(StopTransactionRequestData::generated_message_descriptor_data());
+        messages.push(StopTransactionResponseData::generated_message_descriptor_data());
         messages.push(ChargePointState::generated_message_descriptor_data());
         messages.push(ConnectorInfo::generated_message_descriptor_data());
         messages.push(TransactionInfo::generated_message_descriptor_data());

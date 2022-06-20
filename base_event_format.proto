@@ -46,10 +46,12 @@ enum EventType {
   AUTHORIZE_RESPONSE = 26;
   CHECK_AVAILABILITY_REQUEST = 27;
   CHECK_AVAILABILITY_RESPONSE = 28;
-  START_CHARGE_REQUEST = 29;
-  START_CHARGE_RESPONSE = 30;
+  START_TRANSACTION_REQUEST = 29;
+  START_TRANSACTION_RESPONSE = 30;
   EV_CHARGE_STATUS = 31;
   NOTIFY_CHARGE_POINT_STATE_CHANGE = 32;
+  STOP_TRANSACTION_REQUEST = 33;
+  STOP_TRANSACTION_RESPONSE = 34;
 }
 
 message Event {
@@ -81,11 +83,11 @@ message Event {
     gateway.AuthorizeResponseData authorize_response_data = 20;
     gateway.CheckAvailabilityRequestData check_availability_request_data = 21;
     gateway.CheckAvailabilityResponseData check_availability_response_data = 22;
-    gateway.StartChargeRequestData start_charge_request_data = 24;
-    gateway.StartChargeResponseData start_charge_response_data = 25;
+    gateway.StartTransactionRequestData start_transaction_request_data = 24;
+    gateway.StartTransactionResponseData start_transaction_response_data = 25;
     gateway.EVChargingStatusData ev_charge_status_data = 26;
-    gateway.StopChargeRequestData stop_charge_request_data = 27;
-    gateway.StopChargeResponseData stop_charge_response_data = 28;
+    gateway.StopTransactionRequestData stop_transaction_request_data = 27;
+    gateway.StopTransactionResponseData stop_transaction_response_data = 28;
     gateway.NotifyChargePointStateChangeData
         notify_charge_point_state_change_data = 29;
   }
