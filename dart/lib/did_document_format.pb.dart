@@ -179,25 +179,27 @@ class Signature extends $pb.GeneratedMessage {
 
 class Metadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Metadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'document'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'plugType', protoName: 'plugType')
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'power')
     ..e<Status>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: Status.AVAILABLE, valueOf: Status.valueOf, enumValues: Status.values)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chargePointClientId', protoName: 'chargePointClientId')
     ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'connectorsCount', $pb.PbFieldType.O3, protoName: 'connectorsCount')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'plugType', protoName: 'plugType')
     ..hasRequiredFields = false
   ;
 
   Metadata._() : super();
   factory Metadata({
-    $core.String? plugType,
+    $core.String? name,
     $core.String? power,
     Status? status,
     $core.String? chargePointClientId,
     $core.int? connectorsCount,
+    $core.String? plugType,
   }) {
     final _result = create();
-    if (plugType != null) {
-      _result.plugType = plugType;
+    if (name != null) {
+      _result.name = name;
     }
     if (power != null) {
       _result.power = power;
@@ -210,6 +212,9 @@ class Metadata extends $pb.GeneratedMessage {
     }
     if (connectorsCount != null) {
       _result.connectorsCount = connectorsCount;
+    }
+    if (plugType != null) {
+      _result.plugType = plugType;
     }
     return _result;
   }
@@ -235,13 +240,13 @@ class Metadata extends $pb.GeneratedMessage {
   static Metadata? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get plugType => $_getSZ(0);
+  $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
-  set plugType($core.String v) { $_setString(0, v); }
+  set name($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasPlugType() => $_has(0);
+  $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPlugType() => clearField(1);
+  void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get power => $_getSZ(1);
@@ -278,6 +283,15 @@ class Metadata extends $pb.GeneratedMessage {
   $core.bool hasConnectorsCount() => $_has(4);
   @$pb.TagNumber(5)
   void clearConnectorsCount() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get plugType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set plugType($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPlugType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPlugType() => clearField(6);
 }
 
 enum Service_ServiceEndpoint {
