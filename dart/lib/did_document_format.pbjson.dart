@@ -71,16 +71,17 @@ final $typed_data.Uint8List signatureDescriptor = $convert.base64Decode('CglTaWd
 const Metadata$json = const {
   '1': 'Metadata',
   '2': const [
-    const {'1': 'plugType', '3': 1, '4': 1, '5': 9, '10': 'plugType'},
+    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'power', '3': 2, '4': 1, '5': 9, '10': 'power'},
     const {'1': 'status', '3': 3, '4': 1, '5': 14, '6': '.document.Status', '10': 'status'},
     const {'1': 'chargePointClientId', '3': 4, '4': 1, '5': 9, '10': 'chargePointClientId'},
     const {'1': 'connectorsCount', '3': 5, '4': 1, '5': 5, '10': 'connectorsCount'},
+    const {'1': 'plugType', '3': 6, '4': 1, '5': 9, '10': 'plugType'},
   ],
 };
 
 /// Descriptor for `Metadata`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List metadataDescriptor = $convert.base64Decode('CghNZXRhZGF0YRIaCghwbHVnVHlwZRgBIAEoCVIIcGx1Z1R5cGUSFAoFcG93ZXIYAiABKAlSBXBvd2VyEigKBnN0YXR1cxgDIAEoDjIQLmRvY3VtZW50LlN0YXR1c1IGc3RhdHVzEjAKE2NoYXJnZVBvaW50Q2xpZW50SWQYBCABKAlSE2NoYXJnZVBvaW50Q2xpZW50SWQSKAoPY29ubmVjdG9yc0NvdW50GAUgASgFUg9jb25uZWN0b3JzQ291bnQ=');
+final $typed_data.Uint8List metadataDescriptor = $convert.base64Decode('CghNZXRhZGF0YRISCgRuYW1lGAEgASgJUgRuYW1lEhQKBXBvd2VyGAIgASgJUgVwb3dlchIoCgZzdGF0dXMYAyABKA4yEC5kb2N1bWVudC5TdGF0dXNSBnN0YXR1cxIwChNjaGFyZ2VQb2ludENsaWVudElkGAQgASgJUhNjaGFyZ2VQb2ludENsaWVudElkEigKD2Nvbm5lY3RvcnNDb3VudBgFIAEoBVIPY29ubmVjdG9yc0NvdW50EhoKCHBsdWdUeXBlGAYgASgJUghwbHVnVHlwZQ==');
 @$core.Deprecated('Use serviceDescriptor instead')
 const Service$json = const {
   '1': 'Service',
