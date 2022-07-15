@@ -3,7 +3,7 @@
 //  source: charge_point_gateway_format.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
@@ -718,6 +718,8 @@ class EVChargingStatusData extends $pb.GeneratedMessage {
     ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentOffered', $pb.PbFieldType.OF)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'batteryUnit')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentUnit')
+    ..a<$core.double>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'voltageOffered', $pb.PbFieldType.OF)
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'voltageUnit')
     ..hasRequiredFields = false
   ;
 
@@ -728,6 +730,8 @@ class EVChargingStatusData extends $pb.GeneratedMessage {
     $core.double? currentOffered,
     $core.String? batteryUnit,
     $core.String? currentUnit,
+    $core.double? voltageOffered,
+    $core.String? voltageUnit,
   }) {
     final _result = create();
     if (initialBatteryLevel != null) {
@@ -744,6 +748,12 @@ class EVChargingStatusData extends $pb.GeneratedMessage {
     }
     if (currentUnit != null) {
       _result.currentUnit = currentUnit;
+    }
+    if (voltageOffered != null) {
+      _result.voltageOffered = voltageOffered;
+    }
+    if (voltageUnit != null) {
+      _result.voltageUnit = voltageUnit;
     }
     return _result;
   }
@@ -812,6 +822,24 @@ class EVChargingStatusData extends $pb.GeneratedMessage {
   $core.bool hasCurrentUnit() => $_has(4);
   @$pb.TagNumber(5)
   void clearCurrentUnit() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get voltageOffered => $_getN(5);
+  @$pb.TagNumber(6)
+  set voltageOffered($core.double v) { $_setFloat(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasVoltageOffered() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVoltageOffered() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get voltageUnit => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set voltageUnit($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasVoltageUnit() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVoltageUnit() => clearField(7);
 }
 
 class StopTransactionRequestData extends $pb.GeneratedMessage {

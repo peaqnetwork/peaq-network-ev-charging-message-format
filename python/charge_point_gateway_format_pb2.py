@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!charge_point_gateway_format.proto\x12\x07gateway\"\x84\x02\n\x1b\x42ootNotificationRequestData\x12 \n\x18\x63harge_box_serial_number\x18\x01 \x01(\t\x12\x1a\n\x12\x63harge_point_model\x18\x02 \x01(\t\x12\"\n\x1a\x43harge_point_serial_number\x18\x03 \x01(\t\x12\x1b\n\x13\x43harge_point_vendor\x18\x04 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x05 \x01(\t\x12\r\n\x05iccid\x18\x06 \x01(\t\x12\x0c\n\x04imsi\x18\x07 \x01(\t\x12\x1b\n\x13meter_serial_number\x18\x08 \x01(\t\x12\x12\n\nmeter_type\x18\t \x01(\t\"@\n\x07LogData\x12\x14\n\x0c\x63urrent_time\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"S\n\x14\x41uthorizeRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x1b\n\x13\x63onsumer_public_key\x18\x02 \x01(\t\"U\n\x15\x41uthorizeResponseData\x12\x1b\n\x13\x63onsumer_public_key\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"T\n\x1c\x43heckAvailabilityRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x02 \x01(\x05\"@\n\x1d\x43heckAvailabilityResponseData\x12\x1f\n\x04resp\x18\x01 \x01(\x0b\x32\x11.gateway.Response\"p\n\x1bStartTransactionRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x02 \x01(\x05\x12\x1b\n\x13\x63onsumer_public_key\x18\x03 \x01(\t\"\\\n\x1cStartTransactionResponseData\x12\x1b\n\x13\x63onsumer_public_key\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"B\n NotifyChargePointStateChangeData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\"*\n\x08Response\x12\r\n\x05\x65rror\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x91\x01\n\x14\x45VChargingStatusData\x12\x1d\n\x15initial_battery_level\x18\x01 \x01(\x02\x12\x15\n\rbattery_level\x18\x02 \x01(\x02\x12\x17\n\x0f\x63urrent_offered\x18\x03 \x01(\x02\x12\x14\n\x0c\x62\x61ttery_unit\x18\x04 \x01(\t\x12\x14\n\x0c\x63urrent_unit\x18\x05 \x01(\t\"o\n\x1aStopTransactionRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x02 \x01(\x05\x12\x1b\n\x13\x63onsumer_public_key\x18\x03 \x01(\t\"\x8f\x01\n\x1bStopTransactionResponseData\x12\x1b\n\x13\x63onsumer_public_key\x18\x01 \x01(\t\x12\x32\n\x10transaction_info\x18\x02 \x01(\x0b\x32\x18.gateway.TransactionInfo\x12\x1f\n\x04resp\x18\x03 \x01(\x0b\x32\x11.gateway.Response\"\x95\x04\n\x10\x43hargePointState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12=\n\nconnectors\x18\x03 \x03(\x0b\x32).gateway.ChargePointState.ConnectorsEntry\x12\x41\n\x0ctransactions\x18\x04 \x03(\x0b\x32+.gateway.ChargePointState.TransactionsEntry\x12:\n\tauth_list\x18\x05 \x03(\x0b\x32\'.gateway.ChargePointState.AuthListEntry\x12!\n\x19\x63urrent_auth_list_version\x18\x06 \x01(\x05\x12\x1e\n\x16\x63urrent_transaction_id\x18\x07 \x01(\x05\x1aI\n\x0f\x43onnectorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.gateway.ConnectorInfo:\x02\x38\x01\x1aM\n\x11TransactionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.gateway.TransactionInfo:\x02\x38\x01\x1aJ\n\rAuthListEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12(\n\x05value\x18\x02 \x01(\x0b\x32\x19.gateway.ConsumerAuthData:\x02\x38\x01\"H\n\rConnectorInfo\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x1b\n\x13\x63urrent_transaction\x18\x03 \x01(\x05\"\xc2\x01\n\x0fTransactionInfo\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06id_tag\x18\x02 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x03 \x01(\x05\x12\x12\n\nstart_time\x18\x04 \x01(\t\x12\x10\n\x08\x65nd_time\x18\x05 \x01(\t\x12\x13\n\x0bstart_meter\x18\x06 \x01(\x05\x12\x11\n\tend_meter\x18\x07 \x01(\x05\x12/\n\x08progress\x18\x08 \x01(\x0b\x32\x1d.gateway.EVChargingStatusData\"r\n\x10\x43onsumerAuthData\x12\x12\n\npublic_key\x18\x01 \x01(\t\x12\x16\n\x0etransaction_id\x18\x02 \x01(\x05\x12\x32\n\tauth_data\x18\x03 \x01(\x0b\x32\x1f.gateway.LocalAuthorizationData\"N\n\x16LocalAuthorizationData\x12\r\n\x05idTag\x18\x01 \x01(\t\x12%\n\tidTagInfo\x18\x02 \x01(\x0b\x32\x12.gateway.IdTagInfo\"D\n\tIdTagInfo\x12\x12\n\nexpiryDate\x18\x01 \x01(\t\x12\x13\n\x0bparentIdTag\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\tBWZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gatewayb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!charge_point_gateway_format.proto\x12\x07gateway\"\x84\x02\n\x1b\x42ootNotificationRequestData\x12 \n\x18\x63harge_box_serial_number\x18\x01 \x01(\t\x12\x1a\n\x12\x63harge_point_model\x18\x02 \x01(\t\x12\"\n\x1a\x43harge_point_serial_number\x18\x03 \x01(\t\x12\x1b\n\x13\x43harge_point_vendor\x18\x04 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x05 \x01(\t\x12\r\n\x05iccid\x18\x06 \x01(\t\x12\x0c\n\x04imsi\x18\x07 \x01(\t\x12\x1b\n\x13meter_serial_number\x18\x08 \x01(\t\x12\x12\n\nmeter_type\x18\t \x01(\t\"@\n\x07LogData\x12\x14\n\x0c\x63urrent_time\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"S\n\x14\x41uthorizeRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x1b\n\x13\x63onsumer_public_key\x18\x02 \x01(\t\"U\n\x15\x41uthorizeResponseData\x12\x1b\n\x13\x63onsumer_public_key\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"T\n\x1c\x43heckAvailabilityRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x02 \x01(\x05\"@\n\x1d\x43heckAvailabilityResponseData\x12\x1f\n\x04resp\x18\x01 \x01(\x0b\x32\x11.gateway.Response\"p\n\x1bStartTransactionRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x02 \x01(\x05\x12\x1b\n\x13\x63onsumer_public_key\x18\x03 \x01(\t\"\\\n\x1cStartTransactionResponseData\x12\x1b\n\x13\x63onsumer_public_key\x18\x01 \x01(\t\x12\x1f\n\x04resp\x18\x02 \x01(\x0b\x32\x11.gateway.Response\"B\n NotifyChargePointStateChangeData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\"*\n\x08Response\x12\r\n\x05\x65rror\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xc0\x01\n\x14\x45VChargingStatusData\x12\x1d\n\x15initial_battery_level\x18\x01 \x01(\x02\x12\x15\n\rbattery_level\x18\x02 \x01(\x02\x12\x17\n\x0f\x63urrent_offered\x18\x03 \x01(\x02\x12\x14\n\x0c\x62\x61ttery_unit\x18\x04 \x01(\t\x12\x14\n\x0c\x63urrent_unit\x18\x05 \x01(\t\x12\x17\n\x0fvoltage_offered\x18\x06 \x01(\x02\x12\x14\n\x0cvoltage_unit\x18\x07 \x01(\t\"o\n\x1aStopTransactionRequestData\x12\x1e\n\x16\x63harge_point_client_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x02 \x01(\x05\x12\x1b\n\x13\x63onsumer_public_key\x18\x03 \x01(\t\"\x8f\x01\n\x1bStopTransactionResponseData\x12\x1b\n\x13\x63onsumer_public_key\x18\x01 \x01(\t\x12\x32\n\x10transaction_info\x18\x02 \x01(\x0b\x32\x18.gateway.TransactionInfo\x12\x1f\n\x04resp\x18\x03 \x01(\x0b\x32\x11.gateway.Response\"\x95\x04\n\x10\x43hargePointState\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12=\n\nconnectors\x18\x03 \x03(\x0b\x32).gateway.ChargePointState.ConnectorsEntry\x12\x41\n\x0ctransactions\x18\x04 \x03(\x0b\x32+.gateway.ChargePointState.TransactionsEntry\x12:\n\tauth_list\x18\x05 \x03(\x0b\x32\'.gateway.ChargePointState.AuthListEntry\x12!\n\x19\x63urrent_auth_list_version\x18\x06 \x01(\x05\x12\x1e\n\x16\x63urrent_transaction_id\x18\x07 \x01(\x05\x1aI\n\x0f\x43onnectorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.gateway.ConnectorInfo:\x02\x38\x01\x1aM\n\x11TransactionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.gateway.TransactionInfo:\x02\x38\x01\x1aJ\n\rAuthListEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12(\n\x05value\x18\x02 \x01(\x0b\x32\x19.gateway.ConsumerAuthData:\x02\x38\x01\"H\n\rConnectorInfo\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x1b\n\x13\x63urrent_transaction\x18\x03 \x01(\x05\"\xc2\x01\n\x0fTransactionInfo\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06id_tag\x18\x02 \x01(\t\x12\x14\n\x0c\x63onnector_id\x18\x03 \x01(\x05\x12\x12\n\nstart_time\x18\x04 \x01(\t\x12\x10\n\x08\x65nd_time\x18\x05 \x01(\t\x12\x13\n\x0bstart_meter\x18\x06 \x01(\x05\x12\x11\n\tend_meter\x18\x07 \x01(\x05\x12/\n\x08progress\x18\x08 \x01(\x0b\x32\x1d.gateway.EVChargingStatusData\"r\n\x10\x43onsumerAuthData\x12\x12\n\npublic_key\x18\x01 \x01(\t\x12\x16\n\x0etransaction_id\x18\x02 \x01(\x05\x12\x32\n\tauth_data\x18\x03 \x01(\x0b\x32\x1f.gateway.LocalAuthorizationData\"N\n\x16LocalAuthorizationData\x12\r\n\x05idTag\x18\x01 \x01(\t\x12%\n\tidTagInfo\x18\x02 \x01(\x0b\x32\x12.gateway.IdTagInfo\"D\n\tIdTagInfo\x12\x12\n\nexpiryDate\x18\x01 \x01(\t\x12\x13\n\x0bparentIdTag\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\tBWZUgithub.com/peaqnetwork/peaq-network-ev-charging-message-format/golang/gateway;gatewayb\x06proto3')
 
 
 
@@ -228,27 +228,27 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RESPONSE._serialized_start=975
   _RESPONSE._serialized_end=1017
   _EVCHARGINGSTATUSDATA._serialized_start=1020
-  _EVCHARGINGSTATUSDATA._serialized_end=1165
-  _STOPTRANSACTIONREQUESTDATA._serialized_start=1167
-  _STOPTRANSACTIONREQUESTDATA._serialized_end=1278
-  _STOPTRANSACTIONRESPONSEDATA._serialized_start=1281
-  _STOPTRANSACTIONRESPONSEDATA._serialized_end=1424
-  _CHARGEPOINTSTATE._serialized_start=1427
-  _CHARGEPOINTSTATE._serialized_end=1960
-  _CHARGEPOINTSTATE_CONNECTORSENTRY._serialized_start=1732
-  _CHARGEPOINTSTATE_CONNECTORSENTRY._serialized_end=1805
-  _CHARGEPOINTSTATE_TRANSACTIONSENTRY._serialized_start=1807
-  _CHARGEPOINTSTATE_TRANSACTIONSENTRY._serialized_end=1884
-  _CHARGEPOINTSTATE_AUTHLISTENTRY._serialized_start=1886
-  _CHARGEPOINTSTATE_AUTHLISTENTRY._serialized_end=1960
-  _CONNECTORINFO._serialized_start=1962
-  _CONNECTORINFO._serialized_end=2034
-  _TRANSACTIONINFO._serialized_start=2037
-  _TRANSACTIONINFO._serialized_end=2231
-  _CONSUMERAUTHDATA._serialized_start=2233
-  _CONSUMERAUTHDATA._serialized_end=2347
-  _LOCALAUTHORIZATIONDATA._serialized_start=2349
-  _LOCALAUTHORIZATIONDATA._serialized_end=2427
-  _IDTAGINFO._serialized_start=2429
-  _IDTAGINFO._serialized_end=2497
+  _EVCHARGINGSTATUSDATA._serialized_end=1212
+  _STOPTRANSACTIONREQUESTDATA._serialized_start=1214
+  _STOPTRANSACTIONREQUESTDATA._serialized_end=1325
+  _STOPTRANSACTIONRESPONSEDATA._serialized_start=1328
+  _STOPTRANSACTIONRESPONSEDATA._serialized_end=1471
+  _CHARGEPOINTSTATE._serialized_start=1474
+  _CHARGEPOINTSTATE._serialized_end=2007
+  _CHARGEPOINTSTATE_CONNECTORSENTRY._serialized_start=1779
+  _CHARGEPOINTSTATE_CONNECTORSENTRY._serialized_end=1852
+  _CHARGEPOINTSTATE_TRANSACTIONSENTRY._serialized_start=1854
+  _CHARGEPOINTSTATE_TRANSACTIONSENTRY._serialized_end=1931
+  _CHARGEPOINTSTATE_AUTHLISTENTRY._serialized_start=1933
+  _CHARGEPOINTSTATE_AUTHLISTENTRY._serialized_end=2007
+  _CONNECTORINFO._serialized_start=2009
+  _CONNECTORINFO._serialized_end=2081
+  _TRANSACTIONINFO._serialized_start=2084
+  _TRANSACTIONINFO._serialized_end=2278
+  _CONSUMERAUTHDATA._serialized_start=2280
+  _CONSUMERAUTHDATA._serialized_end=2394
+  _LOCALAUTHORIZATIONDATA._serialized_start=2396
+  _LOCALAUTHORIZATIONDATA._serialized_end=2474
+  _IDTAGINFO._serialized_start=2476
+  _IDTAGINFO._serialized_end=2544
 # @@protoc_insertion_point(module_scope)

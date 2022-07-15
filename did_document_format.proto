@@ -39,6 +39,7 @@ message Metadata {
   string chargePointClientId = 4;
   int32 connectorsCount = 5;
   string plugType = 6;
+  float pricePerKWHR = 7;
 }
 
 message Service {

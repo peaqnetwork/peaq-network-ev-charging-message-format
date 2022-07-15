@@ -3,7 +3,7 @@
 //  source: did_document_format.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields,deprecated_member_use_from_same_package
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
@@ -77,11 +77,12 @@ const Metadata$json = const {
     const {'1': 'chargePointClientId', '3': 4, '4': 1, '5': 9, '10': 'chargePointClientId'},
     const {'1': 'connectorsCount', '3': 5, '4': 1, '5': 5, '10': 'connectorsCount'},
     const {'1': 'plugType', '3': 6, '4': 1, '5': 9, '10': 'plugType'},
+    const {'1': 'pricePerKWHR', '3': 7, '4': 1, '5': 2, '10': 'pricePerKWHR'},
   ],
 };
 
 /// Descriptor for `Metadata`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List metadataDescriptor = $convert.base64Decode('CghNZXRhZGF0YRISCgRuYW1lGAEgASgJUgRuYW1lEhQKBXBvd2VyGAIgASgJUgVwb3dlchIoCgZzdGF0dXMYAyABKA4yEC5kb2N1bWVudC5TdGF0dXNSBnN0YXR1cxIwChNjaGFyZ2VQb2ludENsaWVudElkGAQgASgJUhNjaGFyZ2VQb2ludENsaWVudElkEigKD2Nvbm5lY3RvcnNDb3VudBgFIAEoBVIPY29ubmVjdG9yc0NvdW50EhoKCHBsdWdUeXBlGAYgASgJUghwbHVnVHlwZQ==');
+final $typed_data.Uint8List metadataDescriptor = $convert.base64Decode('CghNZXRhZGF0YRISCgRuYW1lGAEgASgJUgRuYW1lEhQKBXBvd2VyGAIgASgJUgVwb3dlchIoCgZzdGF0dXMYAyABKA4yEC5kb2N1bWVudC5TdGF0dXNSBnN0YXR1cxIwChNjaGFyZ2VQb2ludENsaWVudElkGAQgASgJUhNjaGFyZ2VQb2ludENsaWVudElkEigKD2Nvbm5lY3RvcnNDb3VudBgFIAEoBVIPY29ubmVjdG9yc0NvdW50EhoKCHBsdWdUeXBlGAYgASgJUghwbHVnVHlwZRIiCgxwcmljZVBlcktXSFIYByABKAJSDHByaWNlUGVyS1dIUg==');
 @$core.Deprecated('Use serviceDescriptor instead')
 const Service$json = const {
   '1': 'Service',

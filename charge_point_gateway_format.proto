@@ -64,6 +64,10 @@ message EVChargingStatusData {
   string battery_unit = 4;
   // the current offered value unit - A
   string current_unit = 5;
+  // the electrical voltage offered to EV
+  float voltage_offered = 6;
+  // the voltage offered value unit - V
+  string voltage_unit = 7;
 }
 
 message StopTransactionRequestData {
