@@ -3,7 +3,7 @@
 //  source: did_document_format.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
@@ -185,6 +185,7 @@ class Metadata extends $pb.GeneratedMessage {
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chargePointClientId', protoName: 'chargePointClientId')
     ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'connectorsCount', $pb.PbFieldType.O3, protoName: 'connectorsCount')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'plugType', protoName: 'plugType')
+    ..a<$core.double>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pricePerKWHR', $pb.PbFieldType.OF, protoName: 'pricePerKWHR')
     ..hasRequiredFields = false
   ;
 
@@ -196,6 +197,7 @@ class Metadata extends $pb.GeneratedMessage {
     $core.String? chargePointClientId,
     $core.int? connectorsCount,
     $core.String? plugType,
+    $core.double? pricePerKWHR,
   }) {
     final _result = create();
     if (name != null) {
@@ -215,6 +217,9 @@ class Metadata extends $pb.GeneratedMessage {
     }
     if (plugType != null) {
       _result.plugType = plugType;
+    }
+    if (pricePerKWHR != null) {
+      _result.pricePerKWHR = pricePerKWHR;
     }
     return _result;
   }
@@ -292,6 +297,15 @@ class Metadata extends $pb.GeneratedMessage {
   $core.bool hasPlugType() => $_has(5);
   @$pb.TagNumber(6)
   void clearPlugType() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get pricePerKWHR => $_getN(6);
+  @$pb.TagNumber(7)
+  set pricePerKWHR($core.double v) { $_setFloat(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasPricePerKWHR() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPricePerKWHR() => clearField(7);
 }
 
 enum Service_ServiceEndpoint {

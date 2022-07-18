@@ -3,7 +3,7 @@
 //  source: charge_point_gateway_format.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
@@ -713,37 +713,32 @@ class Response extends $pb.GeneratedMessage {
 
 class EVChargingStatusData extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EVChargingStatusData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'gateway'), createEmptyInstance: create)
-    ..a<$core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'initialBatteryLevel', $pb.PbFieldType.OF)
-    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'batteryLevel', $pb.PbFieldType.OF)
-    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentOffered', $pb.PbFieldType.OF)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'batteryUnit')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentUnit')
+    ..a<$core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentOffered', $pb.PbFieldType.OF)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentUnit')
+    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'voltageOffered', $pb.PbFieldType.OF)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'voltageUnit')
     ..hasRequiredFields = false
   ;
 
   EVChargingStatusData._() : super();
   factory EVChargingStatusData({
-    $core.double? initialBatteryLevel,
-    $core.double? batteryLevel,
     $core.double? currentOffered,
-    $core.String? batteryUnit,
     $core.String? currentUnit,
+    $core.double? voltageOffered,
+    $core.String? voltageUnit,
   }) {
     final _result = create();
-    if (initialBatteryLevel != null) {
-      _result.initialBatteryLevel = initialBatteryLevel;
-    }
-    if (batteryLevel != null) {
-      _result.batteryLevel = batteryLevel;
-    }
     if (currentOffered != null) {
       _result.currentOffered = currentOffered;
     }
-    if (batteryUnit != null) {
-      _result.batteryUnit = batteryUnit;
-    }
     if (currentUnit != null) {
       _result.currentUnit = currentUnit;
+    }
+    if (voltageOffered != null) {
+      _result.voltageOffered = voltageOffered;
+    }
+    if (voltageUnit != null) {
+      _result.voltageUnit = voltageUnit;
     }
     return _result;
   }
@@ -769,49 +764,40 @@ class EVChargingStatusData extends $pb.GeneratedMessage {
   static EVChargingStatusData? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.double get initialBatteryLevel => $_getN(0);
+  $core.double get currentOffered => $_getN(0);
   @$pb.TagNumber(1)
-  set initialBatteryLevel($core.double v) { $_setFloat(0, v); }
+  set currentOffered($core.double v) { $_setFloat(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasInitialBatteryLevel() => $_has(0);
+  $core.bool hasCurrentOffered() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInitialBatteryLevel() => clearField(1);
+  void clearCurrentOffered() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.double get batteryLevel => $_getN(1);
+  $core.String get currentUnit => $_getSZ(1);
   @$pb.TagNumber(2)
-  set batteryLevel($core.double v) { $_setFloat(1, v); }
+  set currentUnit($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasBatteryLevel() => $_has(1);
+  $core.bool hasCurrentUnit() => $_has(1);
   @$pb.TagNumber(2)
-  void clearBatteryLevel() => clearField(2);
+  void clearCurrentUnit() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.double get currentOffered => $_getN(2);
+  $core.double get voltageOffered => $_getN(2);
   @$pb.TagNumber(3)
-  set currentOffered($core.double v) { $_setFloat(2, v); }
+  set voltageOffered($core.double v) { $_setFloat(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCurrentOffered() => $_has(2);
+  $core.bool hasVoltageOffered() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCurrentOffered() => clearField(3);
+  void clearVoltageOffered() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get batteryUnit => $_getSZ(3);
+  $core.String get voltageUnit => $_getSZ(3);
   @$pb.TagNumber(4)
-  set batteryUnit($core.String v) { $_setString(3, v); }
+  set voltageUnit($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasBatteryUnit() => $_has(3);
+  $core.bool hasVoltageUnit() => $_has(3);
   @$pb.TagNumber(4)
-  void clearBatteryUnit() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get currentUnit => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set currentUnit($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasCurrentUnit() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearCurrentUnit() => clearField(5);
+  void clearVoltageUnit() => clearField(4);
 }
 
 class StopTransactionRequestData extends $pb.GeneratedMessage {

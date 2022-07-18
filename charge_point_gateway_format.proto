@@ -54,16 +54,14 @@ message Response {
 
 // EVChargingStatusData contains status of the current ongoing charging
 message EVChargingStatusData {
-  // initial EV battery level in percentage before charging
-  float initial_battery_level = 1;
-  // current EV battery level in percentage before charging
-  float battery_level = 2;
   // the electrical current offered to EV
-  float current_offered = 3;
-  // the initial_battery_level and battery_level value unit - Percent
-  string battery_unit = 4;
+  float current_offered = 1;
   // the current offered value unit - A
-  string current_unit = 5;
+  string current_unit = 2;
+  // the electrical voltage offered to EV
+  float voltage_offered = 3;
+  // the voltage offered value unit - V
+  string voltage_unit = 4;
 }
 
 message StopTransactionRequestData {
