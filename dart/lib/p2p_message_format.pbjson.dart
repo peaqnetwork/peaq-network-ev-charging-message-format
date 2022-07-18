@@ -36,12 +36,11 @@ const ServiceRequestedAckData$json = const {
   '1': 'ServiceRequestedAckData',
   '2': const [
     const {'1': 'resp', '3': 1, '4': 1, '5': 11, '6': '.p2p.Response', '10': 'resp'},
-    const {'1': 'wait_time', '3': 2, '4': 1, '5': 3, '10': 'waitTime'},
   ],
 };
 
 /// Descriptor for `ServiceRequestedAckData`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List serviceRequestedAckDataDescriptor = $convert.base64Decode('ChdTZXJ2aWNlUmVxdWVzdGVkQWNrRGF0YRIhCgRyZXNwGAEgASgLMg0ucDJwLlJlc3BvbnNlUgRyZXNwEhsKCXdhaXRfdGltZRgCIAEoA1IId2FpdFRpbWU=');
+final $typed_data.Uint8List serviceRequestedAckDataDescriptor = $convert.base64Decode('ChdTZXJ2aWNlUmVxdWVzdGVkQWNrRGF0YRIhCgRyZXNwGAEgASgLMg0ucDJwLlJlc3BvbnNlUgRyZXNw');
 @$core.Deprecated('Use serviceRequestedDataDescriptor instead')
 const ServiceRequestedData$json = const {
   '1': 'ServiceRequestedData',
