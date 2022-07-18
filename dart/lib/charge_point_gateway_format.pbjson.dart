@@ -128,18 +128,15 @@ final $typed_data.Uint8List responseDescriptor = $convert.base64Decode('CghSZXNw
 const EVChargingStatusData$json = const {
   '1': 'EVChargingStatusData',
   '2': const [
-    const {'1': 'initial_battery_level', '3': 1, '4': 1, '5': 2, '10': 'initialBatteryLevel'},
-    const {'1': 'battery_level', '3': 2, '4': 1, '5': 2, '10': 'batteryLevel'},
-    const {'1': 'current_offered', '3': 3, '4': 1, '5': 2, '10': 'currentOffered'},
-    const {'1': 'battery_unit', '3': 4, '4': 1, '5': 9, '10': 'batteryUnit'},
-    const {'1': 'current_unit', '3': 5, '4': 1, '5': 9, '10': 'currentUnit'},
-    const {'1': 'voltage_offered', '3': 6, '4': 1, '5': 2, '10': 'voltageOffered'},
-    const {'1': 'voltage_unit', '3': 7, '4': 1, '5': 9, '10': 'voltageUnit'},
+    const {'1': 'current_offered', '3': 1, '4': 1, '5': 2, '10': 'currentOffered'},
+    const {'1': 'current_unit', '3': 2, '4': 1, '5': 9, '10': 'currentUnit'},
+    const {'1': 'voltage_offered', '3': 3, '4': 1, '5': 2, '10': 'voltageOffered'},
+    const {'1': 'voltage_unit', '3': 4, '4': 1, '5': 9, '10': 'voltageUnit'},
   ],
 };
 
 /// Descriptor for `EVChargingStatusData`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List eVChargingStatusDataDescriptor = $convert.base64Decode('ChRFVkNoYXJnaW5nU3RhdHVzRGF0YRIyChVpbml0aWFsX2JhdHRlcnlfbGV2ZWwYASABKAJSE2luaXRpYWxCYXR0ZXJ5TGV2ZWwSIwoNYmF0dGVyeV9sZXZlbBgCIAEoAlIMYmF0dGVyeUxldmVsEicKD2N1cnJlbnRfb2ZmZXJlZBgDIAEoAlIOY3VycmVudE9mZmVyZWQSIQoMYmF0dGVyeV91bml0GAQgASgJUgtiYXR0ZXJ5VW5pdBIhCgxjdXJyZW50X3VuaXQYBSABKAlSC2N1cnJlbnRVbml0EicKD3ZvbHRhZ2Vfb2ZmZXJlZBgGIAEoAlIOdm9sdGFnZU9mZmVyZWQSIQoMdm9sdGFnZV91bml0GAcgASgJUgt2b2x0YWdlVW5pdA==');
+final $typed_data.Uint8List eVChargingStatusDataDescriptor = $convert.base64Decode('ChRFVkNoYXJnaW5nU3RhdHVzRGF0YRInCg9jdXJyZW50X29mZmVyZWQYASABKAJSDmN1cnJlbnRPZmZlcmVkEiEKDGN1cnJlbnRfdW5pdBgCIAEoCVILY3VycmVudFVuaXQSJwoPdm9sdGFnZV9vZmZlcmVkGAMgASgCUg52b2x0YWdlT2ZmZXJlZBIhCgx2b2x0YWdlX3VuaXQYBCABKAlSC3ZvbHRhZ2VVbml0');
 @$core.Deprecated('Use stopTransactionRequestDataDescriptor instead')
 const StopTransactionRequestData$json = const {
   '1': 'StopTransactionRequestData',
