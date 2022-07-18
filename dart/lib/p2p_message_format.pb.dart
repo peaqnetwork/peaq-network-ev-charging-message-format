@@ -155,21 +155,16 @@ class ServiceAckData extends $pb.GeneratedMessage {
 class ServiceRequestedAckData extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ServiceRequestedAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
     ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'waitTime')
     ..hasRequiredFields = false
   ;
 
   ServiceRequestedAckData._() : super();
   factory ServiceRequestedAckData({
     Response? resp,
-    $fixnum.Int64? waitTime,
   }) {
     final _result = create();
     if (resp != null) {
       _result.resp = resp;
-    }
-    if (waitTime != null) {
-      _result.waitTime = waitTime;
     }
     return _result;
   }
@@ -204,15 +199,6 @@ class ServiceRequestedAckData extends $pb.GeneratedMessage {
   void clearResp() => clearField(1);
   @$pb.TagNumber(1)
   Response ensureResp() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $fixnum.Int64 get waitTime => $_getI64(1);
-  @$pb.TagNumber(2)
-  set waitTime($fixnum.Int64 v) { $_setInt64(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasWaitTime() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearWaitTime() => clearField(2);
 }
 
 class ServiceRequestedData extends $pb.GeneratedMessage {
