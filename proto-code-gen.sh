@@ -13,3 +13,7 @@ mv rust/src/mod.rs rust/src/lib.rs
 # Dart code generator
 protoc -I=./ --dart_out=./dart/lib $(find ./ -iname "*.proto")
 protoc -I=./ --python_out python $(find ./ -iname "*.proto")
+
+# Javascript code generator
+# protoc -I=./ --js_out=import_style=commonjs,binary:javascript $(find ./ -iname "*.proto") # to generate for all proto files
+protoc --js_out=import_style=commonjs,binary:javascript did_document_format.proto # to generate for a did_document_format proto file
