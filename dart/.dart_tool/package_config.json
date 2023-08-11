@@ -3,19 +3,19 @@
   "packages": [
     {
       "name": "collection",
-      "rootUri": "file:///Users/iredia/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0",
+      "rootUri": "file:///home/iredia/.pub-cache/hosted/pub.dev/collection-1.16.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "fixnum",
-      "rootUri": "file:///Users/iredia/.pub-cache/hosted/pub.dartlang.org/fixnum-1.0.0",
+      "rootUri": "file:///home/iredia/.pub-cache/hosted/pub.dev/fixnum-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "protobuf",
-      "rootUri": "file:///Users/iredia/.pub-cache/hosted/pub.dartlang.org/protobuf-2.0.1",
+      "rootUri": "file:///home/iredia/.pub-cache/hosted/pub.dev/protobuf-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -23,10 +23,10 @@
       "name": "peaq_network_ev_charging_message_format",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.10"
+      "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-06-23T08:47:23.939098Z",
+  "generated": "2023-08-11T08:55:41.555356Z",
   "generator": "pub",
-  "generatorVersion": "2.16.1"
+  "generatorVersion": "3.0.0"
 }
