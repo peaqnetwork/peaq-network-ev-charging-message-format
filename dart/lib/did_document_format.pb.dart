@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: did_document_format.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -14,38 +18,39 @@ import 'did_document_format.pbenum.dart';
 export 'did_document_format.pbenum.dart';
 
 class VerificationMethod extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'VerificationMethod', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'document'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..e<VerificationType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: VerificationType.Ed25519VerificationKey2020, valueOf: VerificationType.valueOf, enumValues: VerificationType.values)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'controller')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKeyMultibase', protoName: 'publicKeyMultibase')
-    ..hasRequiredFields = false
-  ;
-
-  VerificationMethod._() : super();
   factory VerificationMethod({
     $core.String? id,
     VerificationType? type,
     $core.String? controller,
     $core.String? publicKeyMultibase,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (type != null) {
-      _result.type = type;
+      $result.type = type;
     }
     if (controller != null) {
-      _result.controller = controller;
+      $result.controller = controller;
     }
     if (publicKeyMultibase != null) {
-      _result.publicKeyMultibase = publicKeyMultibase;
+      $result.publicKeyMultibase = publicKeyMultibase;
     }
-    return _result;
+    return $result;
   }
+  VerificationMethod._() : super();
   factory VerificationMethod.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VerificationMethod.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerificationMethod', package: const $pb.PackageName(_omitMessageNames ? '' : 'document'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..e<VerificationType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: VerificationType.Ed25519VerificationKey2020, valueOf: VerificationType.valueOf, enumValues: VerificationType.values)
+    ..aOS(3, _omitFieldNames ? '' : 'controller')
+    ..aOS(4, _omitFieldNames ? '' : 'publicKeyMultibase', protoName: 'publicKeyMultibase')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -55,8 +60,10 @@ class VerificationMethod extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VerificationMethod copyWith(void Function(VerificationMethod) updates) => super.copyWith((message) => updates(message as VerificationMethod)) as VerificationMethod; // ignore: deprecated_member_use
+  VerificationMethod copyWith(void Function(VerificationMethod) updates) => super.copyWith((message) => updates(message as VerificationMethod)) as VerificationMethod;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static VerificationMethod create() => VerificationMethod._();
   VerificationMethod createEmptyInstance() => create();
@@ -103,33 +110,34 @@ class VerificationMethod extends $pb.GeneratedMessage {
 }
 
 class Signature extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Signature', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'document'), createEmptyInstance: create)
-    ..e<VerificationType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: VerificationType.Ed25519VerificationKey2020, valueOf: VerificationType.valueOf, enumValues: VerificationType.values)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'issuer')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hash')
-    ..hasRequiredFields = false
-  ;
-
-  Signature._() : super();
   factory Signature({
     VerificationType? type,
     $core.String? issuer,
     $core.String? hash,
   }) {
-    final _result = create();
+    final $result = create();
     if (type != null) {
-      _result.type = type;
+      $result.type = type;
     }
     if (issuer != null) {
-      _result.issuer = issuer;
+      $result.issuer = issuer;
     }
     if (hash != null) {
-      _result.hash = hash;
+      $result.hash = hash;
     }
-    return _result;
+    return $result;
   }
+  Signature._() : super();
   factory Signature.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Signature.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Signature', package: const $pb.PackageName(_omitMessageNames ? '' : 'document'), createEmptyInstance: create)
+    ..e<VerificationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: VerificationType.Ed25519VerificationKey2020, valueOf: VerificationType.valueOf, enumValues: VerificationType.values)
+    ..aOS(2, _omitFieldNames ? '' : 'issuer')
+    ..aOS(3, _omitFieldNames ? '' : 'hash')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -139,8 +147,10 @@ class Signature extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Signature copyWith(void Function(Signature) updates) => super.copyWith((message) => updates(message as Signature)) as Signature; // ignore: deprecated_member_use
+  Signature copyWith(void Function(Signature) updates) => super.copyWith((message) => updates(message as Signature)) as Signature;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Signature create() => Signature._();
   Signature createEmptyInstance() => create();
@@ -178,18 +188,6 @@ class Signature extends $pb.GeneratedMessage {
 }
 
 class Metadata extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Metadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'document'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'power')
-    ..e<Status>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: Status.AVAILABLE, valueOf: Status.valueOf, enumValues: Status.values)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chargePointClientId', protoName: 'chargePointClientId')
-    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'connectorsCount', $pb.PbFieldType.O3, protoName: 'connectorsCount')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'plugType', protoName: 'plugType')
-    ..a<$core.double>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pricePerKWHR', $pb.PbFieldType.OF, protoName: 'pricePerKWHR')
-    ..hasRequiredFields = false
-  ;
-
-  Metadata._() : super();
   factory Metadata({
     $core.String? name,
     $core.String? power,
@@ -199,32 +197,45 @@ class Metadata extends $pb.GeneratedMessage {
     $core.String? plugType,
     $core.double? pricePerKWHR,
   }) {
-    final _result = create();
+    final $result = create();
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (power != null) {
-      _result.power = power;
+      $result.power = power;
     }
     if (status != null) {
-      _result.status = status;
+      $result.status = status;
     }
     if (chargePointClientId != null) {
-      _result.chargePointClientId = chargePointClientId;
+      $result.chargePointClientId = chargePointClientId;
     }
     if (connectorsCount != null) {
-      _result.connectorsCount = connectorsCount;
+      $result.connectorsCount = connectorsCount;
     }
     if (plugType != null) {
-      _result.plugType = plugType;
+      $result.plugType = plugType;
     }
     if (pricePerKWHR != null) {
-      _result.pricePerKWHR = pricePerKWHR;
+      $result.pricePerKWHR = pricePerKWHR;
     }
-    return _result;
+    return $result;
   }
+  Metadata._() : super();
   factory Metadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Metadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Metadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'document'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'power')
+    ..e<Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: Status.AVAILABLE, valueOf: Status.valueOf, enumValues: Status.values)
+    ..aOS(4, _omitFieldNames ? '' : 'chargePointClientId', protoName: 'chargePointClientId')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'connectorsCount', $pb.PbFieldType.O3, protoName: 'connectorsCount')
+    ..aOS(6, _omitFieldNames ? '' : 'plugType', protoName: 'plugType')
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'pricePerKWHR', $pb.PbFieldType.OF, protoName: 'pricePerKWHR')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -234,8 +245,10 @@ class Metadata extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Metadata copyWith(void Function(Metadata) updates) => super.copyWith((message) => updates(message as Metadata)) as Metadata; // ignore: deprecated_member_use
+  Metadata copyWith(void Function(Metadata) updates) => super.copyWith((message) => updates(message as Metadata)) as Metadata;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Metadata create() => Metadata._();
   Metadata createEmptyInstance() => create();
@@ -315,44 +328,45 @@ enum Service_ServiceEndpoint {
 }
 
 class Service extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, Service_ServiceEndpoint> _Service_ServiceEndpointByTag = {
-    3 : Service_ServiceEndpoint.stringData,
-    4 : Service_ServiceEndpoint.metadata,
-    0 : Service_ServiceEndpoint.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Service', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'document'), createEmptyInstance: create)
-    ..oo(0, [3, 4])
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..e<ServiceType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: ServiceType.p2p, valueOf: ServiceType.valueOf, enumValues: ServiceType.values)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stringData', protoName: 'stringData')
-    ..aOM<Metadata>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: Metadata.create)
-    ..hasRequiredFields = false
-  ;
-
-  Service._() : super();
   factory Service({
     $core.String? id,
     ServiceType? type,
     $core.String? stringData,
     Metadata? metadata,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (type != null) {
-      _result.type = type;
+      $result.type = type;
     }
     if (stringData != null) {
-      _result.stringData = stringData;
+      $result.stringData = stringData;
     }
     if (metadata != null) {
-      _result.metadata = metadata;
+      $result.metadata = metadata;
     }
-    return _result;
+    return $result;
   }
+  Service._() : super();
   factory Service.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Service.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, Service_ServiceEndpoint> _Service_ServiceEndpointByTag = {
+    3 : Service_ServiceEndpoint.stringData,
+    4 : Service_ServiceEndpoint.metadata,
+    0 : Service_ServiceEndpoint.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Service', package: const $pb.PackageName(_omitMessageNames ? '' : 'document'), createEmptyInstance: create)
+    ..oo(0, [3, 4])
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..e<ServiceType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: ServiceType.p2p, valueOf: ServiceType.valueOf, enumValues: ServiceType.values)
+    ..aOS(3, _omitFieldNames ? '' : 'stringData', protoName: 'stringData')
+    ..aOM<Metadata>(4, _omitFieldNames ? '' : 'metadata', subBuilder: Metadata.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -362,8 +376,10 @@ class Service extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Service copyWith(void Function(Service) updates) => super.copyWith((message) => updates(message as Service)) as Service; // ignore: deprecated_member_use
+  Service copyWith(void Function(Service) updates) => super.copyWith((message) => updates(message as Service)) as Service;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Service create() => Service._();
   Service createEmptyInstance() => create();
@@ -415,17 +431,6 @@ class Service extends $pb.GeneratedMessage {
 }
 
 class Document extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Document', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'document'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'controller')
-    ..pc<VerificationMethod>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationMethods', $pb.PbFieldType.PM, protoName: 'verificationMethods', subBuilder: VerificationMethod.create)
-    ..aOM<Signature>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signature', subBuilder: Signature.create)
-    ..pc<Service>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'services', $pb.PbFieldType.PM, subBuilder: Service.create)
-    ..pPS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authentications')
-    ..hasRequiredFields = false
-  ;
-
-  Document._() : super();
   factory Document({
     $core.String? id,
     $core.String? controller,
@@ -434,29 +439,41 @@ class Document extends $pb.GeneratedMessage {
     $core.Iterable<Service>? services,
     $core.Iterable<$core.String>? authentications,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (controller != null) {
-      _result.controller = controller;
+      $result.controller = controller;
     }
     if (verificationMethods != null) {
-      _result.verificationMethods.addAll(verificationMethods);
+      $result.verificationMethods.addAll(verificationMethods);
     }
     if (signature != null) {
-      _result.signature = signature;
+      $result.signature = signature;
     }
     if (services != null) {
-      _result.services.addAll(services);
+      $result.services.addAll(services);
     }
     if (authentications != null) {
-      _result.authentications.addAll(authentications);
+      $result.authentications.addAll(authentications);
     }
-    return _result;
+    return $result;
   }
+  Document._() : super();
   factory Document.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Document.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Document', package: const $pb.PackageName(_omitMessageNames ? '' : 'document'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'controller')
+    ..pc<VerificationMethod>(3, _omitFieldNames ? '' : 'verificationMethods', $pb.PbFieldType.PM, protoName: 'verificationMethods', subBuilder: VerificationMethod.create)
+    ..aOM<Signature>(4, _omitFieldNames ? '' : 'signature', subBuilder: Signature.create)
+    ..pc<Service>(5, _omitFieldNames ? '' : 'services', $pb.PbFieldType.PM, subBuilder: Service.create)
+    ..pPS(6, _omitFieldNames ? '' : 'authentications')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -466,8 +483,10 @@ class Document extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Document copyWith(void Function(Document) updates) => super.copyWith((message) => updates(message as Document)) as Document; // ignore: deprecated_member_use
+  Document copyWith(void Function(Document) updates) => super.copyWith((message) => updates(message as Document)) as Document;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Document create() => Document._();
   Document createEmptyInstance() => create();
@@ -515,3 +534,6 @@ class Document extends $pb.GeneratedMessage {
   $core.List<$core.String> get authentications => $_getList(5);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

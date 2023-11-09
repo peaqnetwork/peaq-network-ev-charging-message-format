@@ -5,8 +5,8 @@ description: "Protobufs format of charmev message and did document"
 publish_to: 'none'
 
 environment:
-  sdk: '>=2.10.0 <3.0.0'
+  sdk: '>=2.12.0 <=3.1.5'
 
 dependencies: 
   fixnum: ^1.0.0
-  protobuf: ^2.0.1
+  protobuf: ^3.1.0

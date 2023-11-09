@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: p2p_message_format.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -15,38 +19,39 @@ import 'p2p_message_format.pbenum.dart';
 export 'p2p_message_format.pbenum.dart';
 
 class ChargingStatusData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChargingStatusData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..a<$core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'progress', $pb.PbFieldType.OF)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chargingPeriod')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'energyConsumption')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenSpent')
-    ..hasRequiredFields = false
-  ;
-
-  ChargingStatusData._() : super();
   factory ChargingStatusData({
     $core.double? progress,
     $core.String? chargingPeriod,
     $core.String? energyConsumption,
     $core.String? tokenSpent,
   }) {
-    final _result = create();
+    final $result = create();
     if (progress != null) {
-      _result.progress = progress;
+      $result.progress = progress;
     }
     if (chargingPeriod != null) {
-      _result.chargingPeriod = chargingPeriod;
+      $result.chargingPeriod = chargingPeriod;
     }
     if (energyConsumption != null) {
-      _result.energyConsumption = energyConsumption;
+      $result.energyConsumption = energyConsumption;
     }
     if (tokenSpent != null) {
-      _result.tokenSpent = tokenSpent;
+      $result.tokenSpent = tokenSpent;
     }
-    return _result;
+    return $result;
   }
+  ChargingStatusData._() : super();
   factory ChargingStatusData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ChargingStatusData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChargingStatusData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'progress', $pb.PbFieldType.OF)
+    ..aOS(2, _omitFieldNames ? '' : 'chargingPeriod')
+    ..aOS(3, _omitFieldNames ? '' : 'energyConsumption')
+    ..aOS(4, _omitFieldNames ? '' : 'tokenSpent')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -56,8 +61,10 @@ class ChargingStatusData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ChargingStatusData copyWith(void Function(ChargingStatusData) updates) => super.copyWith((message) => updates(message as ChargingStatusData)) as ChargingStatusData; // ignore: deprecated_member_use
+  ChargingStatusData copyWith(void Function(ChargingStatusData) updates) => super.copyWith((message) => updates(message as ChargingStatusData)) as ChargingStatusData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ChargingStatusData create() => ChargingStatusData._();
   ChargingStatusData createEmptyInstance() => create();
@@ -104,23 +111,24 @@ class ChargingStatusData extends $pb.GeneratedMessage {
 }
 
 class ServiceAckData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ServiceAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
-    ..hasRequiredFields = false
-  ;
-
-  ServiceAckData._() : super();
   factory ServiceAckData({
     Response? resp,
   }) {
-    final _result = create();
+    final $result = create();
     if (resp != null) {
-      _result.resp = resp;
+      $result.resp = resp;
     }
-    return _result;
+    return $result;
   }
+  ServiceAckData._() : super();
   factory ServiceAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ServiceAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServiceAckData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, _omitFieldNames ? '' : 'resp', subBuilder: Response.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -130,8 +138,10 @@ class ServiceAckData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ServiceAckData copyWith(void Function(ServiceAckData) updates) => super.copyWith((message) => updates(message as ServiceAckData)) as ServiceAckData; // ignore: deprecated_member_use
+  ServiceAckData copyWith(void Function(ServiceAckData) updates) => super.copyWith((message) => updates(message as ServiceAckData)) as ServiceAckData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ServiceAckData create() => ServiceAckData._();
   ServiceAckData createEmptyInstance() => create();
@@ -153,23 +163,24 @@ class ServiceAckData extends $pb.GeneratedMessage {
 }
 
 class ServiceRequestedAckData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ServiceRequestedAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
-    ..hasRequiredFields = false
-  ;
-
-  ServiceRequestedAckData._() : super();
   factory ServiceRequestedAckData({
     Response? resp,
   }) {
-    final _result = create();
+    final $result = create();
     if (resp != null) {
-      _result.resp = resp;
+      $result.resp = resp;
     }
-    return _result;
+    return $result;
   }
+  ServiceRequestedAckData._() : super();
   factory ServiceRequestedAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ServiceRequestedAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServiceRequestedAckData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, _omitFieldNames ? '' : 'resp', subBuilder: Response.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -179,8 +190,10 @@ class ServiceRequestedAckData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ServiceRequestedAckData copyWith(void Function(ServiceRequestedAckData) updates) => super.copyWith((message) => updates(message as ServiceRequestedAckData)) as ServiceRequestedAckData; // ignore: deprecated_member_use
+  ServiceRequestedAckData copyWith(void Function(ServiceRequestedAckData) updates) => super.copyWith((message) => updates(message as ServiceRequestedAckData)) as ServiceRequestedAckData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ServiceRequestedAckData create() => ServiceRequestedAckData._();
   ServiceRequestedAckData createEmptyInstance() => create();
@@ -202,38 +215,39 @@ class ServiceRequestedAckData extends $pb.GeneratedMessage {
 }
 
 class ServiceRequestedData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ServiceRequestedData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'consumer')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'provider')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenDeposited')
-    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'connectorId', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
-
-  ServiceRequestedData._() : super();
   factory ServiceRequestedData({
     $core.String? consumer,
     $core.String? provider,
     $core.String? tokenDeposited,
     $core.int? connectorId,
   }) {
-    final _result = create();
+    final $result = create();
     if (consumer != null) {
-      _result.consumer = consumer;
+      $result.consumer = consumer;
     }
     if (provider != null) {
-      _result.provider = provider;
+      $result.provider = provider;
     }
     if (tokenDeposited != null) {
-      _result.tokenDeposited = tokenDeposited;
+      $result.tokenDeposited = tokenDeposited;
     }
     if (connectorId != null) {
-      _result.connectorId = connectorId;
+      $result.connectorId = connectorId;
     }
-    return _result;
+    return $result;
   }
+  ServiceRequestedData._() : super();
   factory ServiceRequestedData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ServiceRequestedData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServiceRequestedData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'consumer')
+    ..aOS(2, _omitFieldNames ? '' : 'provider')
+    ..aOS(3, _omitFieldNames ? '' : 'tokenDeposited')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'connectorId', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -243,8 +257,10 @@ class ServiceRequestedData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ServiceRequestedData copyWith(void Function(ServiceRequestedData) updates) => super.copyWith((message) => updates(message as ServiceRequestedData)) as ServiceRequestedData; // ignore: deprecated_member_use
+  ServiceRequestedData copyWith(void Function(ServiceRequestedData) updates) => super.copyWith((message) => updates(message as ServiceRequestedData)) as ServiceRequestedData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ServiceRequestedData create() => ServiceRequestedData._();
   ServiceRequestedData createEmptyInstance() => create();
@@ -291,38 +307,39 @@ class ServiceRequestedData extends $pb.GeneratedMessage {
 }
 
 class ServiceDeliveredData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ServiceDeliveredData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'consumer')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'provider')
-    ..aOM<TransactionValue>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refundInfo', subBuilder: TransactionValue.create)
-    ..aOM<TransactionValue>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'spentInfo', subBuilder: TransactionValue.create)
-    ..hasRequiredFields = false
-  ;
-
-  ServiceDeliveredData._() : super();
   factory ServiceDeliveredData({
     $core.String? consumer,
     $core.String? provider,
     TransactionValue? refundInfo,
     TransactionValue? spentInfo,
   }) {
-    final _result = create();
+    final $result = create();
     if (consumer != null) {
-      _result.consumer = consumer;
+      $result.consumer = consumer;
     }
     if (provider != null) {
-      _result.provider = provider;
+      $result.provider = provider;
     }
     if (refundInfo != null) {
-      _result.refundInfo = refundInfo;
+      $result.refundInfo = refundInfo;
     }
     if (spentInfo != null) {
-      _result.spentInfo = spentInfo;
+      $result.spentInfo = spentInfo;
     }
-    return _result;
+    return $result;
   }
+  ServiceDeliveredData._() : super();
   factory ServiceDeliveredData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ServiceDeliveredData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServiceDeliveredData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'consumer')
+    ..aOS(2, _omitFieldNames ? '' : 'provider')
+    ..aOM<TransactionValue>(3, _omitFieldNames ? '' : 'refundInfo', subBuilder: TransactionValue.create)
+    ..aOM<TransactionValue>(4, _omitFieldNames ? '' : 'spentInfo', subBuilder: TransactionValue.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -332,8 +349,10 @@ class ServiceDeliveredData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ServiceDeliveredData copyWith(void Function(ServiceDeliveredData) updates) => super.copyWith((message) => updates(message as ServiceDeliveredData)) as ServiceDeliveredData; // ignore: deprecated_member_use
+  ServiceDeliveredData copyWith(void Function(ServiceDeliveredData) updates) => super.copyWith((message) => updates(message as ServiceDeliveredData)) as ServiceDeliveredData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ServiceDeliveredData create() => ServiceDeliveredData._();
   ServiceDeliveredData createEmptyInstance() => create();
@@ -384,23 +403,24 @@ class ServiceDeliveredData extends $pb.GeneratedMessage {
 }
 
 class StopChargeResponseData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StopChargeResponseData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
-    ..hasRequiredFields = false
-  ;
-
-  StopChargeResponseData._() : super();
   factory StopChargeResponseData({
     Response? resp,
   }) {
-    final _result = create();
+    final $result = create();
     if (resp != null) {
-      _result.resp = resp;
+      $result.resp = resp;
     }
-    return _result;
+    return $result;
   }
+  StopChargeResponseData._() : super();
   factory StopChargeResponseData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StopChargeResponseData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopChargeResponseData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, _omitFieldNames ? '' : 'resp', subBuilder: Response.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -410,8 +430,10 @@ class StopChargeResponseData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  StopChargeResponseData copyWith(void Function(StopChargeResponseData) updates) => super.copyWith((message) => updates(message as StopChargeResponseData)) as StopChargeResponseData; // ignore: deprecated_member_use
+  StopChargeResponseData copyWith(void Function(StopChargeResponseData) updates) => super.copyWith((message) => updates(message as StopChargeResponseData)) as StopChargeResponseData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static StopChargeResponseData create() => StopChargeResponseData._();
   StopChargeResponseData createEmptyInstance() => create();
@@ -433,23 +455,24 @@ class StopChargeResponseData extends $pb.GeneratedMessage {
 }
 
 class IdentityChallengeData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'IdentityChallengeData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'plainData')
-    ..hasRequiredFields = false
-  ;
-
-  IdentityChallengeData._() : super();
   factory IdentityChallengeData({
     $core.String? plainData,
   }) {
-    final _result = create();
+    final $result = create();
     if (plainData != null) {
-      _result.plainData = plainData;
+      $result.plainData = plainData;
     }
-    return _result;
+    return $result;
   }
+  IdentityChallengeData._() : super();
   factory IdentityChallengeData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IdentityChallengeData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IdentityChallengeData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'plainData')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -459,8 +482,10 @@ class IdentityChallengeData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  IdentityChallengeData copyWith(void Function(IdentityChallengeData) updates) => super.copyWith((message) => updates(message as IdentityChallengeData)) as IdentityChallengeData; // ignore: deprecated_member_use
+  IdentityChallengeData copyWith(void Function(IdentityChallengeData) updates) => super.copyWith((message) => updates(message as IdentityChallengeData)) as IdentityChallengeData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static IdentityChallengeData create() => IdentityChallengeData._();
   IdentityChallengeData createEmptyInstance() => create();
@@ -480,28 +505,29 @@ class IdentityChallengeData extends $pb.GeneratedMessage {
 }
 
 class IdentityResponseData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'IdentityResponseData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signature')
-    ..hasRequiredFields = false
-  ;
-
-  IdentityResponseData._() : super();
   factory IdentityResponseData({
     Response? resp,
     $core.String? signature,
   }) {
-    final _result = create();
+    final $result = create();
     if (resp != null) {
-      _result.resp = resp;
+      $result.resp = resp;
     }
     if (signature != null) {
-      _result.signature = signature;
+      $result.signature = signature;
     }
-    return _result;
+    return $result;
   }
+  IdentityResponseData._() : super();
   factory IdentityResponseData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IdentityResponseData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IdentityResponseData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, _omitFieldNames ? '' : 'resp', subBuilder: Response.create)
+    ..aOS(3, _omitFieldNames ? '' : 'signature')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -511,8 +537,10 @@ class IdentityResponseData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  IdentityResponseData copyWith(void Function(IdentityResponseData) updates) => super.copyWith((message) => updates(message as IdentityResponseData)) as IdentityResponseData; // ignore: deprecated_member_use
+  IdentityResponseData copyWith(void Function(IdentityResponseData) updates) => super.copyWith((message) => updates(message as IdentityResponseData)) as IdentityResponseData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static IdentityResponseData create() => IdentityResponseData._();
   IdentityResponseData createEmptyInstance() => create();
@@ -543,28 +571,29 @@ class IdentityResponseData extends $pb.GeneratedMessage {
 }
 
 class Response extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Response', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
-    ..hasRequiredFields = false
-  ;
-
-  Response._() : super();
   factory Response({
     $core.bool? error,
     $core.String? message,
   }) {
-    final _result = create();
+    final $result = create();
     if (error != null) {
-      _result.error = error;
+      $result.error = error;
     }
     if (message != null) {
-      _result.message = message;
+      $result.message = message;
     }
-    return _result;
+    return $result;
   }
+  Response._() : super();
   factory Response.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Response.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Response', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'error')
+    ..aOS(2, _omitFieldNames ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -574,8 +603,10 @@ class Response extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Response copyWith(void Function(Response) updates) => super.copyWith((message) => updates(message as Response)) as Response; // ignore: deprecated_member_use
+  Response copyWith(void Function(Response) updates) => super.copyWith((message) => updates(message as Response)) as Response;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Response create() => Response._();
   Response createEmptyInstance() => create();
@@ -604,28 +635,29 @@ class Response extends $pb.GeneratedMessage {
 }
 
 class TransactionValue_TimePoint extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TransactionValue.TimePoint', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'height')
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'index')
-    ..hasRequiredFields = false
-  ;
-
-  TransactionValue_TimePoint._() : super();
   factory TransactionValue_TimePoint({
     $fixnum.Int64? height,
     $fixnum.Int64? index,
   }) {
-    final _result = create();
+    final $result = create();
     if (height != null) {
-      _result.height = height;
+      $result.height = height;
     }
     if (index != null) {
-      _result.index = index;
+      $result.index = index;
     }
-    return _result;
+    return $result;
   }
+  TransactionValue_TimePoint._() : super();
   factory TransactionValue_TimePoint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TransactionValue_TimePoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TransactionValue.TimePoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'height')
+    ..aInt64(2, _omitFieldNames ? '' : 'index')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -635,8 +667,10 @@ class TransactionValue_TimePoint extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TransactionValue_TimePoint copyWith(void Function(TransactionValue_TimePoint) updates) => super.copyWith((message) => updates(message as TransactionValue_TimePoint)) as TransactionValue_TimePoint; // ignore: deprecated_member_use
+  TransactionValue_TimePoint copyWith(void Function(TransactionValue_TimePoint) updates) => super.copyWith((message) => updates(message as TransactionValue_TimePoint)) as TransactionValue_TimePoint;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TransactionValue_TimePoint create() => TransactionValue_TimePoint._();
   TransactionValue_TimePoint createEmptyInstance() => create();
@@ -665,38 +699,39 @@ class TransactionValue_TimePoint extends $pb.GeneratedMessage {
 }
 
 class TransactionValue extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TransactionValue', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenNum')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'txHash')
-    ..aOM<TransactionValue_TimePoint>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timePoint', subBuilder: TransactionValue_TimePoint.create)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'callHash')
-    ..hasRequiredFields = false
-  ;
-
-  TransactionValue._() : super();
   factory TransactionValue({
     $core.String? tokenNum,
     $core.String? txHash,
     TransactionValue_TimePoint? timePoint,
     $core.String? callHash,
   }) {
-    final _result = create();
+    final $result = create();
     if (tokenNum != null) {
-      _result.tokenNum = tokenNum;
+      $result.tokenNum = tokenNum;
     }
     if (txHash != null) {
-      _result.txHash = txHash;
+      $result.txHash = txHash;
     }
     if (timePoint != null) {
-      _result.timePoint = timePoint;
+      $result.timePoint = timePoint;
     }
     if (callHash != null) {
-      _result.callHash = callHash;
+      $result.callHash = callHash;
     }
-    return _result;
+    return $result;
   }
+  TransactionValue._() : super();
   factory TransactionValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TransactionValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TransactionValue', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'tokenNum')
+    ..aOS(2, _omitFieldNames ? '' : 'txHash')
+    ..aOM<TransactionValue_TimePoint>(3, _omitFieldNames ? '' : 'timePoint', subBuilder: TransactionValue_TimePoint.create)
+    ..aOS(4, _omitFieldNames ? '' : 'callHash')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -706,8 +741,10 @@ class TransactionValue extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TransactionValue copyWith(void Function(TransactionValue) updates) => super.copyWith((message) => updates(message as TransactionValue)) as TransactionValue; // ignore: deprecated_member_use
+  TransactionValue copyWith(void Function(TransactionValue) updates) => super.copyWith((message) => updates(message as TransactionValue)) as TransactionValue;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TransactionValue create() => TransactionValue._();
   TransactionValue createEmptyInstance() => create();
@@ -756,28 +793,29 @@ class TransactionValue extends $pb.GeneratedMessage {
 }
 
 class ChainEventData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChainEventData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'eventId')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'attributes')
-    ..hasRequiredFields = false
-  ;
-
-  ChainEventData._() : super();
   factory ChainEventData({
     $core.String? eventId,
     $core.String? attributes,
   }) {
-    final _result = create();
+    final $result = create();
     if (eventId != null) {
-      _result.eventId = eventId;
+      $result.eventId = eventId;
     }
     if (attributes != null) {
-      _result.attributes = attributes;
+      $result.attributes = attributes;
     }
-    return _result;
+    return $result;
   }
+  ChainEventData._() : super();
   factory ChainEventData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ChainEventData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChainEventData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aOS(2, _omitFieldNames ? '' : 'attributes')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -787,8 +825,10 @@ class ChainEventData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ChainEventData copyWith(void Function(ChainEventData) updates) => super.copyWith((message) => updates(message as ChainEventData)) as ChainEventData; // ignore: deprecated_member_use
+  ChainEventData copyWith(void Function(ChainEventData) updates) => super.copyWith((message) => updates(message as ChainEventData)) as ChainEventData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ChainEventData create() => ChainEventData._();
   ChainEventData createEmptyInstance() => create();
@@ -817,28 +857,29 @@ class ChainEventData extends $pb.GeneratedMessage {
 }
 
 class EmitShowInfoData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EmitShowInfoData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..e<EmitShowInfoData_ShowInfoType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EmitShowInfoData_ShowInfoType.LOG_INFO, valueOf: EmitShowInfoData_ShowInfoType.valueOf, enumValues: EmitShowInfoData_ShowInfoType.values)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data')
-    ..hasRequiredFields = false
-  ;
-
-  EmitShowInfoData._() : super();
   factory EmitShowInfoData({
     EmitShowInfoData_ShowInfoType? type,
     $core.String? data,
   }) {
-    final _result = create();
+    final $result = create();
     if (type != null) {
-      _result.type = type;
+      $result.type = type;
     }
     if (data != null) {
-      _result.data = data;
+      $result.data = data;
     }
-    return _result;
+    return $result;
   }
+  EmitShowInfoData._() : super();
   factory EmitShowInfoData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EmitShowInfoData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EmitShowInfoData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..e<EmitShowInfoData_ShowInfoType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EmitShowInfoData_ShowInfoType.LOG_INFO, valueOf: EmitShowInfoData_ShowInfoType.valueOf, enumValues: EmitShowInfoData_ShowInfoType.values)
+    ..aOS(2, _omitFieldNames ? '' : 'data')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -848,8 +889,10 @@ class EmitShowInfoData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EmitShowInfoData copyWith(void Function(EmitShowInfoData) updates) => super.copyWith((message) => updates(message as EmitShowInfoData)) as EmitShowInfoData; // ignore: deprecated_member_use
+  EmitShowInfoData copyWith(void Function(EmitShowInfoData) updates) => super.copyWith((message) => updates(message as EmitShowInfoData)) as EmitShowInfoData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EmitShowInfoData create() => EmitShowInfoData._();
   EmitShowInfoData createEmptyInstance() => create();
@@ -878,28 +921,29 @@ class EmitShowInfoData extends $pb.GeneratedMessage {
 }
 
 class GetBalanceAckData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetBalanceAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'balance')
-    ..hasRequiredFields = false
-  ;
-
-  GetBalanceAckData._() : super();
   factory GetBalanceAckData({
     Response? resp,
     $core.String? balance,
   }) {
-    final _result = create();
+    final $result = create();
     if (resp != null) {
-      _result.resp = resp;
+      $result.resp = resp;
     }
     if (balance != null) {
-      _result.balance = balance;
+      $result.balance = balance;
     }
-    return _result;
+    return $result;
   }
+  GetBalanceAckData._() : super();
   factory GetBalanceAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetBalanceAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBalanceAckData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, _omitFieldNames ? '' : 'resp', subBuilder: Response.create)
+    ..aOS(2, _omitFieldNames ? '' : 'balance')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -909,8 +953,10 @@ class GetBalanceAckData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetBalanceAckData copyWith(void Function(GetBalanceAckData) updates) => super.copyWith((message) => updates(message as GetBalanceAckData)) as GetBalanceAckData; // ignore: deprecated_member_use
+  GetBalanceAckData copyWith(void Function(GetBalanceAckData) updates) => super.copyWith((message) => updates(message as GetBalanceAckData)) as GetBalanceAckData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetBalanceAckData create() => GetBalanceAckData._();
   GetBalanceAckData createEmptyInstance() => create();
@@ -941,28 +987,29 @@ class GetBalanceAckData extends $pb.GeneratedMessage {
 }
 
 class GetPKAckData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPKAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pk')
-    ..hasRequiredFields = false
-  ;
-
-  GetPKAckData._() : super();
   factory GetPKAckData({
     Response? resp,
     $core.String? pk,
   }) {
-    final _result = create();
+    final $result = create();
     if (resp != null) {
-      _result.resp = resp;
+      $result.resp = resp;
     }
     if (pk != null) {
-      _result.pk = pk;
+      $result.pk = pk;
     }
-    return _result;
+    return $result;
   }
+  GetPKAckData._() : super();
   factory GetPKAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPKAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPKAckData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, _omitFieldNames ? '' : 'resp', subBuilder: Response.create)
+    ..aOS(2, _omitFieldNames ? '' : 'pk')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -972,8 +1019,10 @@ class GetPKAckData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetPKAckData copyWith(void Function(GetPKAckData) updates) => super.copyWith((message) => updates(message as GetPKAckData)) as GetPKAckData; // ignore: deprecated_member_use
+  GetPKAckData copyWith(void Function(GetPKAckData) updates) => super.copyWith((message) => updates(message as GetPKAckData)) as GetPKAckData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetPKAckData create() => GetPKAckData._();
   GetPKAckData createEmptyInstance() => create();
@@ -1004,28 +1053,29 @@ class GetPKAckData extends $pb.GeneratedMessage {
 }
 
 class RePublishDIDAckData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RePublishDIDAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pk')
-    ..hasRequiredFields = false
-  ;
-
-  RePublishDIDAckData._() : super();
   factory RePublishDIDAckData({
     Response? resp,
     $core.String? pk,
   }) {
-    final _result = create();
+    final $result = create();
     if (resp != null) {
-      _result.resp = resp;
+      $result.resp = resp;
     }
     if (pk != null) {
-      _result.pk = pk;
+      $result.pk = pk;
     }
-    return _result;
+    return $result;
   }
+  RePublishDIDAckData._() : super();
   factory RePublishDIDAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RePublishDIDAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RePublishDIDAckData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, _omitFieldNames ? '' : 'resp', subBuilder: Response.create)
+    ..aOS(2, _omitFieldNames ? '' : 'pk')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1035,8 +1085,10 @@ class RePublishDIDAckData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RePublishDIDAckData copyWith(void Function(RePublishDIDAckData) updates) => super.copyWith((message) => updates(message as RePublishDIDAckData)) as RePublishDIDAckData; // ignore: deprecated_member_use
+  RePublishDIDAckData copyWith(void Function(RePublishDIDAckData) updates) => super.copyWith((message) => updates(message as RePublishDIDAckData)) as RePublishDIDAckData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RePublishDIDAckData create() => RePublishDIDAckData._();
   RePublishDIDAckData createEmptyInstance() => create();
@@ -1067,28 +1119,29 @@ class RePublishDIDAckData extends $pb.GeneratedMessage {
 }
 
 class ReconnectAckData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ReconnectAckData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOM<Response>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resp', subBuilder: Response.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
-    ..hasRequiredFields = false
-  ;
-
-  ReconnectAckData._() : super();
   factory ReconnectAckData({
     Response? resp,
     $core.String? message,
   }) {
-    final _result = create();
+    final $result = create();
     if (resp != null) {
-      _result.resp = resp;
+      $result.resp = resp;
     }
     if (message != null) {
-      _result.message = message;
+      $result.message = message;
     }
-    return _result;
+    return $result;
   }
+  ReconnectAckData._() : super();
   factory ReconnectAckData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ReconnectAckData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReconnectAckData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOM<Response>(1, _omitFieldNames ? '' : 'resp', subBuilder: Response.create)
+    ..aOS(2, _omitFieldNames ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1098,8 +1151,10 @@ class ReconnectAckData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ReconnectAckData copyWith(void Function(ReconnectAckData) updates) => super.copyWith((message) => updates(message as ReconnectAckData)) as ReconnectAckData; // ignore: deprecated_member_use
+  ReconnectAckData copyWith(void Function(ReconnectAckData) updates) => super.copyWith((message) => updates(message as ReconnectAckData)) as ReconnectAckData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ReconnectAckData create() => ReconnectAckData._();
   ReconnectAckData createEmptyInstance() => create();
@@ -1130,23 +1185,24 @@ class ReconnectAckData extends $pb.GeneratedMessage {
 }
 
 class StopChargeData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StopChargeData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'p2p'), createEmptyInstance: create)
-    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'success')
-    ..hasRequiredFields = false
-  ;
-
-  StopChargeData._() : super();
   factory StopChargeData({
     $core.bool? success,
   }) {
-    final _result = create();
+    final $result = create();
     if (success != null) {
-      _result.success = success;
+      $result.success = success;
     }
-    return _result;
+    return $result;
   }
+  StopChargeData._() : super();
   factory StopChargeData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StopChargeData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopChargeData', package: const $pb.PackageName(_omitMessageNames ? '' : 'p2p'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1156,8 +1212,10 @@ class StopChargeData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  StopChargeData copyWith(void Function(StopChargeData) updates) => super.copyWith((message) => updates(message as StopChargeData)) as StopChargeData; // ignore: deprecated_member_use
+  StopChargeData copyWith(void Function(StopChargeData) updates) => super.copyWith((message) => updates(message as StopChargeData)) as StopChargeData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static StopChargeData create() => StopChargeData._();
   StopChargeData createEmptyInstance() => create();
@@ -1176,3 +1234,6 @@ class StopChargeData extends $pb.GeneratedMessage {
   void clearSuccess() => clearField(1);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

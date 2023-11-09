@@ -12,6 +12,8 @@ mv rust/src/mod.rs rust/src/lib.rs
 
 # Dart code generator
 protoc -I=./ --dart_out=./dart/lib $(find ./ -iname "*.proto")
+
+# Python code generator
 protoc -I=./ --python_out python $(find ./ -iname "*.proto")
 
 # Javascript code generator

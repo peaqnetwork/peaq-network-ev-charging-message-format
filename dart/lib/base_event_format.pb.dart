@@ -1,18 +1,21 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: base_event_format.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'p2p_message_format.pb.dart' as $0;
-import 'charge_point_gateway_format.pb.dart' as $1;
-
 import 'base_event_format.pbenum.dart';
+import 'charge_point_gateway_format.pb.dart' as $1;
+import 'p2p_message_format.pb.dart' as $0;
 
 export 'base_event_format.pbenum.dart';
 
@@ -48,70 +51,6 @@ enum Event_Data {
 }
 
 class Event extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, Event_Data> _Event_DataByTag = {
-    2 : Event_Data.chargingStatusData,
-    3 : Event_Data.serviceAckData,
-    4 : Event_Data.serviceRequestedData,
-    5 : Event_Data.serviceDeliveredData,
-    6 : Event_Data.stopChargeData,
-    7 : Event_Data.stopChargeRespData,
-    8 : Event_Data.identityChallengeData,
-    9 : Event_Data.identityResponseData,
-    10 : Event_Data.chainEventData,
-    11 : Event_Data.emitShowInfoData,
-    12 : Event_Data.getBalanceAckData,
-    13 : Event_Data.getPkAckData,
-    14 : Event_Data.republishAckData,
-    15 : Event_Data.reconnectAckData,
-    16 : Event_Data.serviceRequestedAckData,
-    17 : Event_Data.bootNotificationRequestData,
-    18 : Event_Data.logData,
-    19 : Event_Data.authorizeRequestData,
-    20 : Event_Data.authorizeResponseData,
-    21 : Event_Data.checkAvailabilityRequestData,
-    22 : Event_Data.checkAvailabilityResponseData,
-    24 : Event_Data.startTransactionRequestData,
-    25 : Event_Data.startTransactionResponseData,
-    26 : Event_Data.evChargeStatusData,
-    27 : Event_Data.stopTransactionRequestData,
-    28 : Event_Data.stopTransactionResponseData,
-    29 : Event_Data.notifyChargePointStateChangeData,
-    0 : Event_Data.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Event', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'events'), createEmptyInstance: create)
-    ..oo(0, [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29])
-    ..e<EventType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'eventId', $pb.PbFieldType.OE, defaultOrMaker: EventType.CHARGING_STATUS, valueOf: EventType.valueOf, enumValues: EventType.values)
-    ..aOM<$0.ChargingStatusData>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chargingStatusData', subBuilder: $0.ChargingStatusData.create)
-    ..aOM<$0.ServiceAckData>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceAckData', subBuilder: $0.ServiceAckData.create)
-    ..aOM<$0.ServiceRequestedData>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceRequestedData', subBuilder: $0.ServiceRequestedData.create)
-    ..aOM<$0.ServiceDeliveredData>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceDeliveredData', subBuilder: $0.ServiceDeliveredData.create)
-    ..aOM<$0.StopChargeData>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stopChargeData', subBuilder: $0.StopChargeData.create)
-    ..aOM<$0.StopChargeResponseData>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stopChargeRespData', subBuilder: $0.StopChargeResponseData.create)
-    ..aOM<$0.IdentityChallengeData>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identityChallengeData', subBuilder: $0.IdentityChallengeData.create)
-    ..aOM<$0.IdentityResponseData>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identityResponseData', subBuilder: $0.IdentityResponseData.create)
-    ..aOM<$0.ChainEventData>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainEventData', subBuilder: $0.ChainEventData.create)
-    ..aOM<$0.EmitShowInfoData>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emitShowInfoData', subBuilder: $0.EmitShowInfoData.create)
-    ..aOM<$0.GetBalanceAckData>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'getBalanceAckData', subBuilder: $0.GetBalanceAckData.create)
-    ..aOM<$0.GetPKAckData>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'getPkAckData', subBuilder: $0.GetPKAckData.create)
-    ..aOM<$0.RePublishDIDAckData>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'republishAckData', subBuilder: $0.RePublishDIDAckData.create)
-    ..aOM<$0.ReconnectAckData>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reconnectAckData', subBuilder: $0.ReconnectAckData.create)
-    ..aOM<$0.ServiceRequestedAckData>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceRequestedAckData', subBuilder: $0.ServiceRequestedAckData.create)
-    ..aOM<$1.BootNotificationRequestData>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bootNotificationRequestData', subBuilder: $1.BootNotificationRequestData.create)
-    ..aOM<$1.LogData>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logData', subBuilder: $1.LogData.create)
-    ..aOM<$1.AuthorizeRequestData>(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizeRequestData', subBuilder: $1.AuthorizeRequestData.create)
-    ..aOM<$1.AuthorizeResponseData>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizeResponseData', subBuilder: $1.AuthorizeResponseData.create)
-    ..aOM<$1.CheckAvailabilityRequestData>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'checkAvailabilityRequestData', subBuilder: $1.CheckAvailabilityRequestData.create)
-    ..aOM<$1.CheckAvailabilityResponseData>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'checkAvailabilityResponseData', subBuilder: $1.CheckAvailabilityResponseData.create)
-    ..aOM<$1.StartTransactionRequestData>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'startTransactionRequestData', subBuilder: $1.StartTransactionRequestData.create)
-    ..aOM<$1.StartTransactionResponseData>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'startTransactionResponseData', subBuilder: $1.StartTransactionResponseData.create)
-    ..aOM<$1.EVChargingStatusData>(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evChargeStatusData', subBuilder: $1.EVChargingStatusData.create)
-    ..aOM<$1.StopTransactionRequestData>(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stopTransactionRequestData', subBuilder: $1.StopTransactionRequestData.create)
-    ..aOM<$1.StopTransactionResponseData>(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stopTransactionResponseData', subBuilder: $1.StopTransactionResponseData.create)
-    ..aOM<$1.NotifyChargePointStateChangeData>(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'notifyChargePointStateChangeData', subBuilder: $1.NotifyChargePointStateChangeData.create)
-    ..hasRequiredFields = false
-  ;
-
-  Event._() : super();
   factory Event({
     EventType? eventId,
     $0.ChargingStatusData? chargingStatusData,
@@ -142,95 +81,160 @@ class Event extends $pb.GeneratedMessage {
     $1.StopTransactionResponseData? stopTransactionResponseData,
     $1.NotifyChargePointStateChangeData? notifyChargePointStateChangeData,
   }) {
-    final _result = create();
+    final $result = create();
     if (eventId != null) {
-      _result.eventId = eventId;
+      $result.eventId = eventId;
     }
     if (chargingStatusData != null) {
-      _result.chargingStatusData = chargingStatusData;
+      $result.chargingStatusData = chargingStatusData;
     }
     if (serviceAckData != null) {
-      _result.serviceAckData = serviceAckData;
+      $result.serviceAckData = serviceAckData;
     }
     if (serviceRequestedData != null) {
-      _result.serviceRequestedData = serviceRequestedData;
+      $result.serviceRequestedData = serviceRequestedData;
     }
     if (serviceDeliveredData != null) {
-      _result.serviceDeliveredData = serviceDeliveredData;
+      $result.serviceDeliveredData = serviceDeliveredData;
     }
     if (stopChargeData != null) {
-      _result.stopChargeData = stopChargeData;
+      $result.stopChargeData = stopChargeData;
     }
     if (stopChargeRespData != null) {
-      _result.stopChargeRespData = stopChargeRespData;
+      $result.stopChargeRespData = stopChargeRespData;
     }
     if (identityChallengeData != null) {
-      _result.identityChallengeData = identityChallengeData;
+      $result.identityChallengeData = identityChallengeData;
     }
     if (identityResponseData != null) {
-      _result.identityResponseData = identityResponseData;
+      $result.identityResponseData = identityResponseData;
     }
     if (chainEventData != null) {
-      _result.chainEventData = chainEventData;
+      $result.chainEventData = chainEventData;
     }
     if (emitShowInfoData != null) {
-      _result.emitShowInfoData = emitShowInfoData;
+      $result.emitShowInfoData = emitShowInfoData;
     }
     if (getBalanceAckData != null) {
-      _result.getBalanceAckData = getBalanceAckData;
+      $result.getBalanceAckData = getBalanceAckData;
     }
     if (getPkAckData != null) {
-      _result.getPkAckData = getPkAckData;
+      $result.getPkAckData = getPkAckData;
     }
     if (republishAckData != null) {
-      _result.republishAckData = republishAckData;
+      $result.republishAckData = republishAckData;
     }
     if (reconnectAckData != null) {
-      _result.reconnectAckData = reconnectAckData;
+      $result.reconnectAckData = reconnectAckData;
     }
     if (serviceRequestedAckData != null) {
-      _result.serviceRequestedAckData = serviceRequestedAckData;
+      $result.serviceRequestedAckData = serviceRequestedAckData;
     }
     if (bootNotificationRequestData != null) {
-      _result.bootNotificationRequestData = bootNotificationRequestData;
+      $result.bootNotificationRequestData = bootNotificationRequestData;
     }
     if (logData != null) {
-      _result.logData = logData;
+      $result.logData = logData;
     }
     if (authorizeRequestData != null) {
-      _result.authorizeRequestData = authorizeRequestData;
+      $result.authorizeRequestData = authorizeRequestData;
     }
     if (authorizeResponseData != null) {
-      _result.authorizeResponseData = authorizeResponseData;
+      $result.authorizeResponseData = authorizeResponseData;
     }
     if (checkAvailabilityRequestData != null) {
-      _result.checkAvailabilityRequestData = checkAvailabilityRequestData;
+      $result.checkAvailabilityRequestData = checkAvailabilityRequestData;
     }
     if (checkAvailabilityResponseData != null) {
-      _result.checkAvailabilityResponseData = checkAvailabilityResponseData;
+      $result.checkAvailabilityResponseData = checkAvailabilityResponseData;
     }
     if (startTransactionRequestData != null) {
-      _result.startTransactionRequestData = startTransactionRequestData;
+      $result.startTransactionRequestData = startTransactionRequestData;
     }
     if (startTransactionResponseData != null) {
-      _result.startTransactionResponseData = startTransactionResponseData;
+      $result.startTransactionResponseData = startTransactionResponseData;
     }
     if (evChargeStatusData != null) {
-      _result.evChargeStatusData = evChargeStatusData;
+      $result.evChargeStatusData = evChargeStatusData;
     }
     if (stopTransactionRequestData != null) {
-      _result.stopTransactionRequestData = stopTransactionRequestData;
+      $result.stopTransactionRequestData = stopTransactionRequestData;
     }
     if (stopTransactionResponseData != null) {
-      _result.stopTransactionResponseData = stopTransactionResponseData;
+      $result.stopTransactionResponseData = stopTransactionResponseData;
     }
     if (notifyChargePointStateChangeData != null) {
-      _result.notifyChargePointStateChangeData = notifyChargePointStateChangeData;
+      $result.notifyChargePointStateChangeData = notifyChargePointStateChangeData;
     }
-    return _result;
+    return $result;
   }
+  Event._() : super();
   factory Event.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Event.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, Event_Data> _Event_DataByTag = {
+    2 : Event_Data.chargingStatusData,
+    3 : Event_Data.serviceAckData,
+    4 : Event_Data.serviceRequestedData,
+    5 : Event_Data.serviceDeliveredData,
+    6 : Event_Data.stopChargeData,
+    7 : Event_Data.stopChargeRespData,
+    8 : Event_Data.identityChallengeData,
+    9 : Event_Data.identityResponseData,
+    10 : Event_Data.chainEventData,
+    11 : Event_Data.emitShowInfoData,
+    12 : Event_Data.getBalanceAckData,
+    13 : Event_Data.getPkAckData,
+    14 : Event_Data.republishAckData,
+    15 : Event_Data.reconnectAckData,
+    16 : Event_Data.serviceRequestedAckData,
+    17 : Event_Data.bootNotificationRequestData,
+    18 : Event_Data.logData,
+    19 : Event_Data.authorizeRequestData,
+    20 : Event_Data.authorizeResponseData,
+    21 : Event_Data.checkAvailabilityRequestData,
+    22 : Event_Data.checkAvailabilityResponseData,
+    24 : Event_Data.startTransactionRequestData,
+    25 : Event_Data.startTransactionResponseData,
+    26 : Event_Data.evChargeStatusData,
+    27 : Event_Data.stopTransactionRequestData,
+    28 : Event_Data.stopTransactionResponseData,
+    29 : Event_Data.notifyChargePointStateChangeData,
+    0 : Event_Data.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Event', package: const $pb.PackageName(_omitMessageNames ? '' : 'events'), createEmptyInstance: create)
+    ..oo(0, [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29])
+    ..e<EventType>(1, _omitFieldNames ? '' : 'eventId', $pb.PbFieldType.OE, defaultOrMaker: EventType.CHARGING_STATUS, valueOf: EventType.valueOf, enumValues: EventType.values)
+    ..aOM<$0.ChargingStatusData>(2, _omitFieldNames ? '' : 'chargingStatusData', subBuilder: $0.ChargingStatusData.create)
+    ..aOM<$0.ServiceAckData>(3, _omitFieldNames ? '' : 'serviceAckData', subBuilder: $0.ServiceAckData.create)
+    ..aOM<$0.ServiceRequestedData>(4, _omitFieldNames ? '' : 'serviceRequestedData', subBuilder: $0.ServiceRequestedData.create)
+    ..aOM<$0.ServiceDeliveredData>(5, _omitFieldNames ? '' : 'serviceDeliveredData', subBuilder: $0.ServiceDeliveredData.create)
+    ..aOM<$0.StopChargeData>(6, _omitFieldNames ? '' : 'stopChargeData', subBuilder: $0.StopChargeData.create)
+    ..aOM<$0.StopChargeResponseData>(7, _omitFieldNames ? '' : 'stopChargeRespData', subBuilder: $0.StopChargeResponseData.create)
+    ..aOM<$0.IdentityChallengeData>(8, _omitFieldNames ? '' : 'identityChallengeData', subBuilder: $0.IdentityChallengeData.create)
+    ..aOM<$0.IdentityResponseData>(9, _omitFieldNames ? '' : 'identityResponseData', subBuilder: $0.IdentityResponseData.create)
+    ..aOM<$0.ChainEventData>(10, _omitFieldNames ? '' : 'chainEventData', subBuilder: $0.ChainEventData.create)
+    ..aOM<$0.EmitShowInfoData>(11, _omitFieldNames ? '' : 'emitShowInfoData', subBuilder: $0.EmitShowInfoData.create)
+    ..aOM<$0.GetBalanceAckData>(12, _omitFieldNames ? '' : 'getBalanceAckData', subBuilder: $0.GetBalanceAckData.create)
+    ..aOM<$0.GetPKAckData>(13, _omitFieldNames ? '' : 'getPkAckData', subBuilder: $0.GetPKAckData.create)
+    ..aOM<$0.RePublishDIDAckData>(14, _omitFieldNames ? '' : 'republishAckData', subBuilder: $0.RePublishDIDAckData.create)
+    ..aOM<$0.ReconnectAckData>(15, _omitFieldNames ? '' : 'reconnectAckData', subBuilder: $0.ReconnectAckData.create)
+    ..aOM<$0.ServiceRequestedAckData>(16, _omitFieldNames ? '' : 'serviceRequestedAckData', subBuilder: $0.ServiceRequestedAckData.create)
+    ..aOM<$1.BootNotificationRequestData>(17, _omitFieldNames ? '' : 'bootNotificationRequestData', subBuilder: $1.BootNotificationRequestData.create)
+    ..aOM<$1.LogData>(18, _omitFieldNames ? '' : 'logData', subBuilder: $1.LogData.create)
+    ..aOM<$1.AuthorizeRequestData>(19, _omitFieldNames ? '' : 'authorizeRequestData', subBuilder: $1.AuthorizeRequestData.create)
+    ..aOM<$1.AuthorizeResponseData>(20, _omitFieldNames ? '' : 'authorizeResponseData', subBuilder: $1.AuthorizeResponseData.create)
+    ..aOM<$1.CheckAvailabilityRequestData>(21, _omitFieldNames ? '' : 'checkAvailabilityRequestData', subBuilder: $1.CheckAvailabilityRequestData.create)
+    ..aOM<$1.CheckAvailabilityResponseData>(22, _omitFieldNames ? '' : 'checkAvailabilityResponseData', subBuilder: $1.CheckAvailabilityResponseData.create)
+    ..aOM<$1.StartTransactionRequestData>(24, _omitFieldNames ? '' : 'startTransactionRequestData', subBuilder: $1.StartTransactionRequestData.create)
+    ..aOM<$1.StartTransactionResponseData>(25, _omitFieldNames ? '' : 'startTransactionResponseData', subBuilder: $1.StartTransactionResponseData.create)
+    ..aOM<$1.EVChargingStatusData>(26, _omitFieldNames ? '' : 'evChargeStatusData', subBuilder: $1.EVChargingStatusData.create)
+    ..aOM<$1.StopTransactionRequestData>(27, _omitFieldNames ? '' : 'stopTransactionRequestData', subBuilder: $1.StopTransactionRequestData.create)
+    ..aOM<$1.StopTransactionResponseData>(28, _omitFieldNames ? '' : 'stopTransactionResponseData', subBuilder: $1.StopTransactionResponseData.create)
+    ..aOM<$1.NotifyChargePointStateChangeData>(29, _omitFieldNames ? '' : 'notifyChargePointStateChangeData', subBuilder: $1.NotifyChargePointStateChangeData.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -240,8 +244,10 @@ class Event extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Event copyWith(void Function(Event) updates) => super.copyWith((message) => updates(message as Event)) as Event; // ignore: deprecated_member_use
+  Event copyWith(void Function(Event) updates) => super.copyWith((message) => updates(message as Event)) as Event;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Event create() => Event._();
   Event createEmptyInstance() => create();
@@ -427,6 +433,7 @@ class Event extends $pb.GeneratedMessage {
   @$pb.TagNumber(16)
   $0.ServiceRequestedAckData ensureServiceRequestedAckData() => $_ensure(15);
 
+  /// Charge Point Gateway event data
   @$pb.TagNumber(17)
   $1.BootNotificationRequestData get bootNotificationRequestData => $_getN(16);
   @$pb.TagNumber(17)
@@ -560,3 +567,6 @@ class Event extends $pb.GeneratedMessage {
   $1.NotifyChargePointStateChangeData ensureNotifyChargePointStateChangeData() => $_ensure(27);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
